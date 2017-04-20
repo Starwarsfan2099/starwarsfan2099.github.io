@@ -1,13 +1,51 @@
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
 <html>
+	<head>
+		<title>Starwarsfan2099's Repo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
 
-<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-<h1>Hello World</h1>
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" width="20%" height="50%" alt="" /></span>
+							<h1>Starwarsfan2099's</h1>
+							<p>Official Cydia Repo</p>
+						</header>
+						<footer>
+							<ul class="icons">
+								<li><a href="cydia://url/https://cydia.saurik.com/api/share#?source=https%3A%2F%2Fstarwarsfan2099.github.io" class="fa-plus">Add Repo</a></li>
+							</ul>
+						</footer>
+					</section>
 
-<p>This is a Cydia repo</p>
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Starwarsfan2099</li>
+						</ul>
+					</footer>
 
-</body>
+			</div>
 
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
 </html>
