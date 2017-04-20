@@ -1,0 +1,183 @@
+Package: com.starwarsfan2099.XglyphControl
+Version: 0.0.2-2+debug
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Installed-Size: 208
+Filename: ./debs/com.starwarsfan2099.XglyphControl_0.0.2-2+debug_iphoneos-arm.deb
+Size: 11786
+MD5sum: 5360302d4ab2fbae611a7928359b2b19
+SHA1: a8a57694aeade42a694bad68482005538b933810
+SHA256: 2a3aeddada402cff878263dd60716e1db48c94cde8091dfba371e3d10c411f79
+Section: Tweaks
+Description: iOS 9 version. Reddit request.
+Author: noone
+Name: XglyphControl
+
+Package: com.starwarsfan2099.cmatrix
+Version: 1.2
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.cmatrix.deb
+Size: 17934
+MD5sum: 507200e396cf19486f5ae54ca8f4d98a
+SHA1: 8a0d2d280db13df2ef1355db8cd3ca840792282c
+SHA256: 89518bd97b2859debe89baf2784d954e94d97f36947e850a6f9d7ae03674912e
+Section: Tools
+Description: Small tool to display matrix style falling text.
+Author: Starwarsfan2099
+Name: CMatrix
+
+Package: com.starwarsfan2099.fdupes
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.fdupes.deb
+Size: 13900
+MD5sum: bab55095b43f262c971e3d9a780eaf04
+SHA1: 95a831a45bbd13865ef42a5f4701272535b5df75
+SHA256: a04941cc0e8900f62c51de0974992c5d6197631d52661b98d0dbf747af394c76
+Section: Tools
+Description: FDUPES is a program for identifying duplicate files residing within specified directories.
+Author: Starwarsfan2099
+Name: fdupes
+
+Package: com.starwarsfan2099.figlet
+Version: 2.2.5
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.figlet.deb
+Size: 115464
+MD5sum: 1357460778aabd4ac5ad4510f5e3f6c1
+SHA1: 08f95dba9a63b914b961b20345844c81f6218f62
+SHA256: b0be96931a34222cd72472fc5b951de84725a3cccec0ae45a5b8f3aae71a7788
+Section: Tools
+Description: FIGlet is a program that creates large text out of screen text. FIGlet can create text in many different styles and can kern and "smush" the text together in various ways.  FIGlet output is generally reminiscent of the sort of "signatures" many people use.
+Author: Starwarsfan2099
+Name: FIGLet
+
+Package: com.starwarsfan2099.fortune
+Version: 0.0.4
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Filename: ./debs/com.starwarsfan2099.fortune.deb
+Size: 292140
+MD5sum: 6479bb7f000343a11aab6e9dc9c3f754
+SHA1: 1aaee20eea1ef6c42961d6f00a85a41784a64ef2
+SHA256: 5c32b800a141d8046723622e3d927f40f1425d36ec004d48f1b61853a543db28
+Section: Tools
+Description: Requires perl!!! Fortune and cowsay for iOS. Reddit request.
+Author: Starwarsfan2099
+Name: Fortune & Cowsay
+
+Package: com.starwarsfan2099.ingressXglyph
+Version: 0.0.2-1+debug
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Installed-Size: 172
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.ingressXglyph_0.0.2-1+debug_iphoneos-arm.deb
+Size: 10214
+MD5sum: 5c22afad170b274f7e95a750247918b8
+SHA1: 995813d6ef3a63651a2027c7323e6f2e0268c0de
+SHA256: 7dc92fbf3465fc8d3feddf2cd7f2ddea84f9d986be9b9704fb5f44bf592d11ba
+Section: Tweaks
+Description: Reddit request for Xglyph
+Author: noone
+Name: ingressXglyph
+
+Package: com.starwarsfan2099.lftp
+Version: 4.7.4
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.lftp.deb
+Size: 731794
+MD5sum: 186c986d882e4a83d3e39f55f3769aed
+SHA1: d5d5e53ab536ebb61598ba393beebc5d7a94bd25
+SHA256: 5a45927026f5814fce95ac6a35fd470d3ff3cd9aad503935e0faa09002789de8
+Section: Tools
+Description: Lftp is a file retrieving tool that supports FTP, HTTP, FISH, SFTP, HTTPS and FTPS.
+Author: Starwarsfan2099
+Name: lftp
+
+Package: com.starwarsfan2099.locktextchanger
+Version: 0.0.3-4+debug
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Installed-Size: 352
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.locktextchanger_0.0.3-4+debug_iphoneos-arm.deb
+Size: 8416
+MD5sum: d8cddb35c6553a18ee91f1ed6c8c45c9
+SHA1: 915ca5b56171f54833cca2e0fd8ce9a45e731b32
+SHA256: 7f42c4b93e58a91e041e48f89f0a3869fda3edf9465fe6d0ff21f2ec0bd9a682
+Section: Tweaks
+Description: Tweak which changes your ‘slide to unlock’ text and 'Enter Passcode' text. iOS 9 is supported!
+Author: Starwarsfan2099
+Name: LockTextChanger
+
+Package: com.starwarsfan2099.locktextchanger
+Version: 0.0.3-4+debug
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Installed-Size: 352
+Depends: mobilesubstrate
+Filename: ./.scanpkgtmp/debs/com.starwarsfan2099.locktextchanger_0.0.3-4+debug_iphoneos-arm/com.starwarsfan2099.locktextchanger_0.0.3-4+debug_iphoneos-arm.deb
+Size: 8416
+MD5sum: d8cddb35c6553a18ee91f1ed6c8c45c9
+SHA1: 915ca5b56171f54833cca2e0fd8ce9a45e731b32
+SHA256: 7f42c4b93e58a91e041e48f89f0a3869fda3edf9465fe6d0ff21f2ec0bd9a682
+Section: Tweaks
+Description: Tweak which changes your ‘slide to unlock’ text and 'Enter Passcode' text. iOS 9 is supported!
+Author: Starwarsfan2099
+Name: LockTextChanger
+
+Package: com.starwarsfan2099.p0f
+Version: 3.09
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.p0f.deb
+Size: 46000
+MD5sum: ca4437338775863af2354e889b395c48
+SHA1: c9173858c2318d2eabbc787e2605317d0f0bef3f
+SHA256: c28735ef48d882f1de9395dfc2690782a4d058b967fa182094ca8b7c90178bbf
+Section: Tools
+Description: P0f is a tool that utilizes an array of sophisticated, purely passive traffic analysis mechanisms to identify the players behind any incidental TCP/IP connections (often as little as a single normal SYN) without interfering in any way. The tool can be operated in the foreground or as a daemon, and offers a simple real-time API for third-party components that wish to obtain additional information about the actors they are talking to. Common uses for p0f include reconnaissance during penetration tests; routine network monitoring; detection of unauthorized network interconnects in corporate environments; providing signals for abuse-prevention tools; and miscellaneous forensics.
+Author: Starwarsfan2099
+Name: p0f
+
+Package: com.starwarsfan2099.sl
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.sl.deb
+Size: 5162
+MD5sum: b70aae7aa3db8f8e6d129ff1cef8ef75
+SHA1: e7f416f414adaccc7a39eac471010a9cca5a95c2
+SHA256: dbdcb857caa4676abaaa89c19ce2e197e3562c98f87f889311a06f1d45c16d49
+Section: Tools
+Description: If you miss-type 'ls' as 'sl', a steam locomotive travels across your screen. Different options are available.
+Author: Starwarsfan2099
+Name: sl
+
+Package: com.starwarsfan2099.uberdriverbypass
+Version: 0.0.1-2+debug
+Architecture: iphoneos-arm
+Maintainer: Starwarsfan2099
+Installed-Size: 124
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.uberdriverbypass_0.0.1-2+debug_iphoneos-arm.deb
+Size: 5442
+MD5sum: db7b778e3751fa95a06e10ee5dc43744
+SHA1: 5ea5f7ebc5a277a89c55c1aef747c6a85874f042
+SHA256: 466384195139c449cb4e5e5b398d8755aa93e7531a8cc9ddbf56c2c3d5d7e420
+Section: Tweaks
+Description: Uber Driver JB detection bypass.
+Author: Starwarsfan2099
+Name: Uber Driver Jailbreak Bypass
+
