@@ -94,22 +94,6 @@ Architecture: iphoneos-arm
 Maintainer: Starwarsfan2099
 Installed-Size: 172
 Depends: mobilesubstrate
-Filename: ./debs/com.starwarsfan2099.ingressXglyph_0.0.2-1+debug_iphoneos-arm(1).deb
-Size: 10214
-MD5sum: 5c22afad170b274f7e95a750247918b8
-SHA1: 995813d6ef3a63651a2027c7323e6f2e0268c0de
-SHA256: 7dc92fbf3465fc8d3feddf2cd7f2ddea84f9d986be9b9704fb5f44bf592d11ba
-Section: Tweaks
-Description: Reddit request for Xglyph
-Author: noone
-Name: ingressXglyph
-
-Package: com.starwarsfan2099.ingressXglyph
-Version: 0.0.2-1+debug
-Architecture: iphoneos-arm
-Maintainer: Starwarsfan2099
-Installed-Size: 172
-Depends: mobilesubstrate
 Filename: ./debs/com.starwarsfan2099.ingressXglyph_0.0.2-1+debug_iphoneos-arm.deb
 Size: 10214
 MD5sum: 5c22afad170b274f7e95a750247918b8
@@ -263,7 +247,7 @@ Package: iconv
 Version: 1.14-1
 Architecture: iphoneos-arm
 Maintainer: Starwarsfan2099 <Starwarsfan2099@gmail.com>
-Filename: ./debs/iconv_1.14-1_iphoneos-arm.deb
+Filename: ./debs/com.starwarsfan2099.iconv.deb
 Size: 1588438
 MD5sum: 8bc46ebf8174384070dc8e3e8709914c
 SHA1: 9456620c1bf75d9ee6f752106121a8c0188fa48c
@@ -279,7 +263,7 @@ Architecture: iphoneos-arm
 Maintainer: Starwarsfan2099 <starwarsfan2099@gmail.com>
 Conflicts: rubygems, com.boococky.ruby, com.boococky.rubygems, net.fenyx.mysqlgem
 Replaces: rubygems, com.boococky.ruby, com.boococky.rubygems, net.fenyx.mysqlgem
-Filename: ./debs/ruby_2.2.3-4_iphoneos-arm.deb
+Filename: ./debs/com.starwarsfan2099.ruby.deb
 Size: 8624430
 MD5sum: 00d42e9119730165d0d3491c1dce8e5a
 SHA1: b0fe41b06dcb5b6b85ca1489c0c2e6be0459ce62
