@@ -1,0 +1,26 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+# relative_permalinks: true
+
+# Setup
+title:               Andrew Clark's Blog
+tagline:             ''
+description:         'A blog for others to follow my adventures and learning experiences in reverse engineering, hardware hacking, and programming.'
+baseurl:             'https://starwarsfan2099.github.io'
+paginate:            5
+
+# About/contact
+author:
+  name:              Andrew Clark
+  email:             clarkiv@masrhall.edu
+
+# Custom vars
+version:             1.0.0
+
+# Fixes
+gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"

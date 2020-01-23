@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      About &middot; Andrew Clark's Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://starwarsfan2099.github.io/public/css/poole.css">
+  <link rel="stylesheet" href="https://starwarsfan2099.github.io/public/css/syntax.css">
+  <link rel="stylesheet" href="https://starwarsfan2099.github.io/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://starwarsfan2099.github.io/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="https://starwarsfan2099.github.io/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A blog for others to follow my adventures and learning experiences in reverse engineering, hardware hacking, and programming.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="https://starwarsfan2099.github.io/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="/about/">About</a>
+        
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="https://www.twitter.com/starwarsfan2099">Twitter</a>
+    <a class="sidebar-nav-item" href="https://www.github.com/Starwarsfan2099">GitHub</a>
+    <a class="sidebar-nav-item" href="https://starwarsfan2099.github.io/repo">Cydia Repo</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2020. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="https://starwarsfan2099.github.io/" title="Home">Andrew Clark's Blog</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">About</h1>
+  <p>Hi, my name is Andrew Clark. I’m a student at Marshall University studying Digital Forensics and Information Assurance. I have a passion for cybersecurity, programming, reverse engineering, hardware hacking, and robotics. My goal with this blog is to share information I learn, projects I create, or just stuff I find interesting and want to share with others. I plan to do several blog posts on reverse engineering, exploitation, debugging, electronics, and who knows what else. I hope you can learn something or share in my excitement about the inner workings of technology!</p>
+
+<p>If you want, here are some other ways you can follow me:</p>
+
+<ul>
+  <li><a href="http://www.github.com/Starwarsfan2099">Github</a></li>
+  <li><a href="http://www.twitter.com/Starwarsfan2099">Twitter</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
