@@ -4,7 +4,7 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-01-24T15:21:39-05:00</updated>
+ <updated>2020-01-24T15:25:07-05:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Loading a Mach-O into memory to execute peeked my interest, and I wanted to know how it worked, and I was able to obtain a sample of the malware. The malware was obtained from &lt;code class=&quot;highlighter-rouge&quot;&gt;https://unioncrypto.vip/&lt;/code&gt; , which is now down but resolved to &lt;code class=&quot;highlighter-rouge&quot;&gt;104.168.167.16&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Loading a Mach-O into memory to execute peeked my interest and I wanted to know how it worked. So I obtained a sample of the malware from the website spreading it. The malware was obtained from &lt;code class=&quot;highlighter-rouge&quot;&gt;https://unioncrypto.vip/&lt;/code&gt; , which is now down but previously resolved to &lt;code class=&quot;highlighter-rouge&quot;&gt;104.168.167.16&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;I first searched the MD5 hash of the file (&lt;code class=&quot;highlighter-rouge&quot;&gt;6588d262529dc372c400bef8478c2eec&lt;/code&gt;) on VirusTotal. It had been uploaded and most of the major AV companies flag the malware.&lt;/p&gt;
 
