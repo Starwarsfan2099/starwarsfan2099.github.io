@@ -4,7 +4,7 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-01-24T11:01:15-05:00</updated>
+ <updated>2020-01-24T15:18:45-05:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
@@ -161,15 +161,15 @@ UTF8String
 
 &lt;p&gt;The code finds the entry point at offset &lt;code class=&quot;highlighter-rouge&quot;&gt;0x8&lt;/code&gt;, sets up some arguments (all &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;’s), and jumps to the entry point of the Mach-O in memory.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_24.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;So, to execute a payload straight from memory, the malware loads a download Mach-O file into memory using &lt;code class=&quot;highlighter-rouge&quot;&gt;mmap()&lt;/code&gt; with protections &lt;code class=&quot;highlighter-rouge&quot;&gt;PROT_READ | PROT_WRITE | PROT_EXEC&lt;/code&gt;, then it uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSCreateObjectFileImageFromMemory()&lt;/code&gt; to create an object image using the Mach-O in memory, next it uses &lt;code class=&quot;highlighter-rouge&quot;&gt;NSLinkModule&lt;/code&gt; to link the the module in memory, filling that it searches for the Mach-O magic number &lt;code class=&quot;highlighter-rouge&quot;&gt;0xfeedfacf&lt;/code&gt; and then finds the address of &lt;code class=&quot;highlighter-rouge&quot;&gt;LC_MAIN&lt;/code&gt; - the Mach-O load command, then at offset &lt;code class=&quot;highlighter-rouge&quot;&gt;0x8&lt;/code&gt; it finds the entry pint to the Mach-O, sets up argument for the entry point, and jumps to it straight in memory.&lt;/p&gt;
 
 &lt;p&gt;And last but not least:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_24.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_25.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If the function &lt;code class=&quot;highlighter-rouge&quot;&gt;_load_from_memory()&lt;/code&gt; fails and returns &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, it just copies the Mach-O to &lt;code class=&quot;highlighter-rouge&quot;&gt;/tmp/updater&lt;/code&gt; and executes it with &lt;code class=&quot;highlighter-rouge&quot;&gt;system()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_25.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
