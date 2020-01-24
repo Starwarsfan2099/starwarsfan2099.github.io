@@ -3,9 +3,8 @@ layout: page
 title: About
 ---
 
-Hi, my name is Andrew Clark. I'm a student at Marshall University studying Digital Forensics and Information Assurance. I have a passion for cybersecurity, programming, reverse engineering, hardware hacking, and robotics. My goal with this blog is to share information I learn, projects I create, or just stuff I find interesting and want to share with others. I plan to do several blog posts on reverse engineering, exploitation, debugging, electronics, and who knows what else. I hope you can learn something or share in my excitement about the inner workings of technology!
+Hi, my name is Andrew Clark. I'm studying Digital Forensics and Information Assurance at Marshall University studying. I have a passion for cybersecurity, programming, reverse engineering, hardware hacking, and robotics. My goal for this blog is to share information I learn, projects I create, or just stuff I find interesting and want to share with others. I plan to do several blog posts on reverse engineering, exploitation, debugging, electronics, and who knows what else. I hope you can learn something or at least share in my excitement about the inner workings of technology!
 
-P.S. Also he loves Jessi. I LOVE YOU!!! :)
 
 If you want, here are some other ways you can follow me:
 
