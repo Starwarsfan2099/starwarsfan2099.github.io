@@ -4,13 +4,22 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-01-24T15:25:07-05:00</updated>
+ <updated>2020-01-25T01:24:34-05:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
    <email>clarkiv@masrhall.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Dji Spark Log Decryption</title>
+   <link href="/2020/01/25/dji-spark-log-decryption/"/>
+   <updated>2020-01-25T00:00:00-05:00</updated>
+   <id>https://starwarsfan2099.github.io/2020/01/25/dji-spark-log-decryption</id>
+   <content type="html">
+</content>
+ </entry>
  
  <entry>
    <title>Analyzing MacOS Malware that Executes a Payload in Memory</title>
