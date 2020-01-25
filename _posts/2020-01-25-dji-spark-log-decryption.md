@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Decrypting DJI Spark Drone Log Files
-excerpt: DJI Spark Drones have a feature that allows them to transfer files to a computer. Some of these appear to be *black box* encrypted log files. By running and reversing the drone's firmware inside of QEMU, the encryption keys and methods can be determined.
+excerpt: DJI Spark Drones have a feature that allows them to transfer files to a computer. Some of these appear to be _black box_ encrypted log files. By running and reversing the drone's firmware inside of QEMU, the encryption keys and methods can be determined.
 
 ---
 
