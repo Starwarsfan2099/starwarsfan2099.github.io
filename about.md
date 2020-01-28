@@ -10,3 +10,4 @@ If you want, here are some other ways you can follow me:
 
 * [Github](http://www.github.com/Starwarsfan2099)
 * [Twitter](http://www.twitter.com/Starwarsfan2099)
+* [Linkedin](https://www.linkedin.com/in/andrew-clark-b83387198/)
