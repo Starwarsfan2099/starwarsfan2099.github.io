@@ -20,7 +20,6 @@ author:
 version:             1.0.0
 
 # Fixes
-gems: [jekyll-paginate]
 plugins: [jekyll-paginate]
 paginate: 5
 paginate_path: "page:num"
