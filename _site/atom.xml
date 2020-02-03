@@ -4,7 +4,7 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-02-01T15:02:13-05:00</updated>
+ <updated>2020-02-03T11:34:47-05:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
@@ -17,7 +17,7 @@
    <link href="/2020/01/25/dji-spark-log-decryption/"/>
    <updated>2020-01-25T00:00:00-05:00</updated>
    <id>https://starwarsfan2099.github.io/2020/01/25/dji-spark-log-decryption</id>
-   <content type="html">&lt;p&gt;Transfered DJI Spark Drone’s log files look something like this after being transfered to a computer.&lt;/p&gt;
+   <content type="html">&lt;p&gt;DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transfered using application. However, they appear to be encrypted for some reason. Transfered DJI Spark Drone’s log files look something like this after being transfered to a computer.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-25/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
 

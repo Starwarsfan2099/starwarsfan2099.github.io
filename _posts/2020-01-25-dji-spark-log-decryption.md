@@ -5,7 +5,7 @@ excerpt: DJI Spark Drones have a feature that allows them to transfer files to a
 
 ---
 
-Transfered DJI Spark Drone's log files look something like this after being transfered to a computer.
+DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transfered using application. However, they appear to be encrypted for some reason. Transfered DJI Spark Drone's log files look something like this after being transfered to a computer.
 
 ![Image](https://starwarsfan2099.github.io/public/2020-1-25/Pic_1.png)
 
