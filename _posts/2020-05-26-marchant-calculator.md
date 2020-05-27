@@ -28,11 +28,3 @@ The model number is listed as `ACR8M-161734`. Serial numbers 161,000 - 165,00 we
 ![Keyboard view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5611.jpg)
 
 The calculator has 8 key columns (`8M` in `ACR8M`) ont the keyboard for digit entry. Each column consists of 1 - 9, with a 10th red key at the bottom. The bottom row of keys is used to clear or zero a individual column and set it back to zero. The keyboard only allows one key to be pressed at a time in each column. Pressing another key releases the previous one that was pressed in a column. The keyboard also contains 9 decimal indicators. They can be flipped over to a painted white side via the wheels below the zeroing keys. This is used to help keep track of decimal places.
-
-Test
-
-# Division Slow Motion with Outer Panels Removed
-
-![Image](https://starwarsfan2099.github.io/public/2020-5-26/right_side_veiw.gif)
-
-Gif should be above ^^^
