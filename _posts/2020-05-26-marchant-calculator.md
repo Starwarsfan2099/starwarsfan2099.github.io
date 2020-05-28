@@ -5,7 +5,7 @@ excerpt: 1942 Marchant ACR8M repair, teardown, functions, and basic operation.
 
 ---
 
-# Overview 
+## Overview 
 
 I was able to acquire a Marchant ACR8M "Silent Speed" mechanical calculator bought off of Ebay. This is the calculator after some light cleaning and repair.
 
