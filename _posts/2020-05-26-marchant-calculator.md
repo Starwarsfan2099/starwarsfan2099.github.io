@@ -17,7 +17,9 @@ The calculator includes its serial number and patent information on the bottom o
 
 ![Patent info](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5619.JPG)
 
-The model number is listed as `ACR8M-161734`. Serial numbers 161,000 - 165,00 were manufactured in 1942. Serial numbers and manufacture dates for the *Silent Speed*, *Figuremaster*, and *Figurmatic* can be found on [this page](http://www.vintagecalculators.com/html/marchant.html). The calculator was in very good condition. Outer panels have light scratching and flaking as well as decade old tape residue. The Marchant painted logos are still present in all places. With only minimal surface cleaning, the calculator looks quite nice. The tape residue is resistant to any cleaners I put on and is completely hardened. Attempts to scrape it off resulted in paint coming off as well so I have left it for now. 
+Marchant calculators were top of the line machines throughout the early 1900s. The *Silent Speed* was among the fastest of any mechanical calculators ever made thanks to a unique and ingenious proportional drive mechanism. Division was among the fastest as well thanks to decaded mechanism for anticipating an underflow, saving machine cycles.
+
+The model number is listed as `ACR8M-161734`. Serial numbers 161,000 - 165,00 were manufactured in 1942. Serial numbers and manufacture dates for the *Silent Speed*, *Figuremaster*, and *Figurmatic* can be found on [this page](http://www.vintagecalculators.com/html/marchant.html). The calculator was in very good condition. Outer panels have light scratching and flaking as well as decade old tape residue. The Marchant painted logos are still present in all places. With only minimal surface cleaning, the calculator looks quite nice. The tape residue is resistant to any cleaners I put on and is completely hardened. Attempts to scrape it off resulted in paint coming off as well so I have left it for now.
 
 ![Right view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5606.JPG)
 
@@ -55,4 +57,18 @@ On the far right, are two "manual" carriage shift buttons. The buttons shift the
 
 **Multiplication:** The *Silent Speed* features a dedicated multiplier row for fast multiplication. The multiplier can be entered forwards or backwards. To enter the multiplier forward, the *left-shift* key should be pressed. If the carriage is not in the most right position, the *Clear Tab* key can be pressed to move the carriage all the way to the right. The multiplicand should be entered on the keyboard. Then the multiplier is entered digit by digit using the multiplier row. The carriage automatically shifts after each multiplication. The *Silent Speed* also features a mechanical buffer system, meaning the next digit of the multiplier can be entered before the previous operations has even finished. This combined with the speed of the machine means the multiplier can be entered continuously with no waiting for the machine to finish an operation. If the *Right-shift* key is pressed, the carriage will move to the right, so the multiplies will need to be entered from the last digit to first. The result is stored in the result register, with the multiplier in the counter register. 
 
-**Division:** The *Silent Speed* has one of the fastest auto-division mechanism of any mechanical calculator ever made. First, the carriage must be placed all the way to the right via the manual carriage shift key or a *Left shift* key set then *Clear Tab*. First, the dividend is entered on the far left side of the keyboard for the most accuracy (via more decimal places). This number is placed in the result register with the addition key. The divisor should be entered on the keyboard next. The counter register shows a 1 but is automatically cleared before division. The *Auto divide* is then pressed. The machine will automatically perform the division. The quotient is in the counter register. If the *Division return* lever is in the down position, the carriage will automatically return home and clear the remainder from the result register. Otherwise, the division stops when the carriage has reached its maximum right position. 
+**Division:** The *Silent Speed* has one of the fastest auto-division mechanism of any mechanical calculator ever made. First, the carriage must be placed all the way to the right via the manual carriage shift key or a *Left shift* key set then *Clear Tab*. First, the dividend is entered on the far left side of the keyboard for the most accuracy (via more decimal places). This number is placed in the result register with the addition key. The divisor should be entered on the keyboard next. The counter register shows a 1 but is automatically cleared before division. The *Auto divide* is then pressed. The machine will automatically perform the division. The quotient is in the counter register. If the *Division return* lever is in the down position, the carriage will automatically return home and clear the remainder from the result register. Otherwise, the division stops when the carriage has reached its maximum right position.
+
+## Repair and Inner Workings
+
+The outer covers on the body of the machine are easily taken off via 12 screws. First the back panel is removed followed by the two side panels.
+
+![Back panel removed](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5614.JPG)
+
+![Back panel removed 2](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5616.JPG)
+
+![Right panel removed](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5622.JPG)
+
+![Right panel removed 2](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5627.JPG)
+
+![Left panel removed 2](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5646.JPG)
