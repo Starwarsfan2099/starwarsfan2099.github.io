@@ -75,5 +75,5 @@ The outer covers on the body of the machine are easily taken off via 12 screws. 
 
 The carriage has three panels easily taken off the machine as well. 
 
-![Carriage panel removed](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5646.JPG)
+![Carriage panel removed](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5648.JPG)
 
