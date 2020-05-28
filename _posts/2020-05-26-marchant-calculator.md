@@ -11,7 +11,7 @@ I was able to acquire a Marchant ACR8M "Silent Speed" mechanical calculator boug
 
 ![Front view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5599_2.jpg)
 
-The calculator includes it's serial number and patent information on the bottom of the machine. 
+The calculator includes its serial number and patent information on the bottom of the machine. 
 
 ![Bottom view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5618.JPG)
 
@@ -31,7 +31,7 @@ The carriage contains a 9 digit counter register and a 16 digit result register.
 
 ![Keyboard view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5611.JPG)
 
-The calculator has 8 key columns (`8M` in `ACR8M`) ont the keyboard for digit entry. Each column consists of 1 - 9, with a 10th red key at the bottom. The bottom row of keys is used to clear or zero a individual column and set it back to zero. The keyboard only allows one key to be pressed at a time in each column. Pressing another key releases the previous one that was pressed in a column. The keyboard also contains 9 decimal indicators. They can be flipped over to a painted white side via the wheels below the zeroing keys. This is used to help keep track of decimal places. Above the keyboard is a display register that shows the currently pressed keys on the keyboard. 
+The calculator has 8 key columns (`8M` in `ACR8M`) on the keyboard for digit entry. Each column consists of 1 - 9, with a 10th red key at the bottom. The bottom row of keys is used to clear or zero a individual column and set it back to zero. The keyboard only allows one key to be pressed at a time in each column. Pressing another key releases the previous one that was pressed in a column. The keyboard also contains 9 decimal indicators. They can be flipped over to a painted white side via the wheels below the zeroing keys. This is used to help keep track of decimal places. Above the keyboard is a display register that shows the currently pressed keys on the keyboard. 
 
 ![Controls view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5610.JPG)
 
@@ -47,3 +47,12 @@ In the top right, beside the multiplier column, is another small lever. This lev
 
 On the far right, are two "manual" carriage shift buttons. The buttons shift the carriage one position, or until the button is released. If the carriage cannot go any further and a carriage shift is initiated, the motor turns on for a second then the machine stops. 
 
+## Operation
+
+**Addition:** Single addition is simple and the same as on many other keyboard mechanical calculators. A first number is entered on the keyboard and the *Addition* key is pressed. This places the number in the result register. The counter register is incremented by one. The keyboard is automatically cleared. Another number can be entered on the keyboard. When the addition key is pressed again, the product of the addition is in the result register. For repeated additions less than 10 times, the number should be entered on the keyboard, then the addition key pressed at the same time as the multiplier row key for the number of successive additions you want. The carriage will not shift after this operation no matter of the shift key setting. The counter register is incremented by the number of additions. 
+
+**Subtraction:** Subtraction is essentially the same process as addition except using the subtraction key. Repeated subtractions use the same method as well.
+
+**Multiplication:** The *Silent Speed* features a dedicated multiplier row for fast multiplication. The multiplier can be entered forwards or backwards. To enter the multiplier forward, the *left-shift* key should be pressed. If the carriage is not in the most right position, the *Clear Tab* key can be pressed to move the carriage all the way to the right. The multiplicand should be entered on the keyboard. Then the multiplier is entered digit by digit using the multiplier row. The carriage automatically shifts after each multiplication. The *Silent Speed* also features a mechanical buffer system, meaning the next digit of the multiplier can be entered before the previous operations has even finished. This combined with the speed of the machine means the multiplier can be entered continuously with no waiting for the machine to finish an operation. If the *Right-shift* key is pressed, the carriage will move to the right, so the multiplies will need to be entered from the last digit to first. The result is stored in the result register, with the multiplier in the counter register. 
+
+**Division:** The *Silent Speed* has one of the fastest auto-division mechanism of any mechanical calculator ever made. First, the carriage must be placed all the way to the right via the manual carriage shift key or a *Left shift* key set then *Clear Tab*. First, the dividend is entered on the far left side of the keyboard for the most accuracy (via more decimal places). This number is placed in the result register with the addition key. The divisor should be entered on the keyboard next. The counter register shows a 1 but is automatically cleared before division. The *Auto divide* is then pressed. The machine will automatically perform the division. The quotient is in the counter register. If the *Division return* lever is in the down position, the carriage will automatically return home and clear the remainder from the result register. Otherwise, the division stops when the carriage has reached its maximum right position. 
