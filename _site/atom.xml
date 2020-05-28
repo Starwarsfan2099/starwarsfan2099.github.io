@@ -4,7 +4,7 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-05-27T20:35:35-04:00</updated>
+ <updated>2020-05-27T20:38:18-04:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
@@ -46,6 +46,8 @@
 &lt;p&gt;Beside the keyboard, there are control keys and another column of keys. In the top right, is a red auto division key. To the right, is the division stop key. Below that row is the addition and subtraction keys. To the right of the subtraction keys is the carriage shift-direction keys. There is a shift left, no shift, and shift right key. These keys determine which way the carriage moves during tabulation and during multiplication. Below those three keys is a reverse key. The reverse key, when set, does the opposite of the operation pressed (addition or subtraction). In-between the reverse and addition keys is a small lever. This lever, when set downwards, causes the carriage return to a position determined by which shift-key is currently set and clear the result register after division. If the shift right key is pressed and the lever is down, after a division the carriage will automatically return to the right and clear the result register. If the lever is in the up position the carriage will not move or clear after a division. In the bottom left is the keyboard clear button. This key clears all columns on the keyboard. To the right of that key, is the tab and clear keys. The tab key returns the machine to position determined by the shift-keys. Below the tab key are two carriage clear keys. A result register clear key and a counter register clear key. All three keys can be pressed at the same time.&lt;/p&gt;
 
 &lt;p&gt;To the right of those keys, is a column of digits. This is the &lt;em&gt;“on-the-fly”&lt;/em&gt; multiplier. Pressing these keys multiplies what is in the result register by the key pressed, and increments the counter register by that amount.&lt;/p&gt;
+
+&lt;p&gt;Test&lt;/p&gt;
 </content>
  </entry>
  
