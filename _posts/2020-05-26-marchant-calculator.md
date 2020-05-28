@@ -59,7 +59,7 @@ On the far right, are two "manual" carriage shift buttons. The buttons shift the
 
 **Division:** The *Silent Speed* has one of the fastest auto-division mechanism of any mechanical calculator ever made. First, the carriage must be placed all the way to the right via the manual carriage shift key or a *Left shift* key set then *Clear Tab*. First, the dividend is entered on the far left side of the keyboard for the most accuracy (via more decimal places). This number is placed in the result register with the addition key. The divisor should be entered on the keyboard next. The counter register shows a 1 but is automatically cleared before division. The *Auto divide* is then pressed. The machine will automatically perform the division. The quotient is in the counter register. If the *Division return* lever is in the down position, the carriage will automatically return home and clear the remainder from the result register. Otherwise, the division stops when the carriage has reached its maximum right position.
 
-## Repair and Inner Workings
+## Outer Panels Removed
 
 The outer covers on the body of the machine are easily taken off via 12 screws. First the back panel is removed followed by the two side panels.
 
@@ -77,3 +77,6 @@ The carriage has three panels easily taken off the machine as well.
 
 ![Carriage panel removed](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5648.JPG)
 
+Removing the panels shows a glimpse of the mechanical complexity inside the machine.
+
+![Complexity](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5649.JPG)
