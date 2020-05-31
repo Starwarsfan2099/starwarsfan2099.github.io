@@ -101,4 +101,7 @@ The clutch has a visible spring loaded cam that should disengage at the end of a
 
 Popping the cam forwards with a screwdriver, oiling the clutch, and repeating the process freed it up properly after about three tries. 
 
-More coming soon....
+## Division Slow Motion
+
+A video showing multiple angles of the machine performing division with the outer panels removed can be found on my YouTube channel: https://www.youtube.com/watch?v=PnmSc-vCM5Q
+
