@@ -100,3 +100,5 @@ The clutch has a visible spring loaded cam that should disengage at the end of a
 ![Main clutch assembly](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5675.JPG)
 
 Popping the cam forwards with a screwdriver, oiling the clutch, and repeating the process freed it up properly after about three tries. 
+
+More coming soon....
