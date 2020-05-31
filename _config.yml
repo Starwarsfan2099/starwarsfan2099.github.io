@@ -21,6 +21,7 @@ author:
 version:             1.0.0
 
 # Fixes
+whitelist: [jekyll-analytics]
 plugins:
   - jekyll-paginate
   - jekyll-analytics
