@@ -83,7 +83,7 @@ Removing the panels shows a glimpse of the mechanical complexity inside the mach
 
 ## Repair and Some Inner Workings
 
-Initially the, keyboard ont the calculator arrived with multiple keys pressed in a single column. The keys were popped up using a large flat-head screwdriver and were fine after that. No control keys were pressed except for the manual left shift key. When the machine was plugged up, the carriage continually tried to shift left even though it was at the maximum right position. The manual shift left button was stuck down. Applying some oil to the two nuts on the left-hand side of the following photo and pulling on the button released it. 
+Initially the, keyboard on the calculator arrived with multiple keys pressed in a single column. The keys were popped up using a large flat-head screwdriver and were fine after that. No control keys were pressed except for the manual left shift key. When the machine was plugged up, the carriage continually tried to shift left even though it was at the maximum right position. The manual shift left button was stuck down. Applying some oil to the two nuts on the left-hand side of the following photo and pulling on the button released it. 
 
 ![Shift stuck](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5655.JPG)
 
@@ -101,7 +101,71 @@ The clutch has a visible spring loaded cam that should disengage at the end of a
 
 Popping the cam forwards with a screwdriver, oiling the clutch, and repeating the process freed it up properly after about three tries. 
 
+Multiplication got stuck often or didn't move as well. Playing with the multiplication and more disassembly eventually showed several parts that were stuck thanks to old oil or grease. The first part was this piece connected to the multiplication column.
+
+![Multiply repair 1](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5663.JPG)
+
+At the left-center of the picture are two pieces diagonally connected downwards to the same shaft. These had a large amount of buildup on them. 
+
+Another piece that was also stuck can be seen on the bottom of the control unit and freed up after some oiling. The piece can be seen left of center with a large flat bolt head.
+
+![Multiply repair 2](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5682.JPG)
+
+Occasional register sticking was occurring, so it's a good practice to regularly oil the carriage dials. The Marchant *Silent Speed* machine carriage digits have a unique mechanism from other calculators. Thanks to the proportional drive mechanism, another digit carry mechanism was needed. Each digit in a register is connected to the next left digit in the register. One full rotation of a digit rotates the next digit 1/10th, and the next left digit 1/100th, and so forth. Because a digit can be not centered thanks to the proportional gearing, a selector unit is in place to ensure each digit is properly determined, centered, and displayed. This, the clearing mechanism, and the division trip mechanism results in a lot of gears and moving parts that could get stuck.
+
+![Carriage repair 2](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5670.JPG)
+
 ## Division Slow Motion
 
 A video showing multiple angles of the machine performing division with the outer panels removed can be found [here on my YouTube channel](https://www.youtube.com/watch?v=PnmSc-vCM5Q).
+
+## More Pictures
+
+The Westinghouse motor.
+
+![Motor](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5617.JPG)
+
+Setting gears, clearing levers, main motor input drive with safety clutch, and the contact to turn on the machine.
+
+![Gearing](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5660.JPG)
+
+Motor input and safety clutch removed.
+
+![Motor input](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5677.JPG)
+
+Multiplication column removed from the machine.
+
+![Multiplication Column](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5684.JPG)
+
+Removable button plate with addition, subtraction, and keyboard clear levers.
+
+![Button Plate](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5686.JPG)
+
+Partially disassembled control unit taken off the machine. 
+
+![Control Unit](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5679.JPG)
+
+Right side of machine with control unit removed.
+
+![Control Unit Gone](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5687.JPG)
+
+Carriage shift gear and maximum shift lever seen above the carriage dial contact gears. 
+
+![Carriage Shift](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5689.JPG)
+
+Carriage contact gears.
+
+![Carriage Contact](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5688.JPG)
+
+Carriage clearing arms, underside of carriage, and digit closeup.
+
+![Carriage Clearing](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5671.JPG)
+
+![Carriage Bottom](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5672.JPG)
+
+![Digit Closeup](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5657.JPG)
+
+Bottom of the machine with baseplate removed. Keyboard selector levers can be seen as well as the main setting line for the machine. 
+
+![Bottom](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5690.JPG)
 
