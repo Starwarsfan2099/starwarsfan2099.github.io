@@ -115,9 +115,13 @@ Occasional register sticking was occurring, so it's a good practice to regularly
 
 ![Carriage repair 2](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5670.JPG)
 
-## Division Slow Motion
+## Division Video
 
-A video showing multiple angles of the machine performing division with the outer panels removed can be found [here on my YouTube channel](https://www.youtube.com/watch?v=PnmSc-vCM5Q).
+A video showing multiple angles of the machine performing division with the outer panels removed can be found [here on my YouTube channel](https://youtu.be/xB5XLkouZfA).
+
+## Division Slow Motion Video
+
+Also, a slow motion video showing multiple angles of the machine performing division with the outer panels removed can be found [on my YouTube channel as well](https://www.youtube.com/watch?v=PnmSc-vCM5Q).
 
 ## More Pictures
 
