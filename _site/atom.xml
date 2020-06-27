@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Andrew Clark's Blog</title>
- <link href="http://localhost:4000http://127.0.0.1:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000http://127.0.0.1:4000/"/>
- <updated>2020-06-20T22:20:10-04:00</updated>
- <id>http://localhost:4000</id>
+ <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
+ <link href="https://starwarsfan2099.github.io/"/>
+ <updated>2020-06-26T20:52:57-04:00</updated>
+ <id></id>
  <author>
    <name>Andrew Clark</name>
    <email>clarkiv@masrhall.edu</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Marchant "Silent Speed" Mechanical Calculator Repair and Operation.</title>
-   <link href="http://localhost:4000/2020/05/26/marchant-calculator/"/>
+   <link href="/2020/05/26/marchant-calculator/"/>
    <updated>2020-05-26T00:00:00-04:00</updated>
-   <id>http://localhost:4000http://127.0.0.1:4000/2020/05/26/marchant-calculator</id>
+   <id>https://starwarsfan2099.github.io/2020/05/26/marchant-calculator</id>
    <content type="html">&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
 &lt;p&gt;I was able to acquire a Marchant ACR8M “Silent Speed” mechanical calculator bought off of Ebay. This is the calculator after some light cleaning and repair.&lt;/p&gt;
@@ -129,7 +129,7 @@
 
 &lt;h2 id=&quot;division-video&quot;&gt;Division Video&lt;/h2&gt;
 
-&lt;p&gt;A video showing multiple angles of the machine performing division with the outer panels removed can be found &lt;a href=&quot;https://youtu.be/xB5XLkouZfA&quot;&gt;here on my YouTube channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A video showing multiple angles of the machine performing division with the outer panels removed can be found &lt;a href=&quot;https://youtu.be/oJXJmg73SL4&quot;&gt;here on my YouTube channel&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;division-slow-motion-video&quot;&gt;Division Slow Motion Video&lt;/h2&gt;
 
@@ -190,9 +190,9 @@
  
  <entry>
    <title>Decrypting DJI Spark Drone Log Files</title>
-   <link href="http://localhost:4000/2020/01/25/dji-spark-log-decryption/"/>
+   <link href="/2020/01/25/dji-spark-log-decryption/"/>
    <updated>2020-01-25T00:00:00-05:00</updated>
-   <id>http://localhost:4000http://127.0.0.1:4000/2020/01/25/dji-spark-log-decryption</id>
+   <id>https://starwarsfan2099.github.io/2020/01/25/dji-spark-log-decryption</id>
    <content type="html">&lt;p&gt;DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transfered using application. However, they appear to be encrypted for some reason. Transfered DJI Spark Drone’s log files look something like this after being transfered to a computer.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-25/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
@@ -304,9 +304,9 @@ key in that same function. Or simply searching for the following bytes will prod
  
  <entry>
    <title>Analyzing MacOS Malware that Executes a Payload in Memory</title>
-   <link href="http://localhost:4000/2020/01/22/mac-malware/"/>
+   <link href="/2020/01/22/mac-malware/"/>
    <updated>2020-01-22T00:00:00-05:00</updated>
-   <id>http://localhost:4000http://127.0.0.1:4000/2020/01/22/mac-malware</id>
+   <id>https://starwarsfan2099.github.io/2020/01/22/mac-malware</id>
    <content type="html">&lt;p&gt;This post was inspired by Dinesh Devadoss’s &lt;a href=&quot;https://twitter.com/dineshdina04/status/1201834142704394242?s=20&quot;&gt;post on twitter&lt;/a&gt; about a piece of MacOS malware from the Lazarus group that loads a Mach-O into memory and executes it.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
