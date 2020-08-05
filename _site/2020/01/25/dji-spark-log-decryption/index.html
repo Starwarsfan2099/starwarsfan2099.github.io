@@ -107,7 +107,7 @@
         <div class="post">
   <h1 class="post-title">Decrypting DJI Spark Drone Log Files</h1>
   <span class="post-date">25 Jan 2020</span>
-  <p>DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transfered using application. However, they appear to be encrypted for some reason. Transfered DJI Spark Drone’s log files look something like this after being transfered to a computer.</p>
+  <p>DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transferred using application. However, they appear to be encrypted for some reason. transferred DJI Spark Drone’s log files look something like this after being transferred to a computer.</p>
 
 <p><img src="https://starwarsfan2099.github.io/public/2020-1-25/Pic_1.png" alt="Image" /></p>
 
@@ -175,7 +175,7 @@ key in that same function. Or simply searching for the following bytes will prod
     <ul>
       <li>Firmware was examined to determine what software ran on the drone.
         <ul>
-          <li>After BusyBox was determined to be running on the drone, it’s source code was analysed to find file transfer and logging functions.</li>
+          <li>After BusyBox was determined to be running on the drone, it’s source code was analyzed to find file transfer and logging functions.</li>
         </ul>
       </li>
     </ul>
@@ -187,7 +187,7 @@ key in that same function. Or simply searching for the following bytes will prod
   </li>
   <li>Debug BusyBox to determine encryption.
     <ul>
-      <li>GDB and Radareɩ were used to debug and determine when the data was encrypted.
+      <li>GDB and Radare were used to debug and determine when the data was encrypted.
         <ul>
           <li>Ghidra was used to disassemble the BusyBox binary and locate the file transfer functions with help from the debuggers.
             <ul>
@@ -219,6 +219,15 @@ key in that same function. Or simply searching for the following bytes will prod
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="https://starwarsfan2099.github.io/2020/08/03/python-code-golf/">
+            Python Roman Numeral Code Golf
+            <small>03 Aug 2020</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>

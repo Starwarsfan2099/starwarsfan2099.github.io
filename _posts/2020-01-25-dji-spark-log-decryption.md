@@ -5,7 +5,7 @@ excerpt: DJI Spark Drones have a feature that allows them to transfer files to a
 
 ---
 
-DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transfered using application. However, they appear to be encrypted for some reason. Transfered DJI Spark Drone's log files look something like this after being transfered to a computer.
+DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transferred using application. However, they appear to be encrypted for some reason. transferred DJI Spark Drone's log files look something like this after being transferred to a computer.
 
 ![Image](https://starwarsfan2099.github.io/public/2020-1-25/Pic_1.png)
 
@@ -66,11 +66,11 @@ The process outline for decrypting the drone data was as follows:
     - Completed by examining headers and using binwalk to extract the filesystem.
 - Determine what part of the firmware deals with log files.
     - Firmware was examined to determine what software ran on the drone.
-        - After BusyBox was determined to be running on the drone, it's source code was analysed to find file transfer and logging functions.
+        - After BusyBox was determined to be running on the drone, it's source code was analyzed to find file transfer and logging functions.
 - Attempt to run drone software in a visualized environment for debugging.
     - I researched QEMU and visualizing embedded systems, trying various configurations to get BusyBox running.
 - Debug BusyBox to determine encryption.
-    - GDB and Radareɩ were used to debug and determine when the data was encrypted.
+    - GDB and Radare were used to debug and determine when the data was encrypted.
         - Ghidra was used to disassemble the BusyBox binary and locate the file transfer functions with help from the debuggers.
             - It was discovered that the key was put into memory, so open source tools were tested against the BusyBox process memory tp pull a key from memory.
 - Write a script to decrypt logs.
