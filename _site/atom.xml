@@ -4,7 +4,7 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-08-28T21:18:47-04:00</updated>
+ <updated>2020-08-28T21:22:13-04:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
@@ -24,7 +24,7 @@
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/llvm/llvm-project.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Next we need to change directory to the llvm-clang directory and create a build directory. llvm-clang supports several build systems. I’m going to use &lt;code class=&quot;highlighter-rouge&quot;&gt;cmake&lt;/code&gt; to configure the build scripts and then &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; to build everything. With &lt;code class=&quot;highlighter-rouge&quot;&gt;cmake&lt;/code&gt;, we are going to pass &lt;code class=&quot;highlighter-rouge&quot;&gt;-DLLVM_ENABLE_PROJECTS=clang&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-DLLVM_TARGETS_TO_BUILD=X86&lt;/code&gt; to enable building clang, and have clang only target x86 to speed up the compilation some. We’ll also pass ``-G “Unix Makefiles”&lt;code class=&quot;highlighter-rouge&quot;&gt; so we can use make to build everything. Next run &lt;/code&gt;make -j [number of threads]&lt;code class=&quot;highlighter-rouge&quot;&gt;. The &lt;/code&gt;-j&lt;code class=&quot;highlighter-rouge&quot;&gt; tells &lt;/code&gt;make&lt;code class=&quot;highlighter-rouge&quot;&gt; how many threads to use. llvm-clang takes fairly long to compile so we definitely want to use more than one thread. I'm using an 8 core MacBook Pro, so I used &lt;/code&gt;make -j 8`. Then patiently wait for clang to build.&lt;/p&gt;
+&lt;p&gt;Next we need to change directory to the llvm-clang directory and create a build directory. llvm-clang supports several build systems. I’m going to use &lt;code class=&quot;highlighter-rouge&quot;&gt;cmake&lt;/code&gt; to configure the build scripts and then &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; to build everything. With &lt;code class=&quot;highlighter-rouge&quot;&gt;cmake&lt;/code&gt;, we are going to pass &lt;code class=&quot;highlighter-rouge&quot;&gt;-DLLVM_ENABLE_PROJECTS=clang&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-DLLVM_TARGETS_TO_BUILD=X86&lt;/code&gt; to enable building clang, and have clang only target x86 to speed up the compilation some. We’ll also pass &lt;code class=&quot;highlighter-rouge&quot;&gt;-G &quot;Unix Makefiles&quot;&lt;/code&gt; so we can use make to build everything. Next run &lt;code class=&quot;highlighter-rouge&quot;&gt;make -j [number of threads]&lt;/code&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;-j&lt;/code&gt; tells &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; how many threads to use. llvm-clang takes fairly long to compile so we definitely want to use more than one thread. I’m using an 8 core MacBook Pro, so I used &lt;code class=&quot;highlighter-rouge&quot;&gt;make -j 8&lt;/code&gt;. Then patiently wait for clang to build.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd llvm-project
 mkdir build
