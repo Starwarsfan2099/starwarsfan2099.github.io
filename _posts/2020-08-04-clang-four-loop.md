@@ -6,13 +6,13 @@ excerpt: Adding a "Four" loop to the clang compiler for fun and because, well, w
 
 What if a person was writing a C program and typoed their `for` loop. In C, a `for` loop is written like `for( int i = 0; i < 12; i++) {...`. What if they mistyped and instead wrote `four( int i = 0; i < 12; i++) {...`? Well, if using llvm-clang, it will error out and fail to compile, understandable and expected. But that's no fun. What if instead, it compiled fine and instead of looping over each iteration, it looped every four iterations because it's a "four" loop?? That would be cool. Lets implement it into clang for fun and learning!
 
-First, we need to download and make sure we can build clang. The llvm project with llvm-clang can be found [here on Github](https://github.com/llvm/llvm-project). First, clone the repository and associated dependencies with git.
+First, we need to download and make sure we can build clang. The llvm project with `llvm-clang` can be found [here on Github](https://github.com/llvm/llvm-project). First, clone the repository and associated dependencies with git.
 
 ```
 git clone https://github.com/llvm/llvm-project.git
 ```
 
-Next we need to change directory to the llvm-clang directory and create a build directory. llvm-clang supports several build systems. I'm going to use `cmake` to configure the build scripts and then `make` to build everything. With `cmake`, we are going to pass `-DLLVM_ENABLE_PROJECTS=clang` and `-DLLVM_TARGETS_TO_BUILD=X86` to enable building clang, and have clang only target x86 to speed up the compilation some. We'll also pass `-G "Unix Makefiles"` so we can use make to build everything. Next run `make -j [number of threads]`. The `-j` tells `make` how many threads to use. llvm-clang takes fairly long to compile so we definitely want to use more than one thread. I'm using an 8 core MacBook Pro, so I used `make -j 8`. Then patiently wait for clang to build.
+Next we need to change directory to the llvm-clang directory and create a build directory. llvm-clang supports several build systems. I'm going to use `cmake` to configure the build scripts and then `make` to build everything. With `cmake`, we are going to pass `-DLLVM_ENABLE_PROJECTS=clang` and `-DLLVM_TARGETS_TO_BUILD=X86` to enable building clang, and have clang only target the x86 architecture to speed up the compilation some. We'll also pass `-G "Unix Makefiles"` so we can use make to build everything. Next run `make -j [number of threads]`. The `-j` tells `make` how many threads to use. llvm-clang takes fairly long to compile so we definitely want to use more than one thread. I'm using an 8 core MacBook Pro, so I used `make -j 8`. Then patiently wait for clang to build.
 
 ```
 cd llvm-project
