@@ -4,7 +4,7 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-09-02T18:17:21-04:00</updated>
+ <updated>2020-09-05T22:19:06-04:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
@@ -33,7 +33,7 @@ cmake -DLLVM_ENABLE_PROJECTS=clang -DLLVM_TARGETS_TO_BUILD=X86 -G &quot;Unix Mak
 make -j 8
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If clang builds successfully, you can find the binary in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build/bin&lt;/code&gt;. Now, we need to add our “four” loop. Opening the clang source code in Visual Studio is very overwhelming. There is &lt;strong&gt;a lot&lt;/strong&gt; of source code. After building llvm, there are 109880 files within the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llvm-project&lt;/code&gt; directory. Where do we start looking for the code associated with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loops? We are interested in modifying clang, so a good first place to start is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llvm-project/clang&lt;/code&gt;. There are still a large amount of files here to though. We need a plan of action. Let’s see if we can modify the current &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop to only loop every four iterations. Delving into the source files in clang, we find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clang/lib/CodeGen/&lt;/code&gt;. That looks promising since we want to modify the code generated for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop. The files are named like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGObjCRuntime.cpp&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGLoopInfo.cpp&lt;/code&gt;. There doesn’t seem to be anything to use of us in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGLoopInfo.cpp&lt;/code&gt;. However, there is an interesting file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGStmt.cpp&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loops are &lt;a href=&quot;https://en.wikibooks.org/wiki/C_Programming/Statements&quot;&gt;iteration statements&lt;/a&gt; so this file could be useful. Searching the rather large file for the keyword “for” results in way to many results. Near the top of the file though, around line 140 are these lines:&lt;/p&gt;
+&lt;p&gt;If clang builds successfully, you can find the binary in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build/bin&lt;/code&gt;. Now, we need to add our “four” loop. Opening the clang source code in Visual Studio is very overwhelming. There is &lt;strong&gt;a lot&lt;/strong&gt; of source code. After building llvm, there are 109,880 files within the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llvm-project&lt;/code&gt; directory at the time I cloned it. Where do we start looking for the code associated with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loops? We are interested in modifying clang, so a good first place to start is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llvm-project/clang&lt;/code&gt;. There are still a large amount of files here to though. We need a plan of action. Let’s see if we can modify the current &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop to only loop every four iterations. Delving into the source files in clang, we find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clang/lib/CodeGen/&lt;/code&gt;. That looks promising since we want to modify the code generated for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop. The files are named like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGObjCRuntime.cpp&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGLoopInfo.cpp&lt;/code&gt;. There doesn’t seem to be anything to use of us in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGLoopInfo.cpp&lt;/code&gt;. However, there is an interesting file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CGStmt.cpp&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loops are &lt;a href=&quot;https://en.wikibooks.org/wiki/C_Programming/Statements&quot;&gt;iteration statements&lt;/a&gt; so this file could be useful. Searching the rather large file for the keyword “for” results in way to many results. Near the top of the file though, around line 140 are these lines:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;case Stmt::IfStmtClass:      EmitIfStmt(cast&amp;lt;IfStmt&amp;gt;(*S));              break;
 case Stmt::WhileStmtClass:   EmitWhileStmt(cast&amp;lt;WhileStmt&amp;gt;(*S), Attrs); break;
@@ -41,7 +41,7 @@ case Stmt::DoStmtClass:      EmitDoStmt(cast&amp;lt;DoStmt&amp;gt;(*S), Attrs); 
 case Stmt::ForStmtClass:     EmitForStmt(cast&amp;lt;ForStmt&amp;gt;(*S), Attrs);     break;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EmitForStmt&lt;/code&gt; immediately stands out and could be interesting. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CodeGenFunction::EmitForStmt&lt;/code&gt; is found on line 882. By “Emit”, clang it is talking about exporting llvm bytecode. Comments reveal this code evaluates the loop and deals with increments. Further down in the function, it looks like we find where the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop is incremented!&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EmitForStmt&lt;/code&gt; immediately stands out and could be interesting. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CodeGenFunction::EmitForStmt&lt;/code&gt; is found on line 882. By &lt;em&gt;“Emit”&lt;/em&gt;, clang it is talking about exporting llvm bytecode. llvm bytecode is the intermediate between the outpur\t of the parser and lexer, and the actual compilation into a binary executable. Comments reveal this specific code here evaluates the loop and deals with increments. Further down in the function, it looks like we find where the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop is incremented!&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// If there is an increment, emit it next.
 if (S.getInc()) {
@@ -69,7 +69,7 @@ if (S.getInc()) {
 12
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Success! Kind of. Now the normal &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; statement increments by four, but we want the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop to be normal and add a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; statement that increments by four. It’s going to be really difficult to add entirely new code to create our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; loop. So, maybe we can modify the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop code that is already in place. We can create another function argument that gets passed all the way down to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CodeGenFunction::EmitForStmt&lt;/code&gt;. Then we can just add a different token in the lexer that looks for our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; statement in the code and simply calls the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop code with the extra argument. What we need first is to find the lexer and tokens clang uses. The compiler lexer looks at the lines of code in the source file and determines what is a statement, string, operator, separator, etc… and a assigns a token to it that describes what it is. Then the tokens are used in later compilation steps. Based upon some quick Googling, tokens for clang are defined in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clang/include/clang/basic/TokenKinds.def&lt;/code&gt;. Doing a keyword search for the word “for” takes us to line 296:&lt;/p&gt;
+&lt;p&gt;Success! Kind of. Now the normal &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; statement increments by four, but we want the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop to act normal and add a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; statement that increments by four. It’s going to be really difficult to add entirely new code to create our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; loop. So, maybe we can modify the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop code that is already in place. We can create another function argument that gets passed all the way down to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CodeGenFunction::EmitForStmt&lt;/code&gt;. Then we can just add a different token in the lexer that looks for our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; statement in the code and simply calls the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop code with the extra argument. What we need first is to find the lexer and tokens clang uses. The compiler lexer looks at the lines of code in the source file and determines what is a statement, string, operator, separator, etc… and a assigns a token to it that describes what it is. Then the tokens are used in later compilation steps. Based upon some quick Googling, tokens for clang are defined in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clang/include/clang/basic/TokenKinds.def&lt;/code&gt;. Doing a keyword search for the word “for” takes us to line 296:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;KEYWORD(extern                      , KEYALL)
 KEYWORD(float                       , KEYALL)
@@ -88,7 +88,7 @@ KEYWORD(four                        , KEYALL)
 KEYWORD(goto                        , KEYALL)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now we need to find the parser, where clang searches for the keywords in the source file. This logic can be found in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clang/lib/Parse/ParseStmt.cpp&lt;/code&gt;. In this file, we find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Parser::ParseStatementOrDeclarationAfterAttributes&lt;/code&gt;. This function includes MANY case statements for finding statements in the source file. At line 266, we find this line:&lt;/p&gt;
+&lt;p&gt;Now we need to find the parser, where clang searches for the keywords in the source file. This logic can be found in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clang/lib/Parse/ParseStmt.cpp&lt;/code&gt;. In this file, we find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Parser::ParseStatementOrDeclarationAfterAttributes&lt;/code&gt;. This function includes &lt;strong&gt;MANY&lt;/strong&gt; case statements for finding statements in the source file. At line 266, we find this line:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  case tok::kw_for:                 // C99 6.8.5.3: for-statement
     return ParseForStatement(TrailingElseLoc);
@@ -102,7 +102,7 @@ KEYWORD(goto                        , KEYALL)
     return ParseForStatement(TrailingElseLoc, true);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Further down in the file, we find the function called if the token is found, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Parser::ParseForStatement&lt;/code&gt;. We need to modify it a bit. originally, the first few lines are written like this:&lt;/p&gt;
+&lt;p&gt;Further down in the file, we find the function that is called if the token is found, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Parser::ParseForStatement&lt;/code&gt;. We need to modify it a bit. Originally, the first few lines are written like this:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;StmtResult Parser::ParseForStatement(SourceLocation *TrailingElseLoc) {
     assert(Tok.is(tok::kw_for) &amp;amp;&amp;amp; &quot;Not a for stmt!&quot;);
@@ -155,7 +155,7 @@ KEYWORD(goto                        , KEYALL)
               Body, ForLoc, LParenLoc, RParenLoc);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Same drill here, add our extra function arg we keep passing down through the functions.&lt;/p&gt;
+&lt;p&gt;Same drill here, add our extra function argument we keep passing down through the functions.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  return new (Context)
       ForStmt(Context, First, Second.get().second, Second.get().first, Third,
@@ -221,7 +221,7 @@ int main() {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This should test if our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; loops work. Now we build the program with the new clang that’s in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llvm-project/build/bin&lt;/code&gt; like so: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bin/clang four_test.c -o four_test&lt;/code&gt;. Now run it and check the output!&lt;/p&gt;
+&lt;p&gt;This should test if our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;four&lt;/code&gt; loops work. Now we build the program with the new clang that’s located in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llvm-project/build/bin&lt;/code&gt; like so: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bin/clang four_test.c -o four_test&lt;/code&gt;. Now run it and check the output!&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AJ@AJs-Macbook-Pro build % ./four_test 
 For Loop
@@ -315,7 +315,7 @@ def fromRomanNumeral(input): # 637 Bytes
     return endValue
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fromRomanNumeral&lt;/code&gt; is 638 bytes in length, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toRomanNumeral&lt;/code&gt; is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values.&lt;/p&gt;
+&lt;p&gt;Understanding this code is left for the reader, it’s fairly simple and the goal of post is to learn about golfing techniques. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fromRomanNumeral&lt;/code&gt; is 638 bytes in length, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toRomanNumeral&lt;/code&gt; is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def toRomanNumeral(input): # 364 Bytes
     values = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
@@ -462,7 +462,7 @@ def s1(n): # 151 Bytes
     return e
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;163 and 151 bytes is significantly better than the 560 and 637 bytes we started out with. Happy golfing!&lt;/p&gt;
+&lt;p&gt;163 and 151 bytes is significantly better than the 560 and 637 bytes we started out with. Happy code golfing!&lt;/p&gt;
 </content>
  </entry>
  

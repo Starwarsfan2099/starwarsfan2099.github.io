@@ -22,7 +22,7 @@ cmake -DLLVM_ENABLE_PROJECTS=clang -DLLVM_TARGETS_TO_BUILD=X86 -G "Unix Makefile
 make -j 8
 ```
 
-If clang builds successfully, you can find the binary in `build/bin`. Now, we need to add our "four" loop. Opening the clang source code in Visual Studio is very overwhelming. There is **a lot** of source code. After building llvm, there are 109880 files within the `llvm-project` directory. Where do we start looking for the code associated with `for` loops? We are interested in modifying clang, so a good first place to start is `llvm-project/clang`. There are still a large amount of files here to though. We need a plan of action. Let's see if we can modify the current `for` loop to only loop every four iterations. Delving into the source files in clang, we find `clang/lib/CodeGen/`. That looks promising since we want to modify the code generated for the `for` loop. The files are named like `CGObjCRuntime.cpp` and `CGLoopInfo.cpp`. There doesn't seem to be anything to use of us in `CGLoopInfo.cpp`. However, there is an interesting file named `CGStmt.cpp`. `for` loops are [iteration statements](https://en.wikibooks.org/wiki/C_Programming/Statements) so this file could be useful. Searching the rather large file for the keyword "for" results in way to many results. Near the top of the file though, around line 140 are these lines:
+If clang builds successfully, you can find the binary in `build/bin`. Now, we need to add our "four" loop. Opening the clang source code in Visual Studio is very overwhelming. There is **a lot** of source code. After building llvm, there are 109,880 files within the `llvm-project` directory at the time I cloned it. Where do we start looking for the code associated with `for` loops? We are interested in modifying clang, so a good first place to start is `llvm-project/clang`. There are still a large amount of files here to though. We need a plan of action. Let's see if we can modify the current `for` loop to only loop every four iterations. Delving into the source files in clang, we find `clang/lib/CodeGen/`. That looks promising since we want to modify the code generated for the `for` loop. The files are named like `CGObjCRuntime.cpp` and `CGLoopInfo.cpp`. There doesn't seem to be anything to use of us in `CGLoopInfo.cpp`. However, there is an interesting file named `CGStmt.cpp`. `for` loops are [iteration statements](https://en.wikibooks.org/wiki/C_Programming/Statements) so this file could be useful. Searching the rather large file for the keyword "for" results in way to many results. Near the top of the file though, around line 140 are these lines:
 
 ```
 case Stmt::IfStmtClass:      EmitIfStmt(cast<IfStmt>(*S));              break;
@@ -31,7 +31,7 @@ case Stmt::DoStmtClass:      EmitDoStmt(cast<DoStmt>(*S), Attrs);       break;
 case Stmt::ForStmtClass:     EmitForStmt(cast<ForStmt>(*S), Attrs);     break;
 ```
 
-`EmitForStmt` immediately stands out and could be interesting. `CodeGenFunction::EmitForStmt` is found on line 882. By "Emit", clang it is talking about exporting llvm bytecode. Comments reveal this code evaluates the loop and deals with increments. Further down in the function, it looks like we find where the `for` loop is incremented!
+`EmitForStmt` immediately stands out and could be interesting. `CodeGenFunction::EmitForStmt` is found on line 882. By *"Emit"*, clang it is talking about exporting llvm bytecode. llvm bytecode is the intermediate between the outpur\t of the parser and lexer, and the actual compilation into a binary executable. Comments reveal this specific code here evaluates the loop and deals with increments. Further down in the function, it looks like we find where the `for` loop is incremented!
 
 ```
 // If there is an increment, emit it next.
@@ -62,7 +62,7 @@ For Loop
 12
 ```
 
-Success! Kind of. Now the normal `for` statement increments by four, but we want the `for` loop to be normal and add a `four` statement that increments by four. It's going to be really difficult to add entirely new code to create our `four` loop. So, maybe we can modify the `for` loop code that is already in place. We can create another function argument that gets passed all the way down to `CodeGenFunction::EmitForStmt`. Then we can just add a different token in the lexer that looks for our `four` statement in the code and simply calls the `for` loop code with the extra argument. What we need first is to find the lexer and tokens clang uses. The compiler lexer looks at the lines of code in the source file and determines what is a statement, string, operator, separator, etc... and a assigns a token to it that describes what it is. Then the tokens are used in later compilation steps. Based upon some quick Googling, tokens for clang are defined in `clang/include/clang/basic/TokenKinds.def`. Doing a keyword search for the word "for" takes us to line 296:
+Success! Kind of. Now the normal `for` statement increments by four, but we want the `for` loop to act normal and add a `four` statement that increments by four. It's going to be really difficult to add entirely new code to create our `four` loop. So, maybe we can modify the `for` loop code that is already in place. We can create another function argument that gets passed all the way down to `CodeGenFunction::EmitForStmt`. Then we can just add a different token in the lexer that looks for our `four` statement in the code and simply calls the `for` loop code with the extra argument. What we need first is to find the lexer and tokens clang uses. The compiler lexer looks at the lines of code in the source file and determines what is a statement, string, operator, separator, etc... and a assigns a token to it that describes what it is. Then the tokens are used in later compilation steps. Based upon some quick Googling, tokens for clang are defined in `clang/include/clang/basic/TokenKinds.def`. Doing a keyword search for the word "for" takes us to line 296:
 
 ```
 KEYWORD(extern                      , KEYALL)
@@ -83,7 +83,7 @@ KEYWORD(four                        , KEYALL)
 KEYWORD(goto                        , KEYALL)
 ```
 
-Now we need to find the parser, where clang searches for the keywords in the source file. This logic can be found in `clang/lib/Parse/ParseStmt.cpp`. In this file, we find `Parser::ParseStatementOrDeclarationAfterAttributes`. This function includes MANY case statements for finding statements in the source file. At line 266, we find this line:
+Now we need to find the parser, where clang searches for the keywords in the source file. This logic can be found in `clang/lib/Parse/ParseStmt.cpp`. In this file, we find `Parser::ParseStatementOrDeclarationAfterAttributes`. This function includes **MANY** case statements for finding statements in the source file. At line 266, we find this line:
 
 ```
   case tok::kw_for:                 // C99 6.8.5.3: for-statement
@@ -99,7 +99,7 @@ This case statement assigns what happens when a `for` statement is found. We wan
     return ParseForStatement(TrailingElseLoc, true);
 ```
 
-Further down in the file, we find the function called if the token is found, `Parser::ParseForStatement`. We need to modify it a bit. originally, the first few lines are written like this:
+Further down in the file, we find the function that is called if the token is found, `Parser::ParseForStatement`. We need to modify it a bit. Originally, the first few lines are written like this:
 
 ```
 StmtResult Parser::ParseForStatement(SourceLocation *TrailingElseLoc) {
@@ -159,7 +159,7 @@ Now, we need to see where this function goes. This function calls `ForStmt`.
               Body, ForLoc, LParenLoc, RParenLoc);
 ```
 
-Same drill here, add our extra function arg we keep passing down through the functions.
+Same drill here, add our extra function argument we keep passing down through the functions.
 
 ```
   return new (Context)
@@ -203,7 +203,6 @@ We set the variable to false afterwards so that way the `for` loops aren't alway
 
 Now we are through with that file and need to go back to `clang/lib/CodeGen/CGStmt.cpp`. Now we can change the block of code that increments the for loop to check if `FourStatement` is true, and if so we increment three more times. In the function arguments of `EmitForStmt`, we see the address of `ForStmt` is assigned to `S`. We can check our `four` loop boolean by simply checking `S.isFourStatement()`.
 
-
 ```
 if (S.getInc()) {
     EmitBlock(Continue.getBlock());
@@ -233,7 +232,7 @@ int main() {
 }
 ```
 
-This should test if our `for` and `four` loops work. Now we build the program with the new clang that's in `llvm-project/build/bin` like so: `bin/clang four_test.c -o four_test`. Now run it and check the output!
+This should test if our `for` and `four` loops work. Now we build the program with the new clang that's located in `llvm-project/build/bin` like so: `bin/clang four_test.c -o four_test`. Now run it and check the output!
 
 ```
 AJ@AJs-Macbook-Pro build % ./four_test 

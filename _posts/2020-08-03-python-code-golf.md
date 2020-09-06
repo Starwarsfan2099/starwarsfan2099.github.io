@@ -67,7 +67,7 @@ def fromRomanNumeral(input): # 637 Bytes
     return endValue
 ```
 
-`fromRomanNumeral` is 638 bytes in length, and `toRomanNumeral` is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values.
+Understanding this code is left for the reader, it's fairly simple and the goal of post is to learn about golfing techniques. `fromRomanNumeral` is 638 bytes in length, and `toRomanNumeral` is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values.
 
 ```
 def toRomanNumeral(input): # 364 Bytes
@@ -226,4 +226,4 @@ def s1(n): # 151 Bytes
     return e
 ```
 
-163 and 151 bytes is significantly better than the 560 and 637 bytes we started out with. Happy golfing!
+163 and 151 bytes is significantly better than the 560 and 637 bytes we started out with. Happy code golfing!
