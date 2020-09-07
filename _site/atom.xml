@@ -4,7 +4,7 @@
  <title>Andrew Clark's Blog</title>
  <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-09-05T22:19:06-04:00</updated>
+ <updated>2020-09-06T22:22:35-04:00</updated>
  <id></id>
  <author>
    <name>Andrew Clark</name>
@@ -315,7 +315,7 @@ def fromRomanNumeral(input): # 637 Bytes
     return endValue
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Understanding this code is left for the reader, it’s fairly simple and the goal of post is to learn about golfing techniques. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fromRomanNumeral&lt;/code&gt; is 638 bytes in length, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toRomanNumeral&lt;/code&gt; is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values.&lt;/p&gt;
+&lt;p&gt;Understanding this code is left for the reader, it’s fairly simple and the goal of post is to learn about golfing techniques. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fromRomanNumeral&lt;/code&gt; is 638 bytes in length, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toRomanNumeral&lt;/code&gt; is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values generated.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def toRomanNumeral(input): # 364 Bytes
     values = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
@@ -339,7 +339,7 @@ def fromRomanNumeral(input): # 408 Bytes
     return endValue
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;That’s a bit better. 408 bytes and 364 bytes. Next thing, variable and function names are taking up lots of space, so we can reduce each name down to one letter.&lt;/p&gt;
+&lt;p&gt;That’s a bit better. 408 bytes and 364 bytes. Next thing, variable and function names are taking up lots of unnecessary space, so we can reduce each name down to one letter.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def r(n): # 286 Bytes
     v = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
@@ -363,14 +363,14 @@ def s(n): # 266 Bytes
     return e
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Sweet, now they are both below 300 bytes. But there is still much room for improvement. How we currently assign variables uses a lot of unneeded space. In the function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toRomanNumerals()&lt;/code&gt;, now simply named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r()&lt;/code&gt;, we define variables on separate lines. this means we use three spaces, three equal signs, then 3 more spaces. Fortunately, Python allows us to do this a different way. Instead of saying:&lt;/p&gt;
+&lt;p&gt;Sweet, now they are both below 300 bytes already. But there is still much room for improvement. How we currently assign variables uses a lot of unneeded space. In the function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toRomanNumerals()&lt;/code&gt;, now simply named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r()&lt;/code&gt;, we define variables on separate lines. this means we use three spaces, three equal signs, then 3 more spaces. Fortunately, Python allows us to do this a different way. Instead of writing:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;v = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
 t = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
 e = []
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;We can instead declare the variables on one line like this:&lt;/p&gt;
+&lt;p&gt;We can instead declare the variables on a single line like this:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;v,t,e=(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1),('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'),[]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -384,12 +384,12 @@ e = 0
 n = n.upper()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n = n.upper()&lt;/code&gt; is not needed, it was just a sanity check for the input to the function. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt; can be declared on the same line. Instead of declaring a dictionary for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v&lt;/code&gt; with brackets then strings and ints, we can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dict()&lt;/code&gt; to declare a dictionary like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dict(M:1000,D:500...)&lt;/code&gt;. This saves bytes from having to use quotes, and we can again remove spaces. This leaves us with:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n = n.upper()&lt;/code&gt; is not needed, it was just a sanity check for the input to the function. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt; can be declared on the same line. Instead of declaring a dictionary for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v&lt;/code&gt; with brackets and then strings and ints, we can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dict()&lt;/code&gt; to declare a dictionary like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dict(M:1000,D:500...)&lt;/code&gt;. This saves bytes from having to use quotes, and we can again remove spaces. This leaves us with:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;v,e=dict(M=1000,D=500,C=100,L=50,X=10,V=5,I=1),0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;We can also save an extra byte here by using exponential notation for declaring the dictionary value &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M&lt;/code&gt;. Instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M=1000&lt;/code&gt; it can be wrote like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M=1e3&lt;/code&gt;. Now the functions look like this:&lt;/p&gt;
+&lt;p&gt;We can also save an extra byte here by using exponential notation for declaring the dictionary value &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M&lt;/code&gt;. Instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M=1000&lt;/code&gt;, it can be written like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M=1e3&lt;/code&gt;. Now the functions look like this:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def r(n): # 230 Bytes
     v,t,e=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),[]
@@ -409,7 +409,7 @@ def s(n): # 223 Bytes
     return e
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;All of the test cases still succeed. Looking at function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r()&lt;/code&gt;, it’s logic can be greatly improved. Instead of using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for i in range(len(v)):&lt;/code&gt;, we can simply loop over &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v&lt;/code&gt; and define &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; above. This saves space and allows us to shorten the logic below. Also, instead of declaring &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; as an empty array and using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.join()&lt;/code&gt; later, we can just declare &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; as an empty string and add to that.&lt;/p&gt;
+&lt;p&gt;All of the test cases still pass. Looking at function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r()&lt;/code&gt;, it’s logic can be greatly improved. Instead of using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for i in range(len(v)):&lt;/code&gt;, we can simply loop over &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v&lt;/code&gt; and define &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; above. This saves space and allows us to shorten the logic below. Also, instead of declaring &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; as an empty array and using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.join()&lt;/code&gt; later, we can just declare &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; as an empty string and append to that.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def r(n): # 194 Bytes
     v,t,e,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),'',0
@@ -420,7 +420,7 @@ def s(n): # 223 Bytes
     return e
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Furthermore, we can remove spaces from between the operators inside the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop. Then we can add semicolons to the end of each line to get the entire for loop and operations within on the same line. This gets us to 162 bytes from the original 560!&lt;/p&gt;
+&lt;p&gt;Furthermore, we can remove spaces from between the operators inside the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop. Then we can add semicolons to the end of each line to get the entire for loop and operations within it onto the same line. This gets us to 162 bytes from the original 560!&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def r(n): # 560 Bytes
     v,t,e,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),'',0
@@ -441,7 +441,7 @@ def s(n): # 223 Bytes
     return e
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Once again, we can remove space from operators. Then we can use &lt;a href=&quot;https://www.wikiwand.com/en/%3F:#/Python&quot;&gt;ternary operators&lt;/a&gt; to move the if and else statement to one line. Ternary operators work in the form of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;result = x if a &amp;gt; b else y&lt;/code&gt;. Using this, we can put most of the logic and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop on the same line. Also on the same line, we can add a semicolon and add our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i+=1;&lt;/code&gt; and have the entire &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop and logic on the same line.&lt;/p&gt;
+&lt;p&gt;Once again, we can remove space from operators. Then we can use &lt;a href=&quot;https://www.wikiwand.com/en/%3F:#/Python&quot;&gt;ternary operators&lt;/a&gt; to move the if and else statement to one line. Ternary operators work in the form of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;result = x if a &amp;gt; b else y&lt;/code&gt;. Using this, we can put most of the logic and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop on the same line. Also on the same line, we can add a semicolon and add our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i+=1;&lt;/code&gt; and have the entire &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; loop and logic on the same line!&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def s(n): # 153 Bytes
     v,e,i=dict(M=1e3,D=500,C=100,L=50,X=10,V=5,I=1),0,0
