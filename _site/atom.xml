@@ -1,22 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Andrew Clark's Blog</title>
- <link href="https://starwarsfan2099.github.io/atom.xml" rel="self"/>
- <link href="https://starwarsfan2099.github.io/"/>
- <updated>2020-10-11T14:31:42-04:00</updated>
- <id></id>
+ <title></title>
+ <link href="starwarsfan2099.github.io/atom.xml" rel="self"/>
+ <link href="starwarsfan2099.github.io/"/>
+ <updated>2020-10-14T20:40:11-04:00</updated>
+ <id>starwarsfan2099.github.io</id>
  <author>
-   <name>Andrew Clark</name>
-   <email>clarkiv@masrhall.edu</email>
+   <name></name>
+   <email></email>
  </author>
 
  
  <entry>
+   <title>Magnet Weekly CTF 1 - Mapping the Digits</title>
+   <link href="starwarsfan2099.github.io/magnet-cft-1/"/>
+   <updated>2020-10-13T00:00:00-04:00</updated>
+   <id>starwarsfan2099.github.io/magnet-cft-1</id>
+   <content type="html">&lt;p&gt;Magnet Forensics recently announced on their &lt;a href=&quot;https://www.magnetforensics.com/blog/magnet-weekly-ctf-challenge/&quot;&gt;blog&lt;/a&gt; that they are beginning a weekly CTF challenge. The first question for the challenge went live on October 5th. The blog says that the questions revolve around an Android image that can be found &lt;a href=&quot;https://drive.google.com/file/d/1tVTppe4-3Hykug7NrOJrBJT4OXuNOiDO/view?usp=sharing&quot;&gt;here&lt;/a&gt;. A new challenge will be released each Monday morning on the CTF’s &lt;a href=&quot;https://magnetweeklyctf.ctfd.io/&quot;&gt;main website&lt;/a&gt;. A week after each challenge is released, it will be closed and blog posts can be made. Points will be awarded based on solving the challenge, creating custom Magnet Artifact and posting it on their Artifact Exchange, and posting a link to your blog post with #MagnetWeeklyCTF. The first challenge is titled &lt;em&gt;“Challenge 1 (OCT 5-11) - Mapping the Digits”&lt;/em&gt; and is worth 20 points. The question for the challenge reads &lt;em&gt;“What time was the file that maps names to IP’s recently accessed? (Please answer in this format in UTC: mm/dd/yyyy HH:MM:SS)”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-13/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;First, we need to figure out what device the Android image was created from and then load it in Cellebrite Physical Imager. The file given to us is a tar file: &lt;code class=&quot;highlighter-rouge&quot;&gt;MUS_Android.tar&lt;/code&gt;. Extracting the file gives a &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; directory that contains a lot of Android filesystem data. Before being able to load this properly in Cellebrite, we need to determine what device the image came from. My favorite way to determine this easily is to look at the Bluetooth device name. This can be found at in the &lt;code class=&quot;highlighter-rouge&quot;&gt;settings_secure&lt;/code&gt; XML file found at &lt;code class=&quot;highlighter-rouge&quot;&gt;/data/system/users/0/settings_secure.xml&lt;/code&gt;. Searching for “bluetooth_name” reveals the value assigned to it is “Pixel 3”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-13/setting_secure.JPG&quot; alt=&quot;Setting secure&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So this Android image was taken from a Google Pixel 3 phone. With this knowledge, we can fully load it in Cellebrite Physical Analyzer. After opening Physical Analyzer, select &lt;code class=&quot;highlighter-rouge&quot;&gt;Open Case&lt;/code&gt;. Select &lt;code class=&quot;highlighter-rouge&quot;&gt;Add Evidence&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Open (Advanced)&lt;/code&gt;. Then we can hit &lt;code class=&quot;highlighter-rouge&quot;&gt;Select Device&lt;/code&gt; and then set the device to the Google Pixel 3.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-13/pick_device.JPG&quot; alt=&quot;Device selection&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After this, select &lt;code class=&quot;highlighter-rouge&quot;&gt;Filesystem - Android ADB Backup&lt;/code&gt;. Then we are prompted to select the folder or zip file containing the data. Select &lt;code class=&quot;highlighter-rouge&quot;&gt;Zip Archive&lt;/code&gt; and add the tar file. Then select save UFD to save our case to a file. Next before finishing I selected &lt;code class=&quot;highlighter-rouge&quot;&gt;Carve locations&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Recover data from archives&lt;/code&gt; in case it’s needed for other challenges. Then select &lt;code class=&quot;highlighter-rouge&quot;&gt;Examine&lt;/code&gt; to begin the processing.&lt;/p&gt;
+
+&lt;p&gt;Now we can focusing on solving the challenge question. The question has to do with &lt;em&gt;the file that maps names to IP’s&lt;/em&gt;. The service that resolves names to IP addresses is the Domain Name System, or DNS. The file that stores resolved names to IPs is typically &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/hosts&lt;/code&gt; on Linux systems. Searching for &lt;code class=&quot;highlighter-rouge&quot;&gt;hosts&lt;/code&gt; in Cellebrite reveals that a file called &lt;code class=&quot;highlighter-rouge&quot;&gt;hosts&lt;/code&gt; is located in &lt;code class=&quot;highlighter-rouge&quot;&gt;/data/adb/modules/hosts/system/etc/hosts&lt;/code&gt;. The question wants the last time the file was accessed. Cellebrite shows this in the right hand panel.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-13/time.JPG&quot; alt=&quot;Time&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Converting this to the time format required by the question gives us &lt;code class=&quot;highlighter-rouge&quot;&gt;03/05/2020 05:50:18&lt;/code&gt;. Enter this into the solution box, and we see this is correct! First week down!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-13/solved.JPG&quot; alt=&quot;Solved&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Wurlitzer 1100 Juke Box Repair</title>
+   <link href="starwarsfan2099.github.io/juke-box-repair/"/>
+   <updated>2020-10-10T00:00:00-04:00</updated>
+   <id>starwarsfan2099.github.io/juke-box-repair</id>
+   <content type="html">&lt;h2 id=&quot;wurlitzer-1100-jukebox&quot;&gt;Wurlitzer 1100 Jukebox&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/main_photo.JPG&quot; alt=&quot;Main Photo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Wurlitzer 1100 Jukebox was made in 1947-1949. The jukebox came out following their extremely popular 1015 model, the “Bubbler” jukebox and was the first jukebox too be produced after World War II. The 1100’s ‘Cobra’ record pickup can store 24 records, played at 78-RPM. It boasts a rather large 15 inch speaker, a rotating song selector, multi-colored rotating lights below the selector, and a large plastic dome for better viewing the record picking mechanism.&lt;/p&gt;
+
+&lt;p&gt;On this specific jukebox, the record picking mechanism, lights, and sound needed work. Lets see what it takes to get it working.&lt;/p&gt;
+
+&lt;h2 id=&quot;opening-the-box&quot;&gt;Opening the Box&lt;/h2&gt;
+
+&lt;p&gt;Opening the jukebox is easy enough. The outer door can be opened by pulling up and out on the left side of the door. It swings open to the right allowing for easy access.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/front_door.JPG&quot; alt=&quot;Front door&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/front_door_inside.JPG&quot; alt=&quot;Front door inside&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Opening the front door allows access to the outer door lights, the song selector, record loading slots and record player wheel and needle. Below the record loading slots and wheel, is a panel holding the single 15-inch speaker. This panel can swing out and to the right as well. A latch sits on the right side of the panel, when twisted left unlocks the panel to swing out.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/speaker_panel.JPG&quot; alt=&quot;Speaker panel&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The speaker panel solely houses the single speaker and the coin check mechanism. On the inside of the machine, on the left side is a small handle that sits right above where the speaker panel rests. Turning the handle downward unlocks the door on the rear of the machine. Then the rear door can be opened as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/rear_door.JPG&quot; alt=&quot;Rear door&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The rear door has the background seen behind the record player, a slanted piece to protect the amplifier from oil or falling parts, and two cutouts in the panel - one for the main power switch and one allowing for access to the volume control. Inside the rear of the machine, the actual record playing and selection mechanism can be seen and accessed, as well as the amplifier and sound circuits.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/inside_rear.JPG&quot; alt=&quot;Inside rear&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;repair&quot;&gt;Repair&lt;/h2&gt;
+
+&lt;h3 id=&quot;record-selection&quot;&gt;Record Selection&lt;/h3&gt;
+
+&lt;p&gt;The first problem encountered with the machine was the record selection mechanism failed to properly pick a record. Pressing a record number would start the mechanism but it would jam up. The first thing done was oiling. Lots and lots of oiling. All the gears, any visible moving arms or levers can be oiled to help the mechanism loosen up. There are also two oiling holes on the motor for oiling, and two oil holes underneath the record spinner for oiling the hardest to reach parts.&lt;/p&gt;
+
+&lt;p&gt;The entire record selection mechanism is simpler than others of the time but still complex. The mechanism is driven off a single motor rotating a single direction. A series of gears, levers, and cams in certain places allow for the record grabbing and playing to take place. The mechanism begins at the song selection coil.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/selection_coil.JPG&quot; alt=&quot;Selection coil&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This coil has 24 smaller coils rotated around it. Each of the smaller coils is connected to rails on the record selector on the door. On the outside of the coil, is the main motor relay. When a record selection button is picked, the smaller electromagnetic coil for that record activates and releases a spring loaded pin that protrudes out about half an inch from the back of the coil, towards the rear of the machine. This also triggers the motor relay to start.&lt;/p&gt;
+
+&lt;p&gt;The motor rotates a shaft, with an “L” shaped end behind the coil. The protruding pin catches the shaft piece and stops it from moving. The shaft is connected to a differential type mechanism, so that when the shaft behind the coil stops, the rotation is transferred to another shaft. This starts the actual record grabbing. The position of the record selection coil is aligned with a cam on the back of the machine. When the shaft stops at a certain coil, the cam is in the right place to allow an arm to move enough to align with the chosen record. However, this cam can wear slightly and isn’t always accurate. Wurlitzer solved this by placing a gear with cut-out slits on it. So that when an arm moves to grab a record, the slots further align the arm to pick a record, and not get caught trying to get two records. This gear and cam can be seen in the image below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/slit_gear.JPG&quot; alt=&quot;Slit gear&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The wear on the cam in this machine was pretty bad, this resulted in the arm getting caught on the gear. Filing down the gear points and edges fixed this partially. The actual pin that fits in the slots had wear on it as well, and was rotated to where it had a bit less wear.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/record_selection.JPG&quot; alt=&quot;Record tray moving arm&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The actual arm that moves up down behind the record tray to move a record out to the table is adjustable via a tapped piece that sits at the top. If two record trays are still being grabbed and the slit gear piece is not getting caught, adjusting this can fix that. When a record tray is moved, the mechanism that moves up and down rotates via another adjustable arm. If the piece is not moving up and down smoothly, the arm adjustor could be too tight. It should slide up and down with hardly any friction. Adjusting this finally fixed the record selection mechanism.&lt;/p&gt;
+
+&lt;h3 id=&quot;lighting&quot;&gt;Lighting&lt;/h3&gt;
+
+&lt;p&gt;Many of the lights in the machine needed to be replaced. Almost all of the lights on the machine have one positive wire connected to it and is grounded through the jukebox frame.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/light.JPG&quot; alt=&quot;Record tray moving arm&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most of the lights can be easily replaced by older cheap incandescent bulbs from Amazon or Ebay. The “Multicolored” lights on the front bottom of the machines, are actually upright fluorescent tubes, surrounded by a rotating cylinder made with three different color filters. Both of these light on the machine were also bad. Replacement tubes in the right size could actually be found at Lowes, but however, they still did not work. Fluorescent light require starters and a transformer to work. The starter caps are found above the lights and the transformer is inside the door, to the left of the selection mechanism.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/starter_caps.JPG&quot; alt=&quot;Starter caps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The starter capacitors can be twisted and removed from the light assembly. Testing each cap reveals both were bad. The transformer also when removed and tested was bad. The transformer was potted, so it really wasn’t worth trying to get into it and fix it. New caps, and two individual transformers were ordered. Below is an image of the two newly installed transformers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/transformers.JPG&quot; alt=&quot;Starter caps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Several of the front lights behind the “Wurlitzer” logo and the “Coin Entry” weren’t working as well, even with new bulbs. On this particular machine, someone in the past had wired it incorrectly and shorted out the light circuit. These were rewired. This is also what probably fried the transformer, as it was also on the same circuit.&lt;/p&gt;
+
+&lt;p&gt;The assembly around the right light also did not rotate. The motor was removed from the door. The gear had come loose from the shaft the goes up into the motor. Some JB-Weld later and it’s good as new.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/light_motor.JPG&quot; alt=&quot;Light motor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The sound electronics repair and front selector mechanism repair will be discussed in another post, so keep an eye out! In the meantime, here are some more pictures of the jukebox.&lt;/p&gt;
+
+&lt;h2 id=&quot;extra-pictures&quot;&gt;Extra Pictures&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/jukebox_dark.JPG&quot; alt=&quot;Jukebox in the dark&quot; /&gt;
+Jukebox in the dark. Stunning.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/front_selector.JPG&quot; alt=&quot;Front selector&quot; /&gt;
+Record selector buttons on the front door.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/inside_door_lights.JPG&quot; alt=&quot;Inside door lights&quot; /&gt;
+Inside the door with lights on.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/motor.JPG&quot; alt=&quot;Motor&quot; /&gt;
+Motor.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/record_table.JPG&quot; alt=&quot;Record table&quot; /&gt;
+Record table.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../public/2020-10-10/tube_amp.JPG&quot; alt=&quot;Tube amp&quot; /&gt;
+Tube amplifier.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Adding a "Four" loop to Clang Compiler</title>
-   <link href="/2020/08/04/clang-four-loop/"/>
+   <link href="starwarsfan2099.github.io/clang-four-loop/"/>
    <updated>2020-08-04T00:00:00-04:00</updated>
-   <id>https://starwarsfan2099.github.io/2020/08/04/clang-four-loop</id>
+   <id>starwarsfan2099.github.io/clang-four-loop</id>
    <content type="html">&lt;p&gt;What if a person was writing a C program and typoed their &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop. In C, a &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop is written like &lt;code class=&quot;highlighter-rouge&quot;&gt;for( int i = 0; i &amp;lt; 12; i++) {...&lt;/code&gt;. What if they mistyped and instead wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;four( int i = 0; i &amp;lt; 12; i++) {...&lt;/code&gt;? Well, if using llvm-clang, it will error out and fail to compile, understandable and expected. But that’s no fun. What if instead, it compiled fine and instead of looping over each iteration, it looped every four iterations because it’s a “four” loop?? That would be cool. Lets implement it into clang for fun and learning!&lt;/p&gt;
 
 &lt;p&gt;First, we need to download and make sure we can build clang. The llvm project with &lt;code class=&quot;highlighter-rouge&quot;&gt;llvm-clang&lt;/code&gt; can be found &lt;a href=&quot;https://github.com/llvm/llvm-project&quot;&gt;here on Github&lt;/a&gt;. First, clone the repository and associated dependencies with git.&lt;/p&gt;
@@ -251,9 +379,9 @@ Four Loop
  
  <entry>
    <title>Python Roman Numeral Code Golf</title>
-   <link href="/2020/08/03/python-code-golf/"/>
+   <link href="starwarsfan2099.github.io/python-code-golf/"/>
    <updated>2020-08-03T00:00:00-04:00</updated>
-   <id>https://starwarsfan2099.github.io/2020/08/03/python-code-golf</id>
+   <id>starwarsfan2099.github.io/python-code-golf</id>
    <content type="html">&lt;p&gt;A while back, a friend challenged me to a Python code golf. For those who don’t know, &lt;a href=&quot;https://www.wikiwand.com/en/Code_golf&quot;&gt;code golfing&lt;/a&gt; is a competition to see who can achieve a goal with the shortest amount of source code. My friend challenged me to write two Python functions. One function takes a number and returns its roman numeral equivalent as a string. The second function takes a roman numeral string as an argument and returns its numerical equivalent. A number of test cases were also given:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cases = {
@@ -468,9 +596,9 @@ def s1(n): # 151 Bytes
  
  <entry>
    <title>Marchant "Silent Speed" Mechanical Calculator Repair and Operation.</title>
-   <link href="/2020/05/26/marchant-calculator/"/>
+   <link href="starwarsfan2099.github.io/marchant-calculator/"/>
    <updated>2020-05-26T00:00:00-04:00</updated>
-   <id>https://starwarsfan2099.github.io/2020/05/26/marchant-calculator</id>
+   <id>starwarsfan2099.github.io/marchant-calculator</id>
    <content type="html">&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
 &lt;p&gt;I was able to acquire a Marchant ACR8M “Silent Speed” mechanical calculator bought off of Ebay. This is the calculator after some light cleaning and repair.&lt;/p&gt;
@@ -644,9 +772,9 @@ def s1(n): # 151 Bytes
  
  <entry>
    <title>Decrypting DJI Spark Drone Log Files</title>
-   <link href="/2020/01/25/dji-spark-log-decryption/"/>
+   <link href="starwarsfan2099.github.io/dji-spark-log-decryption/"/>
    <updated>2020-01-25T00:00:00-05:00</updated>
-   <id>https://starwarsfan2099.github.io/2020/01/25/dji-spark-log-decryption</id>
+   <id>starwarsfan2099.github.io/dji-spark-log-decryption</id>
    <content type="html">&lt;p&gt;DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transferred using application. However, they appear to be encrypted for some reason. transferred DJI Spark Drone’s log files look something like this after being transferred to a computer.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-25/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
@@ -758,9 +886,9 @@ key in that same function. Or simply searching for the following bytes will prod
  
  <entry>
    <title>Analyzing MacOS Malware that Executes a Payload in Memory</title>
-   <link href="/2020/01/22/mac-malware/"/>
+   <link href="starwarsfan2099.github.io/mac-malware/"/>
    <updated>2020-01-22T00:00:00-05:00</updated>
-   <id>https://starwarsfan2099.github.io/2020/01/22/mac-malware</id>
+   <id>starwarsfan2099.github.io/mac-malware</id>
    <content type="html">&lt;p&gt;This post was inspired by Dinesh Devadoss’s &lt;a href=&quot;https://twitter.com/dineshdina04/status/1201834142704394242?s=20&quot;&gt;post on twitter&lt;/a&gt; about a piece of MacOS malware from the Lazarus group that loads a Mach-O into memory and executes it.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
