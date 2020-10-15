@@ -78,7 +78,7 @@ The sound electronics repair and front selector mechanism repair will be discuss
 
 ## Extra Pictures
 
-![Jukebox in the dark](https://starwarsfan2099.github.io/public/2020-10-10/jukebox_dark.JPG)
+![Jukebox in the dark](https://starwarsfan2099.github.io/public/2020-10-10/jukebox_dark.jpg)
 Jukebox in the dark. Stunning. 
 
 ![Front selector](https://starwarsfan2099.github.io/public/2020-10-10/front_selector.JPG)
