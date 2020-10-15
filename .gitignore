@@ -1,4 +1,10 @@
-# Don't track content of these folders
-.jekyll-cache/
-.vscode/
-.scanpkgtmp/
+_site
+.DS_Store
+.jekyll
+.jekyll-metadata
+.bundle
+.sass-cache
+Gemfile
+Gemfile.lock
+node_modules
+package.json

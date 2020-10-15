@@ -109,7 +109,7 @@
   <span class="post-date">03 Aug 2020</span>
   <p>A while back, a friend challenged me to a Python code golf. For those who don’t know, <a href="https://www.wikiwand.com/en/Code_golf">code golfing</a> is a competition to see who can achieve a goal with the shortest amount of source code. My friend challenged me to write two Python functions. One function takes a number and returns its roman numeral equivalent as a string. The second function takes a roman numeral string as an argument and returns its numerical equivalent. A number of test cases were also given:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cases = {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cases = {
         5: "V",
         9: "IX",
         12: "XII",
@@ -137,7 +137,7 @@
 
 <p>My method is to first write code that accomplishes the goal, then attempt to shorten it and try other methods to accomplish the goal. The first code I came up with was:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def toRomanNumeral(input): # 560 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def toRomanNumeral(input): # 560 Bytes
     values = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     text = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
     endText = []
@@ -168,9 +168,9 @@ def fromRomanNumeral(input): # 637 Bytes
     return endValue
 </code></pre></div></div>
 
-<p>Understanding this code is left for the reader, it’s fairly simple and the goal of post is to learn about golfing techniques. <code class="language-plaintext highlighter-rouge">fromRomanNumeral</code> is 638 bytes in length, and <code class="language-plaintext highlighter-rouge">toRomanNumeral</code> is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values generated.</p>
+<p>Understanding this code is left for the reader, it’s fairly simple and the goal of post is to learn about golfing techniques. <code class="highlighter-rouge">fromRomanNumeral</code> is 638 bytes in length, and <code class="highlighter-rouge">toRomanNumeral</code> is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values generated.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def toRomanNumeral(input): # 364 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def toRomanNumeral(input): # 364 Bytes
     values = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     text = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
     endText = []
@@ -194,7 +194,7 @@ def fromRomanNumeral(input): # 408 Bytes
 
 <p>That’s a bit better. 408 bytes and 364 bytes. Next thing, variable and function names are taking up lots of unnecessary space, so we can reduce each name down to one letter.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 286 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 286 Bytes
     v = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     t = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
     e = []
@@ -216,35 +216,35 @@ def s(n): # 266 Bytes
     return e
 </code></pre></div></div>
 
-<p>Sweet, now they are both below 300 bytes already. But there is still much room for improvement. How we currently assign variables uses a lot of unneeded space. In the function <code class="language-plaintext highlighter-rouge">toRomanNumerals()</code>, now simply named <code class="language-plaintext highlighter-rouge">r()</code>, we define variables on separate lines. this means we use three spaces, three equal signs, then 3 more spaces. Fortunately, Python allows us to do this a different way. Instead of writing:</p>
+<p>Sweet, now they are both below 300 bytes already. But there is still much room for improvement. How we currently assign variables uses a lot of unneeded space. In the function <code class="highlighter-rouge">toRomanNumerals()</code>, now simply named <code class="highlighter-rouge">r()</code>, we define variables on separate lines. this means we use three spaces, three equal signs, then 3 more spaces. Fortunately, Python allows us to do this a different way. Instead of writing:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
 t = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
 e = []
 </code></pre></div></div>
 
 <p>We can instead declare the variables on a single line like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v,t,e=(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1),('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'),[]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v,t,e=(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1),('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'),[]
 </code></pre></div></div>
 
-<p>The current way of defining variables uses 141 bytes. Defining them on the same line uses 123 bytes. While we’re at it, <code class="language-plaintext highlighter-rouge">('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')</code> can be shortened. Those repeated quotes use a lot of bytes. Instead of directly declaring an array (71 bytes), we can make a single string with spaces and use <code class="language-plaintext highlighter-rouge">.split()</code> to create an array like this: <code class="language-plaintext highlighter-rouge">'M CM D CD C XC L XL X IX V IV I'.split()</code> (41 bytes). We can also remove spaces from between the numbers defined in <code class="language-plaintext highlighter-rouge">v</code>.</p>
+<p>The current way of defining variables uses 141 bytes. Defining them on the same line uses 123 bytes. While we’re at it, <code class="highlighter-rouge">('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')</code> can be shortened. Those repeated quotes use a lot of bytes. Instead of directly declaring an array (71 bytes), we can make a single string with spaces and use <code class="highlighter-rouge">.split()</code> to create an array like this: <code class="highlighter-rouge">'M CM D CD C XC L XL X IX V IV I'.split()</code> (41 bytes). We can also remove spaces from between the numbers defined in <code class="highlighter-rouge">v</code>.</p>
 
-<p>In the other function <code class="language-plaintext highlighter-rouge">fromRomanNumeral()</code>, now named <code class="language-plaintext highlighter-rouge">s()</code>, we can shorten the variable declaration there too in the same way. Right now the function declares variables like this:</p>
+<p>In the other function <code class="highlighter-rouge">fromRomanNumeral()</code>, now named <code class="highlighter-rouge">s()</code>, we can shorten the variable declaration there too in the same way. Right now the function declares variables like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v = {'M':1000, 'D':500, 'C':100, 'L':50, 'X':10, 'V':5, 'I':1}
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v = {'M':1000, 'D':500, 'C':100, 'L':50, 'X':10, 'V':5, 'I':1}
 e = 0
 n = n.upper()
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">n = n.upper()</code> is not needed, it was just a sanity check for the input to the function. <code class="language-plaintext highlighter-rouge">v</code> and <code class="language-plaintext highlighter-rouge">e</code> can be declared on the same line. Instead of declaring a dictionary for <code class="language-plaintext highlighter-rouge">v</code> with brackets and then strings and ints, we can use <code class="language-plaintext highlighter-rouge">dict()</code> to declare a dictionary like <code class="language-plaintext highlighter-rouge">dict(M:1000,D:500...)</code>. This saves bytes from having to use quotes, and we can again remove spaces. This leaves us with:</p>
+<p><code class="highlighter-rouge">n = n.upper()</code> is not needed, it was just a sanity check for the input to the function. <code class="highlighter-rouge">v</code> and <code class="highlighter-rouge">e</code> can be declared on the same line. Instead of declaring a dictionary for <code class="highlighter-rouge">v</code> with brackets and then strings and ints, we can use <code class="highlighter-rouge">dict()</code> to declare a dictionary like <code class="highlighter-rouge">dict(M:1000,D:500...)</code>. This saves bytes from having to use quotes, and we can again remove spaces. This leaves us with:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v,e=dict(M=1000,D=500,C=100,L=50,X=10,V=5,I=1),0
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v,e=dict(M=1000,D=500,C=100,L=50,X=10,V=5,I=1),0
 </code></pre></div></div>
 
-<p>We can also save an extra byte here by using exponential notation for declaring the dictionary value <code class="language-plaintext highlighter-rouge">M</code>. Instead of <code class="language-plaintext highlighter-rouge">M=1000</code>, it can be written like <code class="language-plaintext highlighter-rouge">M=1e3</code>. Now the functions look like this:</p>
+<p>We can also save an extra byte here by using exponential notation for declaring the dictionary value <code class="highlighter-rouge">M</code>. Instead of <code class="highlighter-rouge">M=1000</code>, it can be written like <code class="highlighter-rouge">M=1e3</code>. Now the functions look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 230 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 230 Bytes
     v,t,e=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),[]
     for i in range(len(v)):
         e.append(t[i] * int(n / v[i]))
@@ -262,9 +262,9 @@ def s(n): # 223 Bytes
     return e
 </code></pre></div></div>
 
-<p>All of the test cases still pass. Looking at function <code class="language-plaintext highlighter-rouge">r()</code>, it’s logic can be greatly improved. Instead of using <code class="language-plaintext highlighter-rouge">for i in range(len(v)):</code>, we can simply loop over <code class="language-plaintext highlighter-rouge">v</code> and define <code class="language-plaintext highlighter-rouge">i</code> above. This saves space and allows us to shorten the logic below. Also, instead of declaring <code class="language-plaintext highlighter-rouge">t</code> as an empty array and using <code class="language-plaintext highlighter-rouge">.join()</code> later, we can just declare <code class="language-plaintext highlighter-rouge">t</code> as an empty string and append to that.</p>
+<p>All of the test cases still pass. Looking at function <code class="highlighter-rouge">r()</code>, it’s logic can be greatly improved. Instead of using <code class="highlighter-rouge">for i in range(len(v)):</code>, we can simply loop over <code class="highlighter-rouge">v</code> and define <code class="highlighter-rouge">i</code> above. This saves space and allows us to shorten the logic below. Also, instead of declaring <code class="highlighter-rouge">t</code> as an empty array and using <code class="highlighter-rouge">.join()</code> later, we can just declare <code class="highlighter-rouge">t</code> as an empty string and append to that.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 194 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 194 Bytes
     v,t,e,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),'',0
     for a in v:
         e += n/a * t[i]
@@ -273,17 +273,17 @@ def s(n): # 223 Bytes
     return e
 </code></pre></div></div>
 
-<p>Furthermore, we can remove spaces from between the operators inside the <code class="language-plaintext highlighter-rouge">for</code> loop. Then we can add semicolons to the end of each line to get the entire for loop and operations within it onto the same line. This gets us to 162 bytes from the original 560!</p>
+<p>Furthermore, we can remove spaces from between the operators inside the <code class="highlighter-rouge">for</code> loop. Then we can add semicolons to the end of each line to get the entire for loop and operations within it onto the same line. This gets us to 162 bytes from the original 560!</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 560 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r(n): # 560 Bytes
     v,t,e,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),'',0
     for a in v:e+=n/a*t[i];n%=a;i+=1;
     return e
 </code></pre></div></div>
 
-<p>Now we turn our attention back to function <code class="language-plaintext highlighter-rouge">s()</code>. Again, instead of <code class="language-plaintext highlighter-rouge">for i in range(len(input)):</code>, we can just declare <code class="language-plaintext highlighter-rouge">i</code> above and in this case loop over the input <code class="language-plaintext highlighter-rouge">n</code>. Changing the logic below results with:</p>
+<p>Now we turn our attention back to function <code class="highlighter-rouge">s()</code>. Again, instead of <code class="highlighter-rouge">for i in range(len(input)):</code>, we can just declare <code class="highlighter-rouge">i</code> above and in this case loop over the input <code class="highlighter-rouge">n</code>. Changing the logic below results with:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def s(n): # 215 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def s(n): # 215 Bytes
     v,e,i=dict(M=1e3,D=500,C=100,L=50,X=10,V=5,I=1),0,0
     for a in n:
         if i+1&lt;len(n) and v[n[i+1]]&gt;v[a]:
@@ -294,9 +294,9 @@ def s(n): # 223 Bytes
     return e
 </code></pre></div></div>
 
-<p>Once again, we can remove space from operators. Then we can use <a href="https://www.wikiwand.com/en/%3F:#/Python">ternary operators</a> to move the if and else statement to one line. Ternary operators work in the form of <code class="language-plaintext highlighter-rouge">result = x if a &gt; b else y</code>. Using this, we can put most of the logic and <code class="language-plaintext highlighter-rouge">for</code> loop on the same line. Also on the same line, we can add a semicolon and add our <code class="language-plaintext highlighter-rouge">i+=1;</code> and have the entire <code class="language-plaintext highlighter-rouge">for</code> loop and logic on the same line!</p>
+<p>Once again, we can remove space from operators. Then we can use <a href="https://www.wikiwand.com/en/%3F:#/Python">ternary operators</a> to move the if and else statement to one line. Ternary operators work in the form of <code class="highlighter-rouge">result = x if a &gt; b else y</code>. Using this, we can put most of the logic and <code class="highlighter-rouge">for</code> loop on the same line. Also on the same line, we can add a semicolon and add our <code class="highlighter-rouge">i+=1;</code> and have the entire <code class="highlighter-rouge">for</code> loop and logic on the same line!</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def s(n): # 153 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def s(n): # 153 Bytes
     v,e,i=dict(M=1e3,D=500,C=100,L=50,X=10,V=5,I=1),0,0
     for a in n:e=e-v[a] if i+1&lt;len(n) and v[n[i+1]]&gt;v[a] else e+v[a];i+=1;
     return e
@@ -304,7 +304,7 @@ def s(n): # 223 Bytes
 
 <p>And finally, conditionals following parentheses, brackets, or braces do not to have a space between them. This leaves us with the following golfed functions.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r1(n): # 163 Bytes
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def r1(n): # 163 Bytes
     v,e,t,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'','M CM D CD C XC L XL X IX V IV I'.split(),0
     for a in v:e+=n/a*t[i];n%=a;i+=1;
     return e

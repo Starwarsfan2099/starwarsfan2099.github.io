@@ -107,41 +107,41 @@
         <div class="post">
   <h1 class="post-title">Adding a "Four" loop to Clang Compiler</h1>
   <span class="post-date">04 Aug 2020</span>
-  <p>What if a person was writing a C program and typoed their <code class="language-plaintext highlighter-rouge">for</code> loop. In C, a <code class="language-plaintext highlighter-rouge">for</code> loop is written like <code class="language-plaintext highlighter-rouge">for( int i = 0; i &lt; 12; i++) {...</code>. What if they mistyped and instead wrote <code class="language-plaintext highlighter-rouge">four( int i = 0; i &lt; 12; i++) {...</code>? Well, if using llvm-clang, it will error out and fail to compile, understandable and expected. But that’s no fun. What if instead, it compiled fine and instead of looping over each iteration, it looped every four iterations because it’s a “four” loop?? That would be cool. Lets implement it into clang for fun and learning!</p>
+  <p>What if a person was writing a C program and typoed their <code class="highlighter-rouge">for</code> loop. In C, a <code class="highlighter-rouge">for</code> loop is written like <code class="highlighter-rouge">for( int i = 0; i &lt; 12; i++) {...</code>. What if they mistyped and instead wrote <code class="highlighter-rouge">four( int i = 0; i &lt; 12; i++) {...</code>? Well, if using llvm-clang, it will error out and fail to compile, understandable and expected. But that’s no fun. What if instead, it compiled fine and instead of looping over each iteration, it looped every four iterations because it’s a “four” loop?? That would be cool. Lets implement it into clang for fun and learning!</p>
 
-<p>First, we need to download and make sure we can build clang. The llvm project with <code class="language-plaintext highlighter-rouge">llvm-clang</code> can be found <a href="https://github.com/llvm/llvm-project">here on Github</a>. First, clone the repository and associated dependencies with git.</p>
+<p>First, we need to download and make sure we can build clang. The llvm project with <code class="highlighter-rouge">llvm-clang</code> can be found <a href="https://github.com/llvm/llvm-project">here on Github</a>. First, clone the repository and associated dependencies with git.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/llvm/llvm-project.git
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/llvm/llvm-project.git
 </code></pre></div></div>
 
-<p>Next we need to change directory to the llvm-clang directory and create a build directory. llvm-clang supports several build systems. I’m going to use <code class="language-plaintext highlighter-rouge">cmake</code> to configure the build scripts and then <code class="language-plaintext highlighter-rouge">make</code> to build everything. With <code class="language-plaintext highlighter-rouge">cmake</code>, we are going to pass <code class="language-plaintext highlighter-rouge">-DLLVM_ENABLE_PROJECTS=clang</code> and <code class="language-plaintext highlighter-rouge">-DLLVM_TARGETS_TO_BUILD=X86</code> to enable building clang, and have clang only target the x86 architecture to speed up the compilation some. We’ll also pass <code class="language-plaintext highlighter-rouge">-G "Unix Makefiles"</code> so we can use make to build everything. Next run <code class="language-plaintext highlighter-rouge">make -j [number of threads]</code>. The <code class="language-plaintext highlighter-rouge">-j</code> tells <code class="language-plaintext highlighter-rouge">make</code> how many threads to use. llvm-clang takes fairly long to compile so we definitely want to use more than one thread. I’m using an 8 core MacBook Pro, so I used <code class="language-plaintext highlighter-rouge">make -j 8</code>. Then patiently wait for clang to build.</p>
+<p>Next we need to change directory to the llvm-clang directory and create a build directory. llvm-clang supports several build systems. I’m going to use <code class="highlighter-rouge">cmake</code> to configure the build scripts and then <code class="highlighter-rouge">make</code> to build everything. With <code class="highlighter-rouge">cmake</code>, we are going to pass <code class="highlighter-rouge">-DLLVM_ENABLE_PROJECTS=clang</code> and <code class="highlighter-rouge">-DLLVM_TARGETS_TO_BUILD=X86</code> to enable building clang, and have clang only target the x86 architecture to speed up the compilation some. We’ll also pass <code class="highlighter-rouge">-G "Unix Makefiles"</code> so we can use make to build everything. Next run <code class="highlighter-rouge">make -j [number of threads]</code>. The <code class="highlighter-rouge">-j</code> tells <code class="highlighter-rouge">make</code> how many threads to use. llvm-clang takes fairly long to compile so we definitely want to use more than one thread. I’m using an 8 core MacBook Pro, so I used <code class="highlighter-rouge">make -j 8</code>. Then patiently wait for clang to build.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd llvm-project
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd llvm-project
 mkdir build
 cd build
 cmake -DLLVM_ENABLE_PROJECTS=clang -DLLVM_TARGETS_TO_BUILD=X86 -G "Unix Makefiles" ../llvm
 make -j 8
 </code></pre></div></div>
 
-<p>If clang builds successfully, you can find the binary in <code class="language-plaintext highlighter-rouge">build/bin</code>. Now, we need to add our “four” loop. Opening the clang source code in Visual Studio is very overwhelming. There is <strong>a lot</strong> of source code. After building llvm, there are 109,880 files within the <code class="language-plaintext highlighter-rouge">llvm-project</code> directory at the time I cloned it. Where do we start looking for the code associated with <code class="language-plaintext highlighter-rouge">for</code> loops? We are interested in modifying clang, so a good first place to start is <code class="language-plaintext highlighter-rouge">llvm-project/clang</code>. There are still a large amount of files here to though. We need a plan of action. Let’s see if we can modify the current <code class="language-plaintext highlighter-rouge">for</code> loop to only loop every four iterations. Delving into the source files in clang, we find <code class="language-plaintext highlighter-rouge">clang/lib/CodeGen/</code>. That looks promising since we want to modify the code generated for the <code class="language-plaintext highlighter-rouge">for</code> loop. The files are named like <code class="language-plaintext highlighter-rouge">CGObjCRuntime.cpp</code> and <code class="language-plaintext highlighter-rouge">CGLoopInfo.cpp</code>. There doesn’t seem to be anything to use of us in <code class="language-plaintext highlighter-rouge">CGLoopInfo.cpp</code>. However, there is an interesting file named <code class="language-plaintext highlighter-rouge">CGStmt.cpp</code>. <code class="language-plaintext highlighter-rouge">for</code> loops are <a href="https://en.wikibooks.org/wiki/C_Programming/Statements">iteration statements</a> so this file could be useful. Searching the rather large file for the keyword “for” results in way to many results. Near the top of the file though, around line 140 are these lines:</p>
+<p>If clang builds successfully, you can find the binary in <code class="highlighter-rouge">build/bin</code>. Now, we need to add our “four” loop. Opening the clang source code in Visual Studio is very overwhelming. There is <strong>a lot</strong> of source code. After building llvm, there are 109,880 files within the <code class="highlighter-rouge">llvm-project</code> directory at the time I cloned it. Where do we start looking for the code associated with <code class="highlighter-rouge">for</code> loops? We are interested in modifying clang, so a good first place to start is <code class="highlighter-rouge">llvm-project/clang</code>. There are still a large amount of files here to though. We need a plan of action. Let’s see if we can modify the current <code class="highlighter-rouge">for</code> loop to only loop every four iterations. Delving into the source files in clang, we find <code class="highlighter-rouge">clang/lib/CodeGen/</code>. That looks promising since we want to modify the code generated for the <code class="highlighter-rouge">for</code> loop. The files are named like <code class="highlighter-rouge">CGObjCRuntime.cpp</code> and <code class="highlighter-rouge">CGLoopInfo.cpp</code>. There doesn’t seem to be anything to use of us in <code class="highlighter-rouge">CGLoopInfo.cpp</code>. However, there is an interesting file named <code class="highlighter-rouge">CGStmt.cpp</code>. <code class="highlighter-rouge">for</code> loops are <a href="https://en.wikibooks.org/wiki/C_Programming/Statements">iteration statements</a> so this file could be useful. Searching the rather large file for the keyword “for” results in way to many results. Near the top of the file though, around line 140 are these lines:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>case Stmt::IfStmtClass:      EmitIfStmt(cast&lt;IfStmt&gt;(*S));              break;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>case Stmt::IfStmtClass:      EmitIfStmt(cast&lt;IfStmt&gt;(*S));              break;
 case Stmt::WhileStmtClass:   EmitWhileStmt(cast&lt;WhileStmt&gt;(*S), Attrs); break;
 case Stmt::DoStmtClass:      EmitDoStmt(cast&lt;DoStmt&gt;(*S), Attrs);       break;
 case Stmt::ForStmtClass:     EmitForStmt(cast&lt;ForStmt&gt;(*S), Attrs);     break;
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">EmitForStmt</code> immediately stands out and could be interesting. <code class="language-plaintext highlighter-rouge">CodeGenFunction::EmitForStmt</code> is found on line 882. By <em>“Emit”</em>, clang it is talking about exporting llvm bytecode. llvm bytecode is the intermediate between the outpur\t of the parser and lexer, and the actual compilation into a binary executable. Comments reveal this specific code here evaluates the loop and deals with increments. Further down in the function, it looks like we find where the <code class="language-plaintext highlighter-rouge">for</code> loop is incremented!</p>
+<p><code class="highlighter-rouge">EmitForStmt</code> immediately stands out and could be interesting. <code class="highlighter-rouge">CodeGenFunction::EmitForStmt</code> is found on line 882. By <em>“Emit”</em>, clang it is talking about exporting llvm bytecode. llvm bytecode is the intermediate between the outpur\t of the parser and lexer, and the actual compilation into a binary executable. Comments reveal this specific code here evaluates the loop and deals with increments. Further down in the function, it looks like we find where the <code class="highlighter-rouge">for</code> loop is incremented!</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// If there is an increment, emit it next.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// If there is an increment, emit it next.
 if (S.getInc()) {
     EmitBlock(Continue.getBlock());
     EmitStmt(S.getInc());
 </code></pre></div></div>
 
-<p>To test this, we can copy <code class="language-plaintext highlighter-rouge">EmitStmt(S.getInc());</code> 3 more times in the code block. So it should look like this:</p>
+<p>To test this, we can copy <code class="highlighter-rouge">EmitStmt(S.getInc());</code> 3 more times in the code block. So it should look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// If there is an increment, emit it next.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// If there is an increment, emit it next.
 if (S.getInc()) {
     EmitBlock(Continue.getBlock());
     EmitStmt(S.getInc());
@@ -150,18 +150,18 @@ if (S.getInc()) {
     EmitStmt(S.getInc());
 </code></pre></div></div>
 
-<p>Now, we need to recompile and test. To recompile, just run <code class="language-plaintext highlighter-rouge">make -j 8</code> again. Then compile a program with a simple for loop and see what happens:</p>
+<p>Now, we need to recompile and test. To recompile, just run <code class="highlighter-rouge">make -j 8</code> again. Then compile a program with a simple for loop and see what happens:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>For Loop
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>For Loop
 0
 4
 8
 12
 </code></pre></div></div>
 
-<p>Success! Kind of. Now the normal <code class="language-plaintext highlighter-rouge">for</code> statement increments by four, but we want the <code class="language-plaintext highlighter-rouge">for</code> loop to act normal and add a <code class="language-plaintext highlighter-rouge">four</code> statement that increments by four. It’s going to be really difficult to add entirely new code to create our <code class="language-plaintext highlighter-rouge">four</code> loop. So, maybe we can modify the <code class="language-plaintext highlighter-rouge">for</code> loop code that is already in place. We can create another function argument that gets passed all the way down to <code class="language-plaintext highlighter-rouge">CodeGenFunction::EmitForStmt</code>. Then we can just add a different token in the lexer that looks for our <code class="language-plaintext highlighter-rouge">four</code> statement in the code and simply calls the <code class="language-plaintext highlighter-rouge">for</code> loop code with the extra argument. What we need first is to find the lexer and tokens clang uses. The compiler lexer looks at the lines of code in the source file and determines what is a statement, string, operator, separator, etc… and a assigns a token to it that describes what it is. Then the tokens are used in later compilation steps. Based upon some quick Googling, tokens for clang are defined in <code class="language-plaintext highlighter-rouge">clang/include/clang/basic/TokenKinds.def</code>. Doing a keyword search for the word “for” takes us to line 296:</p>
+<p>Success! Kind of. Now the normal <code class="highlighter-rouge">for</code> statement increments by four, but we want the <code class="highlighter-rouge">for</code> loop to act normal and add a <code class="highlighter-rouge">four</code> statement that increments by four. It’s going to be really difficult to add entirely new code to create our <code class="highlighter-rouge">four</code> loop. So, maybe we can modify the <code class="highlighter-rouge">for</code> loop code that is already in place. We can create another function argument that gets passed all the way down to <code class="highlighter-rouge">CodeGenFunction::EmitForStmt</code>. Then we can just add a different token in the lexer that looks for our <code class="highlighter-rouge">four</code> statement in the code and simply calls the <code class="highlighter-rouge">for</code> loop code with the extra argument. What we need first is to find the lexer and tokens clang uses. The compiler lexer looks at the lines of code in the source file and determines what is a statement, string, operator, separator, etc… and a assigns a token to it that describes what it is. Then the tokens are used in later compilation steps. Based upon some quick Googling, tokens for clang are defined in <code class="highlighter-rouge">clang/include/clang/basic/TokenKinds.def</code>. Doing a keyword search for the word “for” takes us to line 296:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>KEYWORD(extern                      , KEYALL)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>KEYWORD(extern                      , KEYALL)
 KEYWORD(float                       , KEYALL)
 KEYWORD(for                         , KEYALL)
 KEYWORD(goto                        , KEYALL)
@@ -170,37 +170,37 @@ KEYWORD(inline                      , KEYC99|KEYCXX|KEYGNU)
 KEYWORD(int                         , KEYALL)
 </code></pre></div></div>
 
-<p>Each statement is given a keyword assignment, so clang knows what terms are statements. The 2nd column are flags for the keyword. The flag <code class="language-plaintext highlighter-rouge">KEYALL</code> means the statement is present in all variants of C or C++. <code class="language-plaintext highlighter-rouge">KEYC99</code> and shown above means the feature was introduced in C99, and other flags can have other meanings that are described in the file. <code class="language-plaintext highlighter-rouge">for</code> is a statement present in all variations, so it has the flag <code class="language-plaintext highlighter-rouge">KEYALL</code>. In order for clang to recognize <code class="language-plaintext highlighter-rouge">four</code> as a statement, we need to add our own keyword. Firstly, copy the line where <code class="language-plaintext highlighter-rouge">for</code> is defined as a keyword, paste the line right below it, and change the “for” to “four”. It should look like this:</p>
+<p>Each statement is given a keyword assignment, so clang knows what terms are statements. The 2nd column are flags for the keyword. The flag <code class="highlighter-rouge">KEYALL</code> means the statement is present in all variants of C or C++. <code class="highlighter-rouge">KEYC99</code> and shown above means the feature was introduced in C99, and other flags can have other meanings that are described in the file. <code class="highlighter-rouge">for</code> is a statement present in all variations, so it has the flag <code class="highlighter-rouge">KEYALL</code>. In order for clang to recognize <code class="highlighter-rouge">four</code> as a statement, we need to add our own keyword. Firstly, copy the line where <code class="highlighter-rouge">for</code> is defined as a keyword, paste the line right below it, and change the “for” to “four”. It should look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>KEYWORD(float                       , KEYALL)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>KEYWORD(float                       , KEYALL)
 KEYWORD(for                         , KEYALL)
 KEYWORD(four                        , KEYALL)
 KEYWORD(goto                        , KEYALL)
 </code></pre></div></div>
 
-<p>Now we need to find the parser, where clang searches for the keywords in the source file. This logic can be found in <code class="language-plaintext highlighter-rouge">clang/lib/Parse/ParseStmt.cpp</code>. In this file, we find <code class="language-plaintext highlighter-rouge">Parser::ParseStatementOrDeclarationAfterAttributes</code>. This function includes <strong>MANY</strong> case statements for finding statements in the source file. At line 266, we find this line:</p>
+<p>Now we need to find the parser, where clang searches for the keywords in the source file. This logic can be found in <code class="highlighter-rouge">clang/lib/Parse/ParseStmt.cpp</code>. In this file, we find <code class="highlighter-rouge">Parser::ParseStatementOrDeclarationAfterAttributes</code>. This function includes <strong>MANY</strong> case statements for finding statements in the source file. At line 266, we find this line:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  case tok::kw_for:                 // C99 6.8.5.3: for-statement
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  case tok::kw_for:                 // C99 6.8.5.3: for-statement
     return ParseForStatement(TrailingElseLoc);
 </code></pre></div></div>
 
-<p>This case statement assigns what happens when a <code class="language-plaintext highlighter-rouge">for</code> statement is found. We want to copy this, and pass a function argument with it when the token <code class="language-plaintext highlighter-rouge">four</code> is found.</p>
+<p>This case statement assigns what happens when a <code class="highlighter-rouge">for</code> statement is found. We want to copy this, and pass a function argument with it when the token <code class="highlighter-rouge">four</code> is found.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  case tok::kw_for:                 // C99 6.8.5.3: for-statement
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  case tok::kw_for:                 // C99 6.8.5.3: for-statement
     return ParseForStatement(TrailingElseLoc);
   case tok::kw_four:
     return ParseForStatement(TrailingElseLoc, true);
 </code></pre></div></div>
 
-<p>Further down in the file, we find the function that is called if the token is found, <code class="language-plaintext highlighter-rouge">Parser::ParseForStatement</code>. We need to modify it a bit. Originally, the first few lines are written like this:</p>
+<p>Further down in the file, we find the function that is called if the token is found, <code class="highlighter-rouge">Parser::ParseForStatement</code>. We need to modify it a bit. Originally, the first few lines are written like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Parser::ParseForStatement(SourceLocation *TrailingElseLoc) {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Parser::ParseForStatement(SourceLocation *TrailingElseLoc) {
     assert(Tok.is(tok::kw_for) &amp;&amp; "Not a for stmt!");
 </code></pre></div></div>
 
 <p>And we are going to modify it to look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Parser::ParseForStatement(SourceLocation *TrailingElseLoc, bool is_four_statement) {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Parser::ParseForStatement(SourceLocation *TrailingElseLoc, bool is_four_statement) {
   if (is_four_statement) {
     assert(Tok.is(tok::kw_four) &amp;&amp; "Not a four stmt!");
   } else {
@@ -208,23 +208,23 @@ KEYWORD(goto                        , KEYALL)
   }
 </code></pre></div></div>
 
-<p>Now we have added a <code class="language-plaintext highlighter-rouge">is_four_statement</code> boolean function argument and added an assert to make sure it is a proper statement token. At line 2081, the function calls <code class="language-plaintext highlighter-rouge">Actions.ActOnForStmt</code>. We need to pass our <code class="language-plaintext highlighter-rouge">four</code> statement boolean to that. So we change change this:</p>
+<p>Now we have added a <code class="highlighter-rouge">is_four_statement</code> boolean function argument and added an assert to make sure it is a proper statement token. At line 2081, the function calls <code class="highlighter-rouge">Actions.ActOnForStmt</code>. We need to pass our <code class="highlighter-rouge">four</code> statement boolean to that. So we change change this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return Actions.ActOnForStmt(ForLoc, T.getOpenLocation(), FirstPart.get(),
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return Actions.ActOnForStmt(ForLoc, T.getOpenLocation(), FirstPart.get(),
                               SecondPart, ThirdPart, T.getCloseLocation(),
                               Body.get());
 </code></pre></div></div>
 
 <p>to this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return Actions.ActOnForStmt(ForLoc, T.getOpenLocation(), FirstPart.get(),
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return Actions.ActOnForStmt(ForLoc, T.getOpenLocation(), FirstPart.get(),
                               SecondPart, ThirdPart, T.getCloseLocation(),
                               Body.get(), is_four_statement);
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">ActOnForStmt</code> can be found in <code class="language-plaintext highlighter-rouge">clang/lib/Sema/SemaStmt.cpp</code>. On line 1778, we need to change the function arguments here.</p>
+<p><code class="highlighter-rouge">ActOnForStmt</code> can be found in <code class="highlighter-rouge">clang/lib/Sema/SemaStmt.cpp</code>. On line 1778, we need to change the function arguments here.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Sema::ActOnForStmt(SourceLocation ForLoc, SourceLocation LParenLoc,
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Sema::ActOnForStmt(SourceLocation ForLoc, SourceLocation LParenLoc,
                               Stmt *First, ConditionResult Second,
                               FullExprArg third, SourceLocation RParenLoc,
                               Stmt *Body) {
@@ -232,59 +232,59 @@ KEYWORD(goto                        , KEYALL)
 
 <p>We simply pass our “four” loop boolean arguments here too.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Sema::ActOnForStmt(SourceLocation ForLoc, SourceLocation LParenLoc,
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>StmtResult Sema::ActOnForStmt(SourceLocation ForLoc, SourceLocation LParenLoc,
                               Stmt *First, ConditionResult Second,
                               FullExprArg third, SourceLocation RParenLoc,
                               Stmt *Body, bool is_four_statement) {
 </code></pre></div></div>
 
-<p>Now, we need to see where this function goes. This function calls <code class="language-plaintext highlighter-rouge">ForStmt</code>.</p>
+<p>Now, we need to see where this function goes. This function calls <code class="highlighter-rouge">ForStmt</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  return new (Context)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  return new (Context)
       ForStmt(Context, First, Second.get().second, Second.get().first, Third,
               Body, ForLoc, LParenLoc, RParenLoc);
 </code></pre></div></div>
 
 <p>Same drill here, add our extra function argument we keep passing down through the functions.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  return new (Context)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  return new (Context)
       ForStmt(Context, First, Second.get().second, Second.get().first, Third,
               Body, ForLoc, LParenLoc, RParenLoc, is_four_statement);
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">ForStmt</code> is defined in <code class="language-plaintext highlighter-rouge">clang/lib/AST/Stmt.cpp</code>. So again, we add our function argument to this function definition.</p>
+<p><code class="highlighter-rouge">ForStmt</code> is defined in <code class="highlighter-rouge">clang/lib/AST/Stmt.cpp</code>. So again, we add our function argument to this function definition.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ForStmt::ForStmt(const ASTContext &amp;C, Stmt *Init, Expr *Cond, VarDecl *condVar,
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ForStmt::ForStmt(const ASTContext &amp;C, Stmt *Init, Expr *Cond, VarDecl *condVar,
                  Expr *Inc, Stmt *Body, SourceLocation FL, SourceLocation LP,
                  SourceLocation RP, bool is_four_statement)
 </code></pre></div></div>
 
-<p>If <code class="language-plaintext highlighter-rouge">ForStmt::ForStmt</code> sounds familiar, it’s used in the first code-gen file we modified, where the <code class="language-plaintext highlighter-rouge">for</code> loop counter is actually incremented. While we’re still editing <code class="language-plaintext highlighter-rouge">Stmt.c</code>, we need to add one more line. Around line 927, some variables for the function are assigned, we simply need to assign our function argument to a variable.</p>
+<p>If <code class="highlighter-rouge">ForStmt::ForStmt</code> sounds familiar, it’s used in the first code-gen file we modified, where the <code class="highlighter-rouge">for</code> loop counter is actually incremented. While we’re still editing <code class="highlighter-rouge">Stmt.c</code>, we need to add one more line. Around line 927, some variables for the function are assigned, we simply need to assign our function argument to a variable.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SubExprs[INC] = Inc;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SubExprs[INC] = Inc;
 SubExprs[BODY] = Body;
 ForStmtBits.ForLoc = FL;
 FourStatement = is_four_statement;
 </code></pre></div></div>
 
-<p>Now we head on over to the header file - <code class="language-plaintext highlighter-rouge">clang/include/clang/AST/Stmt.h</code>. We need to add our function argument in the public declaration on line 2460.</p>
+<p>Now we head on over to the header file - <code class="highlighter-rouge">clang/include/clang/AST/Stmt.h</code>. We need to add our function argument in the public declaration on line 2460.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ForStmt(const ASTContext &amp;C, Stmt *Init, Expr *Cond, VarDecl *condVar,
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ForStmt(const ASTContext &amp;C, Stmt *Init, Expr *Cond, VarDecl *condVar,
           Expr *Inc, Stmt *Body, SourceLocation FL, SourceLocation LP,
           SourceLocation RP, bool is_four_statement=false);
 </code></pre></div></div>
 
-<p>Now we, we can access functions in this header from the code-gen file we modified earlier to test the increment. So we just need to add a function to return the value of <code class="language-plaintext highlighter-rouge">FourStatement</code>. Right below <code class="language-plaintext highlighter-rouge">getInit</code>, we’ll add this:</p>
+<p>Now we, we can access functions in this header from the code-gen file we modified earlier to test the increment. So we just need to add a function to return the value of <code class="highlighter-rouge">FourStatement</code>. Right below <code class="highlighter-rouge">getInit</code>, we’ll add this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool isFourStatement() const { return FourStatement; }
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool isFourStatement() const { return FourStatement; }
 bool FourStatement = false;
 </code></pre></div></div>
 
-<p>We set the variable to false afterwards so that way the <code class="language-plaintext highlighter-rouge">for</code> loops aren’t always in increments of four.</p>
+<p>We set the variable to false afterwards so that way the <code class="highlighter-rouge">for</code> loops aren’t always in increments of four.</p>
 
-<p>Now we are through with that file and need to go back to <code class="language-plaintext highlighter-rouge">clang/lib/CodeGen/CGStmt.cpp</code>. Now we can change the block of code that increments the for loop to check if <code class="language-plaintext highlighter-rouge">FourStatement</code> is true, and if so we increment three more times. In the function arguments of <code class="language-plaintext highlighter-rouge">EmitForStmt</code>, we see the address of <code class="language-plaintext highlighter-rouge">ForStmt</code> is assigned to <code class="language-plaintext highlighter-rouge">S</code>. We can check our <code class="language-plaintext highlighter-rouge">four</code> loop boolean by simply checking <code class="language-plaintext highlighter-rouge">S.isFourStatement()</code>.</p>
+<p>Now we are through with that file and need to go back to <code class="highlighter-rouge">clang/lib/CodeGen/CGStmt.cpp</code>. Now we can change the block of code that increments the for loop to check if <code class="highlighter-rouge">FourStatement</code> is true, and if so we increment three more times. In the function arguments of <code class="highlighter-rouge">EmitForStmt</code>, we see the address of <code class="highlighter-rouge">ForStmt</code> is assigned to <code class="highlighter-rouge">S</code>. We can check our <code class="highlighter-rouge">four</code> loop boolean by simply checking <code class="highlighter-rouge">S.isFourStatement()</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (S.getInc()) {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (S.getInc()) {
     EmitBlock(Continue.getBlock());
     EmitStmt(S.getInc());
 
@@ -295,9 +295,9 @@ bool FourStatement = false;
     }
 </code></pre></div></div>
 
-<p>And we’re done! Now we need to go back to <code class="language-plaintext highlighter-rouge">llvm-project/build</code> and rebuild clang again with <code class="language-plaintext highlighter-rouge">make -j 8</code>. If no errors are found, we can now build a test program.</p>
+<p>And we’re done! Now we need to go back to <code class="highlighter-rouge">llvm-project/build</code> and rebuild clang again with <code class="highlighter-rouge">make -j 8</code>. If no errors are found, we can now build a test program.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//four_test.c
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//four_test.c
 int main() {
         printf("For Loop\n");
         for(int i = 0; i &lt; 13; i++) {
@@ -311,9 +311,9 @@ int main() {
 }
 </code></pre></div></div>
 
-<p>This should test if our <code class="language-plaintext highlighter-rouge">for</code> and <code class="language-plaintext highlighter-rouge">four</code> loops work. Now we build the program with the new clang that’s located in <code class="language-plaintext highlighter-rouge">llvm-project/build/bin</code> like so: <code class="language-plaintext highlighter-rouge">bin/clang four_test.c -o four_test</code>. Now run it and check the output!</p>
+<p>This should test if our <code class="highlighter-rouge">for</code> and <code class="highlighter-rouge">four</code> loops work. Now we build the program with the new clang that’s located in <code class="highlighter-rouge">llvm-project/build/bin</code> like so: <code class="highlighter-rouge">bin/clang four_test.c -o four_test</code>. Now run it and check the output!</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AJ@AJs-Macbook-Pro build % ./four_test 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AJ@AJs-Macbook-Pro build % ./four_test 
 For Loop
 0
 1
