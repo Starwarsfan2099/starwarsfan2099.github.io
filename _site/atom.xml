@@ -4,13 +4,73 @@
  <title></title>
  <link href="starwarsfan2099.github.io/atom.xml" rel="self"/>
  <link href="starwarsfan2099.github.io/"/>
- <updated>2020-10-20T12:31:51-04:00</updated>
+ <updated>2020-10-26T23:05:20-04:00</updated>
  <id>starwarsfan2099.github.io</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Magnet Weekly CTF 3 - Cargo Hold</title>
+   <link href="starwarsfan2099.github.io/magnet-cft-3/"/>
+   <updated>2020-10-26T00:00:00-04:00</updated>
+   <id>starwarsfan2099.github.io/magnet-cft-3</id>
+   <content type="html">&lt;p&gt;Another week, another Magnet Forensics weekly challenge. This time, the challenge is worth 40 points, includes a hint that costs 20 points, and only allows 4 attempts to answer the challenge.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This time, we are tasked with finding the an exit that the user passed. The exit apparently could have been taken for “&lt;em&gt;Cargo&lt;/em&gt;”. The meaning of &lt;em&gt;Cargo&lt;/em&gt; is not given. A town maybe? Hmmm. The first thing to do is get all the location data that we can from the Android image. When loading up Cellebrite, be sure to select &lt;code class=&quot;highlighter-rouge&quot;&gt;Carve locations&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Recover data from locations&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Examination tools&lt;/code&gt; window.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/location_settings.JPG&quot; alt=&quot;Settings&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When Cellebrite has finished parsing the file, we can see how many locations were found in the content tab. It found 2,350 location data points.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/locations_tab.JPG&quot; alt=&quot;Locations number&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clicking on this will take us to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Device Locations&lt;/code&gt; tab.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/locations_veiw.JPG&quot; alt=&quot;Locations tab&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My first thought was to search for cities or towns nearby the locations the phone visited. Unfortunately, there were none relatively close to the user’s location with the name “Cargo”. After looking over the Map, I noticed some of the images were taken at JFK International Airport in New York. Examining the location in Google Earth shows that there is a road named “Service Cargo Rd”. It is just off of Exit C on Interstate 678. This answer was attempted and was in fact wrong. Three attempts remaining.&lt;/p&gt;
+
+&lt;p&gt;If you’re following the #Magentweeklyctf hashtag on Twitter, you might have seen and glanced past a tweet from Jessica Hyde. In the Tweet, she said there was a free hint in a YouTube Cache-Up show.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/tweet.JPG&quot; alt=&quot;Tweet&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=LsJARwXDDR4&amp;amp;feature=youtu.be&quot;&gt;The video&lt;/a&gt; did have a hint. The freebie hint was given at 53:20 in the video. Jessica said that the methodology needed to be used was discussed in a talk from last month. The talk was titled “Android v. iOS” and with Jessica Hyde and Chris Vance. Googling for this, a webinar of the talk can be found &lt;a href=&quot;https://www.magnetforensics.com/resources/mobile-artifact-comparison-webinar-recording-oct-7/&quot;&gt;here&lt;/a&gt;. The page asks for an email address, then emails you a YouTube link. The talk goes over many different iOS and Android artifacts. The first relevant topic is location data. None of the techniques mentioned in this section were applicable though to our Android image. The next relevant section was on Picture files. On Android, Jessica discussed MVIMG files. These are similar to Apple iOS’s Live Photos. This section stood out for two reasons. Several of the pictures containing location data had this file format and several of these files were taken while moving or in view of road signs. Such as &lt;code class=&quot;highlighter-rouge&quot;&gt;MVIMG_20200305_145544.jpg&lt;/code&gt;, a picture of a truck driving by a road sign.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/truck.JPG&quot; alt=&quot;Truck&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Cellebrite shows the file extension of the files as MVIMG but parses them as JPG files, so it only shows a still image.&lt;/p&gt;
+
+&lt;p&gt;All of the MVIMG files were found in the Android filesystem and exported to a Linux machine. On Linux, the following terminal command was used to extract the MP4 video files from the MVIMG files.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for i in MVIMG*.jpg; do \
+  ofs=$(grep -F --byte-offset --only-matching --text ftypmp4 &quot;$i&quot;); \
+  ofs=${ofs%:*}; \
+  [[ $ofs ]] &amp;amp;&amp;amp; dd &quot;if=$i&quot; &quot;of=${i%.jpg}.mp4&quot; bs=$((ofs-4)) skip=1; \
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The command gives us the MP4s from each MVIMG file in the directory this is ran from. The first file to be examined was video pulled from the image of the truck. Unfortunately, the road signs could not seen in the video, and searching the location on Google Earth shows nothing named Cargo is nearby. &lt;code class=&quot;highlighter-rouge&quot;&gt;MVIMG_20200307_130326.jpg&lt;/code&gt; was examined next, it looked like a video taken from a bus. In the video, it quickly passes a road sign. It’s difficult, but if you pause and look at the sign, it does in fact say cargo!&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/sign.JPG&quot; alt=&quot;Cargo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The exit number is difficult to make out though. Cellebrite shows this photo was taken at an airport I had overlooked. &lt;em&gt;Olso Airport&lt;/em&gt; in Norway. The location data says the picture was taken here inside the airport:&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/map.JPG&quot; alt=&quot;Picture location&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The location must be slightly off. The video shows a large open space, a road sing with several places, and some strange metal bits in the background, maybe runway lights or something. Looking around on Google Earth, if we travel about a mile out the entry road to the airport, we can see those structures, a fence, and a large open felid. And street view shows the same sign with Cargo on it!&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/earth.JPG&quot; alt=&quot;Actual picture location&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Inputting the answer “E16” reveals it is correct and points are rewarded!&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/solved.JPG&quot; alt=&quot;Solved&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Magnet Weekly CTF 2 - PIP Install</title>
