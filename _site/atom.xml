@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title></title>
- <link href="starwarsfan2099.github.io/atom.xml" rel="self"/>
- <link href="starwarsfan2099.github.io/"/>
- <updated>2020-10-26T23:05:20-04:00</updated>
- <id>starwarsfan2099.github.io</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2020-10-31T12:10:14-04:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name></name>
    <email></email>
@@ -13,10 +13,47 @@
 
  
  <entry>
-   <title>Magnet Weekly CTF 3 - Cargo Hold</title>
-   <link href="starwarsfan2099.github.io/magnet-cft-3/"/>
+   <title>Magnet Weekly CTF 4 - Animals That Never Forget</title>
+   <link href="http://localhost:4000/magnet-cft-4/"/>
    <updated>2020-10-26T00:00:00-04:00</updated>
-   <id>starwarsfan2099.github.io/magnet-cft-3</id>
+   <id>http://localhost:4000/magnet-cft-4</id>
+   <content type="html">&lt;p&gt;After last week’s more difficult challenge, this week Magnet gives us a simpler challenge worth 25 points. This question only allows three answers to be attempted.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The question asks:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Chester likes to be organized with his busy schedule. Global Unique Identifiers change often, just like his schedule but sometimes Chester enjoys phishing. What was the original GUID for his phishing expedition?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hmm. My plan of attack was to find some possible date’s of the phishing attack and then look for references to those dates in the image. Searching for “&lt;em&gt;phishing&lt;/em&gt;” does not yield any results in the image. Going through Chester’s chats however reveals that he was indeed planning on some phishing. On March 3rd, 2020, Chester sent a message to Alan Brunswick via a twitter conversation stating “&lt;em&gt;we phish him&lt;/em&gt;”.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/phish.JPG&quot; alt=&quot;Twitter message&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The following day, Chester states that he has a rough draft they should use to phish their intended target.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/draft.JPG&quot; alt=&quot;Twitter draft&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, if Chester came up with the idea to phish and made a draft in those two days, it’s possible he wrote the plan down, made a note, or added an event somewhere for the phishing expedition. And it could have a GUID. Looking at the &lt;code class=&quot;highlighter-rouge&quot;&gt;Application Usage Logs&lt;/code&gt; section in Cellebrite for March 23rd and 24th,  &lt;code class=&quot;highlighter-rouge&quot;&gt;com.evernote&lt;/code&gt; was used a lot and sticks out. Evernote is a note taking app and could have been used to maybe create the phishing draft or write down some dates. We can go to &lt;code class=&quot;highlighter-rouge&quot;&gt;Installed Applications&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;com.evernote&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run SQLite Wizard&lt;/code&gt; and look at the apps data. You will be greeted with several different databases. There are several database tables but the most promising one appears to be Evernote’s user database: &lt;code class=&quot;highlighter-rouge&quot;&gt;user213777210-1585004951163-Evernote.db&lt;/code&gt;. Sure enough, this database has a notes table with an entry that has a title of “&lt;em&gt;Phishy Phish phish&lt;/em&gt;”. It also has a GUID value of &lt;code class=&quot;highlighter-rouge&quot;&gt;c80ab339-7bec-4b33-8537-4f5a5bd3dd25&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/tables_notes.JPG&quot; alt=&quot;Note in evernote db&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we look closely at the question though, it wants the &lt;strong&gt;original&lt;/strong&gt; GUID of the note. Looking through the database some more reveals there is a table called &lt;code class=&quot;highlighter-rouge&quot;&gt;guid_updates&lt;/code&gt; with out GUID and and &lt;code class=&quot;highlighter-rouge&quot;&gt;old_guid&lt;/code&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;7605cc68-8ef3-4274-b6c2-4a9d26acabf1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/tables_old_guid.JPG&quot; alt=&quot;Old GUID&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Inputting &lt;code class=&quot;highlighter-rouge&quot;&gt;7605cc68-8ef3-4274-b6c2-4a9d26acabf1&lt;/code&gt; into the solution box reveals that is indeed the correct answer. Week 4 completed!&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/solved.JPG&quot; alt=&quot;Old GUID&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Magnet Weekly CTF 3 - Cargo Hold</title>
+   <link href="http://localhost:4000/magnet-cft-3/"/>
+   <updated>2020-10-26T00:00:00-04:00</updated>
+   <id>http://localhost:4000/magnet-cft-3</id>
    <content type="html">&lt;p&gt;Another week, another Magnet Forensics weekly challenge. This time, the challenge is worth 40 points, includes a hint that costs 20 points, and only allows 4 attempts to answer the challenge.&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-22/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
@@ -74,9 +111,9 @@ done
  
  <entry>
    <title>Magnet Weekly CTF 2 - PIP Install</title>
-   <link href="starwarsfan2099.github.io/magnet-cft-2/"/>
+   <link href="http://localhost:4000/magnet-cft-2/"/>
    <updated>2020-10-20T00:00:00-04:00</updated>
-   <id>starwarsfan2099.github.io/magnet-cft-2</id>
+   <id>http://localhost:4000/magnet-cft-2</id>
    <content type="html">&lt;p&gt;Monday of last week, Magnet released the 2nd challenge for their weekly CTF. This weeks challenge is worth 30 points.&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-16/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
@@ -103,9 +140,9 @@ done
  
  <entry>
    <title>Magnet Weekly CTF 1 - Mapping the Digits</title>
-   <link href="starwarsfan2099.github.io/magnet-cft-1/"/>
+   <link href="http://localhost:4000/magnet-cft-1/"/>
    <updated>2020-10-13T00:00:00-04:00</updated>
-   <id>starwarsfan2099.github.io/magnet-cft-1</id>
+   <id>http://localhost:4000/magnet-cft-1</id>
    <content type="html">&lt;p&gt;Magnet Forensics recently announced on their &lt;a href=&quot;https://www.magnetforensics.com/blog/magnet-weekly-ctf-challenge/&quot;&gt;blog&lt;/a&gt; that they are beginning a weekly CTF challenge. The first question for the challenge went live on October 5th. The blog says that the questions revolve around an Android image that can be found &lt;a href=&quot;https://drive.google.com/file/d/1tVTppe4-3Hykug7NrOJrBJT4OXuNOiDO/view?usp=sharing&quot;&gt;here&lt;/a&gt;. A new challenge will be released each Monday morning on the CTF’s &lt;a href=&quot;https://magnetweeklyctf.ctfd.io/&quot;&gt;main website&lt;/a&gt;. A week after each challenge is released, it will be closed and blog posts can be made. Points will be awarded based on solving the challenge, creating custom Magnet Artifact and posting it on their Artifact Exchange, and posting a link to your blog post with #MagnetWeeklyCTF. The first challenge is titled &lt;em&gt;“Challenge 1 (OCT 5-11) - Mapping the Digits”&lt;/em&gt; and is worth 20 points. The question for the challenge reads &lt;em&gt;“What time was the file that maps names to IP’s recently accessed? (Please answer in this format in UTC: mm/dd/yyyy HH:MM:SS)”&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-13/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
@@ -132,9 +169,9 @@ done
  
  <entry>
    <title>Wurlitzer 1100 Juke Box Repair</title>
-   <link href="starwarsfan2099.github.io/juke-box-repair/"/>
+   <link href="http://localhost:4000/juke-box-repair/"/>
    <updated>2020-10-10T00:00:00-04:00</updated>
-   <id>starwarsfan2099.github.io/juke-box-repair</id>
+   <id>http://localhost:4000/juke-box-repair</id>
    <content type="html">&lt;h2 id=&quot;wurlitzer-1100-jukebox&quot;&gt;Wurlitzer 1100 Jukebox&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-10/main_photo.JPG&quot; alt=&quot;Main Photo&quot; /&gt;&lt;/p&gt;
@@ -231,9 +268,9 @@ Tube amplifier.&lt;/p&gt;
  
  <entry>
    <title>Adding a "Four" loop to Clang Compiler</title>
-   <link href="starwarsfan2099.github.io/clang-four-loop/"/>
+   <link href="http://localhost:4000/clang-four-loop/"/>
    <updated>2020-08-04T00:00:00-04:00</updated>
-   <id>starwarsfan2099.github.io/clang-four-loop</id>
+   <id>http://localhost:4000/clang-four-loop</id>
    <content type="html">&lt;p&gt;What if a person was writing a C program and typoed their &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop. In C, a &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop is written like &lt;code class=&quot;highlighter-rouge&quot;&gt;for( int i = 0; i &amp;lt; 12; i++) {...&lt;/code&gt;. What if they mistyped and instead wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;four( int i = 0; i &amp;lt; 12; i++) {...&lt;/code&gt;? Well, if using llvm-clang, it will error out and fail to compile, understandable and expected. But that’s no fun. What if instead, it compiled fine and instead of looping over each iteration, it looped every four iterations because it’s a “four” loop?? That would be cool. Lets implement it into clang for fun and learning!&lt;/p&gt;
 
 &lt;p&gt;First, we need to download and make sure we can build clang. The llvm project with &lt;code class=&quot;highlighter-rouge&quot;&gt;llvm-clang&lt;/code&gt; can be found &lt;a href=&quot;https://github.com/llvm/llvm-project&quot;&gt;here on Github&lt;/a&gt;. First, clone the repository and associated dependencies with git.&lt;/p&gt;
@@ -468,9 +505,9 @@ Four Loop
  
  <entry>
    <title>Python Roman Numeral Code Golf</title>
-   <link href="starwarsfan2099.github.io/python-code-golf/"/>
+   <link href="http://localhost:4000/python-code-golf/"/>
    <updated>2020-08-03T00:00:00-04:00</updated>
-   <id>starwarsfan2099.github.io/python-code-golf</id>
+   <id>http://localhost:4000/python-code-golf</id>
    <content type="html">&lt;p&gt;A while back, a friend challenged me to a Python code golf. For those who don’t know, &lt;a href=&quot;https://www.wikiwand.com/en/Code_golf&quot;&gt;code golfing&lt;/a&gt; is a competition to see who can achieve a goal with the shortest amount of source code. My friend challenged me to write two Python functions. One function takes a number and returns its roman numeral equivalent as a string. The second function takes a roman numeral string as an argument and returns its numerical equivalent. A number of test cases were also given:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cases = {
@@ -685,9 +722,9 @@ def s1(n): # 151 Bytes
  
  <entry>
    <title>Marchant "Silent Speed" Mechanical Calculator Repair and Operation.</title>
-   <link href="starwarsfan2099.github.io/marchant-calculator/"/>
+   <link href="http://localhost:4000/marchant-calculator/"/>
    <updated>2020-05-26T00:00:00-04:00</updated>
-   <id>starwarsfan2099.github.io/marchant-calculator</id>
+   <id>http://localhost:4000/marchant-calculator</id>
    <content type="html">&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
 &lt;p&gt;I was able to acquire a Marchant ACR8M “Silent Speed” mechanical calculator bought off of Ebay. This is the calculator after some light cleaning and repair.&lt;/p&gt;
@@ -861,9 +898,9 @@ def s1(n): # 151 Bytes
  
  <entry>
    <title>Decrypting DJI Spark Drone Log Files</title>
-   <link href="starwarsfan2099.github.io/dji-spark-log-decryption/"/>
+   <link href="http://localhost:4000/dji-spark-log-decryption/"/>
    <updated>2020-01-25T00:00:00-05:00</updated>
-   <id>starwarsfan2099.github.io/dji-spark-log-decryption</id>
+   <id>http://localhost:4000/dji-spark-log-decryption</id>
    <content type="html">&lt;p&gt;DJI Spark drones come with a companion application used to transfer files between the drone and the computer. Some mysterious log files can be transferred using application. However, they appear to be encrypted for some reason. transferred DJI Spark Drone’s log files look something like this after being transferred to a computer.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-25/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
@@ -975,9 +1012,9 @@ key in that same function. Or simply searching for the following bytes will prod
  
  <entry>
    <title>Analyzing MacOS Malware that Executes a Payload in Memory</title>
-   <link href="starwarsfan2099.github.io/mac-malware/"/>
+   <link href="http://localhost:4000/mac-malware/"/>
    <updated>2020-01-22T00:00:00-05:00</updated>
-   <id>starwarsfan2099.github.io/mac-malware</id>
+   <id>http://localhost:4000/mac-malware</id>
    <content type="html">&lt;p&gt;This post was inspired by Dinesh Devadoss’s &lt;a href=&quot;https://twitter.com/dineshdina04/status/1201834142704394242?s=20&quot;&gt;post on twitter&lt;/a&gt; about a piece of MacOS malware from the Lazarus group that loads a Mach-O into memory and executes it.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-1-22/Pic_1.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
