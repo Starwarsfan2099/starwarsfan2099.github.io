@@ -4,7 +4,7 @@
  <title></title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-10-31T12:10:14-04:00</updated>
+ <updated>2020-11-02T13:24:34-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name></name>
@@ -15,11 +15,11 @@
  <entry>
    <title>Magnet Weekly CTF 4 - Animals That Never Forget</title>
    <link href="http://localhost:4000/magnet-cft-4/"/>
-   <updated>2020-10-26T00:00:00-04:00</updated>
+   <updated>2020-11-02T00:00:00-05:00</updated>
    <id>http://localhost:4000/magnet-cft-4</id>
    <content type="html">&lt;p&gt;After last week’s more difficult challenge, this week Magnet gives us a simpler challenge worth 25 points. This question only allows three answers to be attempted.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-2/question.JPG&quot; alt=&quot;Challenge question&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The question asks:&lt;/p&gt;
 
@@ -29,23 +29,192 @@
 
 &lt;p&gt;Hmm. My plan of attack was to find some possible date’s of the phishing attack and then look for references to those dates in the image. Searching for “&lt;em&gt;phishing&lt;/em&gt;” does not yield any results in the image. Going through Chester’s chats however reveals that he was indeed planning on some phishing. On March 3rd, 2020, Chester sent a message to Alan Brunswick via a twitter conversation stating “&lt;em&gt;we phish him&lt;/em&gt;”.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/phish.JPG&quot; alt=&quot;Twitter message&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-2/phish.JPG&quot; alt=&quot;Twitter message&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The following day, Chester states that he has a rough draft they should use to phish their intended target.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/draft.JPG&quot; alt=&quot;Twitter draft&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-2/draft.JPG&quot; alt=&quot;Twitter draft&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So, if Chester came up with the idea to phish and made a draft in those two days, it’s possible he wrote the plan down, made a note, or added an event somewhere for the phishing expedition. And it could have a GUID. Looking at the &lt;code class=&quot;highlighter-rouge&quot;&gt;Application Usage Logs&lt;/code&gt; section in Cellebrite for March 23rd and 24th,  &lt;code class=&quot;highlighter-rouge&quot;&gt;com.evernote&lt;/code&gt; was used a lot and sticks out. Evernote is a note taking app and could have been used to maybe create the phishing draft or write down some dates. We can go to &lt;code class=&quot;highlighter-rouge&quot;&gt;Installed Applications&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;com.evernote&lt;/code&gt; &amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Run SQLite Wizard&lt;/code&gt; and look at the apps data. You will be greeted with several different databases. There are several database tables but the most promising one appears to be Evernote’s user database: &lt;code class=&quot;highlighter-rouge&quot;&gt;user213777210-1585004951163-Evernote.db&lt;/code&gt;. Sure enough, this database has a notes table with an entry that has a title of “&lt;em&gt;Phishy Phish phish&lt;/em&gt;”. It also has a GUID value of &lt;code class=&quot;highlighter-rouge&quot;&gt;c80ab339-7bec-4b33-8537-4f5a5bd3dd25&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/tables_notes.JPG&quot; alt=&quot;Note in evernote db&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-2/tables_notes.JPG&quot; alt=&quot;Note in evernote db&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If we look closely at the question though, it wants the &lt;strong&gt;original&lt;/strong&gt; GUID of the note. Looking through the database some more reveals there is a table called &lt;code class=&quot;highlighter-rouge&quot;&gt;guid_updates&lt;/code&gt; with out GUID and and &lt;code class=&quot;highlighter-rouge&quot;&gt;old_guid&lt;/code&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;7605cc68-8ef3-4274-b6c2-4a9d26acabf1&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/tables_old_guid.JPG&quot; alt=&quot;Old GUID&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-2/tables_old_guid.JPG&quot; alt=&quot;Old GUID&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Inputting &lt;code class=&quot;highlighter-rouge&quot;&gt;7605cc68-8ef3-4274-b6c2-4a9d26acabf1&lt;/code&gt; into the solution box reveals that is indeed the correct answer. Week 4 completed!&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;../public/2020-11-2/solved.JPG&quot; alt=&quot;Old GUID&quot; /&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-2/solved.JPG&quot; alt=&quot;Old GUID&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cellebrite Fall 2020 CTF - Part 1 - Tony Mederos</title>
+   <link href="http://localhost:4000/cellebirte-ctf-tony/"/>
+   <updated>2020-11-02T00:00:00-05:00</updated>
+   <id>http://localhost:4000/cellebirte-ctf-tony</id>
+   <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;On October 18th, 2020, Cellebrite announced on &lt;a href=&quot;https://www.cellebrite.com/en/blog/join-the-first-cellebrite-capture-the-flag-ctf-event/&quot;&gt;their blog&lt;/a&gt; that they were hosting their own capture the flag event. The event began on the October 26th and ended at midnight on the 29th. The CTF was hosted on &lt;a href=&quot;https://cellebrite.ctfd.io/&quot;&gt;cellebrite.ctfd.io&lt;/a&gt;. Four forensic phone images were provided for analysis and solving the event’s challenges. The images could be downloaded from the following links.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.001&quot;&gt;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.001&lt;/a&gt;
+&lt;a href=&quot;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.002&quot;&gt;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.002&lt;/a&gt;
+&lt;a href=&quot;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Ruth_Langmore.7z&quot;&gt;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Ruth_Langmore.7z&lt;/a&gt;
+&lt;a href=&quot;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_A10e_Tony_Mederos.7z&quot;&gt;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_A10e_Tony_Mederos.7z&lt;/a&gt;
+&lt;a href=&quot;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_S8_Rene_Gade.7z&quot;&gt;https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_S8_Rene_Gade.7z&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Images were password protected. An email had to be sent to the Cellebrite CTF team to get the password to the images. to The images provided were two iPhone X images, a Samsung Galaxy A10e, and a Samsung Galaxy S8. Questions were of three varying difficulties with different points rewarded.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Level 1 – 10 points each&lt;/li&gt;
+  &lt;li&gt;Level 2 – 20 points each&lt;/li&gt;
+  &lt;li&gt;Level 3 – 50 or 100 points each&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hints were given for certain questions but also cost a certain number of points to view. A trial copy of Cellebrite Physical Analyzer was provided for two weeks to use for the competition. Again, the Cellebrite CTF team had to be emailed for a license. The trial version of Physical Analyzer lasts for two weeks.&lt;/p&gt;
+
+&lt;h2 id=&quot;tony-mederos-galaxy-a10e&quot;&gt;Tony Mederos Galaxy A10e&lt;/h2&gt;
+
+&lt;h3 id=&quot;extraction-type--10pts&quot;&gt;Extraction Type – 10pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What type of extraction is this? (Acronym or Full Wording)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This question appears simple but actually took a few tries to answer properly. Cellebrite appears to list the extraction type right on the &lt;code class=&quot;highlighter-rouge&quot;&gt;Extraction Summary&lt;/code&gt; page.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_1.JPG&quot; alt=&quot;Extraction type&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;However, &lt;code class=&quot;highlighter-rouge&quot;&gt;File System&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;File System [ Android ADB ]&lt;/code&gt; are not accepted answers. The correct accepted answer is &lt;code class=&quot;highlighter-rouge&quot;&gt;Full File System&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;operating-system--10pts&quot;&gt;Operating System – 10pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What Android Version is this device running? (enter just numerical value)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The OS version can also be seen right in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Extraction Summary&lt;/code&gt; tab.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_2.JPG&quot; alt=&quot;Android OS version&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The source of this information is the &lt;code class=&quot;highlighter-rouge&quot;&gt;build.prop&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_3.JPG&quot; alt=&quot;Android OS version source&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The solution is &lt;code class=&quot;highlighter-rouge&quot;&gt;10&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;crypto--10pts&quot;&gt;Crypto – 10pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What is the name of the Crypto Currency application?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Simply look under the &lt;code class=&quot;highlighter-rouge&quot;&gt;Installed Applications&lt;/code&gt; tab then &lt;code class=&quot;highlighter-rouge&quot;&gt;Cryptocurrency&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_5.JPG&quot; alt=&quot;Crypto app&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.mycelium.wallet&lt;/code&gt; is installed, with the app name being &lt;code class=&quot;highlighter-rouge&quot;&gt;Mycelium&lt;/code&gt; and the solution to this question.&lt;/p&gt;
+
+&lt;h3 id=&quot;security-patch--20pts&quot;&gt;Security Patch – 20pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What Security Patch Level does this device have? (Date Format: MM-DD-YYYY for example: 12-30-2025)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The security patch is also found further down in the &lt;code class=&quot;highlighter-rouge&quot;&gt;build.prop&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_4.JPG&quot; alt=&quot;Android security patch&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Converting this to the answer format, we get &lt;code class=&quot;highlighter-rouge&quot;&gt;05-01-2020&lt;/code&gt; as the solution.&lt;/p&gt;
+
+&lt;h3 id=&quot;location-location-location--20pts&quot;&gt;Location Location Location – 20pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Was Tony looking for any houses, if so, in what city?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hmm. Tony probably tried looking up houses for sale online. Lets check that. Going to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Web History&lt;/code&gt; tab and searching for “house” shows Tony visited &lt;a href=&quot;https://www.realtor.ca/&quot;&gt;https://www.realtor.ca/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_6.JPG&quot; alt=&quot;House search&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Searching for “realtor” shows us a list of all the pages on the website he visited.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_7.JPG&quot; alt=&quot;Realtor search&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These links are viewable in a browser through copying or Control-Clicking on the link in the tab on the right. Several of these links contain specific information Tony was looking for. Viewing them in the browser shows the exact page Tony was looking at.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_8.JPG&quot; alt=&quot;Houses&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This shows that Tony was looking for houses in &lt;em&gt;Vancouver&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;job-search--20pts&quot;&gt;Job Search – 20pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What possible new jobs was Tony looking at?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Again, starting with Tony’s browsing history, we can see one of the nine phrases Tony searched is “&lt;em&gt;how much does an oil tanker captain make&lt;/em&gt;”, found under the &lt;code class=&quot;highlighter-rouge&quot;&gt;Searched Items&lt;/code&gt; tab.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_9.JPG&quot; alt=&quot;Houses&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Searching for “&lt;em&gt;captain&lt;/em&gt;” in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Web History&lt;/code&gt; tab also shows a website he looked at after this Google search.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_10.JPG&quot; alt=&quot;History&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The solution to this challenge is the job he Googled about, a “&lt;em&gt;ship captain&lt;/em&gt;”.&lt;/p&gt;
+
+&lt;h3 id=&quot;wallet-id--20pts&quot;&gt;Wallet ID – 20pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What’s the Crypto Wallet ID?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Searching the entire image for “&lt;em&gt;wallet&lt;/em&gt;” yields several results, including one in the user’s messages with Rene. You can find a wallet ID by simply going up a few messages in the conversation to get some context.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_11.JPG&quot; alt=&quot;Wallet ID&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The solution is &lt;code class=&quot;highlighter-rouge&quot;&gt;33wnUqRbPT49Z6c7Mkc3PojBHAJEZuacao&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;name--20pts&quot;&gt;Name – 20pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What is Scurvy’s real name? (Given name only)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Searching the entire image for “&lt;em&gt;scurvy&lt;/em&gt;” gives a lot of results. The Android contacts database doesn’t list a full name for Mr. Scurvy. The social media results are interesting though. There are several Facebook comments from a “Paul Scurvy”.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_12.JPG&quot; alt=&quot;Scurvy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Entering “&lt;em&gt;Paul Scurvy&lt;/em&gt;” shows us this is the correct answer.&lt;/p&gt;
+
+&lt;h3 id=&quot;auto-join-wifi--50pts&quot;&gt;Auto Join WiFi – 50pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Was Auto Join enabled on CSIS?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Selecting the &lt;code class=&quot;highlighter-rouge&quot;&gt;Wireless Networks&lt;/code&gt; tab from the summary page, we can see the information about the &lt;code class=&quot;highlighter-rouge&quot;&gt;CSIS&lt;/code&gt; access point.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_13.JPG&quot; alt=&quot;Access point&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Going to the XML source file and searching for “&lt;em&gt;auto&lt;/em&gt;” reveals the presence of an attribute titled &lt;code class=&quot;highlighter-rouge&quot;&gt;AutoReconnect&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_14.JPG&quot; alt=&quot;AutoReconnect&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The value is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;. So, &lt;strong&gt;Yes&lt;/strong&gt;, auto join was enabled.&lt;/p&gt;
+
+&lt;h3 id=&quot;wifi-password--100pts&quot;&gt;WiFi Password – 100pts&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What was the password for the Network of CSIS Mesh?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The plaintext WiFi password is not stored in the XML file found above. Other searches for &lt;code class=&quot;highlighter-rouge&quot;&gt;CSIS Mesh&lt;/code&gt; did not yield anything of worth. The XML file is found at &lt;code class=&quot;highlighter-rouge&quot;&gt;/data/misc/wifi/WifiConfigStore.xml&lt;/code&gt;. There are several other directories in &lt;code class=&quot;highlighter-rouge&quot;&gt;/data/misc&lt;/code&gt; that pertain to WiFi information. In &lt;code class=&quot;highlighter-rouge&quot;&gt;/data/misc/wifi_share_profile/backup.conf&lt;/code&gt;, the plaintext password can be seen in the file.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-11-02/tony_15.JPG&quot; alt=&quot;WiFi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The password to the network is &lt;code class=&quot;highlighter-rouge&quot;&gt;abcdef1234&lt;/code&gt;.&lt;/p&gt;
 </content>
  </entry>
  
@@ -176,9 +345,9 @@ done
 
 &lt;p&gt;&lt;img src=&quot;https://starwarsfan2099.github.io/public/2020-10-10/main_photo.JPG&quot; alt=&quot;Main Photo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The Wurlitzer 1100 Jukebox was made in 1947-1949. The jukebox came out following their extremely popular 1015 model, the “Bubbler” jukebox and was the first jukebox too be produced after World War II. The 1100’s ‘Cobra’ record pickup can store 24 records, played at 78-RPM. It boasts a rather large 15 inch speaker, a rotating song selector, multi-colored rotating lights below the selector, and a large plastic dome for better viewing the record picking mechanism.&lt;/p&gt;
+&lt;p&gt;The Wurlitzer 1100 Jukebox was made from 1947-1949. The jukebox came out following their extremely popular 1015 model, the “Bubbler” jukebox, and was the first jukebox too be produced after World War II. The 1100’s ‘Cobra’ record pickup can store 24 records, played at 78-RPM. It boasts a rather large 15 inch speaker, a rotating song selector, multi-colored rotating lights below the selector, and a large plastic dome for better viewing the record picking mechanism.&lt;/p&gt;
 
-&lt;p&gt;On this specific jukebox, the record picking mechanism, lights, and sound needed work. Lets see what it takes to get it working.&lt;/p&gt;
+&lt;p&gt;On this specific jukebox, the record picking mechanism, lights, and sound needed work. Let’s see what it takes to get it working.&lt;/p&gt;
 
 &lt;h2 id=&quot;opening-the-box&quot;&gt;Opening the Box&lt;/h2&gt;
 

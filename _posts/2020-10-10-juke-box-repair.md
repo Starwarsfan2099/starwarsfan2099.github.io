@@ -8,9 +8,9 @@ excerpt: Some pictures and information about repairing a 1948 Wurlitzer model 11
 
 ![Main Photo](https://starwarsfan2099.github.io/public/2020-10-10/main_photo.JPG)
 
-The Wurlitzer 1100 Jukebox was made in 1947-1949. The jukebox came out following their extremely popular 1015 model, the "Bubbler" jukebox and was the first jukebox too be produced after World War II. The 1100's 'Cobra' record pickup can store 24 records, played at 78-RPM. It boasts a rather large 15 inch speaker, a rotating song selector, multi-colored rotating lights below the selector, and a large plastic dome for better viewing the record picking mechanism. 
+The Wurlitzer 1100 Jukebox was made from 1947-1949. The jukebox came out following their extremely popular 1015 model, the "Bubbler" jukebox, and was the first jukebox too be produced after World War II. The 1100's 'Cobra' record pickup can store 24 records, played at 78-RPM. It boasts a rather large 15 inch speaker, a rotating song selector, multi-colored rotating lights below the selector, and a large plastic dome for better viewing the record picking mechanism. 
 
-On this specific jukebox, the record picking mechanism, lights, and sound needed work. Lets see what it takes to get it working. 
+On this specific jukebox, the record picking mechanism, lights, and sound needed work. Let's see what it takes to get it working. 
 
 ## Opening the Box
 
