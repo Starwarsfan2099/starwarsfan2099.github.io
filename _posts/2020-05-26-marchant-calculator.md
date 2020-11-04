@@ -2,7 +2,7 @@
 layout: post
 title: Marchant "Silent Speed" Mechanical Calculator Repair and Operation.
 excerpt: 1942 Marchant ACR8M mechanical calculator repair, teardown, functions, and basic operation.
-
+tags: restoration antique mechanical-calculator
 ---
 
 ## Overview 

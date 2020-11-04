@@ -2,6 +2,7 @@
 layout: post
 title: Adding a "Four" loop to Clang Compiler 
 excerpt: Adding a "Four" loop to the clang compiler for fun and because, well, why not?
+tags: programming fun
 ---
 
 What if a person was writing a C program and typoed their `for` loop. In C, a `for` loop is written like `for( int i = 0; i < 12; i++) {...`. What if they mistyped and instead wrote `four( int i = 0; i < 12; i++) {...`? Well, if using llvm-clang, it will error out and fail to compile, understandable and expected. But that's no fun. What if instead, it compiled fine and instead of looping over each iteration, it looped every four iterations because it's a "four" loop?? That would be cool. Lets implement it into clang for fun and learning!
