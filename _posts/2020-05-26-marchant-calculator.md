@@ -9,7 +9,7 @@ author: rms
 
 I was able to acquire a Marchant ACR8M "Silent Speed" mechanical calculator bought off of Ebay. This is the calculator after some light cleaning and repair.
 
-![Front view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5599_2.JPG){:.shadow}
+![Front view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5599_2.jpg){:.shadow}
 
 The calculator includes its serial number and patent information on the bottom of the machine. 
 
@@ -27,7 +27,7 @@ The model number is listed for this machine as `ACR8M-161734`. Serial numbers 16
 
 ![Left view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5609.JPG){:.shadow}
 
-![Register view](https://starwarsfan2099.github.io/public/2020-5-26/register.PNG)
+![Register view](https://starwarsfan2099.github.io/public/2020-5-26/register.PNG){:.shadow}
 
 The carriage contains a 9 digit counter register and a 16 digit accumulator register. Both registers carry automatically. There multiple sliders for keeping track of decimals on both registers. An arrow shows above the current counter position (over the 8th digit in the picture). To the left of the counter register are 6 tab setting buttons labeled 1 - 8. The tab buttons, when pressed, cause the carriage to stop at a certain position after an operation or tab return.  
 
