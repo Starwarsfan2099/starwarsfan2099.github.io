@@ -1,4 +1,4 @@
-I"<p>After last week’s more difficult challenge, this week Magnet gives us a simpler challenge worth 25 points. This question only allows three answers to be attempted.</p>
+I"�<p>After last week’s more difficult challenge, this week Magnet gives us a simpler challenge worth 25 points. This question only allows three answers to be attempted.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-2/question.JPG" alt="Challenge question" /></p>
 
@@ -16,15 +16,15 @@
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-2/draft.JPG" alt="Twitter draft" /></p>
 
-<p>So, if Chester came up with the idea to phish and made a draft in those two days, it’s possible he wrote the plan down, made a note, or added an event somewhere for the phishing expedition. And it could have a GUID. Looking at the <code class="highlighter-rouge">Application Usage Logs</code> section in Cellebrite for March 23rd and 24th,  <code class="highlighter-rouge">com.evernote</code> was used a lot and sticks out. Evernote is a note taking app and could have been used to maybe create the phishing draft or write down some dates. We can go to <code class="highlighter-rouge">Installed Applications</code> &gt; <code class="highlighter-rouge">com.evernote</code> &gt; <code class="highlighter-rouge">Run SQLite Wizard</code> and look at the apps data. You will be greeted with several different databases. There are several database tables but the most promising one appears to be Evernote’s user database: <code class="highlighter-rouge">user213777210-1585004951163-Evernote.db</code>. Sure enough, this database has a notes table with an entry that has a title of “<em>Phishy Phish phish</em>”. It also has a GUID value of <code class="highlighter-rouge">c80ab339-7bec-4b33-8537-4f5a5bd3dd25</code>.</p>
+<p>So, if Chester came up with the idea to phish and made a draft in those two days, it’s possible he wrote the plan down, made a note, or added an event somewhere for the phishing expedition. And it could have a GUID. Looking at the <code class="language-plaintext highlighter-rouge">Application Usage Logs</code> section in Cellebrite for March 23rd and 24th,  <code class="language-plaintext highlighter-rouge">com.evernote</code> was used a lot and sticks out. Evernote is a note taking app and could have been used to maybe create the phishing draft or write down some dates. We can go to <code class="language-plaintext highlighter-rouge">Installed Applications</code> &gt; <code class="language-plaintext highlighter-rouge">com.evernote</code> &gt; <code class="language-plaintext highlighter-rouge">Run SQLite Wizard</code> and look at the apps data. You will be greeted with several different databases. There are several database tables but the most promising one appears to be Evernote’s user database: <code class="language-plaintext highlighter-rouge">user213777210-1585004951163-Evernote.db</code>. Sure enough, this database has a notes table with an entry that has a title of “<em>Phishy Phish phish</em>”. It also has a GUID value of <code class="language-plaintext highlighter-rouge">c80ab339-7bec-4b33-8537-4f5a5bd3dd25</code>.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-2/tables_notes.JPG" alt="Note in evernote db" /></p>
 
-<p>If we look closely at the question though, it wants the <strong>original</strong> GUID of the note. Looking through the database some more reveals there is a table called <code class="highlighter-rouge">guid_updates</code> with out GUID and and <code class="highlighter-rouge">old_guid</code> of <code class="highlighter-rouge">7605cc68-8ef3-4274-b6c2-4a9d26acabf1</code>.</p>
+<p>If we look closely at the question though, it wants the <strong>original</strong> GUID of the note. Looking through the database some more reveals there is a table called <code class="language-plaintext highlighter-rouge">guid_updates</code> with out GUID and and <code class="language-plaintext highlighter-rouge">old_guid</code> of <code class="language-plaintext highlighter-rouge">7605cc68-8ef3-4274-b6c2-4a9d26acabf1</code>.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-2/tables_old_guid.JPG" alt="Old GUID" /></p>
 
-<p>Inputting <code class="highlighter-rouge">7605cc68-8ef3-4274-b6c2-4a9d26acabf1</code> into the solution box reveals that is indeed the correct answer. Week 4 completed!</p>
+<p>Inputting <code class="language-plaintext highlighter-rouge">7605cc68-8ef3-4274-b6c2-4a9d26acabf1</code> into the solution box reveals that is indeed the correct answer. Week 4 completed!</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-2/solved.JPG" alt="Old GUID" /></p>
 :ET

@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Marchant "Silent Speed" Mechanical Calculator Repair and Operation.
 excerpt: 1942 Marchant ACR8M mechanical calculator repair, teardown, functions, and basic operation.
 tags: restoration antique mechanical-calculator
+author: rms
 ---
 
 ## Overview 
@@ -117,11 +117,15 @@ Occasional register sticking was occurring, so it's a good practice to regularly
 
 ## Division Video
 
-A video showing multiple angles of the machine performing division with the outer panels removed can be found [here on my YouTube channel](https://youtu.be/oJXJmg73SL4).
+A video showing multiple angles of the machine performing division with the outer panels removed can be found on my YouTube channel.
+
+<div>{%- include extensions/youtube.html id='oJXJmg73SL4' -%}</div>
 
 ## Division Slow Motion Video
 
-Also, a slow motion video showing multiple angles of the machine performing division with the outer panels removed can be found [on my YouTube channel as well](https://www.youtube.com/watch?v=PnmSc-vCM5Q).
+Also, a slow motion video showing multiple angles of the machine performing division with the outer panels removed can be found on my YouTube channel as well.
+
+<div>{%- include extensions/youtube.html id='PnmSc-vCM5Q' -%}</div>
 
 ## More Pictures
 

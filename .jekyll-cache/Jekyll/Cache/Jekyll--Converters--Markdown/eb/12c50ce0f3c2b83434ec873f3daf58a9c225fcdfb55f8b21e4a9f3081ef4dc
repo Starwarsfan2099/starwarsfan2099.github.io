@@ -1,4 +1,4 @@
-I"d'<h2 id="introduction">Introduction</h2>
+I"R)<h2 id="introduction">Introduction</h2>
 
 <p>On October 18th, 2020, Cellebrite announced on <a href="https://www.cellebrite.com/en/blog/join-the-first-cellebrite-capture-the-flag-ctf-event/">their blog</a> that they were hosting their own capture the flag event. The event began on the October 26th and ended at midnight on the 29th. The CTF was hosted on <a href="https://cellebrite.ctfd.io/">cellebrite.ctfd.io</a>. Four forensic phone images were provided for analysis and solving the event’s challenges. The images could be downloaded from the following links.</p>
 
@@ -26,11 +26,11 @@
   <p>What type of extraction is this? (Acronym or Full Wording)</p>
 </blockquote>
 
-<p>This question appears simple but actually took a few tries to answer properly. Cellebrite appears to list the extraction type right on the <code class="highlighter-rouge">Extraction Summary</code> page.</p>
+<p>This question appears simple but actually took a few tries to answer properly. Cellebrite appears to list the extraction type right on the <code class="language-plaintext highlighter-rouge">Extraction Summary</code> page.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_1.JPG" alt="Extraction type" /></p>
 
-<p>However, <code class="highlighter-rouge">File System</code> and <code class="highlighter-rouge">File System [ Android ADB ]</code> are not accepted answers. The correct accepted answer is <code class="highlighter-rouge">Full File System</code>.</p>
+<p>However, <code class="language-plaintext highlighter-rouge">File System</code> and <code class="language-plaintext highlighter-rouge">File System [ Android ADB ]</code> are not accepted answers. The correct accepted answer is <code class="language-plaintext highlighter-rouge">Full File System</code>.</p>
 
 <h3 id="operating-system--10pts">Operating System – 10pts</h3>
 
@@ -38,15 +38,15 @@
   <p>What Android Version is this device running? (enter just numerical value)</p>
 </blockquote>
 
-<p>The OS version can also be seen right in the <code class="highlighter-rouge">Extraction Summary</code> tab.</p>
+<p>The OS version can also be seen right in the <code class="language-plaintext highlighter-rouge">Extraction Summary</code> tab.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_2.JPG" alt="Android OS version" /></p>
 
-<p>The source of this information is the <code class="highlighter-rouge">build.prop</code> file:</p>
+<p>The source of this information is the <code class="language-plaintext highlighter-rouge">build.prop</code> file:</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_3.JPG" alt="Android OS version source" /></p>
 
-<p>The solution is <code class="highlighter-rouge">10</code>.</p>
+<p>The solution is <code class="language-plaintext highlighter-rouge">10</code>.</p>
 
 <h3 id="crypto--10pts">Crypto – 10pts</h3>
 
@@ -54,11 +54,11 @@
   <p>What is the name of the Crypto Currency application?</p>
 </blockquote>
 
-<p>Simply look under the <code class="highlighter-rouge">Installed Applications</code> tab then <code class="highlighter-rouge">Cryptocurrency</code>.</p>
+<p>Simply look under the <code class="language-plaintext highlighter-rouge">Installed Applications</code> tab then <code class="language-plaintext highlighter-rouge">Cryptocurrency</code>.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_5.JPG" alt="Crypto app" /></p>
 
-<p><code class="highlighter-rouge">com.mycelium.wallet</code> is installed, with the app name being <code class="highlighter-rouge">Mycelium</code> and the solution to this question.</p>
+<p><code class="language-plaintext highlighter-rouge">com.mycelium.wallet</code> is installed, with the app name being <code class="language-plaintext highlighter-rouge">Mycelium</code> and the solution to this question.</p>
 
 <h3 id="security-patch--20pts">Security Patch – 20pts</h3>
 
@@ -66,11 +66,11 @@
   <p>What Security Patch Level does this device have? (Date Format: MM-DD-YYYY for example: 12-30-2025)</p>
 </blockquote>
 
-<p>The security patch is also found further down in the <code class="highlighter-rouge">build.prop</code> file.</p>
+<p>The security patch is also found further down in the <code class="language-plaintext highlighter-rouge">build.prop</code> file.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_4.JPG" alt="Android security patch" /></p>
 
-<p>Converting this to the answer format, we get <code class="highlighter-rouge">05-01-2020</code> as the solution.</p>
+<p>Converting this to the answer format, we get <code class="language-plaintext highlighter-rouge">05-01-2020</code> as the solution.</p>
 
 <h3 id="location-location-location--20pts">Location Location Location – 20pts</h3>
 
@@ -78,7 +78,7 @@
   <p>Was Tony looking for any houses, if so, in what city?</p>
 </blockquote>
 
-<p>Hmm. Tony probably tried looking up houses for sale online. Lets check that. Going to the <code class="highlighter-rouge">Web History</code> tab and searching for “house” shows Tony visited <a href="https://www.realtor.ca/">https://www.realtor.ca/</a>.</p>
+<p>Hmm. Tony probably tried looking up houses for sale online. Lets check that. Going to the <code class="language-plaintext highlighter-rouge">Web History</code> tab and searching for “house” shows Tony visited <a href="https://www.realtor.ca/">https://www.realtor.ca/</a>.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_6.JPG" alt="House search" /></p>
 
@@ -98,11 +98,11 @@
   <p>What possible new jobs was Tony looking at?</p>
 </blockquote>
 
-<p>Again, starting with Tony’s browsing history, we can see one of the nine phrases Tony searched is “<em>how much does an oil tanker captain make</em>”, found under the <code class="highlighter-rouge">Searched Items</code> tab.</p>
+<p>Again, starting with Tony’s browsing history, we can see one of the nine phrases Tony searched is “<em>how much does an oil tanker captain make</em>”, found under the <code class="language-plaintext highlighter-rouge">Searched Items</code> tab.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_9.JPG" alt="Houses" /></p>
 
-<p>Searching for “<em>captain</em>” in the <code class="highlighter-rouge">Web History</code> tab also shows a website he looked at after this Google search.</p>
+<p>Searching for “<em>captain</em>” in the <code class="language-plaintext highlighter-rouge">Web History</code> tab also shows a website he looked at after this Google search.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_10.JPG" alt="History" /></p>
 
@@ -118,7 +118,7 @@
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_11.JPG" alt="Wallet ID" /></p>
 
-<p>The solution is <code class="highlighter-rouge">33wnUqRbPT49Z6c7Mkc3PojBHAJEZuacao</code>.</p>
+<p>The solution is <code class="language-plaintext highlighter-rouge">33wnUqRbPT49Z6c7Mkc3PojBHAJEZuacao</code>.</p>
 
 <h3 id="name--20pts">Name – 20pts</h3>
 
@@ -138,15 +138,15 @@
   <p>Was Auto Join enabled on CSIS?</p>
 </blockquote>
 
-<p>Selecting the <code class="highlighter-rouge">Wireless Networks</code> tab from the summary page, we can see the information about the <code class="highlighter-rouge">CSIS</code> access point.</p>
+<p>Selecting the <code class="language-plaintext highlighter-rouge">Wireless Networks</code> tab from the summary page, we can see the information about the <code class="language-plaintext highlighter-rouge">CSIS</code> access point.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_13.JPG" alt="Access point" /></p>
 
-<p>Going to the XML source file and searching for “<em>auto</em>” reveals the presence of an attribute titled <code class="highlighter-rouge">AutoReconnect</code>.</p>
+<p>Going to the XML source file and searching for “<em>auto</em>” reveals the presence of an attribute titled <code class="language-plaintext highlighter-rouge">AutoReconnect</code>.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_14.JPG" alt="AutoReconnect" /></p>
 
-<p>The value is set to <code class="highlighter-rouge">1</code>. So, <strong>Yes</strong>, auto join was enabled.</p>
+<p>The value is set to <code class="language-plaintext highlighter-rouge">1</code>. So, <strong>Yes</strong>, auto join was enabled.</p>
 
 <h3 id="wifi-password--100pts">WiFi Password – 100pts</h3>
 
@@ -154,9 +154,9 @@
   <p>What was the password for the Network of CSIS Mesh?</p>
 </blockquote>
 
-<p>The plaintext WiFi password is not stored in the XML file found above. Other searches for <code class="highlighter-rouge">CSIS Mesh</code> did not yield anything of worth. The XML file is found at <code class="highlighter-rouge">/data/misc/wifi/WifiConfigStore.xml</code>. There are several other directories in <code class="highlighter-rouge">/data/misc</code> that pertain to WiFi information. In <code class="highlighter-rouge">/data/misc/wifi_share_profile/backup.conf</code>, the plaintext password can be seen in the file.</p>
+<p>The plaintext WiFi password is not stored in the XML file found above. Other searches for <code class="language-plaintext highlighter-rouge">CSIS Mesh</code> did not yield anything of worth. The XML file is found at <code class="language-plaintext highlighter-rouge">/data/misc/wifi/WifiConfigStore.xml</code>. There are several other directories in <code class="language-plaintext highlighter-rouge">/data/misc</code> that pertain to WiFi information. In <code class="language-plaintext highlighter-rouge">/data/misc/wifi_share_profile/backup.conf</code>, the plaintext password can be seen in the file.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-11-02/tony_15.JPG" alt="WiFi" /></p>
 
-<p>The password to the network is <code class="highlighter-rouge">abcdef1234</code>.</p>
+<p>The password to the network is <code class="language-plaintext highlighter-rouge">abcdef1234</code>.</p>
 :ET

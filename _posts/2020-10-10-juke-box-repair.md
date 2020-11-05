@@ -1,8 +1,8 @@
 ---
-layout: post
 title: Wurlitzer 1100 Juke Box Repair
 excerpt: Some pictures and information about repairing a 1948 Wurlitzer model 1100, 78-RPM, 24 selection Juke Box.
 tags: jukebox restoration antique
+author: rms
 ---
 
 ## Wurlitzer 1100 Jukebox

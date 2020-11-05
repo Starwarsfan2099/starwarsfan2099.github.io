@@ -1,8 +1,8 @@
-I"=<p>Another week, another Magnet Forensics weekly challenge. This time, the challenge is worth 40 points, includes a hint that costs 20 points, and only allows 4 attempts to answer the challenge.</p>
+I"�<p>Another week, another Magnet Forensics weekly challenge. This time, the challenge is worth 40 points, includes a hint that costs 20 points, and only allows 4 attempts to answer the challenge.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-10-22/question.JPG" alt="Challenge question" /></p>
 
-<p>This time, we are tasked with finding the an exit that the user passed. The exit apparently could have been taken for “<em>Cargo</em>”. The meaning of <em>Cargo</em> is not given. A town maybe? Hmmm. The first thing to do is get all the location data that we can from the Android image. When loading up Cellebrite, be sure to select <code class="highlighter-rouge">Carve locations</code> and <code class="highlighter-rouge">Recover data from locations</code> in the <code class="highlighter-rouge">Examination tools</code> window.</p>
+<p>This time, we are tasked with finding the an exit that the user passed. The exit apparently could have been taken for “<em>Cargo</em>”. The meaning of <em>Cargo</em> is not given. A town maybe? Hmmm. The first thing to do is get all the location data that we can from the Android image. When loading up Cellebrite, be sure to select <code class="language-plaintext highlighter-rouge">Carve locations</code> and <code class="language-plaintext highlighter-rouge">Recover data from locations</code> in the <code class="language-plaintext highlighter-rouge">Examination tools</code> window.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-10-22/location_settings.JPG" alt="Settings" /></p>
 
@@ -10,7 +10,7 @@
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-10-22/locations_tab.JPG" alt="Locations number" /></p>
 
-<p>Clicking on this will take us to the <code class="highlighter-rouge">Device Locations</code> tab.</p>
+<p>Clicking on this will take us to the <code class="language-plaintext highlighter-rouge">Device Locations</code> tab.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-10-22/locations_veiw.JPG" alt="Locations tab" /></p>
 
@@ -20,7 +20,7 @@
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-10-22/tweet.JPG" alt="Tweet" /></p>
 
-<p><a href="https://www.youtube.com/watch?v=LsJARwXDDR4&amp;feature=youtu.be">The video</a> did have a hint. The freebie hint was given at 53:20 in the video. Jessica said that the methodology needed to be used was discussed in a talk from last month. The talk was titled “Android v. iOS” and with Jessica Hyde and Chris Vance. Googling for this, a webinar of the talk can be found <a href="https://www.magnetforensics.com/resources/mobile-artifact-comparison-webinar-recording-oct-7/">here</a>. The page asks for an email address, then emails you a YouTube link. The talk goes over many different iOS and Android artifacts. The first relevant topic is location data. None of the techniques mentioned in this section were applicable though to our Android image. The next relevant section was on Picture files. On Android, Jessica discussed MVIMG files. These are similar to Apple iOS’s Live Photos. This section stood out for two reasons. Several of the pictures containing location data had this file format and several of these files were taken while moving or in view of road signs. Such as <code class="highlighter-rouge">MVIMG_20200305_145544.jpg</code>, a picture of a truck driving by a road sign.</p>
+<p><a href="https://www.youtube.com/watch?v=LsJARwXDDR4&amp;feature=youtu.be">The video</a> did have a hint. The freebie hint was given at 53:20 in the video. Jessica said that the methodology needed to be used was discussed in a talk from last month. The talk was titled “Android v. iOS” and with Jessica Hyde and Chris Vance. Googling for this, a webinar of the talk can be found <a href="https://www.magnetforensics.com/resources/mobile-artifact-comparison-webinar-recording-oct-7/">here</a>. The page asks for an email address, then emails you a YouTube link. The talk goes over many different iOS and Android artifacts. The first relevant topic is location data. None of the techniques mentioned in this section were applicable though to our Android image. The next relevant section was on Picture files. On Android, Jessica discussed MVIMG files. These are similar to Apple iOS’s Live Photos. This section stood out for two reasons. Several of the pictures containing location data had this file format and several of these files were taken while moving or in view of road signs. Such as <code class="language-plaintext highlighter-rouge">MVIMG_20200305_145544.jpg</code>, a picture of a truck driving by a road sign.</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-10-22/truck.JPG" alt="Truck" /></p>
 
@@ -28,14 +28,14 @@
 
 <p>All of the MVIMG files were found in the Android filesystem and exported to a Linux machine. On Linux, the following terminal command was used to extract the MP4 video files from the MVIMG files.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in MVIMG*.jpg; do \
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in MVIMG*.jpg; do \
   ofs=$(grep -F --byte-offset --only-matching --text ftypmp4 "$i"); \
   ofs=${ofs%:*}; \
   [[ $ofs ]] &amp;&amp; dd "if=$i" "of=${i%.jpg}.mp4" bs=$((ofs-4)) skip=1; \
 done
 </code></pre></div></div>
 
-<p>The command gives us the MP4s from each MVIMG file in the directory this is ran from. The first file to be examined was video pulled from the image of the truck. Unfortunately, the road signs could not seen in the video, and searching the location on Google Earth shows nothing named Cargo is nearby. <code class="highlighter-rouge">MVIMG_20200307_130326.jpg</code> was examined next, it looked like a video taken from a bus. In the video, it quickly passes a road sign. It’s difficult, but if you pause and look at the sign, it does in fact say cargo!</p>
+<p>The command gives us the MP4s from each MVIMG file in the directory this is ran from. The first file to be examined was video pulled from the image of the truck. Unfortunately, the road signs could not seen in the video, and searching the location on Google Earth shows nothing named Cargo is nearby. <code class="language-plaintext highlighter-rouge">MVIMG_20200307_130326.jpg</code> was examined next, it looked like a video taken from a bus. In the video, it quickly passes a road sign. It’s difficult, but if you pause and look at the sign, it does in fact say cargo!</p>
 
 <p style="text-align: center;"><img src="https://starwarsfan2099.github.io/public/2020-10-22/sign.JPG" alt="Cargo" /></p>
 
