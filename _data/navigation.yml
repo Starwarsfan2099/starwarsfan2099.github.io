@@ -22,7 +22,7 @@ header:
       fr-FR   : *FR
       fr-LU   : *FR
       # @end locale config
-    url: /repo
+    url: /repo/repo.html
 
   - titles:
       # @start locale config
