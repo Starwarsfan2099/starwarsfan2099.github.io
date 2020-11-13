@@ -5,7 +5,7 @@ tags: cellebrite-ctf ctf
 author: rms
 ---
 
-## Tony Mederos Samsung Galaxy 8+
+## Rene Gade's Samsung Galaxy 8+
 
 ### Social Media – 10pts
 
