@@ -153,3 +153,4 @@ The first plan of attack was the CashApp and CoinBase databases. After quite a l
 ![CashApp Splashscreen](https://starwarsfan2099.github.io/public/2020-11-18/juan_14.JPG){:.shadow}
 {: refdef}
 
+The solution to the challenge is `2.99`.
