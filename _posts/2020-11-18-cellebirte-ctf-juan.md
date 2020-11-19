@@ -1,5 +1,5 @@
 ---
-title: Cellebrite Fall 2020 CTF - Part 2 - Juan Mortyme
+title: Cellebrite Fall 2020 CTF - Part 3 - Juan Mortyme
 excerpt: Solutions to the 1st ever Cellebrite CTF! Part 3! This part looks at the solutions to the questions associated with the image of Juan Mortyme's iPhone. 
 tags: cellebrite-ctf ctf
 author: rms
