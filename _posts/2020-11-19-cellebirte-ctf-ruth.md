@@ -155,7 +155,7 @@ The `item_pid` is the first column from the left. `239332200929536034` is the so
 
 > What is the link that was found in a locked note? (Hint: it is a good idea to use this link as it’s a hidden flag and it’s safe!)
 
-The link can be found after unlcoking the locked note, which is described in the [Application Analysis_Notes question]().
+The link can be found after unlcoking the locked note, which is described in the [Application Analysis_Notes question](https://starwarsfan2099.github.io/2020/11/19/cellebirte-ctf-ruth.html#application-analysis_notes---100-points).
 
 {:refdef: style="text-align: center;"}
 ![Unlocked notes](https://starwarsfan2099.github.io/public/2020-11-19/ruth_10.JPG){:.shadow}
