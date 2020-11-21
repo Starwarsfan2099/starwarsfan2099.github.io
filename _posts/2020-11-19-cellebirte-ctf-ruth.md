@@ -167,7 +167,7 @@ The link from the note and solution to the challenge is `https://bit.ly/3arhLSK`
 
 > What is the routing number used by Ruth to make and receive payments for potentially illegal transactions?
 
-[Gerbinator](https://github.com/Gerbinator) again came in clutch on this question. After too long searching anywhere we could think on Ruth's phone, [Gerbinator](https://github.com/Gerbinator) had the idea to check the other images provided. They came across the same SplashScreen image from [Juan's Financial Situation question](https://starwarsfan2099.github.io/2020/11/18/cellebirte-ctf-juan.html#financial-situation---100-points). That image had a routing number in the image.
+[Gerbinator](https://github.com/Gerbinator) again came in clutch on this question. After too long searching anywhere we could think on Ruth's phone, [Gerbinator](https://github.com/Gerbinator) had the idea to check the other images provided. They came across the same SplashScreen image from [Juan's Financial Situation question](https://starwarsfan2099.github.io/2020/11/18/cellebirte-ctf-juan-copy.html#financial-situation---100-points). That image had a routing number in the image.
 
 {:refdef: style="text-align: center;"}
 ![CashApp Splashscreen](https://starwarsfan2099.github.io/public/2020-11-18/juan_14.JPG){:.shadow}
