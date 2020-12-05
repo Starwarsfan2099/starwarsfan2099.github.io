@@ -63,7 +63,7 @@ else {  exit;   }
 
 Ah. This php script loads a bind shell on port `17001` that can execute commands using `shell_exec`. This rules out using php for `Hosting a database`, `Serving a webpage`, and `To run a php webshell`. So the solution must be `Create a fake systemd service`? Lets double check. 
 
-using `ls -la etc/systemd/system/` we can see the system services:
+Using `ls -la etc/systemd/system/` we can see the system services:
 
 ```
 drwxr-xr-x 12 root root 4096 Oct  6  2019 .
