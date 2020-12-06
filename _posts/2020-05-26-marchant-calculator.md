@@ -2,7 +2,7 @@
 title: Marchant "Silent Speed" Mechanical Calculator Repair and Operation.
 excerpt: 1942 Marchant ACR8M mechanical calculator repair, teardown, functions, and basic operation.
 tags: restoration antique mechanical-calculator
-cover: https://starwarsfan2099.github.io/public/public/2020-5-26/cover.jpg
+cover: https://starwarsfan2099.github.io/public/2020-5-26/cover.jpg
 author: rms
 ---
 
