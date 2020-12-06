@@ -1,6 +1,8 @@
 ---
 title: Wurlitzer 1100 Juke Box Repair
 excerpt: Some pictures and information about repairing a 1948 Wurlitzer model 1100, 78-RPM, 24 selection Juke Box.
+cover: https://starwarsfan2099.github.io/public/2020-10-10/cover.jpg
+cover_size: sm
 tags: jukebox restoration antique
 author: rms
 ---
