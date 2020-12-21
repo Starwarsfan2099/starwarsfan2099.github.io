@@ -73,6 +73,12 @@ For example, if you wish to multiply 25 times 25, first enter 25 into the keyboa
 
 First, move the carriage all the way to the right. Make sure both registers are clear. Then, enter the dividend starting at the left side of the keyboard (for maximum accuracy) and press the `+` button. Then, clear the counter register by rotating the clear lever forwards. Next, enter the divisor into the keyboard starting from the left side. Push the division switch upwards and the machine will automatically perform the division. The quotient will be in the counter register. 
 
+## Division Video
+
+Video of the earlier machine performing division in slow motion and with the outer panels removed.
+
+<div>{%- include extensions/youtube.html id='RiHVPijCgAU' -%}</div>
+
 ## Internal pictures
 
 {:refdef: style="text-align: center;"}
