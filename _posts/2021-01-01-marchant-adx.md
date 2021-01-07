@@ -21,7 +21,7 @@ author: rms
 ![Rear](https://starwarsfan2099.github.io/public/2021-01-01/rear.JPG){:.shadow}
 {: refdef}
 
-In the 1940s, Marchant opted to redesign the casing and outer design of their Silent Speed models. Joseph Sinel was hired and created a sleek, smooth, elegant design that debuted in the 1950s. This casing consisted of multiple pieces that interlocked and had to be assembled into a specific order. This resulted in the *Figuremaster*, a machine with a clean curved case with no screws to be seen. 
+In the 1940s, Marchant opted to redesign the casing and outer design of their [Silent Speed](https://starwarsfan2099.github.io/2020/05/26/marchant-calculator.html) models. Joseph Sinel was hired and created a sleek, smooth, elegant design that debuted in the 1950s. This casing consisted of multiple pieces that interlocked and had to be assembled into a specific order. This resulted in the *Figuremaster*, a machine with a clean curved case with no screws to be seen. 
 
 {:refdef: style="text-align: center;"}
 ![Ad](https://starwarsfan2099.github.io/public/2021-01-01/ad.jpg){:.shadow}
