@@ -65,9 +65,13 @@ Operating this machine is nearly identical to the [Marchant "Silent Speed" ACR8M
 
 This machine has a button for automatically setting up division. On the ACR8M, the accumulator register had to be cleared, the carriage shifted to the left, and the the dividend had to be entered all manually. This is reduced to a single button press on the 8ADX. To setup division, simply enter the number onto the keyboard, and press the `DIVIDEND` key. The machine will clear, shift the carriage, and enter the dividend into the accumulator in one go. Then the divisor can be entered and the `÷` key pressed.
 
+## Repair
+
+This machine just needed oiling and the counter reverse switch to be repaired. This machine had been kept in beautiful shape. 
+
 ## Extras
 
-This machine still has it's original cover! It has the SCM logo and Marchant name on it.
+This machine still has its original cover! It has the SCM logo and Marchant name on it.
 
 {:refdef: style="text-align: center;"}
 ![Cover](https://starwarsfan2099.github.io/public/2021-01-01/covering.JPG){:.shadow}
