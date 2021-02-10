@@ -106,3 +106,9 @@ Machine side.
 {: refdef}
 
 Patent information.
+
+{:refdef: style="text-align: center;"}
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/cover_removed.JPG){:.shadow}
+{: refdef}
+
+Cover removed from register.
