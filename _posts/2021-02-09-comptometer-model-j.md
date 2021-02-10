@@ -1,7 +1,7 @@
 ---
 title: Comptometer Model J Overview and Operation 
 excerpt: Stylish 1953 Marchant 8ADX mechanical calculator repair, functions, cover removal, and basic operation.
-cover: https://starwarsfan2099.github.io/public/2021-02-09/cover.jpg
+cover: https://starwarsfan2099.github.io/public/2021-02-09/cover.JPG
 cover_size: sm
 tags: restoration antique mechanical-calculator
 author: rms
@@ -46,7 +46,7 @@ Different models added more features, such as safety interlocks to prevent a key
 The mechanism of the model *J* with added safeties and register mechanism can be seen in this cutaway produced by the company in 1928. (Smithsonian)
 
 {:refdef: style="text-align: center;"}
-![Comptometer Model J Cutaway](https://starwarsfan2099.github.io/public/2021-02-09/cutaway.jpg){:.shadow}
+![Comptometer Model J Cutaway](https://starwarsfan2099.github.io/public/2021-02-09/cutaway.JPG){:.shadow}
 {: refdef}
 
 ## Operation
@@ -78,31 +78,31 @@ Adding machines differ in operation from other calculators discussed on this blo
 ## More Pictures
 
 {:refdef: style="text-align: center;"}
-![Logo](https://starwarsfan2099.github.io/public/2021-02-09/logo.jpg){:.shadow}
+![Logo](https://starwarsfan2099.github.io/public/2021-02-09/logo.JPG){:.shadow}
 {: refdef}
 
 Comptometer logo. The holes in the register plate above are for oiling.
 
 {:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/zeroed.jpg){:.shadow}
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/zeroed.JPG){:.shadow}
 {: refdef}
 
 Zeroed register. Note the digits are slightly not aligned in the window. 
 
 {:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/entered.jpg){:.shadow}
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/entered.JPG){:.shadow}
 {: refdef}
 
 Digit just entered.
 
 {:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/side.jpg){:.shadow}
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/side.JPG){:.shadow}
 {: refdef}
 
 Machine side.
 
 {:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/label.jpg){:.shadow}
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/label.JPG){:.shadow}
 {: refdef}
 
 Patent information.
