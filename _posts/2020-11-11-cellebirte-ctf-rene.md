@@ -1,7 +1,7 @@
 ---
 title: Cellebrite Fall 2020 CTF - Part 2 - Rene Gade
 excerpt: Solutions to the 1st ever Cellebrite CTF! Part 2! This part looks at the solutions to the questions associated with the image of Rene Gade's phone. 
-tags: cellebrite-ctf ctf
+tags: cellebrite-ctf ctf forensics
 author: rms
 ---
 

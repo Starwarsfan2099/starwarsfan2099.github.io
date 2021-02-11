@@ -1,7 +1,7 @@
 ---
 title: Cellebrite Fall 2020 CTF - Part 4 - Ruth Langmore
 excerpt: Solutions to the 1st ever Cellebrite CTF! Part 4! This part looks at the solutions to the questions associated with the image of Ruth Langmore's infamous iPhone X. 
-tags: cellebrite-ctf ctf
+tags: cellebrite-ctf ctf forensics
 author: rms
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Magnet Weekly CTF 8 - Incident Response
 excerpt: Solution to the Magnet Forensics CTF 8th week challenge. This week's challenge asks about some installed packages and a compromise.
-tags: magnet-ctf ctf
+tags: magnet-ctf ctf forensics
 author: rms
 ---
 

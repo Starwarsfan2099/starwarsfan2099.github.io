@@ -1,6 +1,6 @@
 ---
 title: Comptometer Model J Overview and Operation 
-excerpt: Stylish 1953 Marchant 8ADX mechanical calculator repair, functions, cover removal, and basic operation.
+excerpt: An interesting 1920's adding machine, still able to perform addition, subtraction, multiplication, and division.
 cover: https://starwarsfan2099.github.io/public/2021-02-09/cover.JPG
 cover_size: sm
 tags: restoration antique mechanical-calculator
