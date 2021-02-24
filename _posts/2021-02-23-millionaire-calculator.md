@@ -293,14 +293,10 @@ The machine has very stylish writing and extra details, like an arrow indicating
 ![Details](https://starwarsfan2099.github.io/public/2021-02-23/detail4.jpg){:.shadow}
 {: refdef}
 
-The machine also has 3 plaques on bottom of the lower top plate.
+The machine also has 2 plaques on bottom of the lower top plate with Egli's name and the distributer.
 
 {:refdef: style="text-align: center;"}
 ![Details](https://starwarsfan2099.github.io/public/2021-02-23/detail1.jpg){:.shadow}
-{: refdef}
-
-{:refdef: style="text-align: center;"}
-![Details](https://starwarsfan2099.github.io/public/2021-02-23/detail2.jpg){:.shadow}
 {: refdef}
 
 {:refdef: style="text-align: center;"}
