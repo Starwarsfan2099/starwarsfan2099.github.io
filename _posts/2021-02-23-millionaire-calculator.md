@@ -93,7 +93,7 @@ The carriage also has knobs below the accumulator register used for entering dig
 
 Operation in manual mode and electric mode is very similar. If manually using the crank, the button on the multiply lever must be pressed, then the crank knob can be lifted and the crank rotated. The multiplier button can be released once the crank has begun turning. If the button is held, the machine can continuously be cranked. 
 
-If the machine is to be used in motorized mode, first the handle must be removed. **THIS IS IMPORTANT.** If not, the crank handle lock will stop the machine, most likely kicking the drive belt off of the motor. But, it's a lot of force and you don't want the possibility of damaging any parts. Once the handle is removed, turn the motor on via the switch. The motor will turn on and continuously runs until turned off. The button on the multiplier lever is used to cycle the machine. 
+If the machine is to be used in motorized mode, first the handle must be removed and placed in the lid. **THIS IS IMPORTANT.** If not, the crank handle lock will stop the machine, most likely kicking the drive belt off of the motor, but, it's a lot of force and you don't want the possibility of damaging any parts. Once the handle is removed, turn the motor on via the switch. The motor will turn on and continuously runs until turned off. The button on the multiplier lever is used to cycle the machine. 
 
 ### Addition
 
@@ -139,7 +139,7 @@ First, remove the six screws holding the lid to the hinges on the rear panel.
 ![Bottom](https://starwarsfan2099.github.io/public/2021-02-23/bottom.jpg){:.shadow}
 {: refdef}
 
-Next, remove the multiply lever, the crank handle, as well as the selector know and carriage movement knob. Then, remove 5 small screws and 4 larges screws holding the lower panel on the top of the machine. Don't miss the small screw between where to lock holes are located!
+Next, remove the multiply lever, the crank handle, as well as the selector know and carriage movement knob. Then, remove 5 small screws and 4 larges screws holding the lower panel on the top of the machine. Don't miss the small screw between where the lock holes are located!
 
 {:refdef: style="text-align: center;"}
 ![Crank plate](https://starwarsfan2099.github.io/public/2021-02-23/crank_plate.jpg){:.shadow}
@@ -271,6 +271,62 @@ Demo of the machine in manual and motorized mode. Also shows operation with cove
 
 <div>{%- include extensions/youtube.html id='Ac-fJfql4zw' -%}</div>
 
+## Details
+
+### Locking Pins
+
+The calculator has two pins stored in the lid. These pins are used when moving the calculator. One keeps the carriage from moving and the other keeps the multiplier mechanism secure. 
+
+{:refdef: style="text-align: center;"}
+![Pin](https://starwarsfan2099.github.io/public/2021-02-23/secure_pin.jpg){:.shadow}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![Pin](https://starwarsfan2099.github.io/public/2021-02-23/secure_pin2.jpg){:.shadow}
+{: refdef}
+
+### Writing and Plaques
+
+The machine has very stylish writing and extra details, like an arrow indicating which direction to turn, and even an oiling hole labeled "Oil" underneath the crank. The carriage also has markers for the counter and division.
+
+{:refdef: style="text-align: center;"}
+![Details](https://starwarsfan2099.github.io/public/2021-02-23/detail4.jpg){:.shadow}
+{: refdef}
+
+The machine also has 3 plaques on bottom of the lower top plate.
+
+{:refdef: style="text-align: center;"}
+![Details](https://starwarsfan2099.github.io/public/2021-02-23/detail1.jpg){:.shadow}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![Details](https://starwarsfan2099.github.io/public/2021-02-23/detail2.jpg){:.shadow}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![Details](https://starwarsfan2099.github.io/public/2021-02-23/detail3.jpg){:.shadow}
+{: refdef}
+
+### Instructions
+
+Detailed instructions of operation and even maintenance can be found inside the lid of the machine. Along with a table to aid in division.
+
+{:refdef: style="text-align: center;"}
+![Lid](https://starwarsfan2099.github.io/public/2021-02-23/lid1.jpg){:.shadow}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![Lid](https://starwarsfan2099.github.io/public/2021-02-23/lid2.jpg){:.shadow}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![Lid](https://starwarsfan2099.github.io/public/2021-02-23/lid3.jpg){:.shadow}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![Lid](https://starwarsfan2099.github.io/public/2021-02-23/lid4.jpg){:.shadow}
+{: refdef}
+
 ## Before Cleaning and Repairs
 
 {:refdef: style="text-align: center;"}
@@ -281,7 +337,7 @@ Demo of the machine in manual and motorized mode. Also shows operation with cove
 ![Before 2](https://starwarsfan2099.github.io/public/2021-02-23/before2.jpg){:.shadow}
 {: refdef}
 
-These are pictures of the machine when it was picked up. This machine came from Warranton Virginia, before that it was bought from an estate sale relatively close by. The machine was working via the crank, but it was very tight. The power cord was mostly and other wiring was in pretty bad shape.
+These are pictures of the machine when it was picked up. This machine came from Warranton, Virginia, before that it was bought from an estate sale relatively close by. The machine was working via the crank, but it was very tight. The power cord was mostly and other wiring was in pretty bad shape.
 
 {:refdef: style="text-align: center;"}
 ![Before 3](https://starwarsfan2099.github.io/public/2021-02-23/before3.jpg){:.shadow}
