@@ -205,27 +205,27 @@ This machine has truly beautiful brass mechanisms.
 ![Machine Internals](https://starwarsfan2099.github.io/public/2021-02-23/internal5.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Machine Internals](https://starwarsfan2099.github.io/public/2021-02-23/internal6.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Machine Internals](https://starwarsfan2099.github.io/public/2021-02-23/internal7.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Machine Internals](https://starwarsfan2099.github.io/public/2021-02-23/internal8.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Machine Internals](https://starwarsfan2099.github.io/public/2021-02-23/internal9.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Machine Internals](https://starwarsfan2099.github.io/public/2021-02-23/internal10.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Machine Internals](https://starwarsfan2099.github.io/public/2021-02-23/internal11.jpg){:.shadow}
 {: refdef}
 
@@ -233,7 +233,7 @@ v{:refdef: style="text-align: center;"}
 
 The Millionaire machine is one of only a small handful that can perform multiplication in one machine cycle or crank. Most machines use repeated additions for multiplications. This requires multiple cycles of the machine. The Millionaire does not need more that one cycle because it has a mechanical multiplication lookup table.
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Multiplication Table](https://starwarsfan2099.github.io/public/2021-02-23/table.jpg){:.shadow}
 {: refdef}
 
@@ -253,7 +253,7 @@ The table has been milled into a block of brass (pictured above). It's easiest t
 
 The columns are each slider input in one column of the input. Each digit in the table corresponds to the "steps" milled in the piece. Each slider moves a gear up or down along a shaft that connects to the register.
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Input Gear](https://starwarsfan2099.github.io/public/2021-02-23/input2.jpg){:.shadow}
 {: refdef}
 
@@ -261,7 +261,7 @@ Below this, there are 10 toothed shafts that correspond to digits 0-9. These sha
 
 Let's say the input is set to 9, and the multiplier set to 9. Column #9 in the table and row 9. The multiplier comes forward and interacts with the right or tens part of the milled piece, which is 8, and pushes the shaft 8 places, putting 8 into the accumulator. The carriage shifts left, then the multiplier piece shifts right and presses the left or ones side up against the shafts, in this case 1 place. This puts a one in the accumulator, gives us a correct answer of 81.
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Multiplier Meshing](https://starwarsfan2099.github.io/public/2021-02-23/mesh.jpg){:.shadow}
 {: refdef}
 
@@ -273,38 +273,38 @@ Demo of the machine in manual and motorized mode. Also shows operation with cove
 
 ## Before Cleaning and Repairs
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Before](https://starwarsfan2099.github.io/public/2021-02-23/before1.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Before 2](https://starwarsfan2099.github.io/public/2021-02-23/before2.jpg){:.shadow}
 {: refdef}
 
 These are pictures of the machine when it was picked up. This machine came from Warranton Virginia, before that it was bought from an estate sale relatively close by. The machine was working via the crank, but it was very tight. The power cord was mostly and other wiring was in pretty bad shape.
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Before 3](https://starwarsfan2099.github.io/public/2021-02-23/before3.jpg){:.shadow}
 {: refdef}
 
 The motor was also taken apart and thoroughly cleaned, then everything was rewired.
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Before 4](https://starwarsfan2099.github.io/public/2021-02-23/before4.jpg){:.shadow}
 {: refdef}
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Before 5](https://starwarsfan2099.github.io/public/2021-02-23/before5.jpg){:.shadow}
 {: refdef}
 
 Surprisingly, some of the old grease was still surprisingly moist and not hardened. 
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Before 6](https://starwarsfan2099.github.io/public/2021-02-23/before6.jpg){:.shadow}
 {: refdef}
 
 The workspace.
 
-v{:refdef: style="text-align: center;"}
+{:refdef: style="text-align: center;"}
 ![Before 7](https://starwarsfan2099.github.io/public/2021-02-23/before7.jpg){:.shadow}
 {: refdef}
