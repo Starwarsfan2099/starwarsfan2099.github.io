@@ -265,6 +265,12 @@ v{:refdef: style="text-align: center;"}
 ![Multiplier Meshing](https://starwarsfan2099.github.io/public/2021-02-23/mesh.jpg){:.shadow}
 {: refdef}
 
+## Videos
+
+Demo of the machine in manual and motorized mode. Also shows operation with covers and panels removed. 
+
+<div>{%- include extensions/youtube.html id='Ac-fJfql4zw' -%}</div>
+
 ## Before Cleaning and Repairs
 
 v{:refdef: style="text-align: center;"}
