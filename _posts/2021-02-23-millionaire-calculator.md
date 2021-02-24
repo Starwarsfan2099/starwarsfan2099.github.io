@@ -97,7 +97,7 @@ If the machine is to be used in motorized mode, first the handle must be removed
 
 ### Addition
 
-First, set the selector knob to *addition*. Then, simply set the digit to be added using the input sliders, set the multiplier lever to **1** and press the button on the lever to cycle the machine (If using manually, then crank to cycle it). The carriage should not move and the counter register will be disengaged. The multiplier lever does have to be set to **1** for addition and subtraction. This due to how the multiplication lookup table works. See the [Multiplication Lookup Section](https://starwarsfan2099.github.io/2021/02/23/mmillionaire-calulator.html#multiplication-lookup).
+First, set the selector knob to *addition*. Then, simply set the digit to be added using the input sliders, set the multiplier lever to **1** and press the button on the lever to cycle the machine (If using manually, then crank to cycle it). The carriage should not move and the counter register will be disengaged. The multiplier lever does have to be set to **1** for addition and subtraction. This due to how the multiplication lookup table works. See the [Multiplication Lookup Section](https://starwarsfan2099.github.io/2021/02/23/millionaire-calculator.html#multiplication-lookup).
 
 ### Subtraction 
 
@@ -109,7 +109,7 @@ First, set the selector for multiplication. Next, add the multiplicand into the 
 
 ### Division
 
-Division on this machine is more involved. The easiest way to do it is to watch the [video on how to operate the machine](https://starwarsfan2099.github.io/2021/02/23/mmillionaire-calulator.html#videos).
+Division on this machine is more involved. The easiest way to do it is to watch the [video on how to operate the machine](https://starwarsfan2099.github.io/2021/02/23/millionaire-calculator.html#videos).
 
 ## Motor
 
@@ -264,6 +264,8 @@ Let's say the input is set to 9, and the multiplier set to 9. Column #9 in the t
 {:refdef: style="text-align: center;"}
 ![Multiplier Meshing](https://starwarsfan2099.github.io/public/2021-02-23/mesh.jpg){:.shadow}
 {: refdef}
+
+This explains why the multiplication lever has to be set to 1 for addition and subtraction. In addition and subtraction, the carriage does not move. Which means any number other than 1, the ones digit will be added to the same column instead of the next one like in multiplication. So if the machine is set to addition, and 5 is in the input, and the multiply lever is set to 3, first 1 would be added to the accumulator with the first meshing of the multiply plate, but since the carriage isn't moving, next 5 would be added to the same place in the accumulator. And that would yield 6, definitely not the correct answer. 
 
 ## Videos
 
