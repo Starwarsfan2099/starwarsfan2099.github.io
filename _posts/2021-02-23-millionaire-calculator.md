@@ -35,7 +35,7 @@ This specific machine is the model **VIIIe**. The "**VIII**" since the machine h
 
 The actual calculator sets on a steel tube frame, with adjustable casters on the bottom. The motor, motor switch, and some of the gearing is attached to the underside of the machine. Just the main calculator, without the motor and stand weighs around 70 pounds, with the motor and stand it probably comes to around 110-120 pounds. 
 
-This machine is one of the rarer ones. Based on data from the *Museum für Kommunikation in Berne*, a total of only 236 machines in this particular model were ever made. The most common Millionaire machines did not have an electric motor. Of the machines that did have a motor, machines with a keyboard input were most common. Electric machines were usually bought for when a large amount of calculations needed to be made - and the fastest way to input numbers was the keyboard. Sliders are very slow compared to easily selecting numbers on the keyboard, making electric machines with slider input more rare.
+This machine is one of the rarer ones. Based on data from the *Museum für Kommunikation* in Berne, a total of only 236 machines in this particular model were ever made. The most common Millionaire machines did not have an electric motor. Of the machines that did have a motor, machines with a keyboard input were most common. Electric machines were usually bought for when a large amount of calculations needed to be made - and the fastest way to input numbers was the keyboard. Sliders are very slow compared to easily selecting numbers on the keyboard, making electric machines with slider input more rare.
 
 {:refdef: style="text-align: center;"}
 ![Millionaire belt](https://starwarsfan2099.github.io/public/2021-02-23/belt.jpg){:.shadow}
@@ -125,7 +125,7 @@ The motor was manufactured by *Holtzer-Cabot Electric Company* specifically for 
 
 The switch that controls the motor is mounted upside down under the machine and goes directly to the motor.
 
-### Removing Panels
+## Removing Panels
 
 To remove the outer panels from the machine, two flathead screwdrivers will be needed, a small and large one. The older screws used on this machine require very thin tips. I used an antique flathead and manually filed down a modern small flathead screwdriver.
 
