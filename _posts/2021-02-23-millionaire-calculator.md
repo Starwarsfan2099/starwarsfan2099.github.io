@@ -19,7 +19,7 @@ In 1893, engineer *Hans W. Egli* began selling a calculator titled the *"Million
 ![Millionaire Calculator Ad](https://starwarsfan2099.github.io/public/2021-02-23/ad.jpg){:.shadow}
 {: refdef}
 
-The machines were produced all the way up to the early 1930's and sold by a single American distributer. Early machines used sliders and a multiplication lever, and were set in a wooden case. As the years progressed, other options were added such as an electric motor drive, stand, and keyboard controls. Most machines, due to the cost, were bought and used by large businesses, governments, or scientists. Eventually, the speed and shrinking size of electric rotary calculators meant less of the machines were sold. Eventually production of these calculators stopped and *Egli* focused on their other machine, the Madas.
+The machines were produced all the way up to the early 1930's and sold by a single American distributer. Early machines used sliders and a multiplication lever, and were set in a wooden case. As the years progressed, other options were added such as an electric motor drive, stand, and keyboard controls. Most machines, due to the cost, were bought and used by large businesses, such as insurance companies, the government, or scientists. Eventually, the speed and shrinking size of electric rotary calculators meant less of these machines were sold. Eventually production of these calculators stopped and *Egli* focused on their other machine, the Madas.
 
 ## Model VIIIe
 
@@ -27,21 +27,21 @@ The machines were produced all the way up to the early 1930's and sold by a sing
 ![Millionaire Calculator Model](https://starwarsfan2099.github.io/public/2021-02-23/model.jpg){:.shadow}
 {: refdef}
 
-This specific machine is the model **VIIIe**. The "**VIII**" since the machine has an 8 digit input, and the "**e**" for electric. 
+This specific machine is the model **VIIIe**. The "**VIII**" because the machine has an 8 digit input, and the "**e**" for electric. This machine was purchased and picked up from a gentleman in Warrenton, VA. He bought it at an estate sale in the same general area with the intention of re-selling it. Unfortunately, no more history on this specific machine is known. 
 
 {:refdef: style="text-align: center;"}
 ![Millionaire on stand](https://starwarsfan2099.github.io/public/2021-02-23/stand.jpg){:.shadow}
 {: refdef}
 
-The actual calculator sets on a steel tube frame, with adjustable casters on the bottom. The motor, motor switch, and some of the gearing is attached to the underside of the machine. Just the main calculator, without the motor and stand weighs around 70 pounds, with the motor and stand it probably comes to around 110-120 pounds. 
+The actual calculator sets on a steel tube frame, with adjustable casters on the bottom. The motor, motor switch, and some of the gearing is attached upside down to the underside of the machine. Just the main calculator, without the motor and stand weighs around 70 pounds, with the motor and stand it probably comes to around 140 pounds. 
 
-This machine is one of the rarer ones. Based on data from the *Museum für Kommunikation* in Berne, a total of only 236 machines in this particular model were ever made. The most common Millionaire machines did not have an electric motor. Of the machines that did have a motor, machines with a keyboard input were most common. Electric machines were usually bought for when a large amount of calculations needed to be made - and the fastest way to input numbers was the keyboard. Sliders are very slow compared to easily selecting numbers on the keyboard, making electric machines with slider input more rare.
+This machine is one of the rarer ones. Based on data from the *Museum für Kommunikation* in Berne, a total of only 236 machines in this particular model were ever produced. The most common Millionaire machines did not have an electric motor. Of the machines that did have a motor, machines with a keyboard input were most common. Electric machines were usually bought for when a large amount of calculations needed to be made - and the fastest way to input numbers was the keyboard. Sliders are very slow compared to easily selecting numbers on the keyboard, making electric machines with slider input more rare.
 
 {:refdef: style="text-align: center;"}
 ![Millionaire belt](https://starwarsfan2099.github.io/public/2021-02-23/belt.jpg){:.shadow}
 {: refdef}
 
-The motor is attached underneath the base of the calculator, along with a switch, spiral reduction gearing, bevel gears and clutch that connects to the main machine. The motor is connected via a leather belt with a tensioner also attached under the machine.
+The motor is attached underneath the base of the calculator, along with a switch, spiral reduction gearing, multiple bevel gears and a clutch that connects to the main machine. The motor is connected via it's original leather belt with a tensioner also attached under the machine.
 
 ## Controls
 
@@ -105,11 +105,21 @@ Set the selector knob to *subtraction*. Then, again set the digit to be subtract
 
 ### Multiplication
 
-First, set the selector for multiplication. Next, add the multiplicand into the input register. Then, move the multiplication lever to the first digit of the multiplier. Finally, cycle the machine. The product will be in the accumulator, the counter will show the multiplier, and the carriage should shift to the left. For multiple digit multipliers, just repeat for the next digit in the multiplier, and so on, and so forth. 
+First, set the selector for multiplication. Next, add the multiplicand into the input register. Then, move the multiplication lever to the first digit of the multiplier. Finally, cycle the machine. The product will be in the accumulator, the counter will show the multiplier, and the carriage should shift to the left. For multiple digit multipliers, just repeat for the next digits in the multiplier, and so on, and so forth. 
 
 ### Division
 
-Division on this machine is more involved. The easiest way to do it is to watch the [video on how to operate the machine](https://starwarsfan2099.github.io/2021/02/23/millionaire-calculator.html#videos).
+Division on this machine is more involved. For example, 1096 divided by 133. The best way to do this is to utilize the table given in the lid of the machine. 
+
+{:refdef: style="text-align: center;"}
+![Division Table](https://starwarsfan2099.github.io/public/2021-02-23/lid4.jpg){:.shadow}
+{: refdef}
+
+First, we need to setup division. tart by setting the slider over the table using the first two digits of the divisor, 13, using the circle on the slider marked *Divisor*. Next, with the carriage in it's rightmost position, enter the dividend in the leftmost position using the twirlers below the accumulator. It should be entered below the plate that says dividend. Then, set the divisor on the leftmost side using the input sliders. Make sure the selector knob is set to division. Now you can begin the division process.
+
+Now, one can simply use the table. Looking at the accumulator, look at the three digits to the right of the line beside the *Dividend* plate. Compare them to the numbers found in the *Dividend* circles on the slider in the lid to find the first digit of the quotient. 109 is in the accumulator. 109 falls between the 8 and 9 quotient positions in the slider. So, we go with the number lower than or equal to the first three digits in the accumulator. So, press 8 using the multiply lever and cycle the machine. The carriage will shift to the left and 8 will be in the counter. Again, look at the three digits to the right of the marked line. This time it's 054. That falls between 2 and 3 in the slider. So press 2 using the multiply lever and cycle the machine. Now 008 is in the accumulator and right of the the marked line. 008 is below 013 which is quotient digit 1. So this is 0. Enter 0 using the multiply lever. Now 080 in the accumulator. 080 is between 6 and 7 on the slider, so 6 is entered. Continue this until the carriage reaches it's leftmost position and the bell dings. You will find 8.2406015 (with decimal calculated mentally) in the counter - the correct quotient.
+
+Errors can happen using this method due to how the table works. It could underflow. If it does, the bell will sound before the carriage is in the leftmost position, indicating an error. To correct it, set the selector to addition. Set the multiply lever to 1 and cycle the machine. This adds the divisor back and corrects the underflow. Set the selector back to division and continue as normal with the division process.
 
 ## Motor
 
@@ -269,7 +279,7 @@ This explains why the multiplication lever has to be set to 1 for addition and s
 
 ## Videos
 
-Demo of the machine in manual and motorized mode. Also shows operation with covers and panels removed. 
+Demo of the machine in manual and motorized mode. Also shows operation with covers and outer panels removed. 
 
 <div>{%- include extensions/youtube.html id='Ac-fJfql4zw' -%}</div>
 
@@ -335,7 +345,7 @@ Detailed instructions of operation and even maintenance can be found inside the 
 ![Before 2](https://starwarsfan2099.github.io/public/2021-02-23/before2.jpg){:.shadow}
 {: refdef}
 
-These are pictures of the machine when it was picked up. This machine came from Warranton, Virginia, before that it was bought from an estate sale relatively close by. The machine was working via the crank, but it was very tight. The power cord was mostly and other wiring was in pretty bad shape.
+These are pictures taken of the machine when it was picked up. The calculator it's self was on the stand backwards. It was working via the crank, but it was very tight. The power cord was mostly gone and other wiring was in pretty bad shape and was completely redone. A century of dust, oil, and dried grease were thoroughly cleaned from the outer and inner parts of the machine, and then it was reassembled. 
 
 {:refdef: style="text-align: center;"}
 ![Before 3](https://starwarsfan2099.github.io/public/2021-02-23/before3.jpg){:.shadow}
@@ -351,13 +361,13 @@ The motor was also taken apart and thoroughly cleaned, then everything was rewir
 ![Before 5](https://starwarsfan2099.github.io/public/2021-02-23/before5.jpg){:.shadow}
 {: refdef}
 
-Surprisingly, some of the old grease was still surprisingly moist and not hardened. 
+Surprisingly, some of the old grease was still moist and not hardened. 
 
 {:refdef: style="text-align: center;"}
 ![Before 6](https://starwarsfan2099.github.io/public/2021-02-23/before6.jpg){:.shadow}
 {: refdef}
 
-The workspace.
+The workspace. (With a work-in-progress electric Burroughs Class 2 peeking over the calculator in the background)
 
 {:refdef: style="text-align: center;"}
 ![Before 7](https://starwarsfan2099.github.io/public/2021-02-23/before7.jpg){:.shadow}
