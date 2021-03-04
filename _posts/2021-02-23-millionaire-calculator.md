@@ -283,6 +283,10 @@ Demo of the machine in manual and motorized mode. Also shows operation with cove
 
 <div>{%- include extensions/youtube.html id='Ac-fJfql4zw' -%}</div>
 
+And also a quick video on how to operate the machine!
+
+<div>{%- include extensions/youtube.html id='5zYVWc3tZPk' -%}</div>
+
 ## Details
 
 ### Locking Pins
