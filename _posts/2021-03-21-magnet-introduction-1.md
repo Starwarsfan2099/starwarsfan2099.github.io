@@ -9,7 +9,7 @@ author: rms
 
 Magnet AXIOM is advertised as a comprehensive suite of tools for digital forensic investigations that can recover and analyze digital evidence from most sources, including smartphones, cloud services, computers, IoT devices and third-party images. The tool also is equipped with unique analysis tools, such as AI chat categorization, image categorization, and comprehensive keyword search functions pre-processing. 
 
-In Part 1, we will be focusing on AXIOM Process. AXIOM Process is Magnet's solution for acquiring and processing evidence for later analysis in AXIOM Examine. AXIOM Process is capable of working with many different types of image formats as well as acquiring from a range of devices. In this series, we will focus on an older rooted Samsung Galaxy S4 running Android 5.0.1. This device belongs to a suspect who is believed to have stolen several drone lithium-ion batteries. 
+In Part 1, we will be focusing on AXIOM Process. AXIOM Process is Magnet's solution for acquiring and processing evidence for later analysis in AXIOM Examine. AXIOM Process is capable of working with many different types of image formats as well as acquiring from a range of devices. In this series, we will focus on an older rooted Samsung Galaxy S4 running Android 5.0.1. This device belongs to a suspect who is believed to have been involved in stealing several drone lithium-ion batteries. 
 
 ## AXIOM Process
 
