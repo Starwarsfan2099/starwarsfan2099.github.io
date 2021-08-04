@@ -1,7 +1,7 @@
 ---
 title: Magnet AXIOM Introduction - Part 1
 excerpt: Introduction and tutorial to the Magnet AXIOM suite of tools. In part one, we'll acquire and process an Android device to later analyze.
-tags: magnet-ctf ctf forensics
+tags: forensics
 author: rms
 ---
 

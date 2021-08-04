@@ -1,7 +1,7 @@
 ---
 title: Magnet AXIOM Introduction - Part 2
 excerpt: Introduction and tutorial to the Magnet AXIOM suite of tools. In part two, we'll look at AXIOM Examine and how it can be used to search for evidence.
-tags: magnet-ctf ctf forensics
+tags: forensics
 author: rms
 ---
 
