@@ -12,8 +12,39 @@ This is a tool I wrote three years ago, but had to use again a few days ago and 
 
 ## iOS Restrictions Passcode
 
-Apple allows restrictions to be setup on their devices. The primary use of these is for parental control - such as disabling installing apps or disabling 18+ music downloads. The restrictions require a separate password be set for access to the restrictions control page. If this code is forgotten, there is no way to recover it. Typically, the device would have to be reset. I didn't exactly want to reset the device, so my goal was to find or crack the restrictions passcode. 
+Apple allows restrictions to be setup on their devices. The primary use of these is for parental control - such as disabling installing apps or disabling 18+ music downloads. The restrictions require a separate password be set for access to the restrictions control page. If this code is forgotten, there is no way to recover it. Typically, the device would have to be reset. I didn't exactly want to reset the device, so my goal was to find or crack the restrictions passcode.
 
-### How does it work?
+### Where to find it?
 
-That's what I wanted to find out. First, I grabbed my jailbroken device and started browsing around the file system. Since the passcode is entered directly into a page in settings, I started looking there hoping I could find a base64 encoded passcode or something simple. Under `/Library
+That's what I wanted to find out. First, I grabbed my jailbroken device and started browsing around the file system. Since the passcode is entered directly into a page in settings, I started looking there hoping I could find a base64 encoded passcode or something simple. Under `/var/mobile/Library/Preferences` is a property list file called `com.apple.restrictionspassword.plist`. Hm. `restrictionspassword`? Sounds like what I was after. This file contains a single dictionary, with two data keys: `RestrictionsPasswordKey` and `RestrictionsPasswordSalt`. It looked like this:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>RestrictionsPasswordKey</key>
+	<data>
+	+ELsJPG2ko6AHAK3KZe/uooMFR8=
+	</data>
+	<key>RestrictionsPasswordSalt</key>
+	<data>
+	R9C4DA==
+	</data>
+</dict>
+</plist>
+```
+
+Okay, so now I had a hash and a salt. Next is to figure out what kind of hashing algorithm this is. Thankfully, someone on the [hashcat](https://hashcat.net/forum/thread-2892.html) forums had this same question, and somebody answered.  
+
+{:refdef: style="text-align: center;"}
+![Start Screen](../public/2021-08-03/post.jpg){:.shadow}
+{: refdef}
+
+So, this user states that the hashing algorithm is `pbkdf2-hmac-sha1 ((Password-Based Key Derivation Function 2)`.  Since this is a hashing function it needed to be bruteforced. Thankfully, the iOS restrictions only allow for a four digit code to be set as the passcode. So the keyspace is only 0000-9999 which seemed easy enough to bruteforce.
+
+### How to get the file though?
+
+First I had problem though. My sibling's iPod was not jailbroken. So how do we get to this file? Hmmmmm. With some Googling, I learned the restrictions passcode is placed back on the device after a backup and restore. This meant the file or at least the hash and salt definitely is copied to the computer during a backup. This seemed like a good way to find the file. 
+
+So, I made a backup of the iPod and my iPhone with a restrictions set in case there were changes across devices or versions in how the hash and salt is copied over. 
