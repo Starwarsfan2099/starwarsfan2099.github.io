@@ -47,4 +47,50 @@ So, this user states that the hashing algorithm is `pbkdf2-hmac-sha1 ((Password-
 
 First I had problem though. My sibling's iPod was not jailbroken. So how do we get to this file? Hmmmmm. With some Googling, I learned the restrictions passcode is placed back on the device after a backup and restore. This meant the file or at least the hash and salt definitely is copied to the computer during a backup. This seemed like a good way to find the file. 
 
-So, I made a backup of the iPod and my iPhone with a restrictions set in case there were changes across devices or versions in how the hash and salt is copied over. 
+So, I made a backup of the iPod and my iPhone with a restrictions set in case there were changes across devices or versions in how the hash and salt is copied over. Backups were made using iTunes. On Windows, backups are stored at `C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup`. On Mac, they are stored under `/Library/Application Support/MobileSync/Backup/`. In this folder are the different backups, even if it doesn't look like it at first.  
+
+{:refdef: style="text-align: center;"}
+![Backup List](../public/2021-08-03/list.JPG){:.shadow}
+{: refdef}
+
+Inside the folders that are a backup of a device, there is an `Info.plist` file that eventually contains the device name and information.
+
+```
+...
+<key>Build Version</key>
+	<string>18C66</string>
+	<key>Device Name</key>
+	<string>iPod touch</string>
+	<key>Display Name</key>
+	<string>iPod touch</string>
+	<key>GUID</key>
+	<string>REDACTED</string>
+	<key>Installed Applications</key>
+	<array>
+		<string>com.fingersoft.hillclimbracing2</string>
+		<string>com.fboweb.MyRadar</string>
+	</array>
+	<key>Last Backup Date</key>
+	<date>2021-02-09T20:26:38Z</date>
+	<key>Product Name</key>
+	<string>iPod touch</string>
+	<key>Product Type</key>
+	<string>iPod9,1</string>
+	<key>Product Version</key>
+	<string>11.3.1</string>
+	<key>Serial Number</key>
+	<string>REDACTED</string>
+	<key>Target Identifier</key>
+	<string>REDACTED</string>
+	<key>Target Type</key>
+	<string>Device</string>
+	<key>Unique Identifier</key>
+	<string>REDACTED</string>
+	<key>iTunes Files</key>
+	<dict>
+...
+ ```
+
+Now I could find my devices. 
+
+Since I knew that hash that was on my iPhone, I used that and searched through the iPhone backup contents. 
