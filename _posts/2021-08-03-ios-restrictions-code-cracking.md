@@ -16,7 +16,7 @@ Apple allows restrictions to be setup on their devices. The primary use of these
 
 ### Where to find it?
 
-That's what I wanted to find out. First, I grabbed my jailbroken device and started browsing around the file system. Since the passcode is entered directly into a page in settings, I started looking there hoping I could find a base64 encoded passcode or something simple. Under `/var/mobile/Library/Preferences` is a property list file called `com.apple.restrictionspassword.plist`. Hm. `restrictionspassword`? Sounds like what I was after. This file contains a single dictionary, with two data keys: `RestrictionsPasswordKey` and `RestrictionsPasswordSalt`. It looked like this:
+That's what I wanted to find out. First, lets grab a jailbroken device and browse around the file system. Since the passcode is entered directly into a page in settings, we can start there looking for a base64 encoded passcode or something simple. Under `/var/mobile/Library/Preferences` is a property list file called `com.apple.restrictionspassword.plist`. Hm. `restrictionspassword`? Sounds interesting. This file contains a single dictionary, with two data keys: `RestrictionsPasswordKey` and `RestrictionsPasswordSalt`. It looked like this:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -35,22 +35,32 @@ That's what I wanted to find out. First, I grabbed my jailbroken device and star
 </plist>
 ```
 
-Okay, so now I had a hash and a salt. Next is to figure out what kind of hashing algorithm this is. Thankfully, someone on the [hashcat](https://hashcat.net/forum/thread-2892.html) forums had this same question, and somebody answered.  
+Hm. The `=` and `==` characters at the end of the hash and salt are dead give aways of base64 encoding. Decoding it gives us: `f8 42 ec 24 f1 b6 92 8e 80 1c 02 b7 29 97 bf ba 8a 0c 15 1f` That's not much, it's not even mostly printable characters. It is exactly 160 bits long though. What else is 160 bits long? A few hashing functions: 
+
+- SHA-1
+- SHA-0
+- FSB-160
+- HAS-160
+- HAVAL-160
+- RIPEMD-160
+- Tiger-160
+
+So this is very likely a hash of some sort. But what algorithm? Thankfully, someone on the [hashcat](https://hashcat.net/forum/thread-2892.html) forums had this same question, and another user answered.  
 
 {:refdef: style="text-align: center;"}
-![Start Screen](../public/2021-08-03/post.jpg){:.shadow}
+![Start Screen](https://starwarsfan2099.github.io/public/2021-08-03/post.jpg){:.shadow}
 {: refdef}
 
-So, this user states that the hashing algorithm is `pbkdf2-hmac-sha1 ((Password-Based Key Derivation Function 2)`.  Since this is a hashing function it needed to be bruteforced. Thankfully, the iOS restrictions only allow for a four digit code to be set as the passcode. So the keyspace is only 0000-9999 which seemed easy enough to bruteforce.
+So, this user states that the hashing algorithm is `pbkdf2-hmac-sha1 ((Password-Based Key Derivation Function 2)`. He also explains how he figured out it is iterations of the algorithm. This will be useful later. Since this is a hashing function it needed to be bruteforced. Thankfully, the iOS restrictions only allow for a four digit code to be set as the passcode. So the keyspace is only 0000-9999 which seemed easy enough to bruteforce.
 
 ### How to get the file though?
 
-First I had problem though. My sibling's iPod was not jailbroken. So how do we get to this file? Hmmmmm. With some Googling, I learned the restrictions passcode is placed back on the device after a backup and restore. This meant the file or at least the hash and salt definitely is copied to the computer during a backup. This seemed like a good way to find the file. 
+First we have a problem though. My sibling's iPod was not jailbroken. So how do we get to this file? Hmmmmm. With some Googling, we can learn the restrictions passcode is placed back on the device after a backup and restore. This meant the file or at least the hash and salt definitely is copied to the computer during a backup. This seems like a good way to find the file. 
 
 So, I made a backup of the iPod and my iPhone with a restrictions set in case there were changes across devices or versions in how the hash and salt is copied over. Backups were made using iTunes. On Windows, backups are stored at `C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup`. On Mac, they are stored under `/Library/Application Support/MobileSync/Backup/`. In this folder are the different backups, even if it doesn't look like it at first.  
 
 {:refdef: style="text-align: center;"}
-![Backup List](../public/2021-08-03/list.JPG){:.shadow}
+![Backup List](https://starwarsfan2099.github.io/public/2021-08-03/list.JPG){:.shadow}
 {: refdef}
 
 Inside the folders that are a backup of a device, there is an `Info.plist` file that eventually contains the device name and information.
@@ -91,6 +101,36 @@ Inside the folders that are a backup of a device, there is an `Info.plist` file 
 ...
  ```
 
-Now I could find my devices. 
+Now we know which folder pertains to which devices! Next, I searched my iPhone backup for the hash I found in the `.plist` file that I knew was somewhere in the backup. I searched for files that had `restrictionspassword` in the file name or `+ELsJPG2ko6AHAK3KZe/uooMFR8=` in the file contents.
 
-Since I knew that hash that was on my iPhone, I used that and searched through the iPhone backup contents. 
+This results in a file having the hash! It was in a file named `398bc9c2aeeab4cb0c12ada0f52eea12cf14f40b`. However, looking for this file in the iPod backup yielded no results. But, with a quick search for the file name, it was found at `39\398bc9c2aeeab4cb0c12ada0f52eea12cf14f40b`. Now, I had the hash and salt for the iPod!
+
+### Bruteforcing the hash
+
+We can use Python to bruteforce the hash. First, we need a python implementation of `pbkdf2-hmac-sha1`. Luckily, there is already one in the Python module `passlib` - a python hashing library. It needs to be installed with `pip install hashlib`. We will also need to import `b64decode()` from the `base64` module. Now we can right a simple function to bruteforce the passcode. It should:
+
+- base64 decode the hash and salt
+- loop over passcode iterations 0000 to 9999
+- hash each passcode with `pbkdf2()` from passlib
+- pass `pbkdf2()` the current passcode, salt, and rounds (`1000` from earlier)
+- compare the hash to the one provided
+- if they match, the current passcode iteration is the restrictions passcode
+- if they don't, continue looping and iterating
+
+With that basic outline, we get the following simple code:
+
+{% highlight python %}
+from passlib.utils.pbkdf2 import pbkdf2
+from base64 import b64decode
+
+def crackRestrictionsKey(base64Hash, base64Salt):
+    secret = b64decode(base64Hash)
+    salt = b64decode(base64Salt)
+    for i in range(10000):
+        key = "%04d" % i
+        out = pbkdf2(key, salt, 1000)
+        if out == secret:
+            print "[+] Passcode: %s" % key
+{% endhighlight %}
+
+Now we can run the function with our hash and salt: `crackRestrictions("+ELsJPG2ko6AHAK3KZe/uooMFR8=", "R9C4DA==")`. And we get the passcode - `[+] Passcode: 2589`!! Now the restrictions on my brothers iPod can be adjusted without the need for resetting the device. This might have happened a few more times, and I just wrote a whole python script to automatically parse the backups and do everything on both Windows and Mac. It can be found [here](https://github.com/Starwarsfan2099/iOS-Restriction-Key-Cracker/blob/master/KeyCracker.py). Happy hacking!
