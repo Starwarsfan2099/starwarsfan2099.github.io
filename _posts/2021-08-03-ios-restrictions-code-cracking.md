@@ -8,15 +8,15 @@ author: rms
 
 ## Background
 
-This is a tool I wrote three years ago, but had to use again a few days ago and thought I would make a write up about it. So, growing up in a family of 7 and being the one most interested in technology meant I became tech support for my family. As the oldest sibling, I would teach my siblings how to use computers, phones, and iPods. I would also help my parents at handling my sibling's technology. One day, my mother came to me asking if I could get a forgotten passcode for her off one of my youngest sibling's iPod. Surprisingly though, it wasn't the device passcode - it was the passcode to the restrictions.
+This is a tool I wrote three years ago, but had to use again recently. So, I thought I would make a write up about it. Growing up in a family of 7 and being the one most interested in technology meant I became tech support for my family. As the oldest sibling, I would teach my siblings how to use computers, phones, and iPods. I would also help my parents with handling my sibling's technology. One day, my mother came to me asking if I could get a forgotten passcode for her off my youngest sibling's iPod. Surprisingly though, it wasn't the device passcode - it was the passcode to the restrictions.
 
 ## iOS Restrictions Passcode
 
-Apple allows restrictions to be setup on their devices. The primary use of these is for parental control - such as disabling installing apps or disabling 18+ music downloads. The restrictions require a separate password be set for access to the restrictions control page. If this code is forgotten, there is no way to recover it. Typically, the device would have to be reset. I didn't exactly want to reset the device, so my goal was to find or crack the restrictions passcode.
+Apple allows restrictions to be set up on their devices. The primary use of these is for parental control - such as disabling installing apps or disabling 18+ music downloads. The restrictions require a separate password be set for access to the restrictions control page. If this code is forgotten, there is no way to recover it. Typically, the device would have to be reset. I didn't exactly want to reset the device, so my goal was to find or crack the restrictions passcode.
 
 ### Where to find it?
 
-That's what I wanted to find out. First, lets grab a jailbroken device and browse around the file system. Since the passcode is entered directly into a page in settings, we can start there looking for a base64 encoded passcode or something simple. Under `/var/mobile/Library/Preferences` is a property list file called `com.apple.restrictionspassword.plist`. Hm. `restrictionspassword`? Sounds interesting. This file contains a single dictionary, with two data keys: `RestrictionsPasswordKey` and `RestrictionsPasswordSalt`. It looked like this:
+That's what I wanted to find out. First, lets grab a jailbroken device and browse around the file system. Since the passcode is entered directly into a page in settings, we can start there looking for a base64 encoded passcode or something simple. Under `/var/mobile/Library/Preferences` is a property list file called `com.apple.restrictionspassword.plist`. Hm. `restrictionspassword`? Sounds interesting. This file contains a single dictionary, with two data keys: `RestrictionsPasswordKey` and `RestrictionsPasswordSalt`. It looks like this:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -107,7 +107,7 @@ This results in a file having the hash! It was in a file named `398bc9c2aeeab4cb
 
 ### Bruteforcing the hash
 
-We can use Python to bruteforce the hash. First, we need a python implementation of `pbkdf2-hmac-sha1`. Luckily, there is already one in the Python module `passlib` - a python hashing library. It needs to be installed with `pip install hashlib`. We will also need to import `b64decode()` from the `base64` module. Now we can right a simple function to bruteforce the passcode. It should:
+We can use Python to bruteforce the hash. First, we need a python implementation of `pbkdf2-hmac-sha1`. Luckily, there is already one in the Python module `passlib` - a python hashing library. It needs to be installed with `pip install hashlib`. We will also need to import `b64decode()` from the `base64` module. Now we can write a simple function to bruteforce the passcode. It should:
 
 - base64 decode the hash and salt
 - loop over passcode iterations 0000 to 9999
@@ -119,7 +119,7 @@ We can use Python to bruteforce the hash. First, we need a python implementation
 
 With that basic outline, we get the following simple code:
 
-{% highlight python %}
+{% highlight python linenos %}
 from passlib.utils.pbkdf2 import pbkdf2
 from base64 import b64decode
 
@@ -133,4 +133,4 @@ def crackRestrictionsKey(base64Hash, base64Salt):
             print "[+] Passcode: %s" % key
 {% endhighlight %}
 
-Now we can run the function with our hash and salt: `crackRestrictions("+ELsJPG2ko6AHAK3KZe/uooMFR8=", "R9C4DA==")`. And we get the passcode - `[+] Passcode: 2589`!! Now the restrictions on my brothers iPod can be adjusted without the need for resetting the device. This might have happened a few more times, and I just wrote a whole python script to automatically parse the backups and do everything on both Windows and Mac. It can be found [here](https://github.com/Starwarsfan2099/iOS-Restriction-Key-Cracker/blob/master/KeyCracker.py). Happy hacking!
+Now we can run the function with our hash and salt: `crackRestrictions("+ELsJPG2ko6AHAK3KZe/uooMFR8=", "R9C4DA==")`. And we get the passcode - `[+] Passcode: 2589`!! With this information, the restrictions on my brother's iPod could be adjusted without the need for resetting the device. This might have happened a few more times. So, I just wrote a whole python script to automatically parse the backups and do everything on both Windows and Mac. It can be found [here](https://github.com/Starwarsfan2099/iOS-Restriction-Key-Cracker/blob/master/KeyCracker.py). Happy hacking!
