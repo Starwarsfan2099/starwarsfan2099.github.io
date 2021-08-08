@@ -230,8 +230,8 @@ int main() {
         four(int i = 0; i < 13; i++) {
                 printf("%d\n", i);
         }
-  }
-
+}
+     
 {% endhighlight %}
 
 This should test if our `for` and `four` loops work. Now we build the program with the new clang that's located in `llvm-project/build/bin` like so: `bin/clang four_test.c -o four_test`. Now run it and check the output!
