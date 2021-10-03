@@ -376,3 +376,13 @@ The workspace. (With a work-in-progress electric Burroughs Class 2 peeking over 
 {:refdef: style="text-align: center;"}
 ![Before 7](https://starwarsfan2099.github.io/public/2021-02-23/before7.jpg){:.shadow}
 {: refdef}
+
+## Links and Sources
+
+https://www.madas.ch/?page_id=5978
+
+https://www.johnwolff.id.au/calculators/Egli/Egli.htm
+
+https://history-computer.com/inventions/millionaire-calculator-machine-the-complete-history/
+
+https://m-cacm.acm.org/blogs/blog-cacm/231865-mystery-dating-of-the-world-famous-millionaire-calculating-machine-solved/fulltext?mobile=true
