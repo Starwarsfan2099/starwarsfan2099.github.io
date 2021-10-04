@@ -13,7 +13,7 @@ author: rms
 ![Millionaire Calculator](https://starwarsfan2099.github.io/public/2021-02-23/main.jpg){:.shadow}
 {: refdef}
 
-In 1893, engineer *Hans W. Egli* began selling a calculator titled the *"Millionaire"*. *Egli* produced and sold these machines over nearly forty years from Zurich, Sweden. These calculators, while being large, heavy, and expensive, were extremely efficient at multiplication. Most other calculators of the time, and at all really, use repeated additions to perform multiplication. *Egli's* calculator did not. It used a mechanical brass-milled lookup table for performing any single digit multiplication in one turn of the crank, or one machine cycle. A two digit multiplication would then only require two cranks or cycles. Compared to other machines of the time, this was lighting fast. 
+In 1893, engineer *Hans W. Egli* began selling a calculator titled the *"Millionaire"*. *Egli* produced and sold these machines over nearly forty years from Zurich, Sweden. These calculators, while being large, heavy, and expensive, were extremely efficient at multiplication. Most other calculators of the time, and at all really, use repeated additions to perform multiplication. *Egli's* calculator did not. It used a mechanical brass-milled lookup table for performing any single digit multiplication in one turn of the crank, or one machine cycle. A two digit multiplication would then only require two cranks or cycles. Compared to other machines of the time, this was lighting fast.   
 
 {:refdef: style="text-align: center;"}
 ![Millionaire Calculator Ad](https://starwarsfan2099.github.io/public/2021-02-23/ad.jpg){:.shadow}
@@ -261,7 +261,7 @@ The table has been milled into a block of brass (pictured above). It's easiest t
 | 8 |2 7|4 6|6 5|8 4|0 4|2 3|4 2|6 1|8 0|
 | 9 |1 8|2 7|3 6|4 5|5 4|6 3|7 2|8 1|9 0|
 
-The columns are each slider input in one column of the input. Each digit in the table corresponds to the "steps" milled in the piece. Each slider moves a gear up or down along a shaft that connects to the register.
+The columns are each slider input in one column of the input. Each digit in the table corresponds to the "steps" milled into the piece. Each slider moves a gear up or down along a shaft that connects to the register.
 
 {:refdef: style="text-align: center;"}
 ![Input Gear](https://starwarsfan2099.github.io/public/2021-02-23/input2.jpg){:.shadow}
