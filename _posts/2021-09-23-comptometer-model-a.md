@@ -1,0 +1,76 @@
+---
+title: Comptometer Model A (The Wooden Shoebox Model)
+excerpt: The very first Comptometer model ever made. The Model A, also know as the "Shoebox" model, is set in a wooden case.
+cover: https://starwarsfan2099.github.io/public/2021-09-23/cover.JPG
+cover_size: sm
+tags: restoration antique mechanical-calculator
+author: rms
+---
+
+## Overview 
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A](https://starwarsfan2099.github.io/public/2021-09-23/main.JPG){:.shadow}
+{: refdef}
+
+My 2nd Compomter aquisition, this Model A is much older than my [model J](https://starwarsfan2099.github.io/2021/02/09/comptometer-model-j.html). This is the first Comptometer adding machine model made by *Felt & Tarrant Manufacturing Company*. Established in 1889, they were the leader in key-driven adding machines during the 20th century. The primary goals of the machines were speed and accuracy for numbers that needed to be added in rapid succession. The Comptometers quickly gained popularity and many models were produced throughout the years. This particular model is a model *A* and appears to have been built on September 22nd, 1896, making it the oldest calculator in my collection.
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Ad](https://starwarsfan2099.github.io/public/2021-09-23/ad.jpg){:.shadow}
+{: refdef}
+
+This Ad is dated to sometime between 1893 and 1903. It states the 8 column version of the Model A Comptometer, the same as this one, would have cost $125. Adjusted for inflation, that's almost $4,000 dollars today for a calculator!
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Side](https://starwarsfan2099.github.io/public/2021-09-23/side.JPG){:.shadow}
+{: refdef}
+
+This machine came to me from from Troy, Ohio. It sets in a beautiful wooden box. I'm not entirely sure what kind of wood though, my guess would be Mahogany. For it's age, it's in surprisingly good condition. 
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Plate](https://starwarsfan2099.github.io/public/2021-09-23/plate.JPG){:.shadow}
+{: refdef}
+
+Unfortunately, the name plate is slightly damaged in one spot. Nevertheless, it lists the patent dates, the company, city, and what I believe is the build date stamped into it right above the word *Tarrant*. If anyone has any information on whether that is or is not the build date, please let me know via email at [andrewlclarkiv@gmail.com](mailto:andrewlclarkiv@gmail.com). 
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Keys](https://starwarsfan2099.github.io/public/2021-09-23/keys.JPG){:.shadow}
+{: refdef}
+
+The keys have a wonderful font and metal ring around them. On every other roll, the key caps roll down in two places for all keys across that row. Each key has a spring under it. 
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Keys](https://starwarsfan2099.github.io/public/2021-09-23/front.JPG){:.shadow}
+{: refdef}
+
+In between the keys at the front of the machine are eight little tabs that can be pushed. These prevent a carry from happening to any further dials. Below that are eight decimal markers that can be slid up or down. 
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Dials](https://starwarsfan2099.github.io/public/2021-09-23/dial.JPG){:.shadow}
+{: refdef}
+
+The dials on this machine are made of polished metal. Now only the 2nd machine I have with dials that aren't plastic (first is the [Millionaire](https://starwarsfan2099.github.io/2021/02/23/millionaire-calculator.html) dials). 
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Clearing](https://starwarsfan2099.github.io/public/2021-09-23/clear.JPG){:.shadow}
+{: refdef}
+
+On the right side of the machine are the clearing knob and lever. The lever must be pushed downward in order to rotate the knob that clears the dials.
+
+{:refdef: style="text-align: center;"}
+![Comptometer Model A Dovetail](https://starwarsfan2099.github.io/public/2021-09-23/dove_tail.JPG){:.shadow}
+{: refdef}
+
+The case even has dove tail joints in the corners! 
+
+## Repair?
+
+Nope, no repairs needed on this machine. Only needed some oiling and it's fully working!
+
+## Removing the Case
+
+First, remove the six screws holding the clearing knob and lever on the right side of the machine and then pull them out. Next, remove six screws from the metal plate that covers the dials and mechanism on the front of the machine. Lastly, remove the four screws in the body of the machine, two on each side. The internal machine can then be lifted from the case. 
+
+## Internal Pictures
+
+Coming soon!
