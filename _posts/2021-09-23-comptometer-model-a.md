@@ -1,5 +1,5 @@
 ---
-title: Comptometer Model A (The Wooden Case Model!)
+title: Comptometer Model A
 excerpt: The very first Comptometer model ever made - the Model A.
 cover: https://starwarsfan2099.github.io/public/2021-09-23/cover.JPG
 cover_size: sm
