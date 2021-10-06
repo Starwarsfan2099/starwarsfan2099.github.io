@@ -65,14 +65,14 @@ On the right side of the machine are the clearing knob and lever. The lever must
 
 The case even has dove tail joints in the corners! 
 
-## Repair?
+### Repair?
 
 Nope, no repairs needed on this machine. Only needed some oiling and it's fully working!
 
-## Removing the Case
+### Removing the Case
 
 First, remove the six screws holding the clearing knob and lever on the right side of the machine and then pull them out. Next, remove six screws from the metal plate that covers the dials and mechanism on the front of the machine. Lastly, remove the four screws in the body of the machine, two on each side. The internal machine can then be lifted from the case. 
 
-## Internal Pictures
+### Internal Pictures
 
 Coming soon!
