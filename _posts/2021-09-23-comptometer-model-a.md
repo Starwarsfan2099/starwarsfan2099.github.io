@@ -31,13 +31,15 @@ This machine came to me from from Troy, Ohio. It sets in a beautiful wooden box.
 ![Comptometer Model A Plate](https://starwarsfan2099.github.io/public/2021-09-23/plate.JPG){:.shadow}
 {: refdef}
 
-Unfortunately, the name plate is slightly damaged in one spot. Nevertheless, it lists the patent dates, the company, city, and what I believe is the build date stamped into it right above the word *Tarrant*. If anyone has any information on whether that is or is not the build date, please let me know via email at [andrewlclarkiv@gmail.com](mailto:andrewlclarkiv@gmail.com). 
+Unfortunately, the name plate is slightly damaged in one spot. Nevertheless, it lists the patent dates, the company, city, and what I believe is the build date stamped into it right above the word *Tarrant*. If anyone has any information on whether it is or is not the build date, please let me know via email at [andrewlclarkiv@gmail.com](mailto:andrewlclarkiv@gmail.com). 
 
 {:refdef: style="text-align: center;"}
 ![Comptometer Model A Keys](https://starwarsfan2099.github.io/public/2021-09-23/keys.JPG){:.shadow}
 {: refdef}
 
 The keys have a wonderful font and metal ring around them. On every other roll, the key caps roll down in two places for all keys across that row. Each key has a spring under it. 
+
+Operating it is nearly similar to the [model j operation](https://starwarsfan2099.github.io/2021/02/09/comptometer-model-j.html#operation). The only difference is that multiple columns of keys can not be pressed at the same time. Doing so will result in carries not being propagated correctly. 
 
 {:refdef: style="text-align: center;"}
 ![Comptometer Model A Keys](https://starwarsfan2099.github.io/public/2021-09-23/front.JPG){:.shadow}
