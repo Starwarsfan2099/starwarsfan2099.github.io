@@ -39,7 +39,7 @@ Unfortunately, the name plate is slightly damaged in one spot. Nevertheless, it 
 
 The keys have a wonderful font and metal ring around them. On every other roll, the key caps roll down in two places for all keys across that row. Each key has a spring under it. 
 
-Operating it is nearly similar to the [model j operation](https://starwarsfan2099.github.io/2021/02/09/comptometer-model-j.html#operation). The only difference is that multiple columns of keys can not be pressed at the same time. Doing so will result in carries not being propagated correctly. 
+Operating it is nearly similar to the [model J operation](https://starwarsfan2099.github.io/2021/02/09/comptometer-model-j.html#operation). The only difference is that multiple columns of keys can not be pressed at the same time. Doing so will result in carries not being propagated correctly. 
 
 {:refdef: style="text-align: center;"}
 ![Comptometer Model A Keys](https://starwarsfan2099.github.io/public/2021-09-23/front.JPG){:.shadow}
