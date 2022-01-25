@@ -981,16 +981,16 @@ Author: Starwarsfan2099
 Name: lolcat
 
 Package: com.starwarsfan2099.mgspoof
-Version: 0.0.4-9+debug
+Version: 0.0.4-10+debug
 Architecture: iphoneos-arm
 Maintainer: Starwarsfan2099
 Installed-Size: 524
 Depends: mobilesubstrate
 Filename: ./debs/com.starwarsfan2099.mgspoof_0.0.4-3+debug_iphoneos-arm.deb
-Size: 53508
-MD5sum: 5bc168cd3fe469a11eb8e7d88dae3da4
-SHA1: fe27b606c4d1b10c592786f18e1b14ac5fd111b2
-SHA256: 4c5c80fe10660081d16a1e7b2f7552f085a67b2f6840aed16f2a0396ab6e3a6d
+Size: 53456
+MD5sum: 5137bd9097382b7eaea15e2b82380495
+SHA1: a841c201761884c9009101a709e6e8202d28e734
+SHA256: 64937636fd5c9edc5701a3de8a33ea0ecd9833451ce6a6012f714ae167f38caa
 Section: Tweaks
 Description: Tool that can be used to spoof MGCopyAnswer's result. (iOS 9 - 13) This version is patched to allow lockdown spoofing as well. Use at own risk.
 Author: Tony
