@@ -980,22 +980,6 @@ Description: A rainbow in your terminal! Includes trollop and paint gems.
 Author: Starwarsfan2099
 Name: lolcat
 
-Package: com.starwarsfan2099.mgspoof
-Version: 0.0.4-19+debug
-Architecture: iphoneos-arm
-Maintainer: Starwarsfan2099
-Installed-Size: 592
-Depends: mobilesubstrate
-Filename: ./debs/com.starwarsfan2099.mgspoof_0.0.4-3+debug_iphoneos-arm.deb
-Size: 55844
-MD5sum: e9c5252f40a2c107ab14606460c00302
-SHA1: 59f0dc395406d438b7408d0f708a9a9c8acf91ff
-SHA256: d3fccf28fa473bef1a5425daf93dda82fb2bf0f1d458a9bee36e5c7ce08b457c
-Section: Tweaks
-Description: Tool that can be used to spoof MGCopyAnswer's result. (iOS 9 - 13) Patched to allow lockdownd spoofing as well.
-Author: Tony
-Name: MGSpoof
-
 Package: com.starwarsfan2099.p0f
 Version: 3.09
 Architecture: iphoneos-arm
@@ -1117,6 +1101,22 @@ Section: Tweaks
 Description: Uber Driver JB detection bypass.
 Author: Starwarsfan2099
 Name: Uber Driver Jailbreak Bypass
+
+Package: com.tonyk7.mgspoof
+Version: 0.0.3-8+debug
+Architecture: iphoneos-arm
+Maintainer: Tony
+Installed-Size: 592
+Depends: mobilesubstrate
+Filename: ./debs/com.starwarsfan2099.mgspoof_0.0.4-3+debug_iphoneos-arm.deb
+Size: 56478
+MD5sum: 142222005a33a7448ade29a34770389e
+SHA1: f3bee48a146d95e1195e0b9e7745d8e642f33c7b
+SHA256: d2ebdb048ca051de149b2e013cd37c5243330d65685a95aa81320b4fe187844a
+Section: Tweaks
+Description: Tool that can be used to spoof MGCopyAnswer's result. (iOS 9 - 12.1.2)
+Author: Tony
+Name: MGSpoof
 
 Package: com.trcx.iAHT
 Version: 1.5.0-1
