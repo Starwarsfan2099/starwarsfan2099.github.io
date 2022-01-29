@@ -1103,16 +1103,16 @@ Author: Starwarsfan2099
 Name: Uber Driver Jailbreak Bypass
 
 Package: com.tonyk7.mgspoof
-Version: 0.0.3-8+debug
+Version: 0.0.3-15+debug
 Architecture: iphoneos-arm
 Maintainer: Tony
-Installed-Size: 592
+Installed-Size: 588
 Depends: mobilesubstrate
 Filename: ./debs/com.starwarsfan2099.mgspoof_0.0.4-3+debug_iphoneos-arm.deb
-Size: 56478
-MD5sum: 142222005a33a7448ade29a34770389e
-SHA1: f3bee48a146d95e1195e0b9e7745d8e642f33c7b
-SHA256: d2ebdb048ca051de149b2e013cd37c5243330d65685a95aa81320b4fe187844a
+Size: 55886
+MD5sum: 8bd141e124ef6899fdcb32e9ee204e86
+SHA1: cff3dfe5c4f8c13060d959aa46cee110287c7e05
+SHA256: ef374c1bb0c9af149bc1d5e8faf62be9e299d8f695951b4fef835e6cc392e82f
 Section: Tweaks
 Description: Tool that can be used to spoof MGCopyAnswer's result. (iOS 9 - 12.1.2)
 Author: Tony
