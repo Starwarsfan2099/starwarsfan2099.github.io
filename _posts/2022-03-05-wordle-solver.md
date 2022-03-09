@@ -55,4 +55,4 @@ class WordleSolve:
         self.word_list_total = len(self.word_list)
 {% endhighlight %}
 
-First, `argv` is imported for command line arguments and `time` is imported to time the script later on. Next, a class `WordleSolve` is created and inside it is the constructor function `__init__`. In the constructor, several variables are created and initialized. Firstly, two variables for to help with letter frequency analysis: `letter_freq` and `letter_freq_value`. 
+First, `argv` is imported for command line arguments and `time` is imported to time the script later on. Next, a class `WordleSolve` is created and inside it is the constructor function `__init__`. In the constructor, several variables are created and initialized. The constructor accepts a file name and the starting word for Wordle. Once in `__Init__`, firstly, two variables to help with letter frequency analysis: `letter_freq` and `letter_freq_value`. `letter_freq` contains a list of English letters sorted form highest frequency to lowest frequency. `letter_freq_value` contains the actual frequency values from largest value to smallest. 
