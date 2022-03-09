@@ -55,4 +55,92 @@ class WordleSolve:
         self.word_list_total = len(self.word_list)
 {% endhighlight %}
 
-First, `argv` is imported for command line arguments and `time` is imported to time the script later on. Next, a class `WordleSolve` is created and inside it is the constructor function `__init__`. In the constructor, several variables are created and initialized. The constructor accepts a file name and the starting word for Wordle. Once in `__Init__`, firstly, two variables to help with letter frequency analysis: `letter_freq` and `letter_freq_value`. `letter_freq` contains a list of English letters sorted form highest frequency to lowest frequency. `letter_freq_value` contains the actual frequency values from largest value to smallest. 
+First, `argv` is imported for command line arguments and `time` is imported to time the script later on. Next, a class `WordleSolve` is created and inside it is the constructor function `__init__`. In the constructor, several variables are created and initialized. The constructor accepts a file name and the starting word for Wordle. Once in `__Init__`, firstly, two variables to help with letter frequency analysis: `letter_freq` and `letter_freq_value`. `letter_freq` contains a list of English letters sorted form highest frequency to lowest frequency. `letter_freq_value` contains the actual frequency values from largest value to smallest. Next, some variables that are used later are initilized. `target_word`, `yellow_green_list`, `not_list`, `word_history`, `score_list`, and `start_word`. 
+
+For this program, a word list of five letter words is used. Next, the word list provided is opened and the contents are read and stored in a list. 
+
+{% highlight python linenos %}
+    def box(self, words):
+        # Box top and bottom
+        box_top = "  ___________________ "
+        box_spacer  = "  ------------------- "   
+        output = box_top
+        for word in words:
+            output += "\n" + ' | ' +  ' | '.join(list(word)) + ' | ' + "\n" + box_spacer
+        return output
+
+    def get_input(self):
+        text = input("Enter results: ")
+        input_list = []
+        for letter in text:
+            input_list.append(letter)
+        return input_list
+{% endhighlight %}
+
+Next, are two simple hepler functions. One for printing out Wordle guesses in a wordle 'box' and a function for user input. 
+
+{% highlight python linenos %}
+    def letter_modify(self, letter, remove):
+        remove_list = []
+        for word in self.word_list:
+            if remove:
+                if letter in word:
+                    if letter not in self.yellow_green_list:
+                        remove_list.append(word)
+            if not remove:
+                if letter not in word:
+                    remove_list.append(word)
+        for word in remove_list:
+            word_index = self.word_list.index(word)
+            del self.score_list[word_index]
+            del self.word_list[word_index]
+
+    def letter_place(self, place, letter, remove):
+        remove_list = []
+        for word in self.word_list:
+            if remove:
+                if letter in word[place]:
+                    remove_list.append(word)
+            if not remove:
+                if letter not in word[place]:
+                    remove_list.append(word)
+        for word in remove_list:
+            word_index = self.word_list.index(word)
+            del self.score_list[word_index]
+            del self.word_list[word_index]
+{% endhighlight %}
+
+These functions handle modifying the word list after information is received from a guess. `letter_modify` accepts a letter and the boolean `remove`. If `remove` is `True`, any words in the wordlist that contain `letter` are removed from thre list. If `remove` is `False`, Any words that don't have `letter` in the word are removed from the wordlist. For example, if a word is guessed and a letter is blank, that means the letter isn't anywhere in the target word. So, all words containging that letter are removed from the list. Or, if a letter is is definetly in a word, e.g. a yellow blank, `remove` is `False` and all words *without* the letter are removed from the list. `yellow_green_list` is a list of previous letters that have have already been removed from the list. 
+
+`letter_place` is used for green or yellow squares. If a word is guessed and a letter is in a green square, than all words without that letter in that place are removed. So, if `remove` is `True`, all words in the list with `letter` in `place` are removed. If `remove` is `False`, all words in the word list that don't have `letter` in `place` are removed from the list. 
+
+{% highlight python linenos %}
+    def add_known_letters(self, letter):
+        if letter not in self.yellow_green_list:
+            self.yellow_green_list.append(letter)
+
+    def add_known_not_letters(self, letter):
+        if letter not in self.not_list:
+            self.not_list.append(letter)
+
+    def stats(self):
+        print("\nWordle: %s" % ' '.join(self.target_word))
+        print("Known letters in word: %s" % ' '.join(self.yellow_green_list))
+        print("Known letters not in word: %s" % ' '.join(self.not_list))
+        print("{0} words remaining, down to {1:.2%} of words.\n".format(len(self.word_list), (len(self.word_list)/self.word_list_total)))
+{% endhighlight %}
+
+`add_known_letters` is used to add letters to a list of letters that we know are in the target word. `add_known_not_letters` is used to add letters to a list of list of letetrs that are definetly not in the word. This is for optimization. `stats` just prints out some stats on the current Wordle.
+
+{% highlight python linenos %}
+    def sort_by_freq(self):
+        self.score_list = []
+        for word in self.word_list:
+            score = 0
+            for letter in word:
+                score += float(self.letter_freq_value[self.letter_freq.index(letter)])
+            self.score_list.append(score)
+        zipped_list = sorted(zip(self.score_list, self.word_list), reverse=True)
+        self.word_list = [self.word_list for score_list, self.word_list in zipped_list]
+        return zipped_list
+{% endhighlight %}
