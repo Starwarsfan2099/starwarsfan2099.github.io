@@ -8,7 +8,7 @@ author: rms
 ## What's Wordle?
 
 {:refdef: style="text-align: center;"}
-![Wordle](../public/2022-03-05/wordle.jpg){:.shadow}
+![Wordle](https://starwarsfan2099.github.io/public/2022-03-05/wordle.jpg){:.shadow}
 {: refdef}
 
 Wordle is a small online game that has blown up in popularity recently. It's premise is simple, you have six tries to guess a five letter word. I'm going to call this the target word. Each guess reveals information about the target word. If a letter you guessed is at the same place in the target word, it's square in the grid is colored green. If the letter is in the target word but it in the incorrect place, the square is colored yellow. And finally, if the letter is not in the target word the square is blank with no color. 
@@ -20,7 +20,7 @@ In the example image above, the first word I guessed was *beach*. "B" is colored
 Frequency analysis is used to determine the frequency of individual letters in the English language. This is shows us what letters are used more frequently than others, for example, the letter "A" is more common in words than "Z". This can be used for solving a Wordle by guessing the most likely word with the information returned from previous guesses. Thankfully, a frequency analysis of all English letters already exists.
 
 {:refdef: style="text-align: center;"}
-![Table](../public/2022-03-05/table.jpg){:.shadow}
+![Table](https://starwarsfan2099.github.io/public/2022-03-05/table.jpg){:.shadow}
 {: refdef}
 
 Using this information, we can generate a 'score' for each five letter word that is a possible guess or possible Wordle. This score can than be used to determine the *most likely* guess with the given information. Simple really.
