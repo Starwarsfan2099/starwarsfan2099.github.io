@@ -240,6 +240,8 @@ def play_bot(solver, target_list, start_word, verbose):
     word_list_sorted = []
     score_list_sorted = []
     fails = 0
+    for word in target_list:
+        solver.word_list.append(word)
 
     # Sort by frequency and backup those values
     scores = solver.sort_by_freq()
@@ -582,6 +584,8 @@ def play_bot(solver, target_list, start_word, verbose):
     word_list_sorted = []
     score_list_sorted = []
     fails = 0
+    for word in target_list:
+        solver.word_list.append(word)
 
     # Sort by frequency and backup those values
     scores = solver.sort_by_freq()
