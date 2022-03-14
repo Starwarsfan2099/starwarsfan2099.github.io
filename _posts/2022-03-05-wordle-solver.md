@@ -335,7 +335,7 @@ def test_start_words():
         successes = []
         fails = 0
         count, successes, fails = play_bot(solver, target_list, start_word, False)
-        averages.append([(count/len(successes), start_word)])
+        averages.append((count/len(successes), start_word))
         print((count/len(successes), start_word), len(successes))
     result = sorted(averages)
     print("The best start word is %s with a average of %f Wordle guesses." % (result[0][1], result[0][0]))
@@ -662,7 +662,7 @@ def test_start_words():
         successes = []
         fails = 0
         count, successes, fails = play_bot(solver, target_list, start_word, False)
-        averages.append([(count/len(successes), start_word)])
+        averages.append((count/len(successes), start_word))
         print((count/len(successes), start_word), len(successes))
     result = sorted(averages)
     print("The best start word is %s with a average of %f Wordle guesses." % (result[0][1], result[0][0]))
