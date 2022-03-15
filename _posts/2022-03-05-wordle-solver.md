@@ -237,9 +237,12 @@ And finally, there is a bot function to use for testing optimization and start w
 # Automatically play Wordle for testing code, start words, etc.
 def play_bot(solver, target_list, start_word, verbose):
     succsess = []
+    solver.word_list = []
     word_list_sorted = []
     score_list_sorted = []
     fails = 0
+    for word in target_list:
+        solver.word_list.append(word)
 
     # Sort by frequency and backup those values
     scores = solver.sort_by_freq()
@@ -579,9 +582,12 @@ class WordleSolve:
 # Automatically play Wordle for testing code, start words, etc.
 def play_bot(solver, target_list, start_word, verbose):
     succsess = []
+    solver.word_list = []
     word_list_sorted = []
     score_list_sorted = []
     fails = 0
+    for word in target_list:
+        solver.word_list.append(word)
 
     # Sort by frequency and backup those values
     scores = solver.sort_by_freq()
