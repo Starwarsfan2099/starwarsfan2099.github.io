@@ -94,10 +94,12 @@ Next, are two simple hepler functions. One for printing out Wordle guesses in a 
                 if letter in self.word_list[i]:
                     if letter not in self.yellow_green_list:
                         self.word_list.pop(i)
+                        self.score_list.pop(i)
                         continue
             if not remove:
                 if letter not in self.word_list[i]:
                     self.word_list.pop(i)
+                    self.score_list.pop(i)
                     continue
             i += 1
 
@@ -108,10 +110,12 @@ Next, are two simple hepler functions. One for printing out Wordle guesses in a 
             if remove:
                 if letter in self.word_list[i][place]:
                     self.word_list.pop(i)
+                    self.score_list.pop(i)
                     continue
             if not remove:
                 if letter not in self.word_list[i][place]:
                     self.word_list.pop(i)
+                    self.score_list.pop(i)
                     continue
             i += 1
 {% endhighlight %}
@@ -172,6 +176,7 @@ These functions handle modifying the word list after information is received fro
         # Sort the list of scores.
         zipped_list = sorted(zip(self.score_list, self.word_list), reverse=True)
         self.word_list = [self.word_list for score_list, self.word_list in zipped_list]
+        self.score_list = sorted(self.score_list, reverse=True)
         return zipped_list
 {% endhighlight %}
 
@@ -363,8 +368,8 @@ def play():
         print("Top words:")
         try:
             for x in range(0, 4):
-                print("""%s (Freq score: %.2f)""" % (solver.word_list[x], round((scores[x][0]), 2)))
-        except:
+                print("""%s (Freq score: %.2f)""" % (solver.word_list[x], round(solver.score_list[x], 2)))
+        except Exception as e:
             pass
         if len(solver.word_list) == 1:
             if ''.join(user_input[:5]) == "ggggg":
@@ -463,10 +468,12 @@ class WordleSolve:
                 if letter in self.word_list[i]:
                     if letter not in self.yellow_green_list:
                         self.word_list.pop(i)
+                        self.score_list.pop(i)
                         continue
             if not remove:
                 if letter not in self.word_list[i]:
                     self.word_list.pop(i)
+                    self.score_list.pop(i)
                     continue
             i += 1
 
@@ -477,10 +484,12 @@ class WordleSolve:
             if remove:
                 if letter in self.word_list[i][place]:
                     self.word_list.pop(i)
+                    self.score_list.pop(i)
                     continue
             if not remove:
                 if letter not in self.word_list[i][place]:
                     self.word_list.pop(i)
+                    self.score_list.pop(i)
                     continue
             i += 1
 
@@ -531,6 +540,7 @@ class WordleSolve:
         # Sort the list of scores.
         zipped_list = sorted(zip(self.score_list, self.word_list), reverse=True)
         self.word_list = [self.word_list for score_list, self.word_list in zipped_list]
+        self.score_list = sorted(self.score_list, reverse=True)
         return zipped_list
 
     # Process input and adjust the word list starting with known letters in the target word
@@ -686,8 +696,8 @@ def play():
         print("Top words:")
         try:
             for x in range(0, 4):
-                print("""%s (Freq score: %.2f)""" % (solver.word_list[x], round((scores[x][0]), 2)))
-        except:
+                print("""%s (Freq score: %.2f)""" % (solver.word_list[x], round(solver.score_list[x], 2)))
+        except Exception as e:
             pass
         if len(solver.word_list) == 1:
             if ''.join(user_input[:5]) == "ggggg":
