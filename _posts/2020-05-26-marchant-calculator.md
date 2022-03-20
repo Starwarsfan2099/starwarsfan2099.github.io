@@ -20,6 +20,8 @@ The calculator includes its serial number and patent information on the bottom o
 
 Marchant calculators were top of the line machines throughout the early 1900s. The *Silent Speed* was among the fastest of any mechanical calculators ever made thanks to a unique and ingenious proportional drive mechanism. Division was among the fastest as well thanks to decaded mechanism for anticipating an underflow, saving machine cycles.
 
+![Image](https://starwarsfan2099.github.io/public/2020-5-26/ad.JPG){:.shadow}
+
 The model number is listed for this machine as `ACR8M-161734`. Serial numbers 161,000 - 165,00 were manufactured in 1942. Serial numbers and manufacture dates for the *Silent Speed*, *Figuremaster*, and *Figurmatic* can be found on [this page](http://www.vintagecalculators.com/html/marchant.html). The calculator was in very good condition. Outer panels have light scratching and flaking as well as decade old tape residue. The Marchant painted logos are still present in all places. With only minimal surface cleaning, the calculator looks quite nice. The tape residue is resistant to any cleaners I put on and is completely hardened. Attempts to scrape it off resulted in paint coming off as well so I have left it for now.
 
 ![Right view](https://starwarsfan2099.github.io/public/2020-5-26/DSC_5606.JPG){:.shadow}
