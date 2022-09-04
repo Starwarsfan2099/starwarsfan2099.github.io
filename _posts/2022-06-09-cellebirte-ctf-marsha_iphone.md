@@ -5,7 +5,7 @@ tags: cellebrite-ctf ctf forensics
 author: rms
 ---
 
-## Marsha's iPhone X - iOS 14.6
+## Marsha's iPhone X - iOS 14.6 
 
 ### Question 44 – 10pts
 
@@ -14,7 +14,7 @@ author: rms
 The iCLoud address used by Marsha can be found on the Physical Analyzer homepage.
 
 {:refdef: style="text-align: center;"}
-![iCloud address](../public/2022-06-09/44.JPG){:.shadow}
+![iCloud address](https://starwarsfan2099.github.io/public/2022-06-09/44.JPG){:.shadow}
 {: refdef}
 
 It's a clever email address as well, `marshamellos@icloud.com` is the correct solution. 
@@ -26,7 +26,7 @@ It's a clever email address as well, `marshamellos@icloud.com` is the correct so
 The internal model name can also be found on the homepage.
 
 {:refdef: style="text-align: center;"}
-![Internal model name](../public/2022-06-09/45.JPG){:.shadow}
+![Internal model name](https://starwarsfan2099.github.io/public/2022-06-09/45.JPG){:.shadow}
 {: refdef}
 
 The internal model name is `D22AP`. 
@@ -38,7 +38,7 @@ The internal model name is `D22AP`.
 We can go to the `Aggregated Application Usage` tab to how long applications were used for and when. Then, we can sort by `Active time` to see the longest sessions. 
 
 {:refdef: style="text-align: center;"}
-![App usage](../public/2022-06-09/46.JPG){:.shadow}
+![App usage](https://starwarsfan2099.github.io/public/2022-06-09/46.JPG){:.shadow}
 {: refdef}
 
 The longest active session belongs to `com.apple.SleepLockScreen`, however, that is not a third party app. The longest session on a third party app was 01:12:24 spent in `com.google.photos`. 
@@ -50,7 +50,7 @@ The longest active session belongs to `com.apple.SleepLockScreen`, however, that
 Once again, we need to use the `Images` tab. From there, we can simply search for the filesize! 
 
 {:refdef: style="text-align: center;"}
-![Image](../public/2022-06-09/47.JPG){:.shadow}
+![Image](https://starwarsfan2099.github.io/public/2022-06-09/47.JPG){:.shadow}
 {: refdef}
 
 Using the returned results, we can see the exact image and the file hash. The hash and solution is `d9777bb03efb817bb6eaeec026a5b0c2`.
@@ -62,7 +62,7 @@ Using the returned results, we can see the exact image and the file hash. The ha
 For this question, I got lucky and had stumbled across a photo of a receipt earlier. I'm sure there is a way to find it via Cellebrite's image classification. 
 
 {:refdef: style="text-align: center;"}
-![Receipt](../public/2022-06-09/48.JPG){:.shadow}
+![Receipt](https://starwarsfan2099.github.io/public/2022-06-09/48.JPG){:.shadow}
 {: refdef}
 
 The data and time she had lunch was `03-08-2021 12:11`. 
@@ -74,7 +74,7 @@ The data and time she had lunch was `03-08-2021 12:11`.
 Once again, I got lucky and stumbled upon this solution while looking for another challenge's solution. The intended solution is probably more image categorization using a vehicle/license plate number filter. Remember, always read all of the questions in a section before grinding to solve the first one, it can pay off. 
 
 {:refdef: style="text-align: center;"}
-![Receipt](../public/2022-06-09/49.JPG){:.shadow}
+![Receipt](https://starwarsfan2099.github.io/public/2022-06-09/49.JPG){:.shadow}
 {: refdef}
 
 The first three digits are `508`. 
@@ -87,7 +87,7 @@ The first three digits are `508`.
 First, we need to go to the `Call Log` tab. Then we can select the `Parties` tab to allow us to sort by the calls. This dialog also shows a count of repeated incoming or outgoing calls. 
 
 {:refdef: style="text-align: center;"}
-![Call log](../public/2022-06-09/50.JPG){:.shadow}
+![Call log](https://starwarsfan2099.github.io/public/2022-06-09/50.JPG){:.shadow}
 {: refdef}
 
 By quickly scrolling the list, we can see the most frequently interacted with number is `+15162879924`. 
