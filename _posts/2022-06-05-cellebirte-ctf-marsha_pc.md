@@ -25,7 +25,8 @@ To solve this challenge, we don't even need to load the image. The answer can be
 ![/dev/sda serial](https://starwarsfan2099.github.io/public/2022-06-11/serial.JPG){:.shadow}
 {: refdef}
 
-The serial number for `/dev/sda` is `170615BA93CC` and is the solution for challenge 1. 
+The serial number for `/dev/sda` is `170615BA93CC` and is the solution for challenge 1.
+{:.success}
 
 ### Question 2 – 10pts
 
@@ -43,7 +44,10 @@ We can see the key `LastLoggedOnDisplayName` to see who logged in (Marsha) and `
 ![Providers table](https://starwarsfan2099.github.io/public/2022-06-11/providers.JPG){:.shadow}
 {: refdef}
 
-And now we have the sign in method! The credential provider `BEC09223-B018-416D-A0AC-523971B639F5` is the Fingerprint login method. `fingerprint` is the solution to the challenge. 
+And now we have the sign in method! The credential provider `BEC09223-B018-416D-A0AC-523971B639F5` is the Fingerprint login method. 
+
+`fingerprint` is the solution to the challenge. 
+{:.success}
 
 ### Question 3 – 10pts
 
@@ -56,6 +60,7 @@ Now we need to find a card number. Since we aren't given any idea as to the leng
 {: refdef}
 
 The inmate number and solution is `2101460`.
+{:.success}
 
 ### Question 4 – 10pts
 
@@ -73,7 +78,10 @@ Seeing as this has the manufacturer listed as Blackbag, a forensic company now o
 ![Other last USB](https://starwarsfan2099.github.io/public/2022-06-11/toshiba.JPG){:.shadow}
 {: refdef}
 
-The listed serial number is `20151017004222F`. This is the solution! (Note, you may have noticed the `&F` after the serial in the image. This appears to be a parsing error and the "&" character shouldn't appear in a flash drive serial number.)
+The listed serial number is `20151017004222F`. This is the solution! 
+{:.success}
+
+(Note, you may have noticed the `&F` after the serial in the image. This appears to be a parsing error and the "&" character shouldn't appear in a flash drive serial number.)
 
 ### Question 5 – 10pts
 
@@ -86,6 +94,7 @@ Magnet AXIOM Examine keyword searches include image metadata, so we can just do 
 {: refdef}
 
 The camera model in the metadata is a `Canon EOS 5D Mark II` and is the solution to this challenge!
+{:.success}
 
 ### Question 6 – 10pts
 
@@ -104,6 +113,7 @@ There aren't any more user related emails returned though. Searching for common 
 {: refdef}
 
 Hmmmm. Seeing as this a Cellebrite email address, one would think it *might* not be an intended solution, but attempting to submit `marsha4mellos@gmail.com sydney.peason@cellebrite.com` reveals it is indeed the intended solution!
+{:.success}
 
 ### Question 7 – 20pts
 
@@ -116,6 +126,7 @@ For this challenge, I had accidentally stumbled upon the answer when trying to s
 {: refdef}
 
 The file is actually just a text file containing the ASCII text `Huh this is a test`. And that text is the solution to challenge 6!
+{:.success}
 
 ### Question 8 – 20pts
 
@@ -133,13 +144,17 @@ Looking at the footage, we can see the stadium name in the background!
 ![Stadium name](https://starwarsfan2099.github.io/public/2022-06-11/game.JPG){:.shadow}
 {: refdef}
 
-This is the Centurylink Field. A quick [Google search](https://www.alamy.com/april-26-2014-seattle-sounders-fc-fans-during-a-match-against-the-image68825366.html) for the date the video was taken reveals this is the Seattle Sounders vs. the Colorado Rapids. Using the specified format, the solution is `Centurylink Field Colorado Rapids`!
+This is the Centurylink Field. A quick [Google search](https://www.alamy.com/april-26-2014-seattle-sounders-fc-fans-during-a-match-against-the-image68825366.html) for the date the video was taken reveals this is the Seattle Sounders vs. the Colorado Rapids. 
+
+Using the specified format, the solution is `Centurylink Field Colorado Rapids`!
+{:.success}
 
 ### Question 9 – 20pts
 
 > How many unique acquisition tools were recognized by Marsha’s PC, how many times did the acquisition tools connect, and when was the last time an acquisition tool was connected? Format: [unique #] [total #] MM-DD-YYYY HH:MM e.g. 1 3 01-22-2019 19:46
 
 Unfortunately, I was unable to solve this challenge. Will update when I have solved it. 
+{:.error}
 
 ### Question 10 – 50pts
 
@@ -169,12 +184,14 @@ Then, we can pass the hash as input to Hashcat. Hahcat needs to be passed the mo
 {: refdef}
 
 The Windows Hello pin and the solution to this challenge is `134679`!
+{:.success}
 
 ### Question 11 – 100pts
 
 > What is the Personal Meeting ID of the Zoom user account holder?
 
 Sadly, this question went unsolved as well. Again, will update if I get it figured out. 
+{:.error}
 
 ### Question 12 – 100pts
 
@@ -187,3 +204,4 @@ I ended up solving this challenge after the CTF ended, but it was still a fun so
 {: refdef}
 
 The password used to log into 104.106.102:9997 was `NPaacYaE`.
+{:.success}

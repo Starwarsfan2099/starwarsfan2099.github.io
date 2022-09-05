@@ -17,7 +17,8 @@ A simple keyword search for mountains shows three results, with one being an ema
 ![Mountains Search](https://starwarsfan2099.github.io/public/2022-06-05/31.JPG){:.shadow}
 {: refdef}
 
-The email was to `livingstonhank11@gmail.com` and is the solution to this question. 
+The email was to `livingstonhank11@gmail.com` and is the solution to this question.
+{:.success}
 
 ### Question 32 – 10pts
 
@@ -35,7 +36,8 @@ See it right there? A location artifact around 20 minutes before the call!
 ![Location](https://starwarsfan2099.github.io/public/2022-06-05/32_2.JPG){:.shadow}
 {: refdef}
 
-Popping the location coordinates into Google Earth reveals she was in `New York` when she made the call to Marsha. 
+Popping the location coordinates into Google Earth reveals she was in `New York` when she made the call to Marsha.
+{:.success}
 
 ### Question 33 – 10pts
 
@@ -47,7 +49,8 @@ This one is requires analysis of the other images provided as well as this image
 ![PassBook](https://starwarsfan2099.github.io/public/2022-06-05/33.JPG){:.shadow}
 {: refdef}
 
-Since this is a default iOS, I was unsure but decided to use an attempt to answer the challenge, and indeed the answer was `Beth,Marsha`. 
+Since this is a default iOS, I was unsure but decided to use an attempt to answer the challenge, and indeed the answer was `Beth,Marsha`.
+{:.success}
 
 ### Question 34 – 10pts
 
@@ -59,7 +62,8 @@ The extracted container format can be found inside the zip archive that Physical
 ![Container Version](https://starwarsfan2099.github.io/public/2022-06-05/34.JPG){:.shadow}
 {: refdef}
 
-The solution is `CLBX-0.3.1`. 
+The solution is `CLBX-0.3.1`.
+{:.success}
 
 ### Question 36 – 10pts
 
@@ -72,6 +76,7 @@ Another simple keyword search for `Vienna Inn` provides only one result.
 {: refdef}
 
 The solution is `Heisenberg White`. 
+{:.success}
 
 ### Question 37 – 10pts
 
@@ -90,6 +95,7 @@ In this window, we can sort by the `Distance Traveled` column to see the longest
 {: refdef}
 
 The solution is `2482.28`. 
+{:.success}
 
 ### Question 38 – 10pts
 
@@ -102,6 +108,7 @@ Another super-easy one, displayed right on the Physical Analyzer homepage.
 {: refdef}
 
 The solution is `359405082912450`. 
+{:.success}
 
 ### Question 39 – 10pts
 
@@ -114,6 +121,7 @@ This answer is also displayed on the homepage.
 {: refdef}
 
 The solution is `tornadobeth@gmail.com`. 
+{:.success}
 
 ### Question 42 – 20pts
 
@@ -132,6 +140,7 @@ And opening up this file, we can search for and see the ECID.
 {: refdef}
 
 The ECID and solution is `1242319429238830`. 
+{:.success}
 
 ### Question 43 – 20pts
 
@@ -150,3 +159,4 @@ The app folder can be found at `Apple_iPhone X (A1901).zip/root/private/var/mobi
 {: refdef}
 
 Here we see an array containing info about the currently open tabs. The url for the open tab is `https://duckduckgo.com/?q=daphne+bridgerton+actress&t=ddg_ios&atb=v266-3mc&ko=-1&iax=images&ia=images`, making the search query and solution for the challenge `daphne bridgerton actress`. 
+{:.success}

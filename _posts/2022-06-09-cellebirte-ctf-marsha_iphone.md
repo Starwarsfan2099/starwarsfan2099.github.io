@@ -18,6 +18,7 @@ The iCLoud address used by Marsha can be found on the Physical Analyzer homepage
 {: refdef}
 
 It's a clever email address as well, `marshamellos@icloud.com` is the correct solution. 
+{:.success}
 
 ### Question 45 – 10pts
 
@@ -30,6 +31,7 @@ The internal model name can also be found on the homepage.
 {: refdef}
 
 The internal model name is `D22AP`. 
+{:.success}
 
 ### Question 46  – 10pts
 
@@ -42,6 +44,7 @@ We can go to the `Aggregated Application Usage` tab to how long applications wer
 {: refdef}
 
 The longest active session belongs to `com.apple.SleepLockScreen`, however, that is not a third party app. The longest session on a third party app was 01:12:24 spent in `com.google.photos`. 
+{:.success}
 
 ### Question 47  – 10pts
 
@@ -54,6 +57,7 @@ Once again, we need to use the `Images` tab. From there, we can simply search fo
 {: refdef}
 
 Using the returned results, we can see the exact image and the file hash. The hash and solution is `d9777bb03efb817bb6eaeec026a5b0c2`.
+{:.success}
 
 ### Question 48 – 20pts
 
@@ -66,6 +70,7 @@ For this question, I got lucky and had stumbled across a photo of a receipt earl
 {: refdef}
 
 The data and time she had lunch was `03-08-2021 12:11`. 
+{:.success}
 
 ### Question 49 – 20pts
 
@@ -78,7 +83,7 @@ Once again, I got lucky and stumbled upon this solution while looking for anothe
 {: refdef}
 
 The first three digits are `508`. 
-
+{:.success}
 
 ### Question 50 – 20pts
 
@@ -91,3 +96,4 @@ First, we need to go to the `Call Log` tab. Then we can select the `Parties` tab
 {: refdef}
 
 By quickly scrolling the list, we can see the most frequently interacted with number is `+15162879924`. 
+{:.success}

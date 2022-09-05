@@ -18,6 +18,7 @@ The app can be found by simply looking under the `Clean mobile` category in the 
 {: refdef}
 
 The solution is `com.samsung.android.lool`. 
+{:.success}
 
 ### Question 14 – 10pts
 
@@ -30,6 +31,7 @@ A simple keyword search for "License Plate" will show you the installed applicat
 {: refdef}
 
 The app id and solution is `com.orto.usa`. 
+{:.success}
 
 ### Question 15 – 10pts
 
@@ -42,6 +44,7 @@ Once again, a simple keyword search for `zebedee.db` shows the application the d
 {: refdef}
 
 The app and solution is `Device Health Services`.
+{:.success}
 
 ### Question 16 – 10pts
 
@@ -54,6 +57,7 @@ Physical Analyzer does not appear to parse this hotspot data and place it in `De
 {: refdef}
 
 The hotspot password and solution is `yipz5901`. 
+{:.success}
 
 ### Question 17 – 10pts
 
@@ -77,7 +81,10 @@ The package name also gives a clue, being called `com.samsung.android.oneconnect
 ![Timestamp](https://starwarsfan2099.github.io/public/2022-06-07/17_2.JPG){:.shadow}
 {: refdef}
 
-Eventually, a database named `QcDb.db` is found. It contains a table named `devices` that includes the Sound Touch Mac address, name, and a timestamp.  After converting the timestamp and formatting the answer we get the solution: `2c:6b:7d:1d:21:a7 2021-06-27 17:47:41`. 
+Eventually, a database named `QcDb.db` is found. It contains a table named `devices` that includes the Sound Touch Mac address, name, and a timestamp.  
+
+After converting the timestamp and formatting the answer we get the solution: `2c:6b:7d:1d:21:a7 2021-06-27 17:47:41`.
+{:.success}
 
 ### Question 18 – 10pts
 
@@ -90,12 +97,14 @@ When looking through the chats and conversations, Mr. White really only has one 
 {: refdef}
 
 This number is the correct number, and solution to the challenge - `+1–540–299–3169`. 
+{:.success}
 
 ### Question 19 – 10pts
 
 >     BONUS Question Select anything to receive 10pts.
 
 Just select anything and enjoy the free points!
+{:.success}
 
 ### Question 20 – 10pts
 
@@ -108,6 +117,7 @@ We *should* be able to see the deleted messages in the `Messages` tab or in the 
 {: refdef}
 
 Both views show `3` deleted messages. That was an incorrect solution, and so was `6` if we include the emails. Not sure what the answer here is. 
+{:.success}
 
 ### Question 21 – 10pts
 
@@ -119,7 +129,8 @@ By looking at the `Device Locations` tab, we can see that the device was operate
 ![Phone number](https://starwarsfan2099.github.io/public/2022-06-07/21.JPG){:.shadow}
 {: refdef}
 
-The answer is `True`. 
+The answer is `True`.
+{:.success}
 
 ### Question 22 – 10pts
 
@@ -131,7 +142,10 @@ The `Images` tab in Physical Analyzer allows for filtering via metadata containi
 ![Pictures with location info](https://starwarsfan2099.github.io/public/2022-06-07/22.JPG){:.shadow}
 {: refdef}
 
-Looking at the bottom bar, it shows the stats on the specific images. We need to be careful to not look at the `Selected` and the `Deduplication` fields. The answer we are looking for is in the `Items` or `Selected` fields. The answer and solution is `57`.  
+Looking at the bottom bar, it shows the stats on the specific images. We need to be careful to not look at the `Selected` and the `Deduplication` fields. The answer we are looking for is in the `Items` or `Selected` fields.
+
+ The answer and solution is `57`.
+ {:.success}
 
 ### Question 23 – 10pts
 
@@ -144,6 +158,7 @@ This can be found on the Physical Analyzer homepage.
 {: refdef}
 
 The solution and IMSI is `310260275793897`. 
+{:.success}
 
 ### Question 24 – 20pts
 
@@ -156,6 +171,7 @@ Simply searching for the has reveals several locations the image is stored, and 
 {: refdef}
 
 The app used to hide the image was `com.flatfish.cal.privacy`. 
+{:.success}
 
 ### Question 25 – 20pts
 
@@ -167,7 +183,10 @@ Searching for `2623237359273252101` yields no results. However, by doing a more 
 ![Hex search](https://starwarsfan2099.github.io/public/2022-06-07/25.JPG){:.shadow}
 {: refdef}
 
-All the parts to the solution are in this file. Specifically, the `username`, `full_name`, `id`, and `following` keys. Placing these in the properer format for the solution, we get `MarshaMellos_marsha4mellos_44072330861_Yes`!
+All the parts to the solution are in this file. Specifically, the `username`, `full_name`, `id`, and `following` keys. 
+
+Placing these in the properer format for the solution, we get `MarshaMellos_marsha4mellos_44072330861_Yes`!
+{:.success}
 
 ### Question 26 – 20pts
 
@@ -179,7 +198,10 @@ The timeline in Physical Analyzer doesn't show a specific Instagram usage times.
 ![Instagram](https://starwarsfan2099.github.io/public/2022-06-07/27.JPG){:.shadow}
 {: refdef}
 
-Looking at the intervals table, there is column `end_walltime` that is a timestamp of the last usage. Converting the timestamp to the proper format, we get `2021-07-22 19:06:37` and is indeed the correct solution. 
+Looking at the intervals table, there is column `end_walltime` that is a timestamp of the last usage. 
+
+Converting the timestamp to the proper format, we get `2021-07-22 19:06:37` and is indeed the correct solution. 
+{:.success}
 
 ### Question 27 – 20pts
 
@@ -192,6 +214,7 @@ By doing a basic search for the keyword `gas`, we can see the user has an app in
 {: refdef}
 
 Now we can get the solution to the challenge! `414720_0834 `. 
+{:.success}
 
 ### Question 28 – 20pts
 
@@ -204,6 +227,7 @@ Once again, Search is our friend. By simply searching for the keyword `meet` we 
 {: refdef}
 
 All of the information we need is right there. The solution in the proper format is `washington street 18:44:58`. 
+{:.success}
 
 ### Question 29 – 20pts
 
@@ -216,3 +240,4 @@ Well, we know the data of the meeting from question 29. The question says *see a
 {: refdef}
 
 Physical analyzer fails to show any coordinates for where the video was taken, even with **Carve Locations** enabled during processing. However, by simply exporting the video and using exiftool, we can see the coordinates are `37.2249,-80.4159`.
+{:.success}
