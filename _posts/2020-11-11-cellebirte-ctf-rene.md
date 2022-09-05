@@ -24,6 +24,7 @@ Selecting `User Accounts` reveals a single table entry with Rene's Snapchat user
 {: refdef}
 
 Rene's Snapchat username is "renegade7696" and is the solution to the challenge.
+{:.success}
 
 ### User Identification – 20pts
 
@@ -36,6 +37,7 @@ Similar to the above challenge, this question asks us for Rene's Facebook userna
 {: refdef}
 
 The Facebook account signed into Rene's phone is `andy.rod.3910`.
+{:.success}
 
 ### User Activity – 20pts
 
@@ -54,6 +56,7 @@ However, this message doesn't tell us when the Zoom account was made, just a day
 {: refdef}
 
 The email was sent to Rene's email on `5/1/2020`. Converting it to the format required by the question reveals the solution - `05-01-2020`. 
+{:.success}
 
 ### Database Analysis – 20pts
 
@@ -66,6 +69,7 @@ This question gives us a lot of information. We simply need to find a table name
 {: refdef}
 
 The solution to the challenges is "messages".
+{:.success}
 
 ### Files – 20pts
 
@@ -90,6 +94,7 @@ In the `File Info` tab, the file size can be seen.
 {: refdef}
 
 The solution to this challenge is `650880`. 
+{:.success}
 
 ### MMS Analysis – 20pts
 
@@ -126,6 +131,7 @@ Simply scrolling down the conversation, the image and the timestamp can be seen.
 {: refdef}
 
 Converting this to the format required by the challenge, we get the solution, `08:14:2020 20:36:27`. 
+{:.success}
 
 ### Application Analysis – 20pts
 
@@ -138,6 +144,7 @@ This question simply asks for the last Uber code received. Uber codes are typica
 {: refdef}
 
 The last received code is `3748`. 
+{:.success}
 
 ### User Identification – 50pts
 
@@ -150,6 +157,7 @@ Time to find another username. AppGenie is not available for "Cash App", so I we
 {: refdef}
 
 Sure enough, right there is the cashtag username for Rene - `renegader2020`. 
+{:.success}
 
 ### Financial Information – 100pts
 
@@ -168,3 +176,4 @@ Hm. "PDF". Maybe it's hidden via steganography in the PDF file. Checking through
 {: refdef}
 
 Putting the information in the correct format, we get the solution `121000358:9879982234471`.
+{:.success}

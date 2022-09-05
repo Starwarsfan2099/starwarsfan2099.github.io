@@ -35,7 +35,10 @@ This question appears simple but actually took a few tries to answer properly. C
 ![Extraction type](https://starwarsfan2099.github.io/public/2020-11-02/tony_1.JPG){:.shadow}
 {: refdef}
 
-However, `File System` and `File System [ Android ADB ]` are not accepted answers. The correct accepted answer is `Full File System`. 
+However, `File System` and `File System [ Android ADB ]` are not accepted answers. 
+
+The correct accepted answer is `Full File System`. 
+{:.success}
 
 ### Operating System – 10pts
 
@@ -54,6 +57,7 @@ The source of this information is the `build.prop` file:
 {: refdef}
 
 The solution is `10`.
+{:.success}
 
 ### Crypto – 10pts
 
@@ -66,6 +70,7 @@ Simply look under the `Installed Applications` tab then `Cryptocurrency`.
 {: refdef}
 
 `com.mycelium.wallet` is installed, with the app name being `Mycelium` and the solution to this question.
+{:.success}
 
 ### Security Patch – 20pts
 
@@ -78,6 +83,7 @@ The security patch is also found further down in the `build.prop` file.
 {: refdef}
 
 Converting this to the answer format, we get `05-01-2020` as the solution.
+{:.success}
 
 ### Location Location Location – 20pts
 
@@ -102,6 +108,7 @@ These links are viewable in a browser through copying or Control-Clicking on the
 {: refdef}
 
 This shows that Tony was looking for houses in *Vancouver*. 
+{:.success}
 
 ### Job Search – 20pts
 
@@ -120,6 +127,7 @@ Searching for "*captain*" in the `Web History` tab also shows a website he looke
 {: refdef}
 
 The solution to this challenge is the job he Googled about, a "*ship captain*".
+{:.success}
 
 ### Wallet ID – 20pts
 
@@ -132,6 +140,7 @@ Searching the entire image for "*wallet*" yields several results, including one 
 {: refdef}
 
 The solution is `33wnUqRbPT49Z6c7Mkc3PojBHAJEZuacao`.
+{:.success}
 
 ### Name – 20pts
 
@@ -144,6 +153,7 @@ Searching the entire image for "*scurvy*" gives a lot of results. The Android co
 {: refdef}
 
 Entering "*Paul Scurvy*" shows us this is the correct answer.
+{:.success}
 
 ### Auto Join WiFi – 50pts
 
@@ -162,6 +172,7 @@ Going to the XML source file and searching for "*auto*" reveals the presence of 
 {: refdef}
 
 The value is set to `1`. So, **Yes**, auto join was enabled.
+{:.success}
 
 ### WiFi Password – 100pts
 
@@ -174,3 +185,4 @@ The plaintext WiFi password is not stored in the XML file found above. Other sea
 {: refdef}
 
 The password to the network is `abcdef1234`.
+{:.success}

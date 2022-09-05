@@ -28,6 +28,7 @@ INFO    : volatility.debug    : Determining profile based on KDBG search...
 ```
 
 The first two suggested profiles are WIndows 7, so we'll go with the first one, `Win7SP1x64` as the profile for the rest of the commands. 
+{:.success}
 
 ### Challenge 9 Part 1 – 25pts
 
@@ -137,6 +138,7 @@ Passy
 ```
 
 And with that, we have Warren talking to himself and revealing the password and solution to this challenge: `wow_this_is_an_uncrackable_password`. 
+{:.success}
 
 ### Challenge 9 Part 2 – 15pts
 
@@ -161,6 +163,7 @@ DataSectionObject 0x13e6de810   None   \Device\HarddiskVolume1\Users\Warren\AppD
 ```
 
 The file is now saved to `file.None.0xfffffa803316f710.dat` in the working directory. And finally, using `md5sum` presents us with the hash `af1c3038dca8c7387e47226b88ea6e23`. This is the correct solution to the challenge. 
+{:.success}
 
 ### Challenge 9 Part 3 - 15pts
 
@@ -196,6 +199,7 @@ Birth Domain ID: f81101e8-3101-3d66-f800-000000000000
 ```
 
 The birth object id and solution is `31013058-7f31-01c8-6b08-210191061101`. 
+{:.success}
 
 ### Challenge 9 Part 4 – 20pts
 
@@ -213,6 +217,7 @@ WINWORD.EXE (3180): S-1-1-0 (Everyone)
 ```
 
 Obviously, the one we want is for Warren. Using the last 4 digits, the RID, and the name in the format required by the challenge, we get the solution - `1000 (Warren)`. 
+{:.success}
 
 ### Challenge 9 Part 5 – 25pts
 
@@ -231,6 +236,7 @@ Now we need the Word version used to create the `.asd` file. This can be found b
 ```
 
 The Word version used to create the file and the solution to the challenge is `15`. 
+{:.success}
 
 ### Challenge 9 Part 6 – 20pts
 
@@ -251,6 +257,7 @@ Volatility Foundation Volatility Framework 2.6
 ```
 
 The solution to this challenge is `0x02180a2d`.
+{:.success}
 
 ### Challenge 9 Part 7 – 20pts
 
@@ -266,3 +273,4 @@ Well, the physical offset is the decimal offset we needed in the last question t
 ```
 
 The solution and physical address offset in hex is `0xaf12a2d`. 
+{:.success}

@@ -18,7 +18,10 @@ Install: php7.0-cli:amd64 (7.0.33-0ubuntu0.16.04.6, automatic), php-common:amd64
 End-Date: 2019-10-07  01:30:41
 ```
 
-This particular package was the last package installed and the only package installed since 2017. It's likely this image was made in response to the attack, and it makes sense the last package installed was installed by the attacker, especially with such a time difference. Entering in `php` reveals it is indeed the correct solution. 
+This particular package was the last package installed and the only package installed since 2017. It's likely this image was made in response to the attack, and it makes sense the last package installed was installed by the attacker, especially with such a time difference. 
+
+Entering in `php` reveals it is indeed the correct solution. 
+{:.success}
 
 ### Challenge 2 - 5pts
 
@@ -103,3 +106,4 @@ WantedBy=multi-user.target
 ```
 
 So a bind shell is created using `cluster.php` which is started via a systemd service! Entering `Create a fake systemd service` reveals it is the correct solution!
+{:.success}

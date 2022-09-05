@@ -18,6 +18,7 @@ This first question for this challenge asks us to simply determine the phone num
 {: refdef}
 
 The phone number is `+16095299858`.
+{:.success}
 
 ### Location Address - 10 points
 
@@ -30,6 +31,7 @@ The `Device Locations` tab has a search bar that allows us to search locations, 
 {: refdef}
 
 The street listed in the address is `NE 44th Ct` and also the answer to the challenge.
+{:.success}
 
 ### Activation - 20 points
 
@@ -42,6 +44,7 @@ The `activation_records` file's timestamps record the last activation date.
 {: refdef}
 
 Putting the file in the format the answer requires, the solution is found to be `04-23-2020`. 
+{:.success}
 
 ### Vehicle - 20 points
 
@@ -60,6 +63,7 @@ Google searching "MY LEAF" returns a link to a Nissan forum. The forum post ment
 {: refdef}
 
 Entering `Nissan` shows this is the answer to the challenge. 
+{:.success}
 
 ### Location Details - 20 points
 
@@ -82,12 +86,16 @@ The GPS coordinates listed are `39.286895, -76.612876`. Pooping this into Google
 {: refdef}
 
 Entering `Baltimore` shows that it is indeed the solution to the challenge. 
+{:.success}
 
 ### Daytrip - 20 points
 
 > What did I pick up from Montana?
 
-[Gerbinator](https://github.com/Gerbinator) once again came in clutch on this question. There isn't one specific artifact that pointed to it. There are multiple pictures of boats, mentions of boats in texts, and browser searches for boats. [Gerbinator](https://github.com/Gerbinator) correctly guessed that it was a `boat` and it was the correct answer.
+[Gerbinator](https://github.com/Gerbinator) once again came in clutch on this question. There isn't one specific artifact that pointed to it. There are multiple pictures of boats, mentions of boats in texts, and browser searches for boats. 
+
+[Gerbinator](https://github.com/Gerbinator) correctly guessed that it was a `boat` and it was the correct answer.
+{:.success}
 
 ### Printing - 20 points
 
@@ -106,6 +114,7 @@ The document found there:
 {: refdef}
 
 The second word on the third line of the document is `delete`. This is the solution. 
+{:.success}
 
 ### Photo analysis - 20 points
 
@@ -118,6 +127,7 @@ Luckily, we thought we had seen this particular image before. So we checked atta
 {: refdef}
 
 The UTC time offset is already provided for us by Cellebrite right below the image. The solution is `7`. 
+{:.success}
 
 ### (Audio) Recording Location - 50 points
 
@@ -130,6 +140,7 @@ Hmm. Recordings can be found under `Analyzed Data` > `Memos` > `Recordings`. Tho
 {: refdef}
 
 Looking at the [Wikipedia entry for O'Hare International Airport](https://www.wikiwand.com/en/O%27Hare_International_Airport), we can see that it's ICAO code is `KORD` and is indeed one of the solutions to the challenge. 
+{:.success}
 
 ### IP Address - 50 points
 
@@ -142,6 +153,7 @@ IP assignments can be found in DHCP leases. These are stored at `/private/var/db
 {: refdef}
 
 The IP address is `192.168.1.98 ` and the solution to this challenge. 
+{:.success}
 
 ### Financial Situation - 100 points
 
@@ -154,3 +166,4 @@ The first plan of attack was the CashApp and CoinBase databases. After quite a l
 {: refdef}
 
 The solution to the challenge is `2.99`.
+{:.success}

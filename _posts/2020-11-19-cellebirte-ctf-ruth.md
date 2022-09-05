@@ -18,6 +18,7 @@ Cellebrite provides parsed reminder information under `Analyzed Data` > `Calande
 {: refdef}
 
 The date the reminder is set for in the format required by the solution is `08-14-2020`. 
+{:.success}
 
 ### Browser History - 10 points
 
@@ -30,6 +31,7 @@ The `Web History` tab can reveal the solution to this question. Searching for th
 {: refdef}
 
 The solution to this challenge is `Carolina Beach, NC`. 
+{:.success}
 
 ### Communications - 10 points
 
@@ -47,7 +49,10 @@ The initial message includes a PeerId listed as `953301191`. Checking the detail
 ![Tony M PeerId](https://starwarsfan2099.github.io/public/2020-11-19/ruth_4.JPG){:.shadow}
 {: refdef}
 
-The PeerId is listed as Tony M's id. The fact he made the first message supports him creating the group, as well as changing the group photo in the second message. Inputting `Tony M` reveals it is indeed the correct answer.
+The PeerId is listed as Tony M's id. The fact he made the first message supports him creating the group, as well as changing the group photo in the second message. 
+
+Inputting `Tony M` reveals it is indeed the correct answer.
+{:.success}
 
 ### Device Identification - 20 points
 
@@ -60,6 +65,7 @@ The currently running iOS version can simply be found in the plist file `System/
 {: refdef}
 
 This plist clearly shows the iPhone is on iOS version `13.6` and is the correct answer to the challenge. 
+{:.success}
 
 ### Application Analysis - 20 points
 
@@ -72,6 +78,7 @@ The user_id can be found on the in the TikTok databases, but it can also be pars
 {: refdef}
 
 No matter which method is used, Ruth's user_id is returned as `6854514343108871173` and is the solution.
+{:.success}
 
 ### Password Recovery - 20 points
 
@@ -90,6 +97,7 @@ Stumbling across the passowrd `Dr3@mT3@m11`, we tried using it to unlock the lin
 {: refdef}
 
 Decompressing the file reveals an iPhone image of Ruth's phone before it was reset! This is used to answer several of the challenges.
+{:.success}
 
 ### Device Status - 20 points
 
@@ -102,6 +110,7 @@ The date of the last wipe can be found using the file `/private/var/root/.oblite
 {: refdef}
 
 The timestamps on the file are listed as `7/27/2020`, and that is the correct solution to this challenge. 
+{:.success}
 
 ### PList Analysis - 20 points
 
@@ -114,6 +123,7 @@ This question and the next question need to be answered using the second image o
 {: refdef}
 
 The time it was first connected to is the timestamp shown. In the format required by the question, the solution is `07-09-2020`. 
+{:.success}
 
 ### Application Usage - 20 points
 
@@ -126,6 +136,7 @@ This question can be easily solved by looking at the timeline. First, filter by 
 {: refdef}
 
 Subtracting the times returned, `5:53:47` - `5:51:23` = `00:02:24`. The correct solution is `00:02:24`. 
+{:.success}
 
 ### Application Usage - 20 points
 
@@ -138,6 +149,7 @@ The first place to check is the default Podcasts app. Information on Podcasts is
 {: refdef}
 
 This confirms the default iOS Podcast app was used. The question has an example application name in all lower case. So entering `podcast` is the correct answer. 
+{:.success}
 
 ### Application Usage - 20 points
 
@@ -150,6 +162,7 @@ Easy enough! This answer is found in the exact same place we used to answer the 
 {: refdef}
 
 The `item_pid` is the first column from the left. `239332200929536034` is the solution to this challenge. 
+{:.success}
 
 ### Database Analysis - 50 points
 
@@ -161,7 +174,8 @@ The link can be found after unlcoking the locked note, which is described in the
 ![Unlocked notes](https://starwarsfan2099.github.io/public/2020-11-19/ruth_10.JPG){:.shadow}
 {: refdef}
 
-The link from the note and solution to the challenge is `https://bit.ly/3arhLSK`. The shortened link takes us to a password protected DropBox link. 
+The link from the note and solution to the challenge is `https://bit.ly/3arhLSK`. The shortened link takes us to a password protected DropBox link.
+{:.success} 
 
 ### Financial Information - 50 points
 
@@ -174,6 +188,7 @@ The link from the note and solution to the challenge is `https://bit.ly/3arhLSK`
 {: refdef}
 
 Attempting that routing number, especially since it's the only one we could find that it could possibly be, it turns out that is the correct answer - `041215663`!!
+{:.success}
 
 ### Application Analysis_Notes - 100 points
 

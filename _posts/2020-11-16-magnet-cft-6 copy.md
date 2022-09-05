@@ -52,6 +52,7 @@ Log ended: 2017-11-08  01:50:22
 ```
 
 We can see that it errored out several times with error `404`. Entering that as the solution shows that it is indeed the correct answer!
+{:.success}
 
 ### The second challenge
 
@@ -83,4 +84,9 @@ readelf: Error: Not an ELF file - it has the wrong magic bytes at the start
    404: 0000000000410f60   175 FUNC    GLOBAL DEFAULT   15 _ZN8unpacker20re[...]
 ```
 
-If you look closely, you can see that there are several that have a shared word - `deflate_fast` `deflate_stored` and `deflate`. Entering `deflate` as the answer shows it is the correct solution. These symbols came specifically from the `unpack200` binary in that folder. I'm not sure if there was a way to find that specific binary, but nevertheless the challenge is solved.
+If you look closely, you can see that there are several that have a shared word - `deflate_fast` `deflate_stored` and `deflate`. 
+
+Entering `deflate` as the answer shows it is the correct solution. 
+{:.success}
+
+Note: These symbols came specifically from the `unpack200` binary in that folder. I'm not sure if there was a way to find that specific binary, but nevertheless the challenge is solved.
