@@ -8,6 +8,6 @@ Hi, my name is Andrew Clark. I'm studying Digital Forensics and Information Assu
 
 If you want, here are some other ways you can follow me:
 
-* [Github](http://www.github.com/Starwarsfan2099)
-* [Twitter](http://www.twitter.com/Starwarsfan2099)
+* [Github](https://www.github.com/Starwarsfan2099)
+* [Twitter](https://www.twitter.com/Starwarsfan2099)
 * [Linkedin](https://www.linkedin.com/in/andrew-clark-b83387198/)
