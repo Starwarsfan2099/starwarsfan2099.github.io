@@ -58,3 +58,71 @@ if f.tell() != (0x10000 + header_size):
 {% endhighlight %} 
 
 First we start out with the python shebang line, then some imports that are needed for later. Then we define `f` and open the `bootstat.dat` file in read-only binary mode with `'rb'`. Then we define the header size. Next, we seek to the end of the file with `os.SEEK_END`. This gives us the ability to get the number of bytes in the file on the next line with `f.tell()`. The the file size comparison is performed and exits if the condition is not met. 
+
+Now let's look at the next bit of Powershell code.
+
+{% highlight powershell linenos %}
+function Array2Ulong([byte[]]$b)
+{
+    [uint32]$f =     ([uint32]$b[3] -shl 24) `
+                -bor ([uint32]$b[2] -shl 16) `
+                -bor ([uint32]$b[1] -shl  8) `
+                -bor ([uint32]$b[0])
+    return $f
+}
+
+function Array2Uint64([byte[]]$b)
+{
+    [uint64]$f =     ([uint64]$b[7] -shl 56) `
+                -bor ([uint64]$b[6] -shl 48) `
+                -bor ([uint64]$b[5] -shl 40) `
+                -bor ([uint64]$b[4] -shl 32) `
+                -bor ([uint64]$b[3] -shl 24) `
+                -bor ([uint64]$b[2] -shl 16) `
+                -bor ([uint64]$b[1] -shl  8) `
+                -bor ([uint64]$b[0])
+    return $f
+}
+
+function TimeFields2String([byte[]]$b)
+{
+    return '{0:d4}-{1:d2}-{2:d2} {3:d2}:{4:d2}:{5:d2}' -f `
+    ([uint32]$b[1]*256+[uint32]$b[0]), $b[2], $b[4], $b[6], $b[8], $b[10]
+}
+{% endhighlight %} 
+
+Here we have three functions: `Array2Ulong`, `Array2Uint64`, and `TimeFields2String`. Just by the function name and it's arguments (bytes), we can tell the first two functions unpack bytes to either a 32-bit unsigned long or 64 bit unsigned integer data type. We can easily do this in Python using the [struct](https://docs.python.org/3/library/struct.html) module. So, we don't need to create functions in Python for those. The `TimeFields2String` is also nearly able to be directly replicated in Python. 
+
+{% highlight python linenos %}
+# Format time into a human readable string
+def format_time(b):
+    return '%s-%02d-%02d %02d:%02d:%02d' % (b[1]*256+b[0], b[2], b[4], b[6], b[8], b[10])
+{% endhighlight %} 
+
+Next, the Powershell script defines some more variables:
+
+{% highlight powershell linenos %}
+$headerSize = 0x800 #theoretically in some cases can be 0, but let's assume it's 0x800.
+
+$eventLevels = @{
+ 0 = "BSD_EVENT_LEVEL_SUCCESS"
+ 1 = "BSD_EVENT_LEVEL_INFORMATION"
+ 2 = "BSD_EVENT_LEVEL_WARNING"
+ 3 = "BSD_EVENT_LEVEL_ERROR"
+}
+
+#let me know if other values are required
+$eventCodes = @{
+    0 = "BSD_EVENT_END_OF_LOG"
+    1 = "BSD_EVENT_INITIALIZED"
+    49 = "BSD_OSLOADER_EVENT_LAUNCH_OS"
+    80 = "BSD_BOOT_LOADER_LOG_ENTRY"
+}
+
+#let me know if other values are required
+$applicationTypes = @{
+3 = "BCD_APPLICATION_TYPE_WINDOWS_BOOT_LOADER"
+}
+{% endhighlight %} 
+
+`eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. 
