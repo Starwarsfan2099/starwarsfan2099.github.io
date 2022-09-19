@@ -126,4 +126,74 @@ $applicationTypes = @{
 }
 {% endhighlight %} 
 
-`eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. 
+`eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. We can easily define these in the Python script using dictionaries. 
+
+{% highlight python linenos %}
+eventLevels = { 0:'BSD_EVENT_LEVEL_SUCCESS',
+                1:'BSD_EVENT_LEVEL_INFORMATION',
+                2:'BSD_EVENT_LEVEL_WARNING',
+                3:'BSD_EVENT_LEVEL_ERROR'
+}
+
+eventCodes = {  0:'BSD_EVENT_END_OF_LOG',
+                1:'BSD_EVENT_INITIALIZED',
+                49:'BSD_OSLOADER_EVENT_LAUNCH_OS',
+                80:'BSD_BOOT_LOADER_LOG_ENTRY'
+}
+
+applicationTypes = {3:'BCD_APPLICATION_TYPE_WINDOWS_BOOT_LOADER'}
+{% endhighlight %} 
+
+Now we can start getting into the good stuff in the PowerShell script.
+
+{% highlight powershell linenos %}
+$currentPos = $headerSize
+$version = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+$currentPos +=4
+
+if ($version -ne 4)
+{
+    Write-Host "Unsupported version: $version. Exiting." -ForegroundColor Red
+    return
+}
+
+$BootLogStart = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+$currentPos +=4
+$BootLogSize = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+$currentPos +=4
+$NextBootLogEntry = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+$currentPos +=4
+$FirstBootLogEntry = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+
+Write-Debug ("BootLogSize: " + ('0x{0:X}' -f $BootLogSize))
+Write-Debug ("BootLogStart: " + ('0x{0:X4}' -f $BootLogStart))
+Write-Debug ("FirstBootLogEntry: " + ('0x{0:X4}' -f $FirstBootLogEntry))
+Write-Debug ("NextBootLogEntry: " + ('0x{0:X4}' -f $NextBootLogEntry))
+{% endhighlight %} 
+
+First, the script defines a new variable called `currentPos` and sets it to the header size (`0x800`). Next, `version` is defined as `Array2Ulong($bytes[$currentPos..($currentPos+3)])`. This is unpacking the bytes at `currentPos + 3` as an unsigned long datatype. The Python equivalent of this is `struct.unpack('<L', f.read(4))`. `struct.unpack()` returns a tuple contains the unpacked data. Passing the function `<L` as the first argument tells it to unpack the data as little-endian unsigned long. The PowerShell script goes on to check if the version is not equal to `4` (`if ($version -ne 4)`), then create three more variables and print them to the screen. 
+
+Let's replicate in Python. 
+
+{% highlight python linenos %}
+# Get some info
+f.seek(header_size)
+version, = struct.unpack('<L', f.read(4))
+
+if version != 4:
+    print('Unsupported version.')
+    exit()
+
+boot_log_start, = struct.unpack('<L', f.read(4))
+boot_log_size, = struct.unpack('<L', f.read(4))
+next_boot_log_entry, = struct.unpack('<L', f.read(4))
+first_boot_log_entry, = struct.unpack('<L', f.read(4))
+
+print('Version:', version)
+print('BootLogStart: 0x%04x' % boot_log_start)
+print('BootLogSize: 0x%04x' % boot_log_size)
+print('NextBootLogEntry: 0x%04x' % next_boot_log_entry)
+print('FirstBootLogEntry: 0x%04x' % first_boot_log_entry)
+{% endhighlight %} 
+
+ Just like in the PowerShell script, we need to get the `bootstat.dat` version from the `header_size` offset.  Since `struct.unpack()` takes a bytes argument, we can just use `f.read()` as the second argument. We don't necessarily need to keep track of the current position like in the PowerShell script to pass to functions. So we can just use `f.seek(header_size)` and then `f.read(NUMBER)` will read the next `NUMBER` of bytes after that position. So, to get the version after `f.seek(header_size)`, we can use `version, = struct.unpack('<L', f.read(4))`. Then a simple check to make sure the `version` is equal to `4`. The other variables can be created the same way and then simply print the info. 
