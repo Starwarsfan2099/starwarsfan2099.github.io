@@ -197,3 +197,66 @@ print('FirstBootLogEntry: 0x%04x' % first_boot_log_entry)
 {% endhighlight %} 
 
  Just like in the PowerShell script, we need to get the `bootstat.dat` version from the `header_size` offset.  Since `struct.unpack()` takes a bytes argument, we can just use `f.read()` as the second argument. We don't necessarily need to keep track of the current position like in the PowerShell script to pass to functions. So we can just use `f.seek(header_size)` and then `f.read(NUMBER)` will read the next `NUMBER` of bytes after that position. So, to get the version after `f.seek(header_size)`, we can use `version, = struct.unpack('<L', f.read(4))`. Then a simple check to make sure the `version` is equal to `4`. The other variables can be created the same way and then simply print the info. 
+
+{% highlight powershell linenos %}
+ $overlap = $true
+
+if ($FirstBootLogEntry -gt $NextBootLogEntry)
+{
+    $overlap = $false
+    Write-Debug "Log partially overwritten due to its circular nature."
+}
+
+$currentPos = $headerSize + $FirstBootLogEntry
+
+$arrExp=@()
+{% endhighlight %} 
+
+Next, the PowerShell script sets up a variable, `overlap` and sets it to `true`. The the script checks if `FirstBootLogEntry` is greater than `NextBootLogEntry`. If it is, then the program sets `overlap` to `false`. Like the `Write-Debug` statement says, this code is checking to see if part of the log has been overwritten. Then the script sets `currentPos` to the sum of `headerSize` and `FirstBootLogEntry`. Then another variable is initialized, this time an array: `arrExp`. This array is used to store the boot records found and print them at the end of the script. This will be simple to replicate:
+
+{% highlight python linenos %}
+overlap = True
+
+# Check if the log is partially overwritten
+if first_boot_log_entry > next_boot_log_entry:
+    overlap = False
+    print('Log partially overwritten due to its circular nature.')
+
+current_pos = header_size + first_boot_log_entry
+
+# Loop over records
+boot_offsets = []
+{% endhighlight %} 
+
+This Python code is pretty simple and self explanatory. Now we look at a bit more complex code in the PowerShell script.
+
+{% highlight powershell linenos %}
+while ($true)
+{
+    $recordStart = $currentPos
+
+    $TimeStamp = Array2Uint64($bytes[$currentPos..($currentPos+7)])
+    $currentPos += 8
+
+    $ApplicationID = ([guid]::new([byte[]]$bytes[$currentPos..($currentPos+15)])).ToString()
+    $currentPos += 16
+
+    $EntrySize = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+    $currentPos += 4
+    $Level = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+    $currentPos += 4
+    $ApplicationType = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+    $currentPos += 4
+    $EventCode = Array2Ulong($bytes[$currentPos..($currentPos+3)])
+    $currentPos += 4
+
+    Write-Debug ("recordStart: " + ('0x{0:X4}' -f $recordStart))
+    Write-Debug ("  Timestamp: " + $TimeStamp)
+    Write-Debug ("  ApplicationID: " + $ApplicationID)
+    Write-Debug ("  EntrySize: " + $EntrySize)
+    Write-Debug ("  Level: " + $eventLevels[[int32]$Level])
+    Write-Debug ("  ApplicationType: " + $applicationTypes[[int32]$ApplicationType])
+    Write-Debug ("  EventCode: " + $eventCodes[[int32]$EventCode])
+{% endhighlight %} 
+
+First, `recordStart` is assigned the value of `currentPos`. Next, the script gets the timestamp of the current record. This data is stored in the file as an unsigned long long datatype. 
