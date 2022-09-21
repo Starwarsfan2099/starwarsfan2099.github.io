@@ -3,7 +3,7 @@ title: Windows `bootstat.dat` Forensic Parser
 excerpt: Quick post to go over a Python parser for the Windows binary boot log. 
 tags: programming forensics
 author: rms
-published: false
+published: False
 ---
 
 ## Grzegorz Tworek's PSBits
@@ -259,4 +259,29 @@ while ($true)
     Write-Debug ("  EventCode: " + $eventCodes[[int32]$EventCode])
 {% endhighlight %} 
 
-First, `recordStart` is assigned the value of `currentPos`. Next, the script gets the timestamp of the current record. This data is stored in the file as an unsigned long long datatype. 
+First, `recordStart` is assigned the value of `currentPos`. Next, the script gets the timestamp of the current record. This data is stored in the file as an unsigned long long datatype. Then, the GUID parsed from the next 16 bytes. Finally, 4 more variables are created and printed. 
+
+{% highlight python linenos %}
+while(True):
+    # Get the record start offset
+    record_start = current_pos
+    print('\n#########################################################')
+    print('RecordStart: 0x%04x' % record_start)
+
+    f.seek(current_pos)
+    timestamp, = struct.unpack('Q', f.read(8))
+    print('Timestamp:', timestamp)
+    
+    # Move to the GUID position
+    f.seek(current_pos + 8)
+{% endhighlight %}
+
+In Python now, we start the loop then set and print `recordStart`. Next, we use `f.seek(current_pos)` to move to the start of the timestamp data. For the timestamp stored as an unsigned long long, we use `struct.unpack('Q', f.read(8))` to unpack the data. Then we move the position to the start of the GUID. 
+
+**GUID Format**
+<div class="grid">
+  <div id="cell1" class="cell cell--2">----4 bytes---- Little Endian Unsigned Long</div>
+  <div id="cell2" class="cell cell--2">----4 bytes---- Little Endian Unsigned Short</div>
+  <div id="cell3" class="cell cell--4">----8 Bytes---- <br/> Big Endian <br/> Unsigned Short</div>
+</div>
+

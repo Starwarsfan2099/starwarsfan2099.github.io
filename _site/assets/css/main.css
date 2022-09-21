@@ -1,5 +1,11 @@
 #Layer_1 { fill: #fff; }
 
+#cell1 { padding-left: 10px; border-top-left-radius: 25px; border-bottom-left-radius: 25px; border: 2px solid #73AD21; text-align: center; word-break: break-word; }
+
+#cell2 { padding-left: 10px; padding-right: 10px; border: 2px solid #73AD21; text-align: center; word-break: break-word; }
+
+#cell3 { border-top-right-radius: 25px; border-bottom-right-radius: 25px; border: 2px solid #73AD21; text-align: center; word-break: break-word; }
+
 figure.highlight::before { color: #969896 !important; background-color: #1d1f21 !important; }
 
 pre.lineno { color: #969896 !important; }
