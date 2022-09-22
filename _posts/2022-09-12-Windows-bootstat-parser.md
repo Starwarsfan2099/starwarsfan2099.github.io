@@ -276,7 +276,7 @@ while(True):
     f.seek(current_pos + 8)
 {% endhighlight %}
 
-In Python now, we start the loop then set and print `recordStart`. Next, we use `f.seek(current_pos)` to move to the start of the timestamp data. For the timestamp stored as an unsigned long long, we use `struct.unpack('Q', f.read(8))` to unpack the data. Then we move the position to the start of the GUID. 
+In Python now, we start the loop then set and print `recordStart`. Next, we use `f.seek(current_pos)` to move to the start of the timestamp data. For the timestamp stored as an unsigned long long, we use `struct.unpack('Q', f.read(8))` to unpack the data. Then we move the position to the start of the GUID. The PowerShell script used `([guid]::new([byte[]]$bytes[$currentPos..($currentPos+15)])).ToString()` to decode the GUID from the file. This uses the `::` operator to create a new GUID from the .NET framework class `guid`.
 
 **GUID Format**
 <div class="grid">
