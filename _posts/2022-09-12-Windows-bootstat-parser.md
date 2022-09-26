@@ -3,7 +3,7 @@ title: Windows `bootstat.dat` Forensic Parser
 excerpt: Quick post to go over a Python parser for the Windows binary boot log. 
 tags: programming forensics
 author: rms
-published: false
+published: true
 ---
 
 ## Grzegorz Tworek's PSBits
@@ -130,7 +130,7 @@ $applicationTypes = @{
 }
 {% endhighlight %} 
 
-`eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. We can easily define these in the Python script using dictionaries. 
+`eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. We can easily define these in the Python script using dictionaries. After further testing the finished script, more types were added to the `applicationTypes`. These can be found [here](https://www.omnisecu.com/windows-2008/introduction-to-windows-2008-server/boot-configuration-data-bcd-objects.php).
 
 {% highlight python linenos %}
 eventLevels = { 0:'BSD_EVENT_LEVEL_SUCCESS',
@@ -145,7 +145,11 @@ eventCodes = {  0:'BSD_EVENT_END_OF_LOG',
                 80:'BSD_BOOT_LOADER_LOG_ENTRY'
 }
 
-applicationTypes = {3:'BCD_APPLICATION_TYPE_WINDOWS_BOOT_LOADER'}
+applicationTypes = {1:'BCD_APPLICATION_TYPE_FIRMWARE_BOOT_MANAGER',
+                    2:'BCD_APPLICATION_TYPE_WINDOWS_BOOT_MANAGER',
+                    3:'BCD_APPLICATION_TYPE_WINDOWS_BOOT_LOADER',
+                    4:'BCD_APPLICATION_TYPE_WINDOWS_RESUME_APPLICATION',
+                    5:'BCD_APPLICATION_TYPE_WINDOWS_MEMORY_TESTER'}
 {% endhighlight %} 
 
 ### Unpacking data
