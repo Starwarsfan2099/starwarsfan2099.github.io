@@ -130,7 +130,7 @@ $applicationTypes = @{
 }
 {% endhighlight %} 
 
-`eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. We can easily define these in the Python script using dictionaries. After further testing the finished script, more types were added to the `applicationTypes`. These can be found [here](https://www.omnisecu.com/windows-2008/introduction-to-windows-2008-server/boot-configuration-data-bcd-objects.php).
+`eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. We can easily define these in the Python script using dictionaries. After further testing the finished script, more types were added to the `applicationTypes`. These can be found [here](https://www.omnisecu.com/windows-2008/introduction-to-windows-2008-server/boot-configuration-data-bcd-objects.php). More information on the application types and a great source of BCD data is [this document from Microsoft](https://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/bcd.docx). 
 
 {% highlight python linenos %}
 eventLevels = { 0:'BSD_EVENT_LEVEL_SUCCESS',
