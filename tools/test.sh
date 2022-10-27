@@ -63,7 +63,6 @@ main() {
   # test
   bundle exec htmlproofer "$SITE_DIR" \
     --disable-external \
-    --check-html \
     --allow_hash_href
 }
 
