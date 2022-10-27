@@ -78,4 +78,4 @@ The process outline for decrypting the drone data was as follows:
     - Knowing the key, the encryption could be determined and Ghidra was used to find the encryption functions to obtain the IV and packing type.
         - A Python script was written with open source libraries to decrypt the files with the appropriate key, IV, encryption, and packing.
 - Allow for easier obtaining of keys for future drone versions.
-    - A unique byte pattern in the encryption function referencing the key and IV was found allowing for disassembler to search for the pattern and immediately obtain references to the key and IV.
+    - A unique byte pattern in the encryption function referencing the key and IV was found allowing for disassembler to search for the pattern and immediately obtain references to the key and IV. 
