@@ -1,9 +1,9 @@
 ---
 title: Windows `bootstat.dat` Forensic Parser
 excerpt: Quick post to go over a Python parser for the Windows binary boot log. 
+categories: [Hacking, Windows]
 tags: programming forensics
-author: rms
-published: true
+author: clark
 ---
 
 ## Grzegorz Tworek's PSBits

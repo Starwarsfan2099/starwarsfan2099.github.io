@@ -1,8 +1,9 @@
 ---
 title: Cellebrite Spring 2021 CTF - Part 3 - Beth - iPhone X
 excerpt: Solutions to 2022 Spring Cellebrite CTF! Part 3! This part looks at the solutions to the questions associated with the image of Beth's iPhone. 
+categories: [CTF, Cellebrite 2022]
 tags: cellebrite-ctf ctf forensics
-author: rms
+author: clark
 ---
 
 ## Beth's iPhone X - iOS 14.6

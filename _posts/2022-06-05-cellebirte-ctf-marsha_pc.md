@@ -1,8 +1,9 @@
 ---
 title: Cellebrite Spring 2021 CTF - Part 1 - Marsha - PC
 excerpt: Solutions to 2022 Spring Cellebrite CTF! Part 1! This part looks at the solutions to the questions associated with the image of Marsha's Windows 10 PC. 
+categories: [CTF, Cellebrite 2022]
 tags: cellebrite-ctf ctf forensics
-author: rms
+author: clark
 ---
 
 ## Cellebrite 2022 CTF!

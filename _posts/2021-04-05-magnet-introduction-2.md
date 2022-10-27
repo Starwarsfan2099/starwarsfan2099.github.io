@@ -1,8 +1,9 @@
 ---
 title: Magnet AXIOM Introduction - Part 2
 excerpt: Introduction and tutorial to the Magnet AXIOM suite of tools. In part two, we'll look at AXIOM Examine and how it can be used to search for evidence.
+categories: [Tutorial, Magnet AXIOM]
 tags: forensics
-author: rms
+author: clark
 ---
 
 ## What is Magnet AXIOM?

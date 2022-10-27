@@ -1,8 +1,9 @@
 ---
 title: Magnet Weekly CTF 6 - The Elephant in the Room
 excerpt: Solution to the Magnet Forensics CTF 6th week challenge. This week's challenge continues to utilize the Linux Hadoop images for some interesting challenges.
+categories: [CTF, Magnet 2020]
 tags: magnet-ctf ctf forensics
-author: rms
+author: clark
 ---
 
 ### Catch up time

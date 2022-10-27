@@ -1,9 +1,9 @@
 ---
 title: iOS Restrictions Code Cracking
 excerpt: Diving into recovering a forgotten iOS device's restrictions passcode and writing a tool to do so automatically. 
-cover_size: sm
+categories: [Hacking, iOS]
 tags: forensics programming
-author: rms
+author: clark
 ---
 
 ## Background

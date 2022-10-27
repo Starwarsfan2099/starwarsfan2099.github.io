@@ -1,8 +1,8 @@
 ---
 title: Monroe Model LA5-160 Mechanical Calculator.
 excerpt: 1930's and 1940's Monroe Model LA5-160 mechanical calculator repair, cover removal, functions, and basic operation.
-cover: https://starwarsfan2099.github.io/public/2020-12-14/cover.JPG
-cover_size: sm
+thumbnail: https://starwarsfan2099.github.io/public/2020-12-14/cover.JPG
+categories: [Calculator, Monroe]
 tags: restoration antique mechanical-calculator
 author: rms
 ---

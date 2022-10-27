@@ -1,10 +1,10 @@
 ---
 title: Comptometer Model J Overview and Operation 
 excerpt: An interesting 1920's adding machine, still able to perform addition, subtraction, multiplication, and division.
-cover: https://starwarsfan2099.github.io/public/2021-02-09/cover.JPG
-cover_size: sm
+thumbnail: https://starwarsfan2099.github.io/public/2021-02-09/cover.JPG
+categories: [Calculator, Comptometer]
 tags: restoration antique mechanical-calculator
-author: rms
+author: clark
 ---
 
 ## Overview 

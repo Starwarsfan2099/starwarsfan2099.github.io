@@ -1,10 +1,10 @@
 ---
 title: Electric Millionaire Mechanical Calculator Overview and Operation
 excerpt: Incredible brass and steel early 20th century Swedish mechanical calculator. With stand, motor, and single-cycle multiplication. 
-cover: https://starwarsfan2099.github.io/public/2021-02-23/cover.jpg
-cover_size: sm
+categories: [Calculator, Millionaire]
 tags: restoration antique mechanical-calculator
-author: rms
+author: clark
+thumbnail: https://starwarsfan2099.github.io/public/2021-02-23/cover.jpg
 ---
 
 ## Overview 

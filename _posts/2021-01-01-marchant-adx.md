@@ -1,10 +1,10 @@
 ---
 title: Marchant 8ADX Mechanical Calculator Repair and Operation.
 excerpt: Stylish 1953 Marchant 8ADX mechanical calculator repair, functions, cover removal, and basic operation.
-cover: https://starwarsfan2099.github.io/public/2021-01-01/cover.jpg
-cover_size: sm
+# thumbnail: https://starwarsfan2099.github.io/public/2021-01-01/cover.jpg TODO: Resize
+categories: [Calculator, Monroe]
 tags: restoration antique mechanical-calculator
-author: rms
+author: clark
 ---
 
 ## Overview 

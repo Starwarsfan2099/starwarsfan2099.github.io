@@ -1,8 +1,9 @@
 ---
 title: Cellebrite Spring 2021 CTF - Part 2 - Heisenberg - Galaxy Note 10
-excerpt: Solutions to 2022 Spring Cellebrite CTF! Part 2! This part looks at the solutions to the questions associated with the image of Heisenberg's Galaxy Note. 
+excerpt: Solutions to 2022 Spring Cellebrite CTF! Part 2! This part looks at the solutions to the questions associated with the image of Heisenberg's Galaxy Note.
+categories: [CTF, Cellebrite 2022] 
 tags: cellebrite-ctf ctf forensics
-author: rms
+author: clark
 ---
 
 ## Heisenberg's Galaxy Note 10 - Android 11

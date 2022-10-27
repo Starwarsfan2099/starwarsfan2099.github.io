@@ -1,8 +1,9 @@
 ---
 title: Magnet Weekly CTF 9 - Memory Images...
 excerpt: Solution to the Magnet Forensics CTF 9th week challenge. This week's challenges revolve around a new memory dump image for the month of December.
+categories: [CTF, Magnet 2020]
 tags: magnet-ctf ctf forensics
-author: rms
+author: clark
 ---
 
 ### Memory Image?

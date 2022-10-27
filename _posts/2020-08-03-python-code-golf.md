@@ -1,8 +1,9 @@
 ---
 title: Python Roman Numeral Code Golf
 excerpt: Some quick tips and tricks for code golfing Python. This challenge is to implement Roman Numeral to integer conversion and then back again in the shortest number of bytes.
+categories: [Programming, Code Golf]
 tags: programming fun
-author: rms
+author: clark
 ---
 
 A while back, a friend challenged me to a Python code golf. For those who don't know, [code golfing](https://www.wikiwand.com/en/Code_golf) is a competition to see who can achieve a goal with the shortest amount of source code. My friend challenged me to write two Python functions. One function takes a number and returns its roman numeral equivalent as a string. The second function takes a roman numeral string as an argument and returns its numerical equivalent. A number of test cases were also given:

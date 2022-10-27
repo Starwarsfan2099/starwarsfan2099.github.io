@@ -1,8 +1,9 @@
 ---
 title: Solving Wordle using Python and Basic Frequency Analysis
 excerpt: A quick writeup on a simple way I approached solving Wordle with Python and letter frequency analysis. 
+categories: [Programming, Fun]
 tags: programming fun
-author: rms
+author: clark
 ---
 
 ## What's Wordle?

@@ -1,8 +1,9 @@
 ---
 title: Cellebrite Fall 2020 CTF - Part 1 - Tony Mederos
 excerpt: Solutions to the 1st ever Cellebrite CTF! In part 1, we look at the answers to the Tony Mederos image provided.
+categories: [CTF, Cellebrite 2020]
 tags: cellebrite-ctf ctf forensics
-author: rms
+author: clark
 ---
 
 ## Introduction
