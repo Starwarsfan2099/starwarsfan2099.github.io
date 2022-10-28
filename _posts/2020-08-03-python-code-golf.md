@@ -8,7 +8,7 @@ author: clark
 
 A while back, a friend challenged me to a Python code golf. For those who don't know, [code golfing](https://www.wikiwand.com/en/Code_golf) is a competition to see who can achieve a goal with the shortest amount of source code. My friend challenged me to write two Python functions. One function takes a number and returns its roman numeral equivalent as a string. The second function takes a roman numeral string as an argument and returns its numerical equivalent. A number of test cases were also given:
 
-{% highlight python linenos %}
+```python
 cases = {
         5: "V",
         9: "IX",
@@ -33,11 +33,11 @@ cases = {
         2014: "MMXIV",
         3999: "MMMCMXCIX"
 }
-{% endhighlight %}
+```
 
 My method is to first write code that accomplishes the goal, then attempt to shorten it and try other methods to accomplish the goal. The first code I came up with was:
 
-{% highlight python linenos %}
+```python
 def toRomanNumeral(input): # 560 Bytes
     values = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     text = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
@@ -67,11 +67,11 @@ def fromRomanNumeral(input): # 637 Bytes
         except:
              raise Exception("[-] Error: input is not a valid roman numeral")
     return endValue
-{% endhighlight %}
+```
 
 Understanding this code is left for the reader, it's fairly simple and the goal of post is to learn about golfing techniques. `fromRomanNumeral` is 638 bytes in length, and `toRomanNumeral` is 561 bytes in length. Not very good. But this is only the initial starting code, and lots can be improved. First, we have all our test cases already, which means we know what the function arguments will be so there is no need for error checking the function inputs or values generated.
 
-{% highlight python linenos %}
+```python
 def toRomanNumeral(input): # 364 Bytes
     values = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     text = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
@@ -92,11 +92,11 @@ def fromRomanNumeral(input): # 408 Bytes
         else:
             endValue += currentValue
     return endValue
-{% endhighlight %}
+```
 
 That's a bit better. 408 bytes and 364 bytes. Next thing, variable and function names are taking up lots of unnecessary space, so we can reduce each name down to one letter.
 
-{% highlight python linenos %}
+```python
 def r(n): # 286 Bytes
     v = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     t = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
@@ -117,41 +117,41 @@ def s(n): # 266 Bytes
         else:
             e += c
     return e
-{% endhighlight %}
+```
 
 Sweet, now they are both below 300 bytes already. But there is still much room for improvement. How we currently assign variables uses a lot of unneeded space. In the function `toRomanNumerals()`, now simply named `r()`, we define variables on separate lines. this means we use three spaces, three equal signs, then 3 more spaces. Fortunately, Python allows us to do this a different way. Instead of writing:
 
-{% highlight python linenos %}
+```python
 v = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
 t = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
 e = []
-{% endhighlight %}
+```
 
 We can instead declare the variables on a single line like this:
 
-{% highlight python linenos %}
+```python
 v,t,e=(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1),('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'),[]
-{% endhighlight %}
+```
 
 The current way of defining variables uses 141 bytes. Defining them on the same line uses 123 bytes. While we're at it, `('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')` can be shortened. Those repeated quotes use a lot of bytes. Instead of directly declaring an array (71 bytes), we can make a single string with spaces and use `.split()` to create an array like this: `'M CM D CD C XC L XL X IX V IV I'.split()` (41 bytes). We can also remove spaces from between the numbers defined in `v`.
 
 In the other function `fromRomanNumeral()`, now named `s()`, we can shorten the variable declaration there too in the same way. Right now the function declares variables like this:
 
-{% highlight python linenos %}
+```python
 v = {'M':1000, 'D':500, 'C':100, 'L':50, 'X':10, 'V':5, 'I':1}
 e = 0
 n = n.upper()
-{% endhighlight %}
+```
 
 `n = n.upper()` is not needed, it was just a sanity check for the input to the function. `v` and `e` can be declared on the same line. Instead of declaring a dictionary for `v` with brackets and then strings and ints, we can use `dict()` to declare a dictionary like `dict(M:1000,D:500...)`. This saves bytes from having to use quotes, and we can again remove spaces. This leaves us with:
 
-{% highlight python linenos %}
+```python
 v,e=dict(M=1000,D=500,C=100,L=50,X=10,V=5,I=1),0
-{% endhighlight %}
+```
 
 We can also save an extra byte here by using exponential notation for declaring the dictionary value `M`. Instead of `M=1000`, it can be written like `M=1e3`. Now the functions look like this:
 
-{% highlight python linenos %}
+```python
 def r(n): # 230 Bytes
     v,t,e=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),[]
     for i in range(len(v)):
@@ -168,11 +168,11 @@ def s(n): # 223 Bytes
         else:
             e += c
     return e
-{% endhighlight %}
+```
 
 All of the test cases still pass. Looking at function `r()`, it's logic can be greatly improved. Instead of using `for i in range(len(v)):`, we can simply loop over `v` and define `i` above. This saves space and allows us to shorten the logic below. Also, instead of declaring `t` as an empty array and using `.join()` later, we can just declare `t` as an empty string and append to that.
 
-{% highlight python linenos %}
+```python
 def r(n): # 194 Bytes
     v,t,e,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),'',0
     for a in v:
@@ -180,20 +180,20 @@ def r(n): # 194 Bytes
         n %= a
         i += 1
     return e
-{% endhighlight %}
+```
 
 Furthermore, we can remove spaces from between the operators inside the `for` loop. Then we can add semicolons to the end of each line to get the entire for loop and operations within it onto the same line. This gets us to 162 bytes from the original 560!
 
-{% highlight python linenos %}
+```python
 def r(n): # 560 Bytes
     v,t,e,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'M CM D CD C XC L XL X IX V IV I'.split(),'',0
     for a in v:e+=n/a*t[i];n%=a;i+=1;
     return e
-{% endhighlight %}
+```
 
 Now we turn our attention back to function `s()`. Again, instead of `for i in range(len(input)):`, we can just declare `i` above and in this case loop over the input `n`. Changing the logic below results with:
 
-{% highlight python linenos %}
+```python
 def s(n): # 215 Bytes
     v,e,i=dict(M=1e3,D=500,C=100,L=50,X=10,V=5,I=1),0,0
     for a in n:
@@ -203,20 +203,20 @@ def s(n): # 215 Bytes
             e = e + v[a]
         i += 1
     return e
-{% endhighlight %}
+```
 
 Once again, we can remove space from operators. Then we can use [ternary operators](https://www.wikiwand.com/en/%3F:#/Python) to move the if and else statement to one line. Ternary operators work in the form of `result = x if a > b else y`. Using this, we can put most of the logic and `for` loop on the same line. Also on the same line, we can add a semicolon and add our `i+=1;` and have the entire `for` loop and logic on the same line!
 
-{% highlight python linenos %}
+```python
 def s(n): # 153 Bytes
     v,e,i=dict(M=1e3,D=500,C=100,L=50,X=10,V=5,I=1),0,0
     for a in n:e=e-v[a] if i+1<len(n) and v[n[i+1]]>v[a] else e+v[a];i+=1;
     return e
-{% endhighlight %}
+```
 
 And finally, conditionals following parentheses, brackets, or braces do not to have a space between them. This leaves us with the following golfed functions.
 
-{% highlight python linenos %}
+```python
 def r1(n): # 163 Bytes
     v,e,t,i=(1000,900,500,400,100,90,50,40,10,9,5,4,1),'','M CM D CD C XC L XL X IX V IV I'.split(),0
     for a in v:e+=n/a*t[i];n%=a;i+=1;
@@ -226,6 +226,6 @@ def s1(n): # 151 Bytes
     v,e,i=dict(M=1e3,D=500,C=100,L=50,X=10,V=5,I=1),0,0
     for a in n:e=e-v[a]if i+1<len(n)and v[n[i+1]]>v[a]else e+v[a];i+=1;
     return e
-{% endhighlight %}
+```
 
 163 and 151 bytes is significantly better than the 560 and 637 bytes we started out with. Happy code golfing!

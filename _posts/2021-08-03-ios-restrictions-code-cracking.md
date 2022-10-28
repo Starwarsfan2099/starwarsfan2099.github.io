@@ -119,7 +119,7 @@ We can use Python to bruteforce the hash. First, we need a python implementation
 
 With that basic outline, we get the following simple code:
 
-{% highlight python linenos %}
+```python
 from passlib.utils.pbkdf2 import pbkdf2
 from base64 import b64decode
 
@@ -131,6 +131,6 @@ def crackRestrictionsKey(base64Hash, base64Salt):
         out = pbkdf2(key, salt, 1000)
         if out == secret:
             print "[+] Passcode: %s" % key
-{% endhighlight %}
+```
 
 Now we can run the function with our hash and salt: `crackRestrictions("+ELsJPG2ko6AHAK3KZe/uooMFR8=", "R9C4DA==")`. And we get the passcode - `[+] Passcode: 2589`!! With this information, the restrictions on my brother's iPod could be adjusted without the need for resetting the device. This might have happened a few more times. So, I just wrote a whole python script to automatically parse the backups and do everything on both Windows and Mac. It can be found [here](https://github.com/Starwarsfan2099/iOS-Restriction-Key-Cracker/blob/master/KeyCracker.py). Happy hacking!

@@ -18,7 +18,7 @@ Grzegorz Tworek, also known as [0gtweet](https://twitter.com/0gtweet), posted th
 
 Let's look at the first bit of the PowerShell code:
 
-{% highlight powershell linenos %}
+```powershell
 $bootstatFilename = "C:\Windows\bootstat.dat"
 
 # Remove to make it less noisy
@@ -37,11 +37,11 @@ if ($bytes.Count -ne (0x10000 + 0x800))
     Write-Host "Unsupported file size. Exiting." -ForegroundColor Red
     return
 }
-{% endhighlight %}
+```
 
 In this code, firstly a variable titled `bootstatFilename` is defined as `C:\Windows\bootstat.dat`. This is the binary log file we want to parse. `$DebugPreference = "Continue"` is a line that allows the debug output to be printed. We want to print out everything, so we can ignore that. Next is a simple check to make sure the file exists. After that, `bytes` is defined and stores the value returned by `Get-Content $bootstatFilename -Encoding Byte -ReadCount 0`. This gets the bytes from the file. Finally, `if ($bytes.Count -ne (0x10000 + 0x800))` is used to make sure the file length (in bytes) is not equal to `0x10000 + 0x800`. `0x800` is the header size defined later, but I'm not sure where the `0x10000` comes from. Anyway, we can start replicating in Python now.
 
-{% highlight python linenos %}
+```python
 #!/usr/bin/env python3
 
 import struct # Struct is our friend
@@ -56,7 +56,7 @@ f.seek(0, SEEK_END)
 if f.tell() != (0x10000 + header_size):
     print('Unsupported file size.')
     exit()
-{% endhighlight %} 
+``` 
 
 First we start out with the python shebang line, then some imports that are needed for later. Then we define `f` and open the `bootstat.dat` file in read-only binary mode with `'rb'`. Then we define the header size. Next, we seek to the end of the file with `os.SEEK_END`. This gives us the ability to get the number of bytes in the file on the next line with `f.tell()`. The the file size comparison is performed and exits if the condition is not met. 
 
@@ -64,7 +64,7 @@ First we start out with the python shebang line, then some imports that are need
 
 Now let's look at the next bit of Powershell code.
 
-{% highlight powershell linenos %}
+```powershell
 function Array2Ulong([byte[]]$b)
 {
     [uint32]$f =     ([uint32]$b[3] -shl 24) `
@@ -92,21 +92,21 @@ function TimeFields2String([byte[]]$b)
     return '{0:d4}-{1:d2}-{2:d2} {3:d2}:{4:d2}:{5:d2}' -f `
     ([uint32]$b[1]*256+[uint32]$b[0]), $b[2], $b[4], $b[6], $b[8], $b[10]
 }
-{% endhighlight %} 
+``` 
 
 Here we have three functions: `Array2Ulong`, `Array2Uint64`, and `TimeFields2String`. Just by the function name and it's arguments (bytes), we can tell the first two functions unpack bytes to either a 32-bit unsigned long or 64 bit unsigned integer data type. We can easily do this in Python using the [struct](https://docs.python.org/3/library/struct.html) module. So, we don't need to create functions in Python for those. The `TimeFields2String` is also nearly able to be directly replicated in Python. 
 
-{% highlight python linenos %}
+```python
 # Format time into a human readable string
 def format_time(b):
     return '%s-%02d-%02d %02d:%02d:%02d' % (b[1]*256+b[0], b[2], b[4], b[6], b[8], b[10])
-{% endhighlight %} 
+``` 
 
 ### Some constants
 
 Next, the Powershell script defines some more variables:
 
-{% highlight powershell linenos %}
+```powershell
 $headerSize = 0x800 #theoretically in some cases can be 0, but let's assume it's 0x800.
 
 $eventLevels = @{
@@ -128,11 +128,11 @@ $eventCodes = @{
 $applicationTypes = @{
 3 = "BCD_APPLICATION_TYPE_WINDOWS_BOOT_LOADER"
 }
-{% endhighlight %} 
+``` 
 
 `eventLevels`, `eventCodes`, and `applicationTypes` are defined along with the header size we already defined in the Python script. We can easily define these in the Python script using dictionaries. After further testing the finished script, more types were added to the `applicationTypes`. These can be found [here](https://www.omnisecu.com/windows-2008/introduction-to-windows-2008-server/boot-configuration-data-bcd-objects.php). More information on the application types and a great source of BCD data is [this document from Microsoft](https://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/bcd.docx). 
 
-{% highlight python linenos %}
+```python
 eventLevels = { 0:'BSD_EVENT_LEVEL_SUCCESS',
                 1:'BSD_EVENT_LEVEL_INFORMATION',
                 2:'BSD_EVENT_LEVEL_WARNING',
@@ -150,13 +150,13 @@ applicationTypes = {1:'BCD_APPLICATION_TYPE_FIRMWARE_BOOT_MANAGER',
                     3:'BCD_APPLICATION_TYPE_WINDOWS_BOOT_LOADER',
                     4:'BCD_APPLICATION_TYPE_WINDOWS_RESUME_APPLICATION',
                     5:'BCD_APPLICATION_TYPE_WINDOWS_MEMORY_TESTER'}
-{% endhighlight %} 
+``` 
 
 ### Unpacking data
 
 Now we can start getting into the good stuff in the PowerShell script.
 
-{% highlight powershell linenos %}
+```powershell
 $currentPos = $headerSize
 $version = Array2Ulong($bytes[$currentPos..($currentPos+3)])
 $currentPos +=4
@@ -179,13 +179,13 @@ Write-Debug ("BootLogSize: " + ('0x{0:X}' -f $BootLogSize))
 Write-Debug ("BootLogStart: " + ('0x{0:X4}' -f $BootLogStart))
 Write-Debug ("FirstBootLogEntry: " + ('0x{0:X4}' -f $FirstBootLogEntry))
 Write-Debug ("NextBootLogEntry: " + ('0x{0:X4}' -f $NextBootLogEntry))
-{% endhighlight %} 
+``` 
 
 First, the script defines a new variable called `currentPos` and sets it to the header size (`0x800`). Next, `version` is defined as `Array2Ulong($bytes[$currentPos..($currentPos+3)])`. This is unpacking the bytes at `currentPos + 3` as an unsigned long datatype. The Python equivalent of this is `struct.unpack('<L', f.read(4))`. `struct.unpack()` returns a tuple contains the unpacked data. Passing the function `<L` as the first argument tells it to unpack the data as little-endian unsigned long. The PowerShell script goes on to check if the version is not equal to `4` (`if ($version -ne 4)`), then create three more variables and print them to the screen. 
 
 Let's replicate in Python. 
 
-{% highlight python linenos %}
+```python
 # Get some info
 f.seek(header_size)
 version, = struct.unpack('<L', f.read(4))
@@ -204,11 +204,11 @@ print('BootLogStart: 0x%04x' % boot_log_start)
 print('BootLogSize: 0x%04x' % boot_log_size)
 print('NextBootLogEntry: 0x%04x' % next_boot_log_entry)
 print('FirstBootLogEntry: 0x%04x' % first_boot_log_entry)
-{% endhighlight %} 
+``` 
 
  Just like in the PowerShell script, we need to get the `bootstat.dat` version from the `header_size` offset.  Since `struct.unpack()` takes a bytes argument, we can just use `f.read()` as the second argument. We don't necessarily need to keep track of the current position like in the PowerShell script to pass to functions. So we can just use `f.seek(header_size)` and then `f.read(NUMBER)` will read the next `NUMBER` of bytes after that position. So, to get the version after `f.seek(header_size)`, we can use `version, = struct.unpack('<L', f.read(4))`. Then a simple check to make sure the `version` is equal to `4`. The other variables can be created the same way and then simply print the info. 
 
-{% highlight powershell linenos %}
+```powershell
  $overlap = $true
 
 if ($FirstBootLogEntry -gt $NextBootLogEntry)
@@ -220,11 +220,11 @@ if ($FirstBootLogEntry -gt $NextBootLogEntry)
 $currentPos = $headerSize + $FirstBootLogEntry
 
 $arrExp=@()
-{% endhighlight %} 
+``` 
 
 Next, the PowerShell script sets up a variable, `overlap` and sets it to `true`. The the script checks if `FirstBootLogEntry` is greater than `NextBootLogEntry`. If it is, then the program sets `overlap` to `false`. Like the `Write-Debug` statement says, this code is checking to see if part of the log has been overwritten. Then the script sets `currentPos` to the sum of `headerSize` and `FirstBootLogEntry`. Then another variable is initialized, this time an array: `arrExp`. This array is used to store the boot records found and print them at the end of the script. This will be simple to replicate:
 
-{% highlight python linenos %}
+```python
 overlap = True
 
 # Check if the log is partially overwritten
@@ -236,13 +236,13 @@ current_pos = header_size + first_boot_log_entry
 
 # Loop over records
 boot_offsets = []
-{% endhighlight %} 
+``` 
 
 This Python code is pretty simple and self explanatory. Now we look at a bit more complex code in the PowerShell script.
 
 ### Loop over records
 
-{% highlight powershell linenos %}
+```powershell
 while ($true)
 {
     $recordStart = $currentPos
@@ -269,11 +269,11 @@ while ($true)
     Write-Debug ("  Level: " + $eventLevels[[int32]$Level])
     Write-Debug ("  ApplicationType: " + $applicationTypes[[int32]$ApplicationType])
     Write-Debug ("  EventCode: " + $eventCodes[[int32]$EventCode])
-{% endhighlight %} 
+``` 
 
 First, `recordStart` is assigned the value of `currentPos`. Next, the script gets the timestamp of the current record. This data is stored in the file as an unsigned long long datatype. Then, the GUID parsed from the next 16 bytes. Finally, 4 more variables are created and printed. 
 
-{% highlight python linenos %}
+```python
 while(True):
     # Get the record start offset
     record_start = current_pos
@@ -286,7 +286,7 @@ while(True):
     
     # Move to the GUID position
     f.seek(current_pos + 8)
-{% endhighlight %}
+```
 
 ### Unpack GUID
 
@@ -301,17 +301,17 @@ In Python now, we start the loop then set and print `recordStart`. Next, we use 
 
 A Pythonic way of writing it looks something like this:
 
-{% highlight python linenos %}
+```python
 guid_hex = '%0.2X' % struct.unpack('<L', f.read(4))
     for i in range(0, 2):
         guid_hex += '%0.2X' % struct.unpack('<H', f.read(2))
     for i in range(0, 4):
         guid_hex += '%0.2X' % struct.unpack('>H', f.read(2))
-{% endhighlight %}
+```
 
 Then we can use the [uuid](https://docs.python.org/3/library/uuid.html) Python module to format `guid_hex` properly. The we update `current_pos`, unpack, and print out the data we've unpacked.
 
-{% highlight python linenos %}
+```python
     # Format the GUID
     guid = uuid.UUID(hex=guid_hex.strip())
     print('GUID: ', guid)
@@ -328,11 +328,11 @@ Then we can use the [uuid](https://docs.python.org/3/library/uuid.html) Python m
     print('Level: %s' % eventLevels[level])
     print('ApplicationType: %s' % applicationTypes[app_type])
     print('EntrySize: %s' % entry_size)
-{% endhighlight %}
+```
 
 Now lets look at some more PowerShell.
 
-{% highlight powershell linenos %}
+```powershell
 f (($ApplicationType -eq 3) -and ($EventCode -eq 1))
     {
         $BootDateTime = (TimeFields2String($bytes[$currentPos..($currentPos+15)]))
@@ -350,11 +350,11 @@ f (($ApplicationType -eq 3) -and ($EventCode -eq 1))
         Write-Debug ("    DateTime: " + $BootDateTime)
         Write-Debug ("    LastBootId: " + $LastBootId)
     }
-{% endhighlight %}
+```
 
 This is checking for a boot entry. If the application type is `3` and the event code is `1`, there is some boot entry data to parse. We can parse the boot time as well as the boot ID. The PowerShell script creates a `row` variable and some of the data to to it. The, it is appended to `arrExp` for display at the end of the script. After that, it prints the boot info it just parsed. Easy enough to do in Python. 
 
-{% highlight python linenos %}
+```python
     # Look for a boot entry id and time
     if (app_type == 3) and (event_code == 1):
         boot_date_time = f.read(16)
@@ -366,11 +366,11 @@ This is checking for a boot entry. If the application type is `3` and the event 
         print('\tDateTime: ', time)
         print('\tLastBootID: ', last_boot_id)
         boot_offsets.append([record_start, time, last_boot_id, timestamp])
-{% endhighlight %}
+```
 
 We check `app_type` and `event_code`, then parse the boot time and pass it to the `format_time()` function we created earlier. Next, we use `f.seek(f.tell()+8)` to move to the boot id section and read unpack it with `struct.unpack('I', f.read(4))`. Then we print the data, and append it as well as a few more variables to `boot_offsets` to display at the end of the script. 
 
-{% highlight powershell linenos %}
+```powershell
 $currentPos = $recordStart + $EntrySize
 
     if ($overlap -and ($currentPos -ge ($NextBootLogEntry + $headerSize)))
@@ -392,11 +392,11 @@ $currentPos = $recordStart + $EntrySize
         $overlap = $true
     }
 }
-{% endhighlight %}
+```
 
 Almost done. First, the PowerShell script checks if `overlap` is true and then if the current file position is greater then the next entry + the header. This indicates there are no more records to be read, and we need to exit. Next, there is a check to see if the next entry doesn't fit. If it's fine, the next entry it read into `nextEntrySize`. If `nextEntrySize` is `0`, then the record is empty and `overlap` is set to true. This is also easy to convert to Python:
 
-{% highlight python linenos %}
+```python
 # No more records
     if overlap: 
         if current_pos >= (next_boot_log_entry + header_size):
@@ -413,11 +413,11 @@ Almost done. First, the PowerShell script checks if `overlap` is true and then i
     if next_entry_size == 0:
         current_pos = header_size + boot_log_start
         overlap = True
-{% endhighlight %}
+```
 
 And finally, the PowerShell script prints the array of boot entries and the script ends. 
 
-{% highlight powershell linenos %}
+```powershell
 # Let's display the result
 if (Test-Path Variable:PSise)
 {
@@ -427,16 +427,16 @@ else
 {
     $arrExp | Format-Table
 }
-{% endhighlight %}
+```
 
 And we do the same in the Python script:
 
-{% highlight python linenos %}
+```python
 print('\nOffset DateTime            LastBootId TimeStamp')
 print('------ --------            ---------- ---------')
 for record in boot_offsets:
     print('0x%04x %s          %d %d' % (record[0], record[1], record[2], record[3]))
-{% endhighlight %}
+```
 
 And done!
 
@@ -444,7 +444,7 @@ And done!
 
 The script can be found [here in this repo](https://github.com/Starwarsfan2099/Parse-Windows-Boot-Log) or below.
 
-{% highlight python linenos %}
+```python
 #!/usr/bin/env python3
 
 import struct # Struct is our friend
@@ -590,4 +590,4 @@ print('\nOffset DateTime            LastBootId TimeStamp')
 print('------ --------            ---------- ---------')
 for record in boot_offsets:
     print('0x%04x %s          %d %d' % (record[0], record[1], record[2], record[3]))
-{% endhighlight %}
+```

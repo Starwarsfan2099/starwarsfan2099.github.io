@@ -31,7 +31,7 @@ Using this information, we can generate a 'score' for each five letter word that
 
 If you want to see the full source code, it's at the bottom of the post or can be found [here](https://gist.github.com/Starwarsfan2099/600899c8ebbe75e5b3e0bf581c38c5fa). Now, lets walk through the code.
 
-{% highlight python linenos %}
+```python
 from sys import argv
 from time import time
 
@@ -58,13 +58,13 @@ class WordleSolve:
         word_list_file.close()
         self.word_list_total = len(self.word_list)
 
-{% endhighlight %}
+```
 
 First, `argv` is imported for command line arguments and `time` is imported to time the script later on. Next, a class `WordleSolve` is created and inside it is the constructor function `__init__`. In the constructor, several variables are created and initialized. The constructor accepts a file name and the starting word for Wordle. Once in `__Init__`, firstly, two variables to help with letter frequency analysis: `letter_freq`, `letter_freq_value`, `letter_pairs`, and `letter_pairs_freq`. `letter_freq` contains a list of English letters sorted form highest frequency to lowest frequency. `letter_freq_value` contains the actual frequency values from largest value to smallest. `letter_pairs` and `letter_pairs_freq` are the same but for common pairs of letters. Next, some variables that are used later are initilized. `target_word`, `yellow_green_list`, `not_list`, `word_history`, `score_list`, and `start_word`. 
 
 For this program, a word list of five letter words is used. Next, the word list provided is opened and the contents are read and stored in a list. 
 
-{% highlight python linenos %}
+```python
     # Print a list of words in a box like Wordle does
     def box(self, words):
         # Box top and bottom
@@ -82,11 +82,11 @@ For this program, a word list of five letter words is used. Next, the word list 
         for letter in text:
             input_list.append(letter)
         return input_list
-{% endhighlight %}
+```
 
 Next, are two simple hepler functions. One for printing out Wordle guesses in a wordle 'box' and a function for user input. 
 
-{% highlight python linenos %}
+```python
     # If we know a letter is or isn't in a word, adjust the word list apropriatly
     def letter_modify(self, letter, remove):
         i = 0
@@ -119,13 +119,13 @@ Next, are two simple hepler functions. One for printing out Wordle guesses in a 
                     self.score_list.pop(i)
                     continue
             i += 1
-{% endhighlight %}
+```
 
 These functions handle modifying the word list after information is received from a guess. `letter_modify` accepts a letter and the boolean `remove`. If `remove` is `True`, any words in the wordlist that contain `letter` are removed from thre list. If `remove` is `False`, Any words that don't have `letter` in the word are removed from the wordlist. For example, if a word is guessed and a letter is blank, that means the letter isn't anywhere in the target word. So, all words containging that letter are removed from the list. Or, if a letter is is definetly in a word, e.g. a yellow blank, `remove` is `False` and all words *without* the letter are removed from the list. `yellow_green_list` is a list of previous letters that have have already been removed from the list. 
 
 `letter_place` is used for green or yellow squares. If a word is guessed and a letter is in a green square, than all words without that letter in that place are removed. So, if `remove` is `True`, all words in the list with `letter` in `place` are removed. If `remove` is `False`, all words in the word list that don't have `letter` in `place` are removed from the list. 
 
-{% highlight python linenos %}
+```python
     # Add known letters in the word to a list
     def add_known_letters(self, letter):
         if letter not in self.yellow_green_list:
@@ -142,11 +142,11 @@ These functions handle modifying the word list after information is received fro
         print("Known letters in word: %s" % ' '.join(self.yellow_green_list))
         print("Known letters not in word: %s" % ' '.join(self.not_list))
         print("{0} words remaining, down to {1:.2%} of words.\n".format(len(self.word_list), (len(self.word_list)/self.word_list_total)))
-{% endhighlight %}
+```
 
 `add_known_letters` is used to add letters to a list of letters that we know are in the target word. `add_known_not_letters` is used to add letters to a list of list of letetrs that are definetly not in the word. This is for optimization. `stats` just prints out some stats on the current Wordle.
 
-{% highlight python linenos %}
+```python
     # Sort word list based on a letter frequency score
     def sort_by_freq(self):
         self.score_list = []
@@ -179,11 +179,11 @@ These functions handle modifying the word list after information is received fro
         self.word_list = [self.word_list for score_list, self.word_list in zipped_list]
         self.score_list = sorted(self.score_list, reverse=True)
         return zipped_list
-{% endhighlight %}
+```
 
 The function `sort_by_freq` is used to sort the wordlist based on a score of the words letter frequency. The function loops over each letter in every word in the wordlist. First, the function checks what position in the word it as at and checks if a certian letter is in that place. For the first letter place, the most common letter is *s*. If *s* is in the first place, it adds to the score. Second, it takes the frequency value of the current lettert and adds it to the score. It aslo chcks if the letter is in the word more than once. To optimize Wordle, words with duplicates of letters are less useful. For each duplicate letter, the freqency is divided by 5 then added to the score. Finally, it checks for common letter pairs and adds to the score based on how many andf what pairs are in the word. This creates a frequency score and is stored in `score_list`. Once each word has a score, the wordlist and score list are zipped and sorted by the score. `word_list` is then sorted and the function returns the `zipped_list`. 
 
-{% highlight python linenos %}
+```python
     # Process input and adjust the word list starting with known letters in the target word
     def process_guess(self, input_list, iteration):
         # Known letter and position [Green square]
@@ -211,11 +211,11 @@ The function `sort_by_freq` is used to sort the wordlist based on a score of the
                 self.letter_modify(self.word_history[iteration][i], True)
                 self.add_known_not_letters(self.word_history[iteration][i])
             i += 1
-{% endhighlight %}
+```
 
 Next, a function to process a user guess. The function takes `input_list` and `iteration` as arguments. `input_list` is a list of the results after a guess in the form of `bbyygg`. `b` is for a blank square, `y` is for a yellow square, and `g` is for a green square. `iteration` is what guess the user is on. This function loops over the results and makes the appropriate changes to the word list, letter lists, and word history. 
 
-{% highlight python linenos %}
+```python
     # Wordle logic for running tests
     def wordle_logic(self, guess, wordle):
         i = 0
@@ -233,13 +233,13 @@ Next, a function to process a user guess. The function takes `input_list` and `i
         if len(output) != 5:
             print("Something bad happened x2.")
         return output
-{% endhighlight %}
+```
 
 And finally, there is a bot function to use for testing optimization and start words. The function takes a `guess` and a `wordle` and returns a string as if a user was playing. (e.g., in the form of `bbyygg`) And that's the end of the Wordle solving class. 
 
 ### Using the WordleSolver class
 
-{% highlight python linenos %}
+```python
 # Automatically play Wordle for testing code, start words, etc.
 def play_bot(solver, target_list, start_word, verbose):
     succsess = []
@@ -293,11 +293,11 @@ def play_bot(solver, target_list, start_word, verbose):
     for i in succsess:
         count += i
     return count, succsess, fails
-{% endhighlight %}
+```
 
 Next, there is function to have a bot 'solve' a Wordle. This is used for testing start words and optimization testing. This function takes a `WordleSolver` class, list of Wordles, starting guess word, and a verbose boolean as input. The code loops over the Wordles in `target_list` and then prints the Wordle if `verbose` is true. Next, since the bot function is passed a single instance of `WordleSolver` but loops over many Wordles, certain variables like `word_list` and `word_history` are reinitialized. This is done to avoid having to reload the wordlist for every Wordle. Then, all of the target Wordles are copied into `word_list`. Then, the wordlist is sorted with `sort_by_freq()`. Then, six guesses are done. If it's the first guess (`i==0`) then the `start_word` is used. Otherwise, it uses the first word in the `word_list`. This is the most likely word based on letter frequency and the list has had any words removed that will not work. The guesses and Wordle are passed to `wordle_logic` which returns the result. The result is processed with `process_guess`. If `wordle_logic` returns `ggggg` or there is only one word left in `word_list`, then the Wordle has been solved! It keeps track of the number of guesses, fails, and succsess and returns them. 
 
-{% highlight python linenos %}
+```python
 # Using each word in the word list as a Wordle, try to solve it and see what the average number of guesses is
 def test():
     start_word = "least"
@@ -312,7 +312,7 @@ def test():
     print("Number of succsess: %s" % len(successes))
     print("Average guesses for successes: %s" % (count/len(successes)))
     print("Fails: %s" % fails)
-{% endhighlight %}
+```
 
 Now the `play_bot` function can be used to test the solver with one start word on all possible Wordles! Simply initialize the `WordleSolve` class with a starting guess, and a wordlist, then pick and a Wordle list, pick a verbosity and call `play_bot`. Next, the `test` function simply prints the results of the test. Here is an example of it running:
 
@@ -326,7 +326,7 @@ Time: 17.315351486206055
 
 It's also possible to test all of the possible start words on all possible Wordles to determine what the best start word is.
 
-{% highlight python linenos %}
+```python
 # Using each word in the word list as a Wordle, try to solve it and see what the average number of guesses is
 def test_start_words():
     averages = []
@@ -347,11 +347,11 @@ def test_start_words():
     result = sorted(averages)
     print("The best start word is %s with a average of %f Wordle guesses." % (result[0][1], result[0][0]))
 
-{% endhighlight %}
+```
 
 The function `test_start_words` copies all of the words in `word_list` to a `start_word_list`. Then, it uses the `play_bot` function to test every single starting word and record the results. After that finally finishes, it zips the results and sorts them to see what start word yielded the lowest average number of guesses to solve all Wordles. (**Spoiler:** The best start word with this script is *least*) And finally, there is a function for a user to use the Solver and play on the website.
 
-{% highlight python linenos %}
+```python
 # Solve a Wordle with a user
 def play():
     start_word = "least"
@@ -385,11 +385,11 @@ def play():
         solver.word_history.append(solver.word_list[0])
     print("Oof. Good luck picking final word!")
 
-{% endhighlight %}
+```
 
 This function is similar to the `play_bot` functionality, but the user's input from the website replaces `wordle_logic()`. The stats are also printed as well as the guess history in the ASCII text box. The last bit of the script gives some command line args for different test or playing as a user.
 
-{% highlight python linenos %}
+```python
 # Main
 if __name__ == "__main__":
     startTime = time()
@@ -405,13 +405,13 @@ if __name__ == "__main__":
         print("Try again.")
     executionTime = (time() - startTime)
     print('Time: ' + str(executionTime))
-{% endhighlight %}
+```
 
 ## Full Code
 
 The code can be found [here](https://gist.github.com/Starwarsfan2099/600899c8ebbe75e5b3e0bf581c38c5fa) on GitHub and below:
 
-{% highlight python linenos %}
+```python
 #!/usr/bin/python3
 
 # Quick and dirty wordle solver
@@ -729,4 +729,4 @@ if __name__ == "__main__":
     executionTime = (time() - startTime)
     print('Time: ' + str(executionTime))
 
-{% endhighlight %}
+```
