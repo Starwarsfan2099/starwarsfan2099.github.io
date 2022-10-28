@@ -18,7 +18,7 @@ Apple allows restrictions to be set up on their devices. The primary use of thes
 
 That's what I wanted to find out. First, lets grab a jailbroken device and browse around the file system. Since the passcode is entered directly into a page in settings, we can start there looking for a base64 encoded passcode or something simple. Under `/var/mobile/Library/Preferences` is a property list file called `com.apple.restrictionspassword.plist`. Hm. `restrictionspassword`? Sounds interesting. This file contains a single dictionary, with two data keys: `RestrictionsPasswordKey` and `RestrictionsPasswordSalt`. It looks like this:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -47,9 +47,9 @@ Hm. The `=` and `==` characters at the end of the hash and salt are dead give aw
 
 So this is very likely a hash of some sort. But what algorithm? Thankfully, someone on the [hashcat](https://hashcat.net/forum/thread-2892.html) forums had this same question, and another user answered.  
 
-{:refdef: style="text-align: center;"}
-![Start Screen](https://starwarsfan2099.github.io/public/2021-08-03/post.jpg){:.shadow}
-{: refdef}
+
+![Start Screen](https://starwarsfan2099.github.io/public/2021-08-03/post.jpg){:.shadow}{:.center}
+
 
 So, this user states that the hashing algorithm is `pbkdf2-hmac-sha1 ((Password-Based Key Derivation Function 2)`. He also explains how he figured out it is iterations of the algorithm. This will be useful later. Since this is a hashing function it needed to be bruteforced. Thankfully, the iOS restrictions only allow for a four digit code to be set as the passcode. So the keyspace is only 0000-9999 which seemed easy enough to bruteforce.
 
@@ -59,13 +59,13 @@ First we have a problem though. My sibling's iPod was not jailbroken. So how do 
 
 So, I made a backup of the iPod and my iPhone with a restrictions set in case there were changes across devices or versions in how the hash and salt is copied over. Backups were made using iTunes. On Windows, backups are stored at `C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup`. On Mac, they are stored under `/Library/Application Support/MobileSync/Backup/`. In this folder are the different backups, even if it doesn't look like it at first.  
 
-{:refdef: style="text-align: center;"}
-![Backup List](https://starwarsfan2099.github.io/public/2021-08-03/list.JPG){:.shadow}
-{: refdef}
+
+![Backup List](https://starwarsfan2099.github.io/public/2021-08-03/list.JPG){:.shadow}{:.center}
+
 
 Inside the folders that are a backup of a device, there is an `Info.plist` file that eventually contains the device name and information.
 
-```
+```xml
 ...
 <key>Build Version</key>
 	<string>18C66</string>

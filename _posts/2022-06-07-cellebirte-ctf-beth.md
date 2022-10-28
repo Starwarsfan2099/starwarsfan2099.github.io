@@ -14,9 +14,9 @@ author: clark
 
 A simple keyword search for mountains shows three results, with one being an email. 
 
-{:refdef: style="text-align: center;"}
-![Mountains Search](https://starwarsfan2099.github.io/public/2022-06-05/31.JPG){:.shadow}
-{: refdef}
+
+![Mountains Search](https://starwarsfan2099.github.io/public/2022-06-05/31.JPG){:.shadow}{:.center}
+
 
 The email was to `livingstonhank11@gmail.com` and is the solution to this question.
 {:.success}
@@ -27,15 +27,15 @@ The email was to `livingstonhank11@gmail.com` and is the solution to this questi
 
 For this question, we need to load up the timeline created by Physical Analyzer and looked at June 29th, 2021. Here, we can see the outgoing phone call to Marsha and  look for any other artifacts that could contain location data.
 
-{:refdef: style="text-align: center;"}
-![Phone Call](https://starwarsfan2099.github.io/public/2022-06-05/32.JPG){:.shadow}
-{: refdef}
+
+![Phone Call](https://starwarsfan2099.github.io/public/2022-06-05/32.JPG){:.shadow}{:.center}
+
 
 See it right there? A location artifact around 20 minutes before the call! 
 
-{:refdef: style="text-align: center;"}
-![Location](https://starwarsfan2099.github.io/public/2022-06-05/32_2.JPG){:.shadow}
-{: refdef}
+
+![Location](https://starwarsfan2099.github.io/public/2022-06-05/32_2.JPG){:.shadow}{:.center}
+
 
 Popping the location coordinates into Google Earth reveals she was in `New York` when she made the call to Marsha.
 {:.success}
@@ -46,9 +46,9 @@ Popping the location coordinates into Google Earth reveals she was in `New York`
 
 This one is requires analysis of the other images provided as well as this image. It turns out, the only finance app shared between two people was `PassBook` - shared between Beth and Marsha. 
 
-{:refdef: style="text-align: center;"}
-![PassBook](https://starwarsfan2099.github.io/public/2022-06-05/33.JPG){:.shadow}
-{: refdef}
+
+![PassBook](https://starwarsfan2099.github.io/public/2022-06-05/33.JPG){:.shadow}{:.center}
+
 
 Since this is a default iOS, I was unsure but decided to use an attempt to answer the challenge, and indeed the answer was `Beth,Marsha`.
 {:.success}
@@ -59,9 +59,9 @@ Since this is a default iOS, I was unsure but decided to use an attempt to answe
 
 The extracted container format can be found inside the zip archive that Physical Analyzer processes. Inside the zip file is the phone filesystem, a log file, and a version file containing the container format version. 
 
-{:refdef: style="text-align: center;"}
-![Container Version](https://starwarsfan2099.github.io/public/2022-06-05/34.JPG){:.shadow}
-{: refdef}
+
+![Container Version](https://starwarsfan2099.github.io/public/2022-06-05/34.JPG){:.shadow}{:.center}
+
 
 The solution is `CLBX-0.3.1`.
 {:.success}
@@ -72,9 +72,9 @@ The solution is `CLBX-0.3.1`.
 
 Another simple keyword search for `Vienna Inn` provides only one result. 
 
-{:refdef: style="text-align: center;"}
-![Vienna Inn](https://starwarsfan2099.github.io/public/2022-06-05/36.JPG){:.shadow}
-{: refdef}
+
+![Vienna Inn](https://starwarsfan2099.github.io/public/2022-06-05/36.JPG){:.shadow}{:.center}
+
 
 The solution is `Heisenberg White`. 
 {:.success}
@@ -85,15 +85,15 @@ The solution is `Heisenberg White`.
 
 To solve this one, we need to use the `Activity Sensor Data` pane that Cellebrite Provides. 
 
-{:refdef: style="text-align: center;"}
-![Sensor Data](https://starwarsfan2099.github.io/public/2022-06-05/37.JPG){:.shadow}
-{: refdef}
+
+![Sensor Data](https://starwarsfan2099.github.io/public/2022-06-05/37.JPG){:.shadow}{:.center}
+
 
 In this window, we can sort by the `Distance Traveled` column to see the longest distance. 
 
-{:refdef: style="text-align: center;"}
-![Longest Distance](https://starwarsfan2099.github.io/public/2022-06-05/37_2.JPG){:.shadow}
-{: refdef}
+
+![Longest Distance](https://starwarsfan2099.github.io/public/2022-06-05/37_2.JPG){:.shadow}{:.center}
+
 
 The solution is `2482.28`. 
 {:.success}
@@ -104,9 +104,9 @@ The solution is `2482.28`.
 
 Another super-easy one, displayed right on the Physical Analyzer homepage.
 
-{:refdef: style="text-align: center;"}
-![IMEI](https://starwarsfan2099.github.io/public/2022-06-05/38.JPG){:.shadow}
-{: refdef}
+
+![IMEI](https://starwarsfan2099.github.io/public/2022-06-05/38.JPG){:.shadow}{:.center}
+
 
 The solution is `359405082912450`. 
 {:.success}
@@ -117,9 +117,9 @@ The solution is `359405082912450`.
 
 This answer is also displayed on the homepage.
 
-{:refdef: style="text-align: center;"}
-![Apple ID](https://starwarsfan2099.github.io/public/2022-06-05/39.JPG){:.shadow}
-{: refdef}
+
+![Apple ID](https://starwarsfan2099.github.io/public/2022-06-05/39.JPG){:.shadow}{:.center}
+
 
 The solution is `tornadobeth@gmail.com`. 
 {:.success}
@@ -130,15 +130,15 @@ The solution is `tornadobeth@gmail.com`.
 
 A method for solving this challenge can be found on the [ECID iPhone Wiki page](https://www.theiphonewiki.com/wiki/ECID). The page list several methods for recovering the ECID from a running device or filesystem. Within the filesystem, the ECID can be recovered from the `apticket.der` file. The location of this file can be found at `/System/Library/Caches/apticket.der`. By going to this location in Physical Analyzer, we can see the location of the actual file we want.
 
-{:refdef: style="text-align: center;"}
-![apticket location](https://starwarsfan2099.github.io/public/2022-06-05/42.JPG){:.shadow}
-{: refdef}
+
+![apticket location](https://starwarsfan2099.github.io/public/2022-06-05/42.JPG){:.shadow}{:.center}
+
 
 And opening up this file, we can search for and see the ECID.
 
-{:refdef: style="text-align: center;"}
-![ECID](https://starwarsfan2099.github.io/public/2022-06-05/42_2.JPG){:.shadow}
-{: refdef}
+
+![ECID](https://starwarsfan2099.github.io/public/2022-06-05/42_2.JPG){:.shadow}{:.center}
+
 
 The ECID and solution is `1242319429238830`. 
 {:.success}
@@ -149,15 +149,15 @@ The ECID and solution is `1242319429238830`.
 
 Hmmmm. The first place we want to look is the for any cache files present related to the DuckDuckGo browser. Using the SQLite browser, we can see there is a `Cache.db` file that contains a few tables that store some queries and timestamps, but no easy way to connect the two to get the most recent or currently open tab query. 
 
-{:refdef: style="text-align: center;"}
-![Cache.db](https://starwarsfan2099.github.io/public/2022-06-05/43.JPG){:.shadow}
-{: refdef}
+
+![Cache.db](https://starwarsfan2099.github.io/public/2022-06-05/43.JPG){:.shadow}{:.center}
+
 
 The app folder can be found at `Apple_iPhone X (A1901).zip/root/private/var/mobile/Containers/Data/Application/1CFB7BE5-990B-4971-908A-10C2EC94080B`. By going through all the files here and searching keywords, a property list file called `com.duckduckgo.mobile.ios.plist` can be found containing the key `com.duckduckgo.opentabs`. 
 
-{:refdef: style="text-align: center;"}
-![Open Tab](https://starwarsfan2099.github.io/public/2022-06-05/43_2.JPG){:.shadow}
-{: refdef}
+
+![Open Tab](https://starwarsfan2099.github.io/public/2022-06-05/43_2.JPG){:.shadow}{:.center}
+
 
 Here we see an array containing info about the currently open tabs. The url for the open tab is `https://duckduckgo.com/?q=daphne+bridgerton+actress&t=ddg_ios&atb=v266-3mc&ko=-1&iax=images&ia=images`, making the search query and solution for the challenge `daphne bridgerton actress`. 
 {:.success}

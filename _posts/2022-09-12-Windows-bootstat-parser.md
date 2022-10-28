@@ -8,9 +8,9 @@ author: clark
 
 ## Grzegorz Tworek's PSBits
 
-{:refdef: style="text-align: center;"}
-![Tweet](https://starwarsfan2099.github.io/public/2022-09-12/tweet.JPG){:.shadow}
-{: refdef}
+
+![Tweet](https://starwarsfan2099.github.io/public/2022-09-12/tweet.JPG){:.shadow}{:.center}
+
 
 Grzegorz Tworek, also known as [0gtweet](https://twitter.com/0gtweet), posted this [link to a PowerShell script](https://github.com/gtworek/PSBits/blob/master/DFIR/Extract-BootTimes.ps1) a few days ago. I thought is was interesting, because I had never heard of this file, much less it being parsed for possible forensic measures. He'd already written a PowerShell script, but I wanted to make a small Python Parser since I'm not very familiar with PowerShell and wanted to learn more about the `bootstat.dat` file.
 

@@ -9,29 +9,29 @@ author: rms
 
 ## Overview 
 
-{:refdef: style="text-align: center;"}
-![Monroe Model LA5-160](https://starwarsfan2099.github.io/public/2020-12-14/both_main.JPG){:.shadow}
-{: refdef}
+
+![Monroe Model LA5-160](https://starwarsfan2099.github.io/public/2020-12-14/both_main.JPG){:.shadow}{:.center}
+
 
 These are two examples of the Monroe Model LA5-160 product line. This machine is the successor to the model K, with the biggest changes being electric drive as opposed to a hand crank and automatic division. The machine was produced starting in the 1930's. Below is an ad for the small electric calculator. 
 
-{:refdef: style="text-align: center;"}
-![Monroe Model LA5-160 Ad](https://starwarsfan2099.github.io/public/2020-12-14/ad.jpg){:.shadow}
-{: refdef}
+
+![Monroe Model LA5-160 Ad](https://starwarsfan2099.github.io/public/2020-12-14/ad.jpg){:.shadow}{:.center}
+
 
 The model LA5 line carried on for serval years. I have two LA5 machines. One being from the 1930's (left side below) and the other from the 1940's (right side below). The machines have slightly different stylings and logos but the internals are primarily the same. 
 
-{:refdef: style="text-align: center;"}
-![Rear of the machines](https://starwarsfan2099.github.io/public/2020-12-14/back_both.JPG){:.shadow}
-{: refdef}
+
+![Rear of the machines](https://starwarsfan2099.github.io/public/2020-12-14/back_both.JPG){:.shadow}{:.center}
+
 
 The model number "LA5-160" does follow the Monroe model naming scheme. It is an "L"-series machine, "A" for Automatic since it doesn't require a hand crank, version 5, with a 16-place accumulator.
 
 ## Carriage
 
-{:refdef: style="text-align: center;"}
-![Register](https://starwarsfan2099.github.io/public/2020-12-14/register.JPG){:.shadow}
-{: refdef}
+
+![Register](https://starwarsfan2099.github.io/public/2020-12-14/register.JPG){:.shadow}{:.center}
+
 
 The model LA5-160 has a 16 digit accumulator register (per the "16" in the model name) and a 8 digit counter register above it. The counter register does not have a carry mechanism. Both register include several decimal sliders below each register. On the rightmost side of the carriage is the clearing lever. Rotating the clearing lever forwards clears the counter register. Rotating the lever backwards clears the accumulator register.
 
@@ -39,9 +39,9 @@ The carriage can be moved using the knob on the right side of the carriage. The 
 
 ## Keyboard and Controls
 
-{:refdef: style="text-align: center;"}
-![Keyboard](https://starwarsfan2099.github.io/public/2020-12-14/keyboard.JPG){:.shadow}
-{: refdef}
+
+![Keyboard](https://starwarsfan2099.github.io/public/2020-12-14/keyboard.JPG){:.shadow}{:.center}
+
 
 The model LA5-160 has an 8 column keyboard, each numbered 1 - 9 and an extra button for clearing that column. There are 7 decimal markers that can be spun via the wheel at the top of the keyboard. To the left of the keyboard is a red lever used to activate division. To the right of the keyboard are two black buttons. The `-` button subtracts the number on the keyboard from the accumulator register. Below that is the `+` button. This button adds the number on the keyboard to the accumulator.
 
@@ -49,9 +49,9 @@ Below those buttons are two small red buttons, the lower one having an `R` on it
 
 Below the repeat buttons is the big keyboard clear button. This button clears all columns of the keyboard at once. 
 
-{:refdef: style="text-align: center;"}
-![Multiply Lever](https://starwarsfan2099.github.io/public/2020-12-14/multiply_flip.JPG){:.shadow}
-{: refdef}
+
+![Multiply Lever](https://starwarsfan2099.github.io/public/2020-12-14/multiply_flip.JPG){:.shadow}{:.center}
+
 
 At the bottom left of the keyboard is a "T" handle that can be rotated. This lifts and then rotates the carriage one digit placement for each half turn of the handle. This handle is used for multiplication or division.
 
@@ -81,32 +81,31 @@ Video of the earlier machine performing division in slow motion and with the out
 
 ## Internal pictures
 
-{:refdef: style="text-align: center;"}
-![Right Side Internals](https://starwarsfan2099.github.io/public/2020-12-14/right_internals.JPG){:.shadow}
-{: refdef}
 
-{:refdef: style="text-align: center;"}
-![Rear Internals](https://starwarsfan2099.github.io/public/2020-12-14/rear_internals.JPG){:.shadow}
-{: refdef}
+![Right Side Internals](https://starwarsfan2099.github.io/public/2020-12-14/right_internals.JPG){:.shadow}{:.center}
 
-{:refdef: style="text-align: center;"}
-![Left Internals](https://starwarsfan2099.github.io/public/2020-12-14/left_internals.JPG){:.shadow}
-{: refdef}
+
+
+![Rear Internals](https://starwarsfan2099.github.io/public/2020-12-14/rear_internals.JPG){:.shadow}{:.center}
+
+
+
+![Left Internals](https://starwarsfan2099.github.io/public/2020-12-14/left_internals.JPG){:.shadow}{:.center}
+
 
 ## More Pictures
 
-{:refdef: style="text-align: center;"}
-![30s Front Logo](https://starwarsfan2099.github.io/public/2020-12-14/30s_front.JPG){:.shadow}
-{: refdef}
+
+![30s Front Logo](https://starwarsfan2099.github.io/public/2020-12-14/30s_front.JPG){:.shadow}{:.center}
+
 
 1930's Monroe logo.
 
-{:refdef: style="text-align: center;"}
-![Both Front](https://starwarsfan2099.github.io/public/2020-12-14/both_front.JPG){:.shadow}
-{: refdef}
+
+![Both Front](https://starwarsfan2099.github.io/public/2020-12-14/both_front.JPG){:.shadow}{:.center}
+
 
 Both machine's logos. 
 
-{:refdef: style="text-align: center;"}
-![Both ](https://starwarsfan2099.github.io/public/2020-12-14/both.JPG){:.shadow}
-{: refdef}
+
+![Both ](https://starwarsfan2099.github.io/public/2020-12-14/both.JPG){:.shadow}{:.center}

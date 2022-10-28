@@ -9,35 +9,35 @@ author: clark
 
 ## Overview 
 
-{:refdef: style="text-align: center;"}
-![Comptometer Model J](https://starwarsfan2099.github.io/public/2021-02-09/main.JPG){:.shadow}
-{: refdef}
+
+![Comptometer Model J](https://starwarsfan2099.github.io/public/2021-02-09/main.JPG){:.shadow}{:.center}
+
 
 The *Felt & Tarrant Manufacturing Company*, established in 1889, was the leader in key-driven adding machines during the 20th century. The machines manufactured by the company were produced and marketed under the Comptometer name. The primary goals of the machines were speed and accuracy for numbers that needed to be added in rapid succession. The Comptometers quickly gained popularity and many models were produced throughout the years. This particular model is a model *J* (serial J329790). The model *J* began production in 1926 and continued through 1939. The machine is nearly identical in appearance to previous models such as the model *H*,  however, there were a few small internal changes - such as a more reliable clearing mechanism, small changes to the carry mechanism, and more reliably calibrated springs. 
 
-{:refdef: style="text-align: center;"}
-![Comptometer Ad](https://starwarsfan2099.github.io/public/2021-02-09/ad_1.JPG){:.shadow}
-{: refdef}
+
+![Comptometer Ad](https://starwarsfan2099.github.io/public/2021-02-09/ad_1.JPG){:.shadow}{:.center}
+
 
 Model *J* machines were produced specific currencies or simply normal 0-9 values and in varying sizes. 
 
-{:refdef: style="text-align: center;"}
-![Comptometer Keyboard](https://starwarsfan2099.github.io/public/2021-02-09/keyboard.JPG){:.shadow}
-{: refdef}
+
+![Comptometer Keyboard](https://starwarsfan2099.github.io/public/2021-02-09/keyboard.JPG){:.shadow}{:.center}
+
 
 This particular model had an 8 column keyboard with a nine digit register. The register keys are in green and white, with the compliment of the key digit in a smaller font to the left of the main digit. A small red key at the top right of the machine engages or disengages the safety mechanism preventing any key presses of a key is only half depressed. On the right side of the machine is lever for clearing the register.
 
-{:refdef: style="text-align: center;"}
-![Comptometer Register](https://starwarsfan2099.github.io/public/2021-02-09/register.JPG){:.shadow}
-{: refdef}
+
+![Comptometer Register](https://starwarsfan2099.github.io/public/2021-02-09/register.JPG){:.shadow}{:.center}
+
 
 The register has little swinging decimal place indicators for eight of the digits. A small button above the digits, if pressed, disengages the tens carry mechanism for the next digit.
 
 ## Basic Mechanism
 
-{:refdef: style="text-align: center;"}
-![Comptometer Model J mechanism](https://starwarsfan2099.github.io/public/2021-02-09/function_1.JPG){:.shadow}
-{: refdef}
+
+![Comptometer Model J mechanism](https://starwarsfan2099.github.io/public/2021-02-09/function_1.JPG){:.shadow}{:.center}
+
 
 This is an image of the basic Comptometer mechanism (Credit - MechanicalComputing, YouTube). The primary mechanism consists of a long long metal bracket, with teeth on the front end at the register and pivoted from the rear of the machine. A spring keeps tension on the bracket, pulling it upwards. Depressing a key pushes the bracket down and due to the placement of the keys from the rear pivot point, a key closer to the pivot point moves the bar farther downwards than a key farther from the pivot point. The key distance from the pivot point, determines how far down the bracket travels, and thus how many teeth engage the gear the in the register. Pressing nine on the keyboard pushes the bracket down the most, and thus more teeth engage and rotate the register gearing. The register gear is ratcheted to where only upwards motion from the teeth on the bracket rotate the register mechanism. 
 
@@ -45,9 +45,9 @@ Different models added more features, such as safety interlocks to prevent a key
 
 The mechanism of the model *J* with added safeties and register mechanism can be seen in this cutaway produced by the company in 1928. (Smithsonian)
 
-{:refdef: style="text-align: center;"}
-![Comptometer Model J Cutaway](https://starwarsfan2099.github.io/public/2021-02-09/cutaway_1.JPG){:.shadow}
-{: refdef}
+
+![Comptometer Model J Cutaway](https://starwarsfan2099.github.io/public/2021-02-09/cutaway_1.JPG){:.shadow}{:.center}
+
 
 ## Operation
 
@@ -77,38 +77,38 @@ Adding machines differ in operation from other calculators discussed on this blo
 
 ## More Pictures
 
-{:refdef: style="text-align: center;"}
-![Logo](https://starwarsfan2099.github.io/public/2021-02-09/logo.JPG){:.shadow}
-{: refdef}
+
+![Logo](https://starwarsfan2099.github.io/public/2021-02-09/logo.JPG){:.shadow}{:.center}
+
 
 Comptometer logo. The holes in the register plate above are for oiling.
 
-{:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/zeroed.JPG){:.shadow}
-{: refdef}
+
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/zeroed.JPG){:.shadow}{:.center}
+
 
 Zeroed register. Note the digits are slightly not aligned in the window. 
 
-{:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/entered.JPG){:.shadow}
-{: refdef}
+
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/entered.JPG){:.shadow}{:.center}
+
 
 Digit just entered.
 
-{:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/side.JPG){:.shadow}
-{: refdef}
+
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/side.JPG){:.shadow}{:.center}
+
 
 Machine side.
 
-{:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/label.JPG){:.shadow}
-{: refdef}
+
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/label.JPG){:.shadow}{:.center}
+
 
 Patent information.
 
-{:refdef: style="text-align: center;"}
-![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/cover_removed.JPG){:.shadow}
-{: refdef}
+
+![Zeroed](https://starwarsfan2099.github.io/public/2021-02-09/cover_removed.JPG){:.shadow}{:.center}
+
 
 Cover removed from register.
