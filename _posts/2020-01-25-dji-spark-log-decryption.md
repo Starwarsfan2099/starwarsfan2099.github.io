@@ -27,6 +27,7 @@ Image 2. FTP server successfully transferring files. `GDB` and `radare2` were at
 
 Image 4. AES IV located inside the BusyBox binary shown with `Ghidra`. Knowing the AES key, the IV, and the packing, it is trivial to write asmall Python script to decrypt the files:
 
+
 ```python
 # Created by Andrew Clark on 7/30/19
 import sys, os 
@@ -41,7 +42,9 @@ if len(sys.argv) < 2:
     exit()
  else:
     if os.path.isfile(sys.argv[1]):                 
-        print "Opening and decrypting file..."                 encryptedFile = open(sys.argv[1], 'rb').read()            decryptedFile = aes.decrypt(encryptedFile)
+        print "Opening and decrypting file..."                 
+        encryptedFile = open(sys.argv[1], 'rb').read()            
+        decryptedFile = aes.decrypt(encryptedFile)
         encoding = PKCS7Encoder()
         decodedFile = encoding.decode(decryptedFile)
         outputFile = open(sys.argv[1] + ".decrypted", 'w+')
@@ -51,6 +54,7 @@ if len(sys.argv) < 2:
     else:
         print "Could not open file."
 ```
+
 
 The IV did not change across drone versions, but the AES key did twice, the most recent versions all have the same key though. Knowing
 the IV, it is now easiest to get the AES key for future versions by checking in a disassembler if the IV string is present and locating the AES
