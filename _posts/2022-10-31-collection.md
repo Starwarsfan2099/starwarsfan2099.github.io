@@ -1,0 +1,287 @@
+---
+title: Mechanical Calculator and Jukebox Collection - Status and Wanted
+excerpt: Current status of my mechanical calculator and jukebox collection!
+thumbnail: https://clarkiv.dev/public/2021-02-23/cover.jpg
+categories: [Calculator]
+tags: restoration antique mechanical-calculator
+author: clark
+pin: true
+---
+
+# Wanted Machines
+
+- [ ] Alpina Calculator
+- [ ] Any Millionaire calculator
+- [ ] Any twin rotary machines
+- [ ] Curta
+- [ ] Facit ESA
+- [ ] Friden SBT
+- [ ] Marchant "Twin Marchant"
+- [ ] Marchant Deci-Magic (SKA)
+- [ ] Marchant MR
+- [ ] Marchant Octal Calculator (Raytheon binary-octal calculator)
+- [ ] Monroe Duplex 88N-213
+- [ ] Monroe Octal Calculator
+
+If you think you may have any of these machines or know where one is, send me an email! My email is andrewlclariv@gmail.com
+
+# Mechanical Calculators
+
+
+## Bohn Contex
+
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/bohn.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1960s
+- **From:** Sugarcreek, OH
+- **Not Functional**
+- **Post:** No post yet.
+
+
+## Burroughs Class 2 Bookkeeping Machine
+
+![Burroughs Class 2 Bookkeeping Machine](https://clarkiv.dev/public/2022-10-13/burroughs_2.png){:.shadow}{:.center}
+
+- **Manufactured:** 1914
+- **From:** Fraisers Bottom, WV
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Burroughs Adding Machine, Class 1
+
+![Burroughs Adding Machine, Class 1](https://clarkiv.dev/public/2022-10-13/burroughs_3.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1910s
+- **From:** Sugarcreek, OH
+- **Fully functional**
+- **Post:** No post yet.
+
+
+## Burroughs Class 2, Model 13
+
+![Burroughs Class 2, Model 13](https://clarkiv.dev/public/2022-10-13/burroughs.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1920s
+- **From:** Troutville, OH
+- **Not functional yet**
+- **Post:** No post yet.
+
+
+## Burroughs Portable Class 9
+
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/burroughs_class9.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1930s
+- **From:** Princeton, WV
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Comptometer 12-D
+
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/comp_12d.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Chillicothe, OH
+- **Not Functional**
+- **Post:** No post yet.
+
+
+## Comptometer Model A
+
+![Comptometer Model A](https://clarkiv.dev/public/2021-09-23/main.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1896
+- **From:** Troy, OH
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/comptometer-model-a/](https://clarkiv.dev/posts/comptometer-model-a/)
+
+
+## Comptometer Model J
+
+![Comptometer Model J](https://clarkiv.dev/public/2021-02-09/main.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1926
+- **From:** Troy, OH
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/comptometer-model-j/](https://clarkiv.dev/posts/comptometer-model-j/)
+
+
+## Friden DW-8
+
+![Friden DW-8](https://clarkiv.dev/public/2022-03-01/main.jpg){:.shadow}{:.center}
+
+- **Manufactured:** 1951
+- **From:** Chillicothe, OH
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/Friden-DW-8/](https://clarkiv.dev/posts/Friden-DW-8/)
+
+
+## Marchant - Unsure of model.
+
+![Marchant unkown](https://clarkiv.dev/public/2022-10-13/marchant_unknown.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1930s
+- **From:** Bloomington, MN
+- **In repair now**
+- **Post:** No post yet.
+
+
+## Marchant 8-ADX
+
+![Marchant 8ADX](https://clarkiv.dev/public/2021-01-01/overveiw.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1956
+- **From:** Livingston, KY
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/marchant-adx/](https://clarkiv.dev/posts/marchant-adx/)
+
+
+## Marchant ACR8M
+
+![Front view](https://clarkiv.dev/public/2020-5-26/DSC_5599_2.jpg){:.shadow}{:.center}
+
+- **Manufactured:** 1942
+- **From:** Lancaster, KY
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/marchant-calculator/](https://clarkiv.dev/posts/marchant-calculator/)
+
+
+## Marchant ACT10
+
+![Marchant ACT10](https://clarkiv.dev/public/2022-10-13/marchant_act10.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1930s
+- **From:** Hillsville, VA
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Marchant SKA - Deci Magic
+
+![Marchant SKA - Deci Magic](https://clarkiv.dev/public/2022-10-13/marchant_ska.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** New York, NY
+- **Not Functional**
+- **Post:** No post yet.
+
+
+## Millionaire ELectric Calculator
+
+![Millionaire Calculator](https://clarkiv.dev/public/2021-02-23/main.jpg){:.shadow}
+
+- **Manufactured:** 1910's
+- **From:** Warenton, VA
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/millionaire-calculator/](https://clarkiv.dev/posts/millionaire-calculator/)
+
+
+## Monroe 8N-213
+
+![Monore 8N-213](https://clarkiv.dev/public/2020-11-26/overveiw.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1954
+- **From:** Hubbardston, MA
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/monroe-8n-213/](https://clarkiv.dev/posts/monroe-8n-213/)
+
+
+## Monroe CSAE-10
+
+![Monroe CSAE-10](https://clarkiv.dev/public/2022-10-13/monroe_csae.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1960s
+- **From:** Chillicothe, OH
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Monroe IQ-213
+
+![Monroe IQ-213](https://clarkiv.dev/public/2022-05-10/main.jpg){:.shadow}{:.center}
+
+- **Manufactured:** 1963
+- **From:** Maryland, VA
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/Monroe-IQ-213/](https://clarkiv.dev/posts/Monroe-IQ-213/)
+
+
+## Monroe L-160X "Executive"
+
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/monroe_l160x.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1930s
+- **From:** Chillicothe, OH
+- **Not Functional**
+- **Post:** No post yet.
+
+## Monroe LA5-160 x2
+
+![Monroe Model LA5-160](https://clarkiv.dev/public/2020-12-14/both_main.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1930's (left) and 1940's (right)
+- **From:** Hillsville, VA
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/monroe-model-l/](https://clarkiv.dev/posts/monroe-model-l/)
+
+
+## Monroe LA5-200
+
+![Monroe LA5-200](https://clarkiv.dev/public/2022-10-13/monroe_la5.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Chillicothe, OH
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Monroe LA-7
+
+![Monroe LA-7](https://clarkiv.dev/public/2022-10-13/monroe_la7.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Chillicothe, OH
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Monroe LNE
+
+![Monroe LNE](https://clarkiv.dev/public/2022-10-13/monroe_lne.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Chillicothe, OH
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Friden D-8
+
+![Friden D-8](https://clarkiv.dev/public/2022-10-13/friden_d8.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1940s
+- **From:** Chillicothe, OH
+- **Fully Functional**
+- **Post:** No post yet.
+
+
+## Friden DW-8
+
+![Friden DW](https://clarkiv.dev/public/2022-03-01/main.jpg){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Berlin, OH
+- **Fully Functional**
+- **Post:** https://clarkiv.dev/posts/Friden-DW-8/
+
+
+## Friden STW-10
+
+![Friden STW-10](https://clarkiv.dev/public/2022-10-13/friden_stw.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Johnstown, KS
+- **Not Functional**
+- **Post:** No post yet.
