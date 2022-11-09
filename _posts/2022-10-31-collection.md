@@ -27,6 +27,7 @@ If you think you may have any of these machines or know where one is, send me an
 
 # Mechanical Calculators
 
+This is the current extent of my calculator collection. If the pictures look rough, it's probably because I haven't had a chance to take decent quality photos of the machine yet or make a blog post about it. 
 
 ## Bohn Contex
 
@@ -188,6 +189,16 @@ If you think you may have any of these machines or know where one is, send me an
 - **Post:** [https://clarkiv.dev/posts/monroe-8n-213/](https://clarkiv.dev/posts/monroe-8n-213/)
 
 
+## Monroe CSA-10
+
+![Monroe CSA-10](https://clarkiv.dev/public/2022-10-13/monroe_csa.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1940s
+- **From:** Chillicothe, OH
+- **Not Functional**
+- **Post:** No post yet.
+
+
 ## Monroe CSAE-10
 
 ![Monroe CSAE-10](https://clarkiv.dev/public/2022-10-13/monroe_csae.JPG){:.shadow}{:.center}
@@ -284,4 +295,16 @@ If you think you may have any of these machines or know where one is, send me an
 - **Manufactured:** 1950s
 - **From:** Johnstown, KS
 - **Not Functional**
+- **Post:** No post yet.
+
+
+# Jukeboxes
+
+## Rockola 1422
+
+![Rockola 1422](https://clarkiv.dev/public/2022-10-13/rockola.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1946
+- **From:** Bleufeild, WV
+- **Fully Functional**
 - **Post:** No post yet.
