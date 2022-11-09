@@ -41,7 +41,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Burroughs Class 2 Bookkeeping Machine
 
-![Burroughs Class 2 Bookkeeping Machine](https://clarkiv.dev/public/2022-10-13/burroughs_2.png){:.shadow}{:.center}
+![Burroughs Class 2 Bookkeeping Machine](https://clarkiv.dev/public/2022-10-13/burroughs_2.jpg){:.shadow}{:.center}
 
 - **Manufactured:** 1914
 - **From:** Fraisers Bottom, WV
@@ -191,7 +191,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe CSA-10
 
-![Monroe CSA-10](https://clarkiv.dev/public/2022-10-13/monroe_csa.JPG){:.shadow}{:.center}
+![Monroe CSA-10](https://clarkiv.dev/public/2022-10-13/monroe_csa-min.JPG){:.shadow}{:.center}
 
 - **Manufactured:** 1940s
 - **From:** Chillicothe, OH
@@ -305,6 +305,6 @@ This is the current extent of my calculator collection. If the pictures look rou
 ![Rockola 1422](https://clarkiv.dev/public/2022-10-13/rockola.JPG){:.shadow}{:.center}
 
 - **Manufactured:** 1946
-- **From:** Bleufeild, WV
+- **From:** Bluefeild, WV
 - **Fully Functional**
 - **Post:** No post yet.
