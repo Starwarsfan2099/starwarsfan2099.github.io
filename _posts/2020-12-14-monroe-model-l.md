@@ -19,7 +19,7 @@ These are two examples of the Monroe Model LA5-160 product line. This machine is
 ![Monroe Model LA5-160 Ad](https://starwarsfan2099.github.io/public/2020-12-14/ad.jpg){:.shadow}{:.center}
 
 
-The model LA5 line carried on for serval years. I have two LA5 machines. One being from the 1930's (left side below) and the other from the 1940's (right side below). The machines have slightly different stylings and logos but the internals are primarily the same. 
+The model LA5 line carried on for serval years. I have two LA5 machines. One being from the 1930's (left side below) and the other from the 1940's (right side below). The machines have slightly different stylings and logos but the internals are primarily the same. The 1930's machine was the first calculator I ever acquired! It came from the Flea Market at Hillsville, VA. 
 
 
 ![Rear of the machines](https://starwarsfan2099.github.io/public/2020-12-14/back_both.JPG){:.shadow}{:.center}
