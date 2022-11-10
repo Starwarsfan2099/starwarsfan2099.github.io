@@ -4,6 +4,7 @@ excerpt: Quick post to go over a Python parser for the Windows binary boot log.
 categories: [Hacking, Windows]
 tags: programming forensics
 author: clark
+mermaid: true
 ---
 
 ## Grzegorz Tworek's PSBits
@@ -293,11 +294,14 @@ while(True):
 In Python now, we start the loop then set and print `recordStart`. Next, we use `f.seek(current_pos)` to move to the start of the timestamp data. For the timestamp stored as an unsigned long long, we use `struct.unpack('Q', f.read(8))` to unpack the data. Then we move the position to the start of the GUID. The PowerShell script used `([guid]::new([byte[]]$bytes[$currentPos..($currentPos+15)])).ToString()` to decode the GUID from the file. This uses the `::` operator to create a new GUID from the .NET framework class `guid`. We don't have this luxury in Python sadly. Using `struct.unpack('<L', f.read(4))` for all 16 bytes results in a partially correct GUID. With some trial and error though, we can get the correct unpacking format for the GUID. It looks like this:
 
 **GUID Format**
-<div class="grid">
-  <div id="cell1" class="cell cell--2">----4 bytes---- Little Endian Unsigned Long</div>
-  <div id="cell2" class="cell cell--2">----4 bytes---- Little Endian Unsigned Short</div>
-  <div id="cell3" class="cell cell--4">----8 Bytes---- <br/> Big Endian <br/> Unsigned Short</div>
-</div>
+
+```
+#   [----4 bytes----|----4 bytes-----|----------8 bytes------------]
+#   +--------------------------------------------------------------+
+#   | little-endian | little-endian  |         big-endian          |
+#   | unsigned long | unsigned short |       unsigned short        |
+#   +--------------------------------------------------------------+
+```
 
 A Pythonic way of writing it looks something like this:
 

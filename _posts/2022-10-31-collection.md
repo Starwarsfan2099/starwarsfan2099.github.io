@@ -109,14 +109,34 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Post:** [https://clarkiv.dev/posts/comptometer-model-j/](https://clarkiv.dev/posts/comptometer-model-j/)
 
 
-## Friden DW-8
+## Friden D-8
 
-![Friden DW-8](https://clarkiv.dev/public/2022-03-01/main.jpg){:.shadow}{:.center}
+![Friden D-8](https://clarkiv.dev/public/2022-10-13/friden_d8.JPG){:.shadow}{:.center}
 
-- **Manufactured:** 1951
+- **Manufactured:** 1940s
 - **From:** Chillicothe, OH
 - **Fully Functional**
+- **Post:** No post yet.
+
+
+## Friden DW-8
+
+![Friden DW](https://clarkiv.dev/public/2022-03-01/main.jpg){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Berlin, OH
+- **Fully Functional**
 - **Post:** [https://clarkiv.dev/posts/Friden-DW-8/](https://clarkiv.dev/posts/Friden-DW-8/)
+
+
+## Friden STW-10
+
+![Friden STW-10](https://clarkiv.dev/public/2022-10-13/friden_stw.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** Johnstown, KS
+- **Not Functional**
+- **Post:** No post yet.
 
 
 ## Marchant - Unsure of model.
@@ -265,36 +285,6 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Manufactured:** 1950s
 - **From:** Chillicothe, OH
 - **Fully Functional**
-- **Post:** No post yet.
-
-
-## Friden D-8
-
-![Friden D-8](https://clarkiv.dev/public/2022-10-13/friden_d8.JPG){:.shadow}{:.center}
-
-- **Manufactured:** 1940s
-- **From:** Chillicothe, OH
-- **Fully Functional**
-- **Post:** No post yet.
-
-
-## Friden DW-8
-
-![Friden DW](https://clarkiv.dev/public/2022-03-01/main.jpg){:.shadow}{:.center}
-
-- **Manufactured:** 1950s
-- **From:** Berlin, OH
-- **Fully Functional**
-- **Post:** https://clarkiv.dev/posts/Friden-DW-8/
-
-
-## Friden STW-10
-
-![Friden STW-10](https://clarkiv.dev/public/2022-10-13/friden_stw.JPG){:.shadow}{:.center}
-
-- **Manufactured:** 1950s
-- **From:** Johnstown, KS
-- **Not Functional**
 - **Post:** No post yet.
 
 
