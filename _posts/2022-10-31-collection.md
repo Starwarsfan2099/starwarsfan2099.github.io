@@ -287,6 +287,14 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Fully Functional**
 - **Post:** No post yet.
 
+## PLUS Model 506/SP
+
+![PLUS](https://clarkiv.dev/public/2022-10-13/plus.JPG){:.shadow}{:.center}
+
+- **Manufactured:** 1950s
+- **From:** - 
+- **Fully Functional**
+- **Post:** No post yet.
 
 # Jukeboxes
 
