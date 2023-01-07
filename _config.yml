@@ -21,10 +21,10 @@ timezone: America/New_York
 
 title: Andrew Clark's Blog                          # the main title
 
-tagline: Programming, hacking, and mechnical calculators.   # it will display as the sub-title
+tagline: Programming, hacking, and mechanical calculators.   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Place to share my adventures in prgramming, hacking, fooreniscs, and antique calculator repair. 
+  Place to share my adventures in programming, hacking, forensics, and antique calculator repair. 
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'clarkiv.dev'
