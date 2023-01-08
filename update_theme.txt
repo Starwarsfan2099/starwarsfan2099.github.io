@@ -1,0 +1,26 @@
+_sass/layout/home.scss
+
+Add:
+
+.preveiw img {
+  float: left;
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 100px;  
+  padding: 5px 10px 10px 10px;
+}
+
+_layout/home.html
+
+Add:
+(just below)
+({% for post in posts %}
+  <div class="post-preview">)
+
+  
+{% if post.thumbnail %}
+      <div class="preveiw">
+        <a href="{{ post.url }}" ><img src="{{ post.thumbnail }}" />
+      </div>
+    {% endif %}
