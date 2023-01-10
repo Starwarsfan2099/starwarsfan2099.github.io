@@ -131,13 +131,13 @@ Occasional register sticking was occurring, so it's a good practice to regularly
 
 A video showing multiple angles of the machine performing division with the outer panels removed can be found on my YouTube channel.
 
-<div>{%- include extensions/youtube.html id='oJXJmg73SL4' -%}</div>
+{% include embed/youtube.html id='oJXJmg73SL4' %}
 
 ## Division Slow Motion Video
 
 Also, a slow motion video showing multiple angles of the machine performing division with the outer panels removed can be found on my YouTube channel as well.
 
-<div>{%- include extensions/youtube.html id='PnmSc-vCM5Q' -%}</div>
+{% include embed/youtube.html id='PnmSc-vCM5Q' %}
 
 ## More Pictures
 

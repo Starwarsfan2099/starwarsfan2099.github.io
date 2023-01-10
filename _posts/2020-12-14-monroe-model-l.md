@@ -77,7 +77,7 @@ First, move the carriage all the way to the right. Make sure both registers are 
 
 Video of the earlier machine performing division in slow motion and with the outer panels removed.
 
-<div>{%- include extensions/youtube.html id='RiHVPijCgAU' -%}</div>
+{% include embed/youtube.html id='RiHVPijCgAU' %}
 
 ## Internal pictures
 

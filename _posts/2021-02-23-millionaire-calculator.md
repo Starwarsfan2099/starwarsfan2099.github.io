@@ -281,11 +281,11 @@ This explains why the multiplication lever has to be set to 1 for addition and s
 
 Demo of the machine in manual and motorized mode. Also shows operation with covers and outer panels removed. 
 
-<div>{%- include extensions/youtube.html id='Ac-fJfql4zw' -%}</div>
+{% include embed/youtube.html id='Ac-fJfql4zw' %}
 
 And also a quick video on how to operate the machine!
 
-<div>{%- include extensions/youtube.html id='5zYVWc3tZPk' -%}</div>
+{% include embed/youtube.html id='5zYVWc3tZPk' %}
 
 ## Details
 

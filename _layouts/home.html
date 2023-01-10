@@ -41,6 +41,7 @@ layout: page
 <div id="post-list">
 
 {% for post in posts %}
+
   <div class="post-preview">
     {% if post.thumbnail %}
       <div class="preveiw">
@@ -53,7 +54,7 @@ layout: page
 
     <div class="post-content">
       <p>
-        {% include no-linenos.html content=post.excerpt %}
+        {% include no-linenos.html content=post.content %}
         {{ content | markdownify | strip_html | truncate: 200 | escape }}
       </p>
     </div>
