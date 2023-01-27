@@ -31,7 +31,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Bohn Contex
 
-![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/bohn.JPG){:.shadow}{:.center}
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/bohn.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1960s
 - **From:** Sugarcreek, OH
@@ -41,7 +41,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Burroughs Class 2 Bookkeeping Machine
 
-![Burroughs Class 2 Bookkeeping Machine](https://clarkiv.dev/public/2022-10-13/burroughs_2.jpg){:.shadow}{:.center}
+![Burroughs Class 2 Bookkeeping Machine](https://clarkiv.dev/public/2022-10-13/burroughs_2.jpg){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1914
 - **From:** Fraisers Bottom, WV
@@ -51,7 +51,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Burroughs Adding Machine, Class 1
 
-![Burroughs Adding Machine, Class 1](https://clarkiv.dev/public/2022-10-13/burroughs_3.JPG){:.shadow}{:.center}
+![Burroughs Adding Machine, Class 1](https://clarkiv.dev/public/2022-10-13/burroughs_3.JPG){:.center}{: width="4000" height="6000" }
 
 - **Manufactured:** 1910s
 - **From:** Sugarcreek, OH
@@ -61,7 +61,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Burroughs Class 2, Model 13
 
-![Burroughs Class 2, Model 13](https://clarkiv.dev/public/2022-10-13/burroughs.JPG){:.shadow}{:.center}
+![Burroughs Class 2, Model 13](https://clarkiv.dev/public/2022-10-13/burroughs.JPG){:.center}{: width="4000" height="6000" }
 
 - **Manufactured:** 1920s
 - **From:** Troutville, OH
@@ -71,7 +71,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Burroughs Portable Class 9
 
-![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/burroughs_class9.JPG){:.shadow}{:.center}
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/burroughs_class9.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1930s
 - **From:** Princeton, WV
@@ -81,7 +81,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Comptometer 12-D
 
-![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/comp_12d.JPG){:.shadow}{:.center}
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/comp_12d.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1950s
 - **From:** Chillicothe, OH
@@ -91,7 +91,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Comptometer Model A
 
-![Comptometer Model A](https://clarkiv.dev/public/2021-09-23/main.JPG){:.shadow}{:.center}
+![Comptometer Model A](https://clarkiv.dev/public/2021-09-23/main.JPG){:.center}{: width="960" height="579" }
 
 - **Manufactured:** 1896
 - **From:** Troy, OH
@@ -101,7 +101,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Comptometer Model J
 
-![Comptometer Model J](https://clarkiv.dev/public/2021-02-09/main.JPG){:.shadow}{:.center}
+![Comptometer Model J](https://clarkiv.dev/public/2021-02-09/main.JPG){:.center}{: width="4928" height="3264" }
 
 - **Manufactured:** 1926
 - **From:** Troy, OH
@@ -111,7 +111,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Friden D-8
 
-![Friden D-8](https://clarkiv.dev/public/2022-10-13/friden_d8.JPG){:.shadow}{:.center}
+![Friden D-8](https://clarkiv.dev/public/2022-10-13/friden_d8.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1940s
 - **From:** Chillicothe, OH
@@ -121,7 +121,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Friden DW-8
 
-![Friden DW](https://clarkiv.dev/public/2022-03-01/main.jpg){:.shadow}{:.center}
+![Friden DW](https://clarkiv.dev/public/2022-03-01/main.jpg){:.center}{: width="1800" height="1200" }
 
 - **Manufactured:** 1950s
 - **From:** Berlin, OH
@@ -131,7 +131,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Friden STW-10
 
-![Friden STW-10](https://clarkiv.dev/public/2022-10-13/friden_stw.JPG){:.shadow}{:.center}
+![Friden STW-10](https://clarkiv.dev/public/2022-10-13/friden_stw.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1950s
 - **From:** Johnstown, KS
@@ -141,7 +141,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Marchant - Unsure of model.
 
-![Marchant unkown](https://clarkiv.dev/public/2022-10-13/marchant_unknown.JPG){:.shadow}{:.center}
+![Marchant unkown](https://clarkiv.dev/public/2022-10-13/marchant_unknown.JPG){:.center}{: width="4000" height="6000" }
 
 - **Manufactured:** 1930s
 - **From:** Bloomington, MN
@@ -151,7 +151,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Marchant 8-ADX
 
-![Marchant 8ADX](https://clarkiv.dev/public/2021-01-01/overveiw.JPG){:.shadow}{:.center}
+![Marchant 8ADX](https://clarkiv.dev/public/2021-01-01/overveiw.JPG){:.center}{: width="3842" height="2983" }
 
 - **Manufactured:** 1956
 - **From:** Livingston, KY
@@ -161,7 +161,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Marchant ACR8M
 
-![Front view](https://clarkiv.dev/public/2020-5-26/DSC_5599_2.jpg){:.shadow}{:.center}
+![Front view](https://clarkiv.dev/public/2020-5-26/DSC_5599_2.jpg){:.center}{: width="1024" height="995" }
 
 - **Manufactured:** 1942
 - **From:** Lancaster, KY
@@ -171,7 +171,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Marchant ACT10
 
-![Marchant ACT10](https://clarkiv.dev/public/2022-10-13/marchant_act10.JPG){:.shadow}{:.center}
+![Marchant ACT10](https://clarkiv.dev/public/2022-10-13/marchant_act10.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1930s
 - **From:** Hillsville, VA
@@ -181,7 +181,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Marchant SKA - Deci Magic
 
-![Marchant SKA - Deci Magic](https://clarkiv.dev/public/2022-10-13/marchant_ska.JPG){:.shadow}{:.center}
+![Marchant SKA - Deci Magic](https://clarkiv.dev/public/2022-10-13/marchant_ska.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1950s
 - **From:** New York, NY
@@ -191,7 +191,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Millionaire ELectric Calculator
 
-![Millionaire Calculator](https://clarkiv.dev/public/2021-02-23/main.jpg){:.shadow}
+![Millionaire Calculator](https://clarkiv.dev/public/2021-02-23/main.jpg){:.center}{: width="4020" height="3264" }
 
 - **Manufactured:** 1910's
 - **From:** Warenton, VA
@@ -201,7 +201,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe 8N-213
 
-![Monore 8N-213](https://clarkiv.dev/public/2020-11-26/overveiw.JPG){:.shadow}{:.center}
+![Monore 8N-213](https://clarkiv.dev/public/2020-11-26/overveiw.JPG){:.center}{: width="4540" height="3264" }
 
 - **Manufactured:** 1954
 - **From:** Hubbardston, MA
@@ -211,7 +211,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe CSA-10
 
-![Monroe CSA-10](https://clarkiv.dev/public/2022-10-13/monroe_csa-min.JPG){:.shadow}{:.center}
+![Monroe CSA-10](https://clarkiv.dev/public/2022-10-13/monroe_csa-min.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1940s
 - **From:** Chillicothe, OH
@@ -221,7 +221,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe CSAE-10
 
-![Monroe CSAE-10](https://clarkiv.dev/public/2022-10-13/monroe_csae.JPG){:.shadow}{:.center}
+![Monroe CSAE-10](https://clarkiv.dev/public/2022-10-13/monroe_csae.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1960s
 - **From:** Chillicothe, OH
@@ -231,7 +231,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe IQ-213
 
-![Monroe IQ-213](https://clarkiv.dev/public/2022-05-10/main.jpg){:.shadow}{:.center}
+![Monroe IQ-213](https://clarkiv.dev/public/2022-05-10/main.jpg){:.center}{: width="1800" height="1200" }
 
 - **Manufactured:** 1963
 - **From:** Maryland, VA
@@ -241,7 +241,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe L-160X "Executive"
 
-![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/monroe_l160x.JPG){:.shadow}{:.center}
+![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/monroe_l160x.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1930s
 - **From:** Chillicothe, OH
@@ -250,7 +250,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe LA5-160 x2
 
-![Monroe Model LA5-160](https://clarkiv.dev/public/2020-12-14/both_main.JPG){:.shadow}{:.center}
+![Monroe Model LA5-160](https://clarkiv.dev/public/2020-12-14/both_main.JPG){:.center}{: width="4928" height="3264" }
 
 - **Manufactured:** 1930's (left) and 1940's (right)
 - **From:** Hillsville, VA
@@ -260,7 +260,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe LA5-200
 
-![Monroe LA5-200](https://clarkiv.dev/public/2022-10-13/monroe_la5.JPG){:.shadow}{:.center}
+![Monroe LA5-200](https://clarkiv.dev/public/2022-10-13/monroe_la5.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1950s
 - **From:** Chillicothe, OH
@@ -270,7 +270,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe LA-7
 
-![Monroe LA-7](https://clarkiv.dev/public/2022-10-13/monroe_la7.JPG){:.shadow}{:.center}
+![Monroe LA-7](https://clarkiv.dev/public/2022-10-13/monroe_la7.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1950s
 - **From:** Chillicothe, OH
@@ -280,7 +280,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Monroe LNE
 
-![Monroe LNE](https://clarkiv.dev/public/2022-10-13/monroe_lne.JPG){:.shadow}{:.center}
+![Monroe LNE](https://clarkiv.dev/public/2022-10-13/monroe_lne.JPG){:.center}{: width="6000" height="4000" }
 
 - **Manufactured:** 1950s
 - **From:** Chillicothe, OH
@@ -289,7 +289,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## PLUS Model 506/SP
 
-![PLUS](https://clarkiv.dev/public/2022-10-13/plus.JPG){:.shadow}{:.center}
+![PLUS](https://clarkiv.dev/public/2022-10-13/plus.JPG){:.center}{: width="3227" height="3226" }
 
 - **Manufactured:** 1950s
 - **From:** - 
@@ -300,7 +300,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ## Rockola 1422
 
-![Rockola 1422](https://clarkiv.dev/public/2022-10-13/rockola.JPG){:.shadow}{:.center}
+![Rockola 1422](https://clarkiv.dev/public/2022-10-13/rockola.JPG){:.center}{: width="631" height="950" }
 
 - **Manufactured:** 1946
 - **From:** Bluefeild, WV
