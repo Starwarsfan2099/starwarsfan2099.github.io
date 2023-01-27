@@ -15,7 +15,7 @@ author: rms
 Cellebrite provides parsed reminder information under `Analyzed Data` > `Calander` > `Reminders`. In this table, a reminder with the title "Move the product can be seen". 
 
 
-![Reminder](https://starwarsfan2099.github.io/public/2020-11-19/ruth_1.JPG){:.shadow}{:.center}
+![Reminder](https://starwarsfan2099.github.io/public/2020-11-19/ruth_1.JPG){:.shadow}{:.center}{: width="382" height="478" }
 
 
 The date the reminder is set for in the format required by the solution is `08-14-2020`. 
@@ -28,7 +28,7 @@ The date the reminder is set for in the format required by the solution is `08-1
 The `Web History` tab can reveal the solution to this question. Searching for the term "*weather*" reveals several AccuWeather website visits, with the city and state visible.
 
 
-![Weather search](https://starwarsfan2099.github.io/public/2020-11-19/ruth_2.JPG){:.shadow}{:.center}
+![Weather search](https://starwarsfan2099.github.io/public/2020-11-19/ruth_2.JPG){:.shadow}{:.center}{: width="1122" height="498" }
 
 
 The solution to this challenge is `Carolina Beach, NC`. 
@@ -41,13 +41,13 @@ The solution to this challenge is `Carolina Beach, NC`.
 Searching the image for "*OG Crew*" returns the Telegram conversation. 
 
 
-![Telegram conversation](https://starwarsfan2099.github.io/public/2020-11-19/ruth_3.JPG){:.shadow}{:.center}
+![Telegram conversation](https://starwarsfan2099.github.io/public/2020-11-19/ruth_3.JPG){:.shadow}{:.center}{: width="349" height="662" }
 
 
 The initial message includes a PeerId listed as `953301191`. Checking the details of the conversation, we can see user PeerIds.
 
 
-![Tony M PeerId](https://starwarsfan2099.github.io/public/2020-11-19/ruth_4.JPG){:.shadow}{:.center}
+![Tony M PeerId](https://starwarsfan2099.github.io/public/2020-11-19/ruth_4.JPG){:.shadow}{:.center}{: width="138" height="116" }
 
 
 The PeerId is listed as Tony M's id. The fact he made the first message supports him creating the group, as well as changing the group photo in the second message. 
@@ -62,7 +62,7 @@ Inputting `Tony M` reveals it is indeed the correct answer.
 The currently running iOS version can simply be found in the plist file `System/Library/CoreServices/systemversion.plist`. 
 
 
-![iOS Version](https://starwarsfan2099.github.io/public/2020-11-19/ruth_5.JPG){:.shadow}{:.center}
+![iOS Version](https://starwarsfan2099.github.io/public/2020-11-19/ruth_5.JPG){:.shadow}{:.center}{: width="442" height="172" }
 
 
 This plist clearly shows the iPhone is on iOS version `13.6` and is the correct answer to the challenge. 
@@ -75,7 +75,7 @@ This plist clearly shows the iPhone is on iOS version `13.6` and is the correct 
 The user_id can be found on the in the TikTok databases, but it can also be parsed with AppGenie as well. The database that TikTok contacts are found in is located in `private/var/mobile/Containers/Data/Application/314C0D76-AD79-43D9-93F6-5369A847BEE5/Documents/AwemeIM.db`, in the `AwemeContactsV3` table. Or, AppGenie can parse it us. 
 
 
-![TikTok user_id](https://starwarsfan2099.github.io/public/2020-11-19/ruth_6.JPG){:.shadow}{:.center}
+![TikTok user_id](https://starwarsfan2099.github.io/public/2020-11-19/ruth_6.JPG){:.shadow}{:.center}{: width="372" height="708" }
 
 
 No matter which method is used, Ruth's user_id is returned as `6854514343108871173` and is the solution.
@@ -88,13 +88,13 @@ No matter which method is used, Ruth's user_id is returned as `68545143431088711
 This question actually took a while to solve. It needs to be solved after solving the [Database Analysis question](https://starwarsfan2099.github.io/2020/11/19/cellebirte-ctf-ruth.html#database-analysis---50-points) and getting the DropBox link. Ultimately, there was no real system used to find the password. A password was found while going through other conversations in an attempt to solve another challenge. The password was found in a TikTok chat that began on 8/13/2020. 
 
 
-![Dropbox password](https://starwarsfan2099.github.io/public/2020-11-19/ruth_7.JPG){:.shadow}{:.center}
+![Dropbox password](https://starwarsfan2099.github.io/public/2020-11-19/ruth_7.JPG){:.shadow}{:.center}{: width="343" height="681" }
 
 
 Stumbling across the passowrd `Dr3@mT3@m11`, we tried using it to unlock the link and it surprisingly worked! And is the solution to this challenge. The unlocked DropBox has one file stored - `Ruth.z7`.
 
 
-![Dropbox](https://starwarsfan2099.github.io/public/2020-11-19/ruth_11.JPG){:.shadow}{:.center}
+![Dropbox](https://starwarsfan2099.github.io/public/2020-11-19/ruth_11.JPG){:.shadow}{:.center}{: width="989" height="343" }
 
 
 Decompressing the file reveals an iPhone image of Ruth's phone before it was reset! This is used to answer several of the challenges.
@@ -107,7 +107,7 @@ Decompressing the file reveals an iPhone image of Ruth's phone before it was res
 The date of the last wipe can be found using the file `/private/var/root/.obliterated`. The timestamp on that file is the last time the device was restored, reset, or erased. 
 
 
-![Obliterated](https://starwarsfan2099.github.io/public/2020-11-19/ruth_8.JPG){:.shadow}{:.center}
+![Obliterated](https://starwarsfan2099.github.io/public/2020-11-19/ruth_8.JPG){:.shadow}{:.center}{: width="181" height="249" }
 
 
 The timestamps on the file are listed as `7/27/2020`, and that is the correct solution to this challenge. 
@@ -120,7 +120,7 @@ The timestamps on the file are listed as `7/27/2020`, and that is the correct so
 This question and the next question need to be answered using the second image of Ruth's phone obtained in the [Password Recovery question](https://starwarsfan2099.github.io/2020/11/19/cellebirte-ctf-ruth.html#password-recovery---20-points). The answer to this question can be found by going to the `Wireless Networks` tab and sorting by the SSIDs. 
 
 
-![WiFi](https://starwarsfan2099.github.io/public/2020-11-19/ruth_12.JPG){:.shadow}{:.center}
+![WiFi](https://starwarsfan2099.github.io/public/2020-11-19/ruth_12.JPG){:.shadow}{:.center}{: width="372" height="412" }
 
 
 The time it was first connected to is the timestamp shown. In the format required by the question, the solution is `07-09-2020`. 
@@ -133,7 +133,7 @@ The time it was first connected to is the timestamp shown. In the format require
 This question can be easily solved by looking at the timeline. First, filter by the data in question, 7/25/2020. Then search for the TikTok identifier `com.zhiliaoapp.musically`. This returns 7 rows, 2 of which are application usage logs. 
 
 
-![Application usage](https://starwarsfan2099.github.io/public/2020-11-19/ruth_13.JPG){:.shadow}{:.center}
+![Application usage](https://starwarsfan2099.github.io/public/2020-11-19/ruth_13.JPG){:.shadow}{:.center}{: width="395" height="306" }
 
 
 Subtracting the times returned, `5:53:47` - `5:51:23` = `00:02:24`. The correct solution is `00:02:24`. 
@@ -146,7 +146,7 @@ Subtracting the times returned, `5:53:47` - `5:51:23` = `00:02:24`. The correct 
 The first place to check is the default Podcasts app. Information on Podcasts is not found in the Podcast app or it's databases, it is actually found in `/private/var/mobile/Media/iTunes_Control/iTunes/MediaLibrary.sqlitedb`, the default media library database. After searching the different tables for the keywords "*Episode 4*", it can finally be found in the `item_extra` table.
 
 
-![Podcast in database](https://starwarsfan2099.github.io/public/2020-11-19/ruth_9.JPG){:.shadow}{:.center}
+![Podcast in database](https://starwarsfan2099.github.io/public/2020-11-19/ruth_9.JPG){:.shadow}{:.center}{: width="671" height="157" }{: width="671" height="157" }
 
 
 This confirms the default iOS Podcast app was used. The question has an example application name in all lower case. So entering `podcast` is the correct answer. 
@@ -159,7 +159,7 @@ This confirms the default iOS Podcast app was used. The question has an example 
 Easy enough! This answer is found in the exact same place we used to answer the last question.
 
 
-![Podcast in database](https://starwarsfan2099.github.io/public/2020-11-19/ruth_9.JPG){:.shadow}{:.center}
+![Podcast in database](https://starwarsfan2099.github.io/public/2020-11-19/ruth_9.JPG){:.shadow}{:.center}{: width="671" height="157" }{: width="671" height="157" }
 
 
 The `item_pid` is the first column from the left. `239332200929536034` is the solution to this challenge. 
@@ -172,7 +172,7 @@ The `item_pid` is the first column from the left. `239332200929536034` is the so
 The link can be found after unlcoking the locked note, which is described in the [Application Analysis_Notes question](https://starwarsfan2099.github.io/2020/11/19/cellebirte-ctf-ruth.html#application-analysis_notes---100-points).
 
 
-![Unlocked notes](https://starwarsfan2099.github.io/public/2020-11-19/ruth_10.JPG){:.shadow}{:.center}
+![Unlocked notes](https://starwarsfan2099.github.io/public/2020-11-19/ruth_10.JPG){:.shadow}{:.center}{: width="377" height="637" }
 
 
 The link from the note and solution to the challenge is `https://bit.ly/3arhLSK`. The shortened link takes us to a password protected DropBox link.
@@ -185,7 +185,7 @@ The link from the note and solution to the challenge is `https://bit.ly/3arhLSK`
 [Gerbinator](https://github.com/Gerbinator) again came in clutch on this question. After too long searching anywhere we could think on Ruth's phone, [Gerbinator](https://github.com/Gerbinator) had the idea to check the other images provided. They came across the same SplashScreen image from [Juan's Financial Situation question](https://starwarsfan2099.github.io/2020/11/18/cellebirte-ctf-juan-copy.html#financial-situation---100-points). That image had a routing number in the image.
 
 
-![CashApp Splashscreen](https://starwarsfan2099.github.io/public/2020-11-18/juan_14.JPG){:.shadow}{:.center}
+![CashApp Splashscreen](https://starwarsfan2099.github.io/public/2020-11-18/juan_14.JPG){:.shadow}{:.center}{: width="383" height="800" }
 
 
 Attempting that routing number, especially since it's the only one we could find that it could possibly be, it turns out that is the correct answer - `041215663`!!

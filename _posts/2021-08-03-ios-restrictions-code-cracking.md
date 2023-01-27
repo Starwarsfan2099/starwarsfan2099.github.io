@@ -48,7 +48,7 @@ Hm. The `=` and `==` characters at the end of the hash and salt are dead give aw
 So this is very likely a hash of some sort. But what algorithm? Thankfully, someone on the [hashcat](https://hashcat.net/forum/thread-2892.html) forums had this same question, and another user answered.  
 
 
-![Start Screen](https://starwarsfan2099.github.io/public/2021-08-03/post.jpg){:.shadow}{:.center}
+![Start Screen](https://starwarsfan2099.github.io/public/2021-08-03/post.jpg){:.shadow}{:.center}{: width="1874" height="832" }
 
 
 So, this user states that the hashing algorithm is `pbkdf2-hmac-sha1 ((Password-Based Key Derivation Function 2)`. He also explains how he figured out it is iterations of the algorithm. This will be useful later. Since this is a hashing function it needed to be bruteforced. Thankfully, the iOS restrictions only allow for a four digit code to be set as the passcode. So the keyspace is only 0000-9999 which seemed easy enough to bruteforce.
@@ -60,7 +60,7 @@ First we have a problem though. My sibling's iPod was not jailbroken. So how do 
 So, I made a backup of the iPod and my iPhone with a restrictions set in case there were changes across devices or versions in how the hash and salt is copied over. Backups were made using iTunes. On Windows, backups are stored at `C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup`. On Mac, they are stored under `/Library/Application Support/MobileSync/Backup/`. In this folder are the different backups, even if it doesn't look like it at first.  
 
 
-![Backup List](https://starwarsfan2099.github.io/public/2021-08-03/list.JPG){:.shadow}{:.center}
+![Backup List](https://starwarsfan2099.github.io/public/2021-08-03/list.JPG){:.shadow}{:.center}{: width="583" height="190" }
 
 
 Inside the folders that are a backup of a device, there is an `Info.plist` file that eventually contains the device name and information.

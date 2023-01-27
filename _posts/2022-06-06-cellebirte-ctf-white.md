@@ -15,7 +15,7 @@ author: clark
 The app can be found by simply looking under the `Clean mobile` category in the `Installed Applications` section. 
 
 
-![Cleaning apps](https://starwarsfan2099.github.io/public/2022-06-07/13.JPG){:.shadow}{:.center}
+![Cleaning apps](https://starwarsfan2099.github.io/public/2022-06-07/13.JPG){:.shadow}{:.center}{: width="279" height="105" }
 
 
 The solution is `com.samsung.android.lool`. 
@@ -28,7 +28,7 @@ The solution is `com.samsung.android.lool`.
 A simple keyword search for "License Plate" will show you the installed application. 
 
 
-![License Plate App](https://starwarsfan2099.github.io/public/2022-06-07/14.JPG){:.shadow}{:.center}
+![License Plate App](https://starwarsfan2099.github.io/public/2022-06-07/14.JPG){:.shadow}{:.center}{: width="964" height="300" }
 
 
 The app id and solution is `com.orto.usa`. 
@@ -41,7 +41,7 @@ The app id and solution is `com.orto.usa`.
 Once again, a simple keyword search for `zebedee.db` shows the application the database is associated with. 
 
 
-![zebedee App](https://starwarsfan2099.github.io/public/2022-06-07/15.JPG){:.shadow}{:.center}
+![zebedee App](https://starwarsfan2099.github.io/public/2022-06-07/15.JPG){:.shadow}{:.center}{: width="829" height="241" }
 
 
 The app and solution is `Device Health Services`.
@@ -54,7 +54,7 @@ The app and solution is `Device Health Services`.
 Physical Analyzer does not appear to parse this hotspot data and place it in `Device connectivity` or the `Networking` sections. However, when searching for `Wifi` and looking through the data not used in the `Device connectivity` or the `Networking` sections, a few xml files can be found. One named `WifiConfigStoreSoftAp.xml`. This file stores the solution.
 
 
-![Hotspot](https://starwarsfan2099.github.io/public/2022-06-07/16.JPG){:.shadow}{:.center}
+![Hotspot](https://starwarsfan2099.github.io/public/2022-06-07/16.JPG){:.shadow}{:.center}{: width="240" height="372" }
 
 
 The hotspot password and solution is `yipz5901`. 
@@ -67,19 +67,19 @@ The hotspot password and solution is `yipz5901`.
 First, looking under the `Device Connectivity` tab does indeed show a "Bose Sound Touch" device. However, it only records the start time instead of the last connection time. It does show us the Mac though: `2c:6b:7d:1d:21:a7`. 
 
 
-![Devices](https://starwarsfan2099.github.io/public/2022-06-07/17.JPG){:.shadow}{:.center}
+![Devices](https://starwarsfan2099.github.io/public/2022-06-07/17.JPG){:.shadow}{:.center}{: width="1550" height="527" }
 
 
 Searching for the Mac though doesn't return anything useful. If there are no results parsed be Cellebrite, perhaps the info is in a third party source. Looking through the installed apps, an app called `SmartThings` can be found. 
 
 
-![Bluetooth app?](https://starwarsfan2099.github.io/public/2022-06-07/17_1.JPG){:.shadow}{:.center}
+![Bluetooth app?](https://starwarsfan2099.github.io/public/2022-06-07/17_1.JPG){:.shadow}{:.center}{: width="345" height="60" }
 
 
 The package name also gives a clue, being called `com.samsung.android.oneconnect`. Hmmm. Sounds like it could involve Bluetooth. Using the SQLite Wizard, we can look through the app's databases.
 
 
-![Timestamp](https://starwarsfan2099.github.io/public/2022-06-07/17_2.JPG){:.shadow}{:.center}
+![Timestamp](https://starwarsfan2099.github.io/public/2022-06-07/17_2.JPG){:.shadow}{:.center}{: width="1403" height="596" }
 
 
 Eventually, a database named `QcDb.db` is found. It contains a table named `devices` that includes the Sound Touch Mac address, name, and a timestamp.  
@@ -94,7 +94,7 @@ After converting the timestamp and formatting the answer we get the solution: `2
 When looking through the chats and conversations, Mr. White really only has one conversation with an unknown individual. All other conversations are with a known contact or spam. 
 
 
-![Phone number](https://starwarsfan2099.github.io/public/2022-06-07/18.JPG){:.shadow}{:.center}
+![Phone number](https://starwarsfan2099.github.io/public/2022-06-07/18.JPG){:.shadow}{:.center}{: width="351" height="275" }
 
 
 This number is the correct number, and solution to the challenge - `+1–540–299–3169`. 
@@ -114,7 +114,7 @@ Just select anything and enjoy the free points!
 We *should* be able to see the deleted messages in the `Messages` tab or in the `Analyzed Data` sidebar view.
 
 
-![Deleted](https://starwarsfan2099.github.io/public/2022-06-07/20.JPG){:.shadow}{:.center}
+![Deleted](https://starwarsfan2099.github.io/public/2022-06-07/20.JPG){:.shadow}{:.center}{: width="283" height="171" }
 
 
 Both views show `3` deleted messages. That was an incorrect solution, and so was `6` if we include the emails. Not sure what the answer here is. 
@@ -127,7 +127,7 @@ Both views show `3` deleted messages. That was an incorrect solution, and so was
 By looking at the `Device Locations` tab, we can see that the device was operated near Arbuckle, WV. 
 
 
-![Phone number](https://starwarsfan2099.github.io/public/2022-06-07/21.JPG){:.shadow}{:.center}
+![Phone number](https://starwarsfan2099.github.io/public/2022-06-07/21.JPG){:.shadow}{:.center}{: width="403" height="349" }
 
 
 The answer is `True`.
@@ -140,7 +140,7 @@ The answer is `True`.
 The `Images` tab in Physical Analyzer allows for filtering via metadata containing location information. 
 
 
-![Pictures with location info](https://starwarsfan2099.github.io/public/2022-06-07/22.JPG){:.shadow}{:.center}
+![Pictures with location info](https://starwarsfan2099.github.io/public/2022-06-07/22.JPG){:.shadow}{:.center}{: width="1518" height="696" }
 
 
 Looking at the bottom bar, it shows the stats on the specific images. We need to be careful to not look at the `Selected` and the `Deduplication` fields. The answer we are looking for is in the `Items` or `Selected` fields.
@@ -155,7 +155,7 @@ Looking at the bottom bar, it shows the stats on the specific images. We need to
 This can be found on the Physical Analyzer homepage. 
 
 
-![IMSI](https://starwarsfan2099.github.io/public/2022-06-07/23.JPG){:.shadow}{:.center}
+![IMSI](https://starwarsfan2099.github.io/public/2022-06-07/23.JPG){:.shadow}{:.center}{: width="713" height="588" }
 
 
 The solution and IMSI is `310260275793897`. 
@@ -168,7 +168,7 @@ The solution and IMSI is `310260275793897`.
 Simply searching for the has reveals several locations the image is stored, and each filepath has the app package name. 
 
 
-![Hash Photo](https://starwarsfan2099.github.io/public/2022-06-07/24.JPG){:.shadow}{:.center}
+![Hash Photo](https://starwarsfan2099.github.io/public/2022-06-07/24.JPG){:.shadow}{:.center}{: width="628" height="414" }
 
 
 The app used to hide the image was `com.flatfish.cal.privacy`. 
@@ -181,7 +181,7 @@ The app used to hide the image was `com.flatfish.cal.privacy`.
 Searching for `2623237359273252101` yields no results. However, by doing a more thorough hex search on the actual image, we can find several mentions of the string in an Instagram database. 
 
 
-![Hex search](https://starwarsfan2099.github.io/public/2022-06-07/25.JPG){:.shadow}{:.center}
+![Hex search](https://starwarsfan2099.github.io/public/2022-06-07/25.JPG){:.shadow}{:.center}{: width="2179" height="879" }
 
 
 All the parts to the solution are in this file. Specifically, the `username`, `full_name`, `id`, and `following` keys. 
@@ -196,7 +196,7 @@ Placing these in the properer format for the solution, we get `MarshaMellos_mars
 The timeline in Physical Analyzer doesn't show a specific Instagram usage times. However, filtering in the **Analyzed Data > Databases** section for instagram shows some Instagram databases with `time_in_app` in the name. 
 
 
-![Instagram](https://starwarsfan2099.github.io/public/2022-06-07/27.JPG){:.shadow}{:.center}
+![Instagram](https://starwarsfan2099.github.io/public/2022-06-07/27.JPG){:.shadow}{:.center}{: width="2071" height="757" }
 
 
 Looking at the intervals table, there is column `end_walltime` that is a timestamp of the last usage. 
@@ -211,7 +211,7 @@ Converting the timestamp to the proper format, we get `2021-07-22 19:06:37` and 
 By doing a basic search for the keyword `gas`, we can see the user has an app installed titled **GetUpside** for gas discounts. Searching the **Analyzed Data > Databases** again for `gas` or `GetUpside` shows the databases associated with the apps. After poking around them, a table named `class_CreditCard` can be found in the `upside.realm` database. It includes two columns we need, `firstSix` and `lastFour`. 
 
 
-![GetUpside DB](https://starwarsfan2099.github.io/public/2022-06-07/28.JPG){:.shadow}{:.center}
+![GetUpside DB](https://starwarsfan2099.github.io/public/2022-06-07/28.JPG){:.shadow}{:.center}{: width="1781" height="761" }
 
 
 Now we can get the solution to the challenge! `414720_0834 `. 
@@ -224,7 +224,7 @@ Now we can get the solution to the challenge! `414720_0834 `.
 Once again, Search is our friend. By simply searching for the keyword `meet` we can see one chat where that word is mentioned. 
 
 
-![Meeting chat](https://starwarsfan2099.github.io/public/2022-06-07/29.JPG){:.shadow}{:.center}
+![Meeting chat](https://starwarsfan2099.github.io/public/2022-06-07/29.JPG){:.shadow}{:.center}{: width="2178" height="921" }
 
 
 All of the information we need is right there. The solution in the proper format is `washington street 18:44:58`. 
@@ -237,7 +237,7 @@ All of the information we need is right there. The solution in the proper format
 Well, we know the data of the meeting from question 29. The question says *see and hear*, so this must be a video! Filtering videos by the date of the meeting, we can find the meeting video!
 
 
-![Meeting video](https://starwarsfan2099.github.io/public/2022-06-07/30.JPG){:.shadow}{:.center}
+![Meeting video](https://starwarsfan2099.github.io/public/2022-06-07/30.JPG){:.shadow}{:.center}{: width="2177" height="522" }
 
 
 Physical analyzer fails to show any coordinates for where the video was taken, even with **Carve Locations** enabled during processing. However, by simply exporting the video and using exiftool, we can see the coordinates are `37.2249,-80.4159`.

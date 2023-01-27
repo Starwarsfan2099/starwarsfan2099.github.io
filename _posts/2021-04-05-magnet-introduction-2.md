@@ -17,7 +17,7 @@ In Part 2, we will focus on the basics of AXIOM Examine and using the tool to se
 ### Case Dashboard
 
 
-![Start Screen](https://starwarsfan2099.github.io/public/2021-04-05/main.JPG){:.shadow}{:.center}
+![Start Screen](https://starwarsfan2099.github.io/public/2021-04-05/main.JPG){:.shadow}{:.center}{: width="1920" height="1006" }
 
 
 After opening AXIOM Examine, the first view you will see is the **Case Dashboard** view. There are several boxes and options in this view. Looking at the boxes and starting at the top left, you can see the *Case Summary* box. This box includes the examiner name and the case summary. Below this is the *Case Processing Details*. This box shows who scanned and processed the evidence, when it was processed, and a scan description if it was filled in during the processing phase. And below that is the *Case Information* box. This allows the examiner to open the case information file as well as the log file.
@@ -31,7 +31,7 @@ Below that section is the *CPS Data Matches* section. This section shows results
 ### Evidence View
 
 
-![Evidence View](https://starwarsfan2099.github.io/public/2021-04-05/evidence.JPG){:.shadow}{:.center}
+![Evidence View](https://starwarsfan2099.github.io/public/2021-04-05/evidence.JPG){:.shadow}{:.center}{: width="1920" height="1016" }
 
 
 The evidence view looks daunting at first, but it's actually pretty simple. On the left, are the evidence categories. The artifacts found are automatically sorted and can be viewed using these. Sections like **All Evidence**, **Media**, **Documents**, and **Web Related**. The sections are further categorized into sub categories. These can be by application, file type, or just general artifact type. The categories and sub categories are extremely useful and allow for easily navigating through mountains of evidence. 
@@ -43,7 +43,7 @@ Using the button to the right of the home button, in the top right, we can choos
 ### Timeline View
 
 
-![Timeline View](https://starwarsfan2099.github.io/public/2021-04-05/timeline.JPG){:.shadow}{:.center}
+![Timeline View](https://starwarsfan2099.github.io/public/2021-04-05/timeline.JPG){:.shadow}{:.center}{: width="1918" height="1015" }
 
 
 In this view, evidence is presented and able to be sorted chronologically. The timeline range can be adjusted, artifacts can still be filtered, and the everything is presented chronologically based on these adjustments and is entirely searchable.
@@ -51,7 +51,7 @@ In this view, evidence is presented and able to be sorted chronologically. The t
 ### Connections View
 
 
-![Connections View](https://starwarsfan2099.github.io/public/2021-04-05/connections.jpg){:.shadow}{:.center}
+![Connections View](https://starwarsfan2099.github.io/public/2021-04-05/connections.jpg){:.shadow}{:.center}{: width="1918" height="1018" }
 
 
 This view can be accessed via right clicking on an artifact and selecting show connections. It builds and shows relationships of the selected artifacts with other artifacts and events. Artifacts can further be filtered, selected, and examined in this view. 
@@ -59,7 +59,7 @@ This view can be accessed via right clicking on an artifact and selecting show c
 ### Filesystem View
 
 
-![Filesystem View](https://starwarsfan2099.github.io/public/2021-04-05/filesystem.JPG){:.shadow}{:.center}
+![Filesystem View](https://starwarsfan2099.github.io/public/2021-04-05/filesystem.JPG){:.shadow}{:.center}{: width="1919" height="1018" }
 
 
 If the examiner would rather directly search the file system, there's a tab for that as well.
@@ -73,7 +73,7 @@ There are tabs for the Windows Registry tab and a general Media tab.
 Remember that keyword search for *"Drone"*? Selecting it from the home page shows all artifacts associated with the word *drone*. 
 
 
-![Filesystem View](https://starwarsfan2099.github.io/public/2021-04-05/drone.jpg){:.shadow}{:.center}
+![Filesystem View](https://starwarsfan2099.github.io/public/2021-04-05/drone.jpg){:.shadow}{:.center}{: width="1910" height="991" }
 
 
 We are immediately greeted with conversations and contacts discussing the drone the batteries were taken from. Everything is easily viewable and presented to the examiner. Supporting evidence and more information can be easily found via the connections to the contact or conversation. The conversation can be bookmarked as flagged evidence and we can continue searching through artifacts. 
