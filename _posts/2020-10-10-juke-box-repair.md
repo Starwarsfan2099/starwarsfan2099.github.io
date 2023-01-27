@@ -19,8 +19,6 @@ On this specific jukebox, the record picking mechanism, lights, and sound needed
 
 Opening the jukebox is easy enough. The outer door can be opened by pulling up and out on the left side of the door. It swings open to the right allowing for easy access. 
 
-![Front door](https://starwarsfan2099.github.io/public/2020-10-10/front_door.JPG){:.shadow}{:.center}
-
 ![Front door inside](https://starwarsfan2099.github.io/public/2020-10-10/front_door_inside.JPG){:.shadow}{:.center}
 
 Opening the front door allows access to the outer door lights, the song selector, record loading slots and record player wheel and needle. Below the record loading slots and wheel, is a panel holding the single 15-inch speaker. This panel can swing out and to the right as well. A latch sits on the right side of the panel, when twisted left unlocks the panel to swing out. 
