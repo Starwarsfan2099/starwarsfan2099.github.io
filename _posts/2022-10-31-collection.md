@@ -79,6 +79,16 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Post:** No post yet.
 
 
+## Comptometer Model A
+
+![Comptometer](https://clarkiv.dev/public/2021-09-23/main.JPG){:.shadow}{:.center}{: width="960" height="579" }
+
+- **Manufactured:** 1896
+- **From:** Troy, OH
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/wooden-comptometer/](https://clarkiv.dev/posts/wooden-comptometer/)
+
+
 ## Comptometer 12-D
 
 ![Monroe L-160X](https://clarkiv.dev/public/2022-10-13/comp_12d.JPG){:.shadow}{:.center}{: width="6000" height="4000" }
@@ -87,16 +97,6 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **From:** Chillicothe, OH
 - **Not Functional**
 - **Post:** No post yet.
-
-
-## Comptometer Model A
-
-![Comptometer Model A](https://clarkiv.dev/public/2021-09-23/main.JPG){:.shadow}{:.center}{: width="960" height="579" }
-
-- **Manufactured:** 1896
-- **From:** Troy, OH
-- **Fully Functional**
-- **Post:** [https://clarkiv.dev/posts/comptometer-model-a/](https://clarkiv.dev/posts/comptometer-model-a/)
 
 
 ## Comptometer Model J
