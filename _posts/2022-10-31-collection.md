@@ -79,7 +79,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Post:** No post yet.
 
 
-## Comptometer Model A
+## Comptometer
 
 ![Comptometer](https://clarkiv.dev/public/2021-09-23/main.JPG){:.shadow}{:.center}{: width="960" height="579" }
 
