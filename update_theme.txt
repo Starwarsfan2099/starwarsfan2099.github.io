@@ -24,3 +24,14 @@ Add:
         <a href="{{ post.url }}" ><img src="{{ post.thumbnail }}" />
       </div>
     {% endif %}
+
+Also add this under:
+<div class="card-text post-content">
+
+{% if post.excerpt %}
+  {% include no-linenos.html content=post.content %}
+  {{ post.excerpt }}
+{% else %}
+  {% include no-linenos.html content=post.content %}
+  {{ content | markdownify | strip_html | truncate: 200 | escape }}
+{% endif %}
