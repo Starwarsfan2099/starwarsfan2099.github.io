@@ -13,20 +13,23 @@
   
 >
 
-  <!--
-  The Head
--->
+  <!-- The Head -->
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  >
 
   
-
     
 
     
-
   
 
   
@@ -35,7 +38,7 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.1" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Andrew Clark’s Blog" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Place to share my adventures in programming, hacking, forensics, and antique calculator repair." />
@@ -77,7 +80,6 @@
 
 
   
-
     
       <link rel="preconnect" href="https://fonts.googleapis.com" >
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
@@ -93,7 +95,6 @@
     
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-
   
 
   <!-- GA -->
@@ -144,13 +145,12 @@
       let self = this;
 
       /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener("change", () => {
+      this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
           if (self.isDarkMode) {
             if (!self.isSysDarkPrefer) {
               self.setDark();
             }
-
           } else {
             if (self.isSysDarkPrefer) {
               self.setLight();
@@ -161,9 +161,7 @@
         }
 
         self.notify();
-
       });
-
     } /* constructor() */
 
     get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); }
@@ -180,8 +178,7 @@
 
     /* get the current mode on screen */
     get modeStatus() {
-      if (this.isDarkMode
-        || (!this.hasMode && this.isSysDarkPrefer)) {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
         return ModeToggle.DARK_MODE;
       } else {
         return ModeToggle.LIGHT_MODE;
@@ -211,46 +208,41 @@
       }, "*");
     }
 
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
   } /* ModeToggle */
 
-  const toggle = new ModeToggle();
-
-  function flipMode() {
-    if (toggle.hasMode) {
-      if (toggle.isSysDarkPrefer) {
-        if (toggle.isLightMode) {
-          toggle.clearMode();
-        } else {
-          toggle.setLight();
-        }
-
-      } else {
-        if (toggle.isDarkMode) {
-          toggle.clearMode();
-        } else {
-          toggle.setDark();
-        }
-      }
-
-    } else {
-      if (toggle.isSysDarkPrefer) {
-        toggle.setLight();
-      } else {
-        toggle.setDark();
-      }
-    }
-
-    toggle.notify();
-
-  } /* flipMode() */
-
+  const modeToggle = new ModeToggle();
 </script>
 
   
 </head>
 
 
-  <body data-spy="scroll" data-target="#toc" data-topbar-visible="true">
+  <body data-topbar-visible="true">
 
     <!--
   The Side Bar
@@ -351,14 +343,16 @@
       
       <a href="https://github.com/Starwarsfan2099" aria-label="github"
         
+
         
-          
           target="_blank"
+          
         
 
         
 
-        rel="noopener">
+        rel="noopener noreferrer">
+
         <i class="fab fa-github"></i>
       </a>
       
@@ -369,14 +363,16 @@
       
       <a href="https://twitter.com/Starwarsfan2099" aria-label="twitter"
         
+
         
-          
           target="_blank"
+          
         
 
         
 
-        rel="noopener">
+        rel="noopener noreferrer">
+
         <i class="fab fa-twitter"></i>
       </a>
       
@@ -385,14 +381,15 @@
       
 
       
-      <a href="
-          javascript:location.href = 'mailto:' + ['Starwarsfan2099','gmail.com'].join('@')" aria-label="email"
+      <a href="javascript:location.href = 'mailto:' + ['Starwarsfan2099','gmail.com'].join('@')" aria-label="email"
         
+
         
 
         
 
         >
+
         <i class="fas fa-envelope"></i>
       </a>
       
@@ -403,11 +400,13 @@
       
       <a href="/feed.xml" aria-label="rss"
         
+
         
 
         
 
         >
+
         <i class="fas fa-rss"></i>
       </a>
       
@@ -498,28 +497,28 @@
 
 
 <div id="post-list">
+  
+    <div class="card post-preview">
+      <a href="/posts/collection/">
+        <div class="card-body">
+          
+            <div class="preveiw">
+              <a href="/posts/collection/" ><img src="https://clarkiv.dev/public/2021-02-23/cover.jpg" />
+            </div>
+          
+          <h1 class="card-title">
+            Mechanical Calculator and Jukebox Collection - Status and Wanted
+          </h1>
+
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
-  <div class="post-preview">
-    
-      <div class="preveiw">
-        <a href="/posts/collection/" ><img src="https://clarkiv.dev/public/2021-02-23/cover.jpg" />
-      </div>
-    
-    <h1>
-      <a href="/posts/collection/">Mechanical Calculator and Jukebox Collection - Status and Wanted</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
 
 
-
-
-
-        Wanted Machines
+              Wanted Machines
 
 
   Alpina Calculator
@@ -532,15 +531,14 @@
   Marchant Deci-Magic (SKA)
   Marchant MR
  ...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -550,64 +548,64 @@
 
 
 <em class=""
-    data-ts="1667192400"
+    data-ts="1667188800"
     data-df="ll"
     >
   Oct 31, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Calculator
+                </span>
+              
+            </div>
+
+            
+              <div class="pin">
+                <i class="fas fa-thumbtack fa-fw"></i>
+                <span>Pinned</span>
+              </div>
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/ChatGPT/">
+        <div class="card-body">
           
-            Calculator
-          </span>
-        
+          <h1 class="card-title">
+            Exploring a Computer in the Mind of ChatGPT
+          </h1>
 
-      </div>
-
-      
-      <div class="pin">
-        <i class="fas fa-thumbtack fa-fw"></i>
-        <span>Pinned</span>
-      </div>
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/ChatGPT/">Exploring a Computer in the Mind of ChatGPT</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        ChatGPT
+              ChatGPT
 
 
   ChatGPT is a recently released chatbot that uses the GPT-3 (Generative Pretrained Transformer-3) language model to generate responses to user input. It is a type of conversational AI th...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -617,61 +615,61 @@
 
 
 <em class=""
-    data-ts="1670475600"
+    data-ts="1670472000"
     data-df="ll"
     >
   Dec  8, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Fun
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/Flareon9/">
+        <div class="card-body">
           
-            Fun
-          </span>
-        
+          <h1 class="card-title">
+            Flareon9 Challenges 1-4 solutions and methodology
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/Flareon9/">Flareon9 Challenges 1-4 solutions and methodology</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        Flaredle
+              Flaredle
 
 For the first challenge, we are greeted with the following message:
 
 
   You probably won’t win. Maybe you’re like us and spent the year playing Wordle. We made our own version that is too...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -681,61 +679,61 @@ For the first challenge, we are greeted with the following message:
 
 
 <em class=""
-    data-ts="1668315600"
+    data-ts="1668312000"
     data-df="ll"
     >
   Nov 13, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    CTF,
+                    Flareon
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/Windows-bootstat-parser/">
+        <div class="card-body">
           
-            CTF,
-            Flareon
-          </span>
-        
+          <h1 class="card-title">
+            Windows `bootstat.dat` Forensic Parser
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/Windows-bootstat-parser/">Windows `bootstat.dat` Forensic Parser</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        Grzegorz Tworek’s PSBits
+              Grzegorz Tworek’s PSBits
 
 
 
 Grzegorz Tworek, also known as 0gtweet, posted this link to a PowerShell script a few days ago. I thought is was interesting, because I had never heard of this file, muc...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -745,62 +743,62 @@ Grzegorz Tworek, also known as 0gtweet, posted this link to a PowerShell script 
 
 
 <em class=""
-    data-ts="1662958800"
+    data-ts="1662955200"
     data-df="ll"
     >
   Sep 12, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Hacking,
+                    Windows
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/cellebirte-ctf-marsha_iphone/">
+        <div class="card-body">
           
-            Hacking,
-            Windows
-          </span>
-        
+          <h1 class="card-title">
+            Cellebrite Spring 2021 CTF - Part 4 - Marsha - iPhone X
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/cellebirte-ctf-marsha_iphone/">Cellebrite Spring 2021 CTF - Part 4 - Marsha - iPhone X</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        Marsha’s iPhone X - iOS 14.6
+              Marsha’s iPhone X - iOS 14.6
 
 Question 44 – 10pts
 
 
   Criminals tend to keep their business private. The suspects used an App that hides data (photos/video/contacts) behind an ordinary calculator. ...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -810,48 +808,49 @@ Question 44 – 10pts
 
 
 <em class=""
-    data-ts="1654750800"
+    data-ts="1654747200"
     data-df="ll"
     >
   Jun  9, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    CTF,
+                    Cellebrite 2022
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/cellebirte-ctf-beth/">
+        <div class="card-body">
           
-            CTF,
-            Cellebrite 2022
-          </span>
-        
+          <h1 class="card-title">
+            Cellebrite Spring 2021 CTF - Part 3 - Beth - iPhone X
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/cellebirte-ctf-beth/">Cellebrite Spring 2021 CTF - Part 3 - Beth - iPhone X</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        Beth’s iPhone X - iOS 14.6
+              Beth’s iPhone X - iOS 14.6
 
 Question 31 – 10pts
 
@@ -860,15 +859,14 @@ Question 31 – 10pts
 
 
 A simple keyword se...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -878,48 +876,49 @@ A simple keyword se...
 
 
 <em class=""
-    data-ts="1654578000"
+    data-ts="1654574400"
     data-df="ll"
     >
   Jun  7, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    CTF,
+                    Cellebrite 2022
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/cellebirte-ctf-white/">
+        <div class="card-body">
           
-            CTF,
-            Cellebrite 2022
-          </span>
-        
+          <h1 class="card-title">
+            Cellebrite Spring 2021 CTF - Part 2 - Heisenberg - Galaxy Note 10
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/cellebirte-ctf-white/">Cellebrite Spring 2021 CTF - Part 2 - Heisenberg - Galaxy Note 10</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        Heisenberg’s Galaxy Note 10 - Android 11
+              Heisenberg’s Galaxy Note 10 - Android 11
 
 Question 13 – 10pts
 
@@ -928,15 +927,14 @@ Question 13 – 10pts
 
 
 The app can be found by si...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -946,62 +944,62 @@ The app can be found by si...
 
 
 <em class=""
-    data-ts="1654491600"
+    data-ts="1654488000"
     data-df="ll"
     >
   Jun  6, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    CTF,
+                    Cellebrite 2022
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/cellebirte-ctf-marsha_pc/">
+        <div class="card-body">
           
-            CTF,
-            Cellebrite 2022
-          </span>
-        
+          <h1 class="card-title">
+            Cellebrite Spring 2021 CTF - Part 1 - Marsha - PC
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/cellebirte-ctf-marsha_pc/">Cellebrite Spring 2021 CTF - Part 1 - Marsha - PC</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        Cellebrite 2022 CTF!
+              Cellebrite 2022 CTF!
 
 Cellebrite decided to launch another CTF this year! Their last CTF was quite fun and helped me learn more about forensic methodology. Here’s the scenario for this year:
 
 
   Be...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1011,65 +1009,65 @@ Cellebrite decided to launch another CTF this year! Their last CTF was quite fun
 
 
 <em class=""
-    data-ts="1654405200"
+    data-ts="1654401600"
     data-df="ll"
     >
   Jun  5, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    CTF,
+                    Cellebrite 2022
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/Monroe-IQ-213/">
+        <div class="card-body">
           
-            CTF,
-            Cellebrite 2022
-          </span>
-        
+            <div class="preveiw">
+              <a href="/posts/Monroe-IQ-213/" ><img src="https://starwarsfan2099.github.io/public/2022-05-10/cover.jpg" />
+            </div>
+          
+          <h1 class="card-title">
+            Monroe IQ-213 - The Calculator with a Memory
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-      <div class="preveiw">
-        <a href="/posts/Monroe-IQ-213/" ><img src="https://starwarsfan2099.github.io/public/2022-05-10/cover.jpg" />
-      </div>
-    
-    <h1>
-      <a href="/posts/Monroe-IQ-213/">Monroe IQ-213 - The Calculator with a Memory</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        Overview
+              Overview
 
 
 
 The Monroe IQ-213 is a rather large fully automatic, full keyboard mechanical calculator. Even compared to something like a Marchant ACR-10M, this calculator takes up more desk space an...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1079,61 +1077,61 @@ The Monroe IQ-213 is a rather large fully automatic, full keyboard mechanical ca
 
 
 <em class=""
-    data-ts="1652158800"
+    data-ts="1652155200"
     data-df="ll"
     >
   May 10, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Calculator,
+                    Monroe
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+    <div class="card post-preview">
+      <a href="/posts/wordle-solver/">
+        <div class="card-body">
           
-            Calculator,
-            Monroe
-          </span>
-        
+          <h1 class="card-title">
+            Solving Wordle using Python and Basic Frequency Analysis
+          </h1>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    
-    <h1>
-      <a href="/posts/wordle-solver/">Solving Wordle using Python and Basic Frequency Analysis</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
+          <div class="card-text post-content">
+            <p>
+              
 
 
 
 
 
-        What’s Wordle?
+              What’s Wordle?
 
 
 
 Wordle is a small online game that has blown up in popularity recently. It’s premise is simple, you have six tries to guess a five letter word. I’m going to call this the target w...
-      </p>
-    </div>
+            </p>
+          </div>
 
-    <div class="post-meta text-muted d-flex">
-      <div class="mr-auto">
-
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
+          <div class="post-meta text-muted d-flex">
+            <div class="mr-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1143,34 +1141,34 @@ Wordle is a small online game that has blown up in popularity recently. It’s p
 
 
 <em class=""
-    data-ts="1646456400"
+    data-ts="1646452800"
     data-df="ll"
     >
   Mar  5, 2022
 </em>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Programming,
-            Fun
-          </span>
-        
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw"></i>
+                <span>
+                  
+                    Programming,
+                    Fun
+                </span>
+              
+            </div>
 
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-</div> <!-- #post-list -->
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+      </a>
+    </div>
+    <!-- .post-review -->
+  
+</div>
+<!-- #post-list -->
 
 
   <!--
@@ -2234,12 +2232,9 @@ SimpleJekyllSearch({
 </script>
 
 
-    <!--
-  JS selector for site.
--->
+    <!-- JS selector for site. -->
 
 <!-- layout specified -->
-
 
 
 
@@ -2303,8 +2298,7 @@ SimpleJekyllSearch({
 
 
 
-
-<script defer src="/assets/js/dist/home.min.js"></script>
+<script defer src="/assets/js/dist/misc.min.js"></script>
 
 
 

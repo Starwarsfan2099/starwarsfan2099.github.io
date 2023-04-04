@@ -2,6 +2,64 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.6.1](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v5.6.0...v5.6.1) (2023-03-30)
+
+
+### Bug Fixes
+
+* **deps:** `tocbot` has no initialization detection ([#957](https://github.com/cotes2020/jekyll-theme-chirpy/issues/957)) ([8225174](https://github.com/cotes2020/jekyll-theme-chirpy/commit/8225174cb5e02fda7b3cc548ec821c876b0a5139))
+* mode-toggle leads to Disqus loading failure ([#945](https://github.com/cotes2020/jekyll-theme-chirpy/issues/945)) ([6fec411](https://github.com/cotes2020/jekyll-theme-chirpy/commit/6fec411c18ca5689c467c7b216ddeda02df23623))
+* pageviews not updated immediately ([8b4f99c](https://github.com/cotes2020/jekyll-theme-chirpy/commit/8b4f99c87f9a9227f47e84fb39d7b0f551d6f4dd))
+
+## [5.6.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v5.5.2...v5.6.0) (2023-03-17)
+
+
+### Features
+
+* change TOC plugin to `tocbot` ([#774](https://github.com/cotes2020/jekyll-theme-chirpy/issues/774)) ([02b7bd5](https://github.com/cotes2020/jekyll-theme-chirpy/commit/02b7bd5095a2affe5b4c5ed7b5b182baaf642ff3))
+* **i18n:** add Greek Language Support. ([#903](https://github.com/cotes2020/jekyll-theme-chirpy/issues/903)) ([712a9b2](https://github.com/cotes2020/jekyll-theme-chirpy/commit/712a9b22401ce591cf4c0bb03fbdd1693fee30bb))
+* **ux:** turn home page posts into clickable cards ([#895](https://github.com/cotes2020/jekyll-theme-chirpy/issues/895)) ([b85f633](https://github.com/cotes2020/jekyll-theme-chirpy/commit/b85f6330dea666350631c4461b742cdb54c5f052))
+
+
+### Bug Fixes
+
+* css selector string escaping vulnerability ([#888](https://github.com/cotes2020/jekyll-theme-chirpy/issues/888)) ([5c6ec9d](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5c6ec9d06b6571e2c0efe6652078442dca8af477))
+* mathematics cannot scroll horizontally ([#760](https://github.com/cotes2020/jekyll-theme-chirpy/issues/760)) ([4681df7](https://github.com/cotes2020/jekyll-theme-chirpy/commit/4681df715118a37ae1e91b588de0adb67f4e331a))
+* notch status bar doesn't match theme color ([#918](https://github.com/cotes2020/jekyll-theme-chirpy/issues/918)) ([820ba62](https://github.com/cotes2020/jekyll-theme-chirpy/commit/820ba62e9e939090523a7077d01d01bd78ec84eb))
+* some console snippets will be incompletely copied ([e8e4901](https://github.com/cotes2020/jekyll-theme-chirpy/commit/e8e4901e340dd7e5fc5f656dd3c7bcd6c97b886a))
+
+## [5.5.2](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v5.5.1...v5.5.2) (2023-01-30)
+
+
+### Bug Fixes
+
+* position of prompt icon is incorrect in paragraph on mobile ([5df953f](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5df953f6c877e2aa3f1f4981c97a0b8007abe6d4))
+
+## [5.5.1](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v5.5.0...v5.5.1) (2023-01-29)
+
+
+### Bug Fixes
+
+* the icon position of the prompts in the list is incorrect ([0c9558d](https://github.com/cotes2020/jekyll-theme-chirpy/commit/0c9558de8a01e9ab795778f351a8bbf4d6b21763))
+
+## [5.5.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v5.4.0...v5.5.0) (2023-01-29)
+
+
+### Features
+
+* **i18n:** add Arabic translation ([#857](https://github.com/cotes2020/jekyll-theme-chirpy/issues/857)) ([765af53](https://github.com/cotes2020/jekyll-theme-chirpy/commit/765af53b77e5c63804784d5728f5970ae274c2c7))
+* **i18n:** add Czech language ([#833](https://github.com/cotes2020/jekyll-theme-chirpy/issues/833)) ([98d48f5](https://github.com/cotes2020/jekyll-theme-chirpy/commit/98d48f5da412276d4a0c99cd01a87b19349bc6bc))
+* **i18n:** add Finnish translations ([#843](https://github.com/cotes2020/jekyll-theme-chirpy/issues/843)) ([d6d0318](https://github.com/cotes2020/jekyll-theme-chirpy/commit/d6d03183eaf94b44e037cc48b6e1c47cee183f6e))
+* **i18n:** add Italian translation ([#850](https://github.com/cotes2020/jekyll-theme-chirpy/issues/850)) ([9a011e1](https://github.com/cotes2020/jekyll-theme-chirpy/commit/9a011e14d66195d8b2fb9ec62f3e60a3e56cd032))
+
+
+### Bug Fixes
+
+*  copy command line incomplete(`.gp` part) ([41ed331](https://github.com/cotes2020/jekyll-theme-chirpy/commit/41ed33145639415148aec8e85edc7a6fd0de0ca3))
+* correct encoding of spaces in share URLs ([#835](https://github.com/cotes2020/jekyll-theme-chirpy/issues/835)) ([f2d2858](https://github.com/cotes2020/jekyll-theme-chirpy/commit/f2d285844e6e2979f2b0eec1d20073d3c05b6c0c))
+* post's image would cover the PWA update alert ([bd374dd](https://github.com/cotes2020/jekyll-theme-chirpy/commit/bd374dd383c50f89c8f018ecb4e25772eeb8f6d8))
+* prompt with nested blockquotes renders incorrectly ([#846](https://github.com/cotes2020/jekyll-theme-chirpy/issues/846)) ([babb4a0](https://github.com/cotes2020/jekyll-theme-chirpy/commit/babb4a0c5a58ceb2e4093bc465670accdd526c18))
+
 ## [5.4.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v5.3.2...v5.4.0) (2022-12-27)
 
 

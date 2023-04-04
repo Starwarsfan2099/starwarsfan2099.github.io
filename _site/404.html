@@ -13,13 +13,18 @@
   
 >
 
-  <!--
-  The Head
--->
+  <!-- The Head -->
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  >
 
   
 
@@ -29,7 +34,7 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.1" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="404: Page not found" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Place to share my adventures in programming, hacking, forensics, and antique calculator repair." />
@@ -70,7 +75,6 @@
 
 
   
-
     
       <link rel="preconnect" href="https://fonts.googleapis.com" >
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
@@ -86,7 +90,6 @@
     
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-
   
 
   <!-- GA -->
@@ -140,13 +143,12 @@
       let self = this;
 
       /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener("change", () => {
+      this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
           if (self.isDarkMode) {
             if (!self.isSysDarkPrefer) {
               self.setDark();
             }
-
           } else {
             if (self.isSysDarkPrefer) {
               self.setLight();
@@ -157,9 +159,7 @@
         }
 
         self.notify();
-
       });
-
     } /* constructor() */
 
     get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); }
@@ -176,8 +176,7 @@
 
     /* get the current mode on screen */
     get modeStatus() {
-      if (this.isDarkMode
-        || (!this.hasMode && this.isSysDarkPrefer)) {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
         return ModeToggle.DARK_MODE;
       } else {
         return ModeToggle.LIGHT_MODE;
@@ -207,46 +206,41 @@
       }, "*");
     }
 
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
   } /* ModeToggle */
 
-  const toggle = new ModeToggle();
-
-  function flipMode() {
-    if (toggle.hasMode) {
-      if (toggle.isSysDarkPrefer) {
-        if (toggle.isLightMode) {
-          toggle.clearMode();
-        } else {
-          toggle.setLight();
-        }
-
-      } else {
-        if (toggle.isDarkMode) {
-          toggle.clearMode();
-        } else {
-          toggle.setDark();
-        }
-      }
-
-    } else {
-      if (toggle.isSysDarkPrefer) {
-        toggle.setLight();
-      } else {
-        toggle.setDark();
-      }
-    }
-
-    toggle.notify();
-
-  } /* flipMode() */
-
+  const modeToggle = new ModeToggle();
 </script>
 
   
 </head>
 
 
-  <body data-spy="scroll" data-target="#toc" data-topbar-visible="true">
+  <body data-topbar-visible="true">
 
     <!--
   The Side Bar
@@ -347,14 +341,16 @@
       
       <a href="https://github.com/Starwarsfan2099" aria-label="github"
         
+
         
-          
           target="_blank"
+          
         
 
         
 
-        rel="noopener">
+        rel="noopener noreferrer">
+
         <i class="fab fa-github"></i>
       </a>
       
@@ -365,14 +361,16 @@
       
       <a href="https://twitter.com/Starwarsfan2099" aria-label="twitter"
         
+
         
-          
           target="_blank"
+          
         
 
         
 
-        rel="noopener">
+        rel="noopener noreferrer">
+
         <i class="fab fa-twitter"></i>
       </a>
       
@@ -381,14 +379,15 @@
       
 
       
-      <a href="
-          javascript:location.href = 'mailto:' + ['Starwarsfan2099','gmail.com'].join('@')" aria-label="email"
+      <a href="javascript:location.href = 'mailto:' + ['Starwarsfan2099','gmail.com'].join('@')" aria-label="email"
         
+
         
 
         
 
         >
+
         <i class="fas fa-envelope"></i>
       </a>
       
@@ -399,11 +398,13 @@
       
       <a href="/feed.xml" aria-label="rss"
         
+
         
 
         
 
         >
+
         <i class="fas fa-rss"></i>
       </a>
       
@@ -556,14 +557,6 @@
   
 
   
-
-
-
-
-<!-- Wrap prompt element of blockquote with the <div> tag -->
-
-
-
 
 
 
@@ -1510,9 +1503,7 @@ SimpleJekyllSearch({
 </script>
 
 
-    <!--
-  JS selector for site.
--->
+    <!-- JS selector for site. -->
 
 <!-- layout specified -->
 
