@@ -189,7 +189,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Post:** No post yet.
 
 
-## Millionaire ELectric Calculator
+## Millionaire Electric Calculator
 
 ![Millionaire Calculator](https://clarkiv.dev/public/2021-02-23/main.jpg){:.shadow}{:.center}{: width="4020" height="3264" }
 
