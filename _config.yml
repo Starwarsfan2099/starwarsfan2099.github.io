@@ -27,7 +27,7 @@ description: >-                        # used by seo meta and the atom feed
   Place to share my adventures in programming, hacking, forensics, and antique calculator repair. 
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'clarkiv.dev'
+url: 'https://clarkiv.dev'
 
 github:
   username: Starwarsfan2099             # change to your github username
