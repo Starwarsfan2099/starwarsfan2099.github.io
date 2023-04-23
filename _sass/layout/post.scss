@@ -300,6 +300,11 @@ h1 + .post-meta {
     }
 
     ul {
+      ul {
+        a {
+          padding-left: 3rem;
+        }
+      }
       a {
         padding-left: 2rem;
       }
