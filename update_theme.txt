@@ -35,3 +35,9 @@ Also add this under:
   {% include no-linenos.html content=post.content %}
   {{ content | markdownify | strip_html | truncate: 200 | escape }}
 {% endif %}
+
+_javascript/modules/components/toc.js
+
+Change "headingSelector"
+
+      headingSelector: 'h2, h3, h4',
