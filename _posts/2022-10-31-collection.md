@@ -296,6 +296,15 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Fully Functional**
 - **Post:** No post yet.
 
+## Thales Model M
+
+![Thales M](https://clarkiv.dev/public/2023-04-22/IMG_2011.jpeg){:.shadow}{:.center}{: width="4032" height="3024" }
+
+- **Manufactured:** 1920s
+- **From:** Originally brought over from Germany during World War II. Found in Huntington, WV. 
+- **Fully Functional**
+- **Post:** No post yet.
+
 # Jukeboxes
 
 ## Rockola 1422
