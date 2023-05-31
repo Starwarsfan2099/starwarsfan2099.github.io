@@ -235,6 +235,15 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Fully Functional**
 - **Post:** No post yet.
 
+#### Monroe G
+
+![Monroe G](https://clarkiv.dev/public/2022-10-13/monroe_g.jpeg){:.shadow}{:.center}{: width="1674" height="1295" }
+
+- **Manufactured:** 1919
+- **From:** Roanoke, VA
+- **Mostly Functional, not worked on yet**
+- **Post:** No post yet.
+
 
 #### Monroe IQ-213
 
