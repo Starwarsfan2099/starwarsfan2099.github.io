@@ -20,6 +20,7 @@ pin: true
 - [ ] Marchant Deci-Magic (SKA)
 - [ ] Marchant MR
 - [ ] Marchant Octal Calculator (Raytheon binary-octal calculator)
+- [ ] Mercedes Euklid
 - [ ] Monroe Duplex 88N-213
 - [ ] Monroe Octal Calculator
 
@@ -193,6 +194,17 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Not Functional**
 - **Post:** No post yet.
 
+### Mercedes Euklid
+
+#### Mercedes Euklid VIII
+
+![Mercedes Euklid VIII](https://clarkiv.dev/public/2023-11-07/overview.JPG){:.shadow}{:.center}{: width="3516" height="3598" }
+
+- **Manufactured:** 1923
+- **From:** Originally built in Zella-Mehlis, Germany. Found in Stewartsville, NJ.
+- **Fully Functional**
+- **Post:** Coming soon!.
+
 ### Millionaire
 
 #### Millionaire Electric Calculator
@@ -322,6 +334,17 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 - **Manufactured:** 1920s
 - **From:** Originally brought over from Germany during World War II. Found in Huntington, WV. 
+- **Fully Functional**
+- **Post:** No post yet.
+
+### TIM
+
+#### TIM II
+
+![TIM II](https://clarkiv.dev/public/2023-11-08/overview.JPG){:.shadow}{:.center}{: width="5165" height="2454" }
+
+- **Manufactured:** 1910s
+- **From:** Originally built in Berlin, Germany. Found in Michigan.
 - **Fully Functional**
 - **Post:** No post yet.
 
