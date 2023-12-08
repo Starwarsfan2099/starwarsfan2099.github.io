@@ -23,6 +23,7 @@ pin: true
 - [ ] Mercedes Euklid
 - [ ] Monroe Duplex 88N-213
 - [ ] Monroe Octal Calculator
+- [ ] Austria V
 
 If you think you may have any of these machines or know where one is, send me an email! My email is andrewlclariv@gmail.com
 
