@@ -199,7 +199,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 #### Mercedes Euklid VIII
 
-![Mercedes Euklid VIII](https://clarkiv.dev/public/2023-11-07/overview.JPG){:.shadow}{:.center}{: width="3516" height="3598" }
+![Mercedes Euklid VIII](https://clarkiv.dev/public/2023-09-11/overview.jpg){:.shadow}{:.center}{: width="3516" height="3598" }
 
 - **Manufactured:** 1923
 - **From:** Originally built in Zella-Mehlis, Germany. Found in Stewartsville, NJ.
