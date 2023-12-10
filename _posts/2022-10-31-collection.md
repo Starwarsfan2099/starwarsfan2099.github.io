@@ -206,7 +206,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Manufactured:** 1923
 - **From:** Originally built in Zella-Mehlis, Germany. Found in Stewartsville, NJ.
 - **Fully Functional**
-- **Post:** Coming soon!.
+- **Post:** [https://clarkiv.dev/posts/Mercedes-Euklid-VIII/](https://clarkiv.dev/posts/Mercedes-Euklid-VIII/).
 
 ### Millionaire
 
