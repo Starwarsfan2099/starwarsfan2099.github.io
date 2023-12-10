@@ -26,7 +26,8 @@ pin: true
 - [ ] Monroe Octal Calculator
 - [ ] Austria V
 
-If you think you may have any of these machines or know where one is, send me an email! My email is andrewlclarkiv@gmail.com
+If you think you may have any of these machines or know where one is, send me an email! My email is [andrewlclarkiv@gmail.com](mailto:andrewlclarkiv@gmail.com).
+
 
 ## Mechanical Calculators
 
