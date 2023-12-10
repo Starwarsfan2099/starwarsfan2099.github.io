@@ -20,8 +20,9 @@ pin: true
 - [ ] Marchant Deci-Magic (SKA)
 - [ ] Marchant MR
 - [ ] Marchant Octal Calculator (Raytheon binary-octal calculator)
-- [ ] Mercedes Euklid
+- [ ] ~~Mercedes Euklid~~
 - [ ] Monroe Duplex 88N-213
+- [ ] ~~Monroe IQ~~
 - [ ] Monroe Octal Calculator
 - [ ] Austria V
 
