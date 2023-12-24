@@ -176,7 +176,7 @@ int main() {
 }
 ```
 
-![Flag](/public/2023-12-21/flag_1_censored.JPG){:.shadow}{:.center}{: width="1029" height="792" }
+![Flag](/public/2023-12-21/flag_1_censored.jpg){:.shadow}{:.center}{: width="1029" height="792" }
 
 #### Python
 
@@ -194,7 +194,7 @@ flag = [((signed_byte(val) >> 4) & 0xF | (signed_byte(val) << 4) & 0xF0) ^ 0xD f
 print("Flag:", ''.join(map(chr, flag)))
 ```
 
-![Flag](/public/2023-12-21/flag_2_censored.JPG){:.shadow}{:.center}{: width="1152" height="447" }
+![Flag](/public/2023-12-21/flag_2_censored.jpg){:.shadow}{:.center}{: width="1152" height="447" }
 
 ### Debugging
 
