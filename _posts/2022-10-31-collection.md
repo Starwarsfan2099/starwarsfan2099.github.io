@@ -25,6 +25,7 @@ pin: true
 - [ ] ~~Monroe IQ~~
 - [ ] Monroe Octal Calculator
 - [ ] Austria V
+- [ ] Everest Multarapid S
 
 If you think you may have any of these machines or know where one is, send me an email! My email is [andrewlclarkiv@gmail.com](mailto:andrewlclarkiv@gmail.com).
 
