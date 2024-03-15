@@ -23,7 +23,7 @@ Looking at the back, it has a rather large connector. It is technically called a
 
 A vacuum fluorescent display (VFD) is a special type of display. VFDs operate on the principle of *cathodoluminescence*, which is similar to the principle of cathode ray tubes but at much lower voltages. The display consists of a vacuum tube containing a filament, a grid, and a phosphor-coated anode. When a voltage is applied to the filament, it heats up and emits electrons. These electrons are then accelerated towards the anode by the grid, which is negatively charged. When the electrons collide with the phosphor-coated anode, they cause it to emit light. VFDs are known for their bright and clear displays, which can be seen in darkness or full sunlight without straining the eyes.
 
-## WHere is a datasheet?
+## Where is a datasheet?
 
 After looking far and wide, I was unable to find a datasheet for this particular VFD. However, I was able to find a datasheet for a `M402SD07GS` VFD display. It can be found [here](https://datasheetspdf.com/pdf-file/761465/Futaba/M402SD07GS/1). It uses a different connector but still gives us some good information. 
 
