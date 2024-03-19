@@ -82,10 +82,19 @@ a {
   @extend %link-color;
 }
 
+.img-wrapper {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  -webkit-filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
+  box-shadow: none !important;
+}
+
 img {
   max-width: 100%;
   height: auto;
-
+  object-fit: contain;
   &[data-src] {
     &.lazyloaded {
       -webkit-animation: fade-in 0.4s ease-in;
@@ -105,12 +114,6 @@ img {
       &.lazyloading {
         background: var(--img-bg);
       }
-    }
-
-    &.shadow {
-      -webkit-filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
-      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
-      box-shadow: none !important; /* cover the Bootstrap 4.6.1 styles */
     }
 
     @extend %img-caption;

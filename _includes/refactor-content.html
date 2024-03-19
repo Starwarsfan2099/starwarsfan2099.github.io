@@ -45,7 +45,8 @@
 
 <!-- images -->
 
-{% assign IMG_TAG = '<img ' %}
+{% assign IMG_TAG = '<div class="img-wrapper">
+  <img ' %}
 
 {% if _content contains IMG_TAG %}
   {% assign _img_content = nil %}
