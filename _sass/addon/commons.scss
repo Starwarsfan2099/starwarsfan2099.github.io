@@ -968,9 +968,7 @@ $sidebar-display: 'sidebar-display';
   z-index: 50;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 
-  background-color: var(--topbar-wrapper-bg);
-  // Another fix for old iOS devices
-  background-color: white; 
+  background-color: var(--topbar-wrapper-bg, white);
 
   [data-topbar-visible='false'] & {
     top: -$topbar-height; /* same as topbar height. */
