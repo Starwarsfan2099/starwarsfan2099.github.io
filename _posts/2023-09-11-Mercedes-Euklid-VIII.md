@@ -74,6 +74,10 @@ The motor is a 220 Volt - 40 Watt DC motor. In order to run this machine on the 
 
 This machine also uses a mechanical governor to control the speed of the motor! It's a simple resistive design that is controllable from a knob on the outside of the machine. 
 
+## Video
+
+{% include embed/youtube.html id='sH4eO0bLY0U' %}
+
 ## More Images
 
 ![Overview](https://clarkiv.dev/public/2023-09-11/overview_2.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
