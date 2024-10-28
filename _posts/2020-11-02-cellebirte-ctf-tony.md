@@ -8,7 +8,7 @@ author: clark
 
 ## Introduction
 
-On October 18th, 2020, Cellebrite announced on [their blog](https://www.cellebrite.com/en/blog/join-the-first-cellebrite-capture-the-flag-ctf-event/) that they were hosting their own capture the flag event. The event began on the October 26th and ended at midnight on the 29th. The CTF was hosted on [cellebrite.ctfd.io](https://cellebrite.ctfd.io/). Four forensic phone images were provided for analysis and solving the event's challenges. The archived images could be downloaded from the following links:
+On October 18th, 2020, Cellebrite announced on [their blog](https://www.cellebrite.com/en/blog/join-the-first-cellebrite-capture-the-flag-ctf-event/) that they were hosting their own capture the flag event. The event began on the October 26th and ended at midnight on the 29th. The CTF was hosted on [cellebrite.ctfd.io](https://cellebrite.ctfd.io/). Four forensic phone images were provided for analysis and solving the event's challenges. The archived images can be downloaded from the following links:
 
 [Juan Part 1](https://drive.google.com/file/d/1U8LHC1eHwxOTA42f_HrMpG8W0IXXld9f/view?usp=sharing)
 
