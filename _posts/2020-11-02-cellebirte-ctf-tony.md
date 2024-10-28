@@ -8,13 +8,18 @@ author: clark
 
 ## Introduction
 
-On October 18th, 2020, Cellebrite announced on [their blog](https://www.cellebrite.com/en/blog/join-the-first-cellebrite-capture-the-flag-ctf-event/) that they were hosting their own capture the flag event. The event began on the October 26th and ended at midnight on the 29th. The CTF was hosted on [cellebrite.ctfd.io](https://cellebrite.ctfd.io/). Four forensic phone images were provided for analysis and solving the event's challenges. The images could be downloaded from the following links.
+On October 18th, 2020, Cellebrite announced on [their blog](https://www.cellebrite.com/en/blog/join-the-first-cellebrite-capture-the-flag-ctf-event/) that they were hosting their own capture the flag event. The event began on the October 26th and ended at midnight on the 29th. The CTF was hosted on [cellebrite.ctfd.io](https://cellebrite.ctfd.io/). Four forensic phone images were provided for analysis and solving the event's challenges. The archived images could be downloaded from the following links:
 
-[https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.001](https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.001)
-[https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.002](https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Juan_Mortyme_parts.7z.002)
-[https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Ruth_Langmore.7z](https://d17k3c8pvtyk2s.cloudfront.net/CTF_Apple_iPhone_X_Ruth_Langmore.7z)
-[https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_A10e_Tony_Mederos.7z](https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_A10e_Tony_Mederos.7z)
-[https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_S8_Rene_Gade.7z](https://d17k3c8pvtyk2s.cloudfront.net/CTF_Samsung_Galaxy_S8_Rene_Gade.7z)
+[Juan Part 1](https://drive.google.com/file/d/1U8LHC1eHwxOTA42f_HrMpG8W0IXXld9f/view?usp=sharing)
+
+[Juan Part 2](https://drive.google.com/file/d/1Xr9WR2ylN1LzmRnc3HT_Ee-L9pC5eb-z/view?usp=sharing)
+
+[Ruth](https://drive.google.com/file/d/1RHwRWqvHF5PBUjHYgwIQcx2ctThiQKHY/view?usp=sharing)
+
+[Tony](https://drive.google.com/file/d/1KbzACyfVszDbT90bjJsI8Xl9beSbc7Cf/view?usp=sharingCTF_Samsung_Galaxy_A10e_Tony_Mederos.7z)
+
+[Rene](https://drive.google.com/file/d/1A-FuOh4NqUWI2plCbtM4C6vMFfLSC3-l/view?usp=sharing)
+
 
 Images were password protected. An email had to be sent to the Cellebrite CTF team to get the password to the images. to The images provided were two iPhone X images, a Samsung Galaxy A10e, and a Samsung Galaxy S8. Questions were of three varying difficulties with different points rewarded. 
 
