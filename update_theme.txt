@@ -41,3 +41,38 @@ _javascript/modules/components/toc.js
 Change "headingSelector"
 
       headingSelector: 'h2, h3, h4',
+
+Fixes for older iOS versions:
+
+_includes/refactor-content.html:
+
+{% assign IMG_TAG = '<img ' %}
+
+to 
+
+{% assign IMG_TAG = '<div class="img-wrapper"><img ' %}
+
+_sass/addon/commons.scss
+
+.img-wrapper {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  -webkit-filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
+  box-shadow: none !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  + object-fit: contain;
+  &[data-src] {
+    &.lazyloaded {
+      -webkit-animation: fade-in 0.4s ease-in;
+
+  background-color: var(--topbar-wrapper-bg);
+
+_sass/colors/light-typography.scss
+
+    --topbar-wrapper-bg: rgb(245, 245, 245);
