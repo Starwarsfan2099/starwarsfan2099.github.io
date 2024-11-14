@@ -161,7 +161,7 @@ And..... nothing. Characters printed after aren't hidden now, but trying to prin
 
 But how are characters printed? Well, we send five bytes of value `0xFF` and the character printed has all points on the character lit up. What is `0xFF` in  binary? `11111111`! The binary value of the bytes is used to light up the points, starting from the top left and working right then on to the next row. `1` means a point is turned on and `0` means that point is off. So five bytes is enough data to specify all 35 points with some padding at the end. 
 
-The best way I've been able to do this is use [this wonderful tool matrix font generator tool](https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html). Next set the rows to 8 and the columns to 5 to match this specific display's character size. And then "draw" the character.
+The best way I've been able to do this is using [this wonderful matrix font generator tool](https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html). Next set the rows to 8 and the columns to 5 to match this specific display's character size. And then "draw" the character.
 
 ![Matrix](/public/2024-1-16/matrix.JPG){:.shadow}{:.center}{: width="630" height="536" }
 
