@@ -1,7 +1,7 @@
 ---
 title: TIM III - Time Is Money
 excerpt: An interesting little calculator manufactured from 1910 to 1930.
-thumbnail: /public/2024-11-15/cover.JPG
+thumbnail: /public/2024-11-15/cover.jpg
 categories: [Calculator, TIM]
 tags: restoration antique mechanical-calculator
 author: clark
@@ -13,7 +13,7 @@ author: clark
 
 This is a TIM model III machine. TIM stands for **T**ime **I**s **M**oney, and was designed to speed up calculations in order to save money. This machine features eight digit entry via sliders, nine digit counter register, and sixteen digit accumulation register. It's made of iron and brass, weighing in at around 20 lbs. It was manufactured by *Ludwig Spitz & Co* in Berlin, Germany from 1910 to 1930. It was sold in new York via *Oscar Muller & Co*.
 
-![Ad via rechnerlexikon.de](/public/2024-11-15/ad.JPG){:.shadow}{:.center}{: width="646" height="1001" }
+![Ad via rechnerlexikon.de](/public/2024-11-15/ad.jpg){:.shadow}{:.center}{: width="646" height="1001" }
 
 The machine also has a protective cover that sits overtop of the machine when not in use. 
 
@@ -31,7 +31,7 @@ On the left side of the machine is a lever for switching between addition/subtra
 
 ## Mechanism
 
-![Patent via rechnerlexikon.de](/public/2024-11-15/patent.JPG){:.shadow}{:.center}{: width="2120" height="1387" }
+![Patent via rechnerlexikon.de](/public/2024-11-15/patent.jpg){:.shadow}{:.center}{: width="2120" height="1387" }
 
 The TIM machines had a surprisingly simple mechanism. The patent entry above shows a machine with keyboard entry, which is a bit more complicated. The mechanism is based off of the stepped drum principle. The input sliders move a gear up or down beside a drum. The drum has an increasing number of groves placed vertically on the drum. When the input gear is at the bottom of the drum and the drum is rotated, the input gear only moves one position. When the input gear is at the top of the drum, it moves nine positions. The input gear is connected to the counter and the accumulater register and increases or decreases their amounts based on the position of the add/subtract lever. 
 
