@@ -11,7 +11,7 @@ author: clark
 
 ![Overview](/public/2024-11-15/overview.JPG){:.shadow}{:.center}{: width="5165" height="2454" }
 
-This is a TIM model III machine. TIM stands for **T**ime **I**s **M**oney, and was designed to speed up calculations in order to save money. This machine features eight digit entry via sliders, nine digit counter register, and sixteen digit accumulation register. It's made of iron and brass, weighing in at around 20 lbs. It was manufactured by *Ludwig Spitz & Co* in Berlin, Germany from 1910 to 1930. It was sold in New York via *Oscar Muller & Co*.
+This is a TIM model III calculator. TIM stands for **T**ime **I**s **M**oney, and was designed to speed up calculations in order to save money. This machine features eight digit entry via sliders, nine digit counter register, and sixteen digit accumulation register. It's made of iron and brass, weighing in at around 20 lbs. It was manufactured by *Ludwig Spitz & Co* in Berlin, Germany from 1910 to 1930. It was sold in New York via *Oscar Muller & Co*.
 
 ![Ad via rechnerlexikon.de](/public/2024-11-15/ad.jpg){:.shadow}{:.center}{: width="646" height="1001" }
 
