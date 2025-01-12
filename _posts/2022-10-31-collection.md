@@ -354,9 +354,9 @@ This is the current extent of my calculator collection. If the pictures look rou
 
 ### Wales
 
-#### Wales Model 10
+#### Wales Model 20
 
-![Wales Model 10](/public/2022-10-13/wales.JPG){:.shadow}{:.center}{: width="2400" height="1600" }
+![Wales Model 20](/public/2022-10-13/wales.JPG){:.shadow}{:.center}{: width="2400" height="1600" }
 
 - **Manufactured:** 1910s
 - **From:** Sugarcreek Ohio.
