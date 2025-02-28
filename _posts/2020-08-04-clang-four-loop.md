@@ -1,5 +1,5 @@
 ---
-title: Adding a "Four" loop to Clang Compiler 
+title: Adding a Four loop to Clang Compiler 
 excerpt: Adding a "Four" loop to the clang compiler for fun and because, well, why not?
 categories: [Programming, Fun]
 tags: programming fun
