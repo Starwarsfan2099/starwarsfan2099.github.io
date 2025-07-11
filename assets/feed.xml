@@ -24,9 +24,10 @@ permalink: /feed.xml
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ post.url }}</id>
     <content type="html"><![CDATA[
-      {{ post.content | replace: '/public/', public_url_prefix }}
+      {{ post.output | replace: '/public/', public_url_prefix }}
     ]]></content>
   </entry>
 {% endfor %}
+
 
 </feed>
