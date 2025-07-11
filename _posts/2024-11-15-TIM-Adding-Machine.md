@@ -33,7 +33,7 @@ On the left side of the machine is a lever for switching between addition/subtra
 
 ![Patent via rechnerlexikon.de](/public/2024-11-15/patent.jpg){:.shadow}{:.center}{: width="2120" height="1387" }
 
-The TIM machines had a surprisingly simple mechanism. The patent entry above shows a machine with keyboard entry, which is a bit more complicated. The mechanism is based off of the stepped drum principle. The input sliders move a gear up or down beside a drum. The drum has an increasing number of groves placed vertically on the drum. When the input gear is at the bottom of the drum and the drum is rotated, the input gear only moves one position. When the input gear is at the top of the drum, it moves nine positions. The input gear is connected to the counter and the accumulater register and increases or decreases their amounts based on the position of the add/subtract lever. 
+The TIM machines had a surprisingly simple mechanism. The patent entry above shows a machine with keyboard entry, which is a bit more complicated. The mechanism is based off of the stepped drum principle. The input sliders move a gear up or down beside a drum. The drum has an increasing number of groves placed vertically on the drum. When the input gear is at the bottom of the drum and the drum is rotated, the input gear only moves one position. When the input gear is at the top of the drum, it moves nine positions. The input gear is connected to the counter and the accumulator register and increases or decreases their amounts based on the position of the add/subtract lever. 
 
 ## Internals
 

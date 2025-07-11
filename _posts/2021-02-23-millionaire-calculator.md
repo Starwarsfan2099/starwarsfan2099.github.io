@@ -5,8 +5,12 @@ thumbnail: https://clarkiv.dev/public/2021-02-23/cover.jpg
 categories: [Calculator, Millionaire]
 cover_size: sm
 tags: restoration antique mechanical-calculator
-author: rms
+author: clark
 ---
+
+Mechanical calculators in the early 20<sup>th</sup> century occupied an interesting position in the evolution of computing. The Thomas de Colmar arithmometer and similar designs were widely popular. The [Comptometer](https://clarkiv.dev/posts/wooden-comptometer/) was gaining traction and would become the first successful key-driven adding machine. Companies like Monroe, Burroughs, and Marchant were also releasing early machines, most of which relied on variations of pinwheel or stepped drum mechanisms.
+
+A major drawback of these machines was the time-consuming process of multiplication and division resulting from those mechanisms. Each operation required multiple cycles, cranks, or key presses—multiplying 8 × 7, for example, would take seven manual steps. Recognizing this inefficiency, *Hans W. Egli* set out to revolutionize mechanical calculation.
 
 ## Overview 
 
