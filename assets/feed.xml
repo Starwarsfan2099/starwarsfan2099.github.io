@@ -16,7 +16,7 @@ permalink: /feed.xml
     <name>{{ site.author.name | xml_escape }}</name>
     <email>{{ site.author.email | xml_escape }}</email>
   </author>
-{% for post in site.posts limit:100 %}
+{% for post in site.posts limit:10 %}
   {% capture public_url_prefix %}{{ site.url }}/public/{% endcapture %}
   <entry>
     <title>{{ post.title | xml_escape }}</title>
@@ -24,8 +24,9 @@ permalink: /feed.xml
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ post.url }}</id>
     <content type="html"><![CDATA[
-      {{ post.content | markdownify | replace: '/public/', public_url_prefix }}
+      {{ post.content | replace: '/public/', public_url_prefix }}
     ]]></content>
   </entry>
 {% endfor %}
+
 </feed>
