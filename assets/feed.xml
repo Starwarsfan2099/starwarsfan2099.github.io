@@ -16,7 +16,7 @@ permalink: /feed.xml
     <name>{{ site.author.name | xml_escape }}</name>
     <email>{{ site.author.email | xml_escape }}</email>
   </author>
-{% for post in site.posts limit:10 %}
+{% for post in site.posts limit:100 %}
   {% capture public_url_prefix %}{{ site.url }}/public/{% endcapture %}
   <entry>
     <title>{{ post.title | xml_escape }}</title>
