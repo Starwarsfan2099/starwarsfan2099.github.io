@@ -1,5 +1,5 @@
 ---
-layout: compress
+# layout: compress
 permalink: /feed.xml
 # Atom Feed, reference: https://validator.w3.org/feed/docs/atom.html
 ---
