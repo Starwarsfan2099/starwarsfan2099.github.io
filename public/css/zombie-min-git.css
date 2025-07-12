@@ -26,10 +26,10 @@ h4 {
 }
 .adminDrawerLogo img,
 imgLogoIcon {
-  content: url(https://clarkiv.dev/public/css/logo/jellyfin-logo-light.png) !important;
+  content: url(/public/css/logo/jellyfin-logo-light.png) !important;
 }
 .pageTitleWithLogo {
-  background-image: url(https://clarkiv.dev/public/css/logo/jellyfin-logo-light.png) !important;
+  background-image: url(/public/css/logo/jellyfin-logo-light.png) !important;
 }
 @media only screen and (max-device-width: 767px) {
   .featurediframe {
@@ -1123,7 +1123,7 @@ a[data-role="button"] {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://clarkiv.dev/public/css/img/loginImg/login.jpg");
+    url("/public/css/img/loginImg/login.jpg");
   background-position: top left;
   background-size: cover;
   background-attachment: fixed;

@@ -1,7 +1,7 @@
 ---
 title: Electric Millionaire Mechanical Calculator Overview and Operation
 excerpt: Incredible brass and steel early 20th century Swedish mechanical calculator. With stand, motor, and single-cycle multiplication. 
-thumbnail: https://clarkiv.dev/public/2021-02-23/cover.jpg
+thumbnail: /public/2021-02-23/cover.jpg
 categories: [Calculator, Millionaire]
 cover_size: sm
 tags: restoration antique mechanical-calculator

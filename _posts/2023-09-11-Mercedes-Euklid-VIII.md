@@ -1,7 +1,7 @@
 ---
 title: Mercedes Euklid VIII - The First Fully Automatic Electric Calculator
 excerpt: This calculator is the very first electric machine to automatically multiply and divide.
-thumbnail: https://clarkiv.dev/public/2023-09-11/cover.jpg
+thumbnail: /public/2023-09-11/cover.jpg
 categories: [Calculator, Mercedes]
 tags: restoration antique mechanical-calculator
 author: clark
@@ -10,13 +10,13 @@ author: clark
 ## Overview 
 
 
-![Mercedes Euklid VIII](https://clarkiv.dev/public/2023-09-11/overview.jpg){:.shadow}{:.center}{: width="3516" height="3598" }
+![Mercedes Euklid VIII](/public/2023-09-11/overview.jpg){:.shadow}{:.center}{: width="3516" height="3598" }
 
 First produced in 1913, this machine is the first commercially available fully automatic electric mechanical calculator. Produced by Mercedes Bureau-Maschinen in Zella-Mehlis, Germany, this specific machine was made in 1923. Mercedes machines uses a unique principal for operation - proportional levers. Instead of a drum or special gear mechanism, a system of racks is pivoted and used to turn gears different amounts. This unique design was used as the basis for all of their machines. 
 
-![Mercedes Euklid VIII AD](https://clarkiv.dev/public/2023-09-11/ad.jpg){:.shadow}{:.center}{: width="1268" height="1000" }
+![Mercedes Euklid VIII AD](/public/2023-09-11/ad.jpg){:.shadow}{:.center}{: width="1268" height="1000" }
 
-![Mercedes Euklid VIII AD Translated](https://clarkiv.dev/public/2023-09-11/ad_translated.jpg){:.shadow}{:.center}{: width="1268" height="1000" }
+![Mercedes Euklid VIII AD Translated](/public/2023-09-11/ad_translated.jpg){:.shadow}{:.center}{: width="1268" height="1000" }
 
 There were many Mercedes models based off the same idea and design. For many of those designs, it visually appears like pieces were just set on top or in front of a base Mercedes Euklid machine. This machine is no exception. It *is* essentially a base Mercedes Euklid set on top of a motorized base, with a keyboard stacked on top of the machine, and a multiply register stuck to the front of the carriage. A lovely design of function before form. The model VIII sold particularly well thanks to the automatic functions. 
 
@@ -24,19 +24,19 @@ There were many Mercedes models based off the same idea and design. For many of 
 
 There are a few different controls located around the machine. 
 
-![Keyboard](https://clarkiv.dev/public/2023-09-11/keyboard.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Keyboard](/public/2023-09-11/keyboard.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
 At the top is the keyboard for input. There are nine columns, each with nine digits and a key to clear that column. The currently entered digit is shown on dials below each keyboard column. Beside the keys on each side are two silver levers. The left lever clears the keyboard. The right lever, if in the downwards position clears the keyboard after a cycle is performed. On the far right of the keyboard is a large button used to activate the machine for addition and subtraction. 
 
-![Controls](https://clarkiv.dev/public/2023-09-11/controls_1.jpg){:.shadow}{:.center}{: width="6000" height="4000" } 
+![Controls](/public/2023-09-11/controls_1.jpg){:.shadow}{:.center}{: width="6000" height="4000" } 
 
 Lower down on the machine are more controls - two levers as well as a pin to connect the two levers. There is a plate that explains the positions of the levers for the different operating modes. 
 
-![Multiplication and division lever](https://clarkiv.dev/public/2023-09-11/controls_2.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Multiplication and division lever](/public/2023-09-11/controls_2.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
 There is a lever below the carriage also used to set multiplication and division. 
 
-![Carriage Controls](https://clarkiv.dev/public/2023-09-11/controls_3.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Carriage Controls](/public/2023-09-11/controls_3.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
 On the left hand side of the carriage, on the top, there are two buttons, a center pin, and a locking lever. On the side of the carriage below that is a silver button. All of these controls work together. When in addition and subtraction, the locking lever is disengaged, allowing the center pin to move freely. This allows for the two top buttons to work. The upper button releases the carriage to where it slides into it's leftmost home position. The bottom button steps the carriage one place to the left at a time.
 
@@ -64,13 +64,13 @@ For division, the carriage setting again needs to allow it to move freely. Both 
 
 ## Motor
 
-![Motor](https://clarkiv.dev/public/2023-09-11/motor.jpg){:.shadow}{:.center}{: width="4000" height="6000" }
+![Motor](/public/2023-09-11/motor.jpg){:.shadow}{:.center}{: width="4000" height="6000" }
 
 The motor is a 220 Volt - 40 Watt DC motor. In order to run this machine on the U.S electrical grid, I used a 220 volt step up transformer and a 1000 watt rectifier from Amazon. 
 
 ## Governor
 
-![Motor Speed Control](https://clarkiv.dev/public/2023-09-11/governor.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Motor Speed Control](/public/2023-09-11/governor.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
 This machine also uses a mechanical governor to control the speed of the motor! It's a simple resistive design that is controllable from a knob on the outside of the machine. 
 
@@ -80,14 +80,14 @@ This machine also uses a mechanical governor to control the speed of the motor! 
 
 ## More Images
 
-![Overview](https://clarkiv.dev/public/2023-09-11/overview_2.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Overview](/public/2023-09-11/overview_2.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
-![Internals](https://clarkiv.dev/public/2023-09-11/internals_1.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Internals](/public/2023-09-11/internals_1.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
-![Internals](https://clarkiv.dev/public/2023-09-11/internals_2.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Internals](/public/2023-09-11/internals_2.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
-![Internals](https://clarkiv.dev/public/2023-09-11/internals_3.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Internals](/public/2023-09-11/internals_3.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
-![Internals](https://clarkiv.dev/public/2023-09-11/internals_4.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Internals](/public/2023-09-11/internals_4.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
 
-![Internals](https://clarkiv.dev/public/2023-09-11/internals_5.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
+![Internals](/public/2023-09-11/internals_5.jpg){:.shadow}{:.center}{: width="6000" height="4000" }
