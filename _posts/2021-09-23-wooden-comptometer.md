@@ -13,7 +13,7 @@ author: clark
 ![Comptometer Model A](https://starwarsfan2099.github.io/public/2021-09-23/main.JPG){:.shadow}{:.center}{: width="960" height="579" }
 
 
-My 2nd Compomter aquisition, this Wooden COmptometer is much older than my [model J](https://starwarsfan2099.github.io/2021/02/09/comptometer-model-j.html). This is the first Comptometer adding machine model made by *Felt & Tarrant Manufacturing Company*. Established in 1889, they were the leader in key-driven adding machines during the 20th century. The primary goals of the machines were speed and accuracy for numbers that needed to be added in rapid succession. The Comptometers quickly gained popularity and many models were produced throughout the years. This particular machine appears to have been built on September 22nd, 1896, making it the oldest calculator in my collection.
+My 2nd Compomter aquisition, this Wooden COmptometer is much older than my [model J](https://starwarsfan2099.github.io/2021/02/09/comptometer-model-j.html). This is the first Comptometer adding machine model made by *Felt & Tarrant Manufacturing Company*. Established in 1889, they were the leader in key-driven adding machines during the 20th century. The primary goals of the machines were speed and accuracy for numbers that needed to be added in rapid succession. The Comptometers quickly gained popularity and many models were produced throughout the years. This particular model was manufactured between 1887 and 1903 making it the oldest calculator in my collection. 
 
 
 ![Comptometer Ad](https://starwarsfan2099.github.io/public/2021-09-23/ad.jpg){:.shadow}{:.center}{: width="959" height="549" }
