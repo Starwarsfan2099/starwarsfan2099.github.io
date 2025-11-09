@@ -16,3 +16,34 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Default (light mode) */
+:root {
+  --mermaid-bg: #ffffff;
+  --mermaid-text: #000000;
+}
+
+/* Dark mode for systems or themes using prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mermaid-bg: #1e1e1e;
+    --mermaid-text: #eeeeee;
+  }
+}
+
+/* Optional: if your site toggles dark mode with a class (like .dark-theme or .theme-dark) */
+.dark-theme,
+.theme-dark {
+  --mermaid-bg: #1e1e1e;
+  --mermaid-text: #eeeeee;
+}
+
+/* Mermaid edge label styling */
+.mermaid .edgeLabel {
+  background-color: var(--mermaid-bg) !important;
+  color: var(--mermaid-text) !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+}
