@@ -75,7 +75,7 @@ google_analytics:
 theme_mode:   # [light|dark]
 
 # Enable snow animation.
-snow: false
+snow: true
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
