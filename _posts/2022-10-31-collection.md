@@ -13,16 +13,16 @@ pin: true
 - [ ] Alpina Calculator
 - [ ] Any Millionaire calculator
 - [ ] Any twin rotary machines
-- [ ] Curta
+- [x] Curta
 - [ ] Facit ESA
 - [ ] Friden SBT
 - [ ] Marchant "Twin Marchant"
 - [ ] Marchant Deci-Magic (SKA)
 - [ ] Marchant MR
 - [ ] Marchant Octal Calculator (Raytheon binary-octal calculator)
-- [ ] ~~Mercedes Euklid~~
+- [x] Mercedes Euklid
 - [ ] Monroe Duplex 88N-213
-- [ ] ~~Monroe IQ~~
+- [x] Monroe IQ
 - [ ] Monroe Octal Calculator
 - [ ] Austria V
 - [ ] Everest Multarapid S
