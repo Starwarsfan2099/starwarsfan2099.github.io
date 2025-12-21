@@ -117,6 +117,18 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Fully Functional**
 - **Post:** [https://clarkiv.dev/posts/comptometer-model-j/](https://clarkiv.dev/posts/comptometer-model-j/)
 
+### Curta
+
+#### Curta - Type 1
+
+![Curta Type 1](/public/2022-10-13/curta.jpeg){:.shadow}{:.center}{: width="2694" height="3309" }
+
+- **Manufactured:** 1951
+- **Serial:** 7251
+- **From:** Berlin, DE
+- **Fully Functional**
+- **Post:** No post yet.
+
 ### Friden
 
 #### Friden D-8
