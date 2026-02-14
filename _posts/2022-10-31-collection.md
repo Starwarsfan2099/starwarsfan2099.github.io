@@ -127,7 +127,7 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **Serial:** 7251
 - **From:** Berlin, DE
 - **Fully Functional**
-- **Post:** No post yet.
+- **Post:** [https://clarkiv.dev/posts/Curta-Type-I/](https://clarkiv.dev/posts/Curta-Type-I/)
 
 ### Friden
 
