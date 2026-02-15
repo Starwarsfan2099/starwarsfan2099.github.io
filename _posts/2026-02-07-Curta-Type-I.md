@@ -31,26 +31,25 @@ This Curta is a Type 1, Serial #7251 - a semi-prime serial number! It was built 
 
 ![Handle](/public/2026-02-07/handle.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
-The main operating handle on the Curta is mounted vertically on the top of the machine. It rotates clockwise to perform an addition operation. The handle can be pulled upward revealing a small grey ring. This indicates cranking the hand clockwise now performs a subtraction instead of an addition operation.
+The main operating handle on the Curta is mounted vertically on the top of the machine. It rotates clockwise to perform an addition operation. The handle can be pulled upward revealing a small grey ring. This indicates that cranking the hand clockwise now performs a subtraction instead of an addition operation.
 
 ![Subtraction](/public/2026-02-07/subtraction.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
-Just below this is the clearing lever. It can be folded for storage in the canister by pressing down the small pin beside the handle. 
+Just below this is the clearing lever. It can be folded for storage in the canister by pressing down the small pin beside the handle.
 
 ![Clearing Handle](/public/2026-02-07/clearing_1.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
-And it can be folded out and locked into place for normal operation. 
+And it can be folded out and locked into place for normal operation. Rotating the clearing handle clears out the result and counter register. You can also rotate it halfway to only clear one of the registers. 
 
 ![Clearing Handle Unfolded](/public/2026-02-07/clearing_2.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
-Below this is the display for the calculator's output. The main 11 digit result register is on the black side, and the 6 digit counter register is on the silver side. There also several silver decimal markers that can be slid around the registers. This whole assembly can be lifted up and rotated left and right in order to change to counter and result register positions in relation to the input register. 
+Below this is the display for the calculator's output registers. The primary 11 digit result register is on the black side, and the 6 digit counter register is on the silver side. There also several silver decimal markers that can be slid around above the registers. This whole upper carriage assembly can be lifted up and rotated left and right in order to change to counter and result register positions in relation to the input register. 
 
 ![Input](/public/2026-02-07/input.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
 There is an arrow above the rightmost input slider pointing at the current result register place value. There are a total of 8 input sliders with dials above them showing the current value for that column. There are numbers for each column and more silver decimal markers below that. And finally, on the side of the machine is a switch for reversing the direction of the counter mechanism. 
 
 ![Counter reverse](/public/2026-02-07/counter_reverse.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
-
 
 ## Canister
 
@@ -66,7 +65,7 @@ With the lid screwed on tightly, the Curta inside cannot be felt rattling or jos
 
 ## Manuals 
 
-This machine also came with two booklets for it.
+This machine also came with two original booklets when I received it.
 
 ![Manuals](/public/2026-02-07/manuals.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
