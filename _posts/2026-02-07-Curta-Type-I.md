@@ -19,11 +19,11 @@ Eventually, due to his heritage, Herzstark was sent to Buchenwald concentration 
 
 ![Advertisment](/public/2026-02-07/advertisment.jpg){:.shadow}{:.center}{: width="1024" height="370"}{:style="max-width: 80%;"}
 
-Full production for commercial Curta machines began in 1947 with the 'Type 1', and then a second upgraded 'Type 2' model began production in 1953. The Type 1 originally sold for $125 ($1,547.80 in 2025). Around 80,000 Type I Curtas were produced and 60,000 Type II machines. The Curta was considered the best portable calculator and manufactured until the 1970s when it began being replaced by electronic calculators. However, even after the the electronic calculator became widespread, Curtas were still used in rally racing due to early electronic calculators not faring well with the constant bounces and jolts of rallying.
+Full production for commercial Curta machines began in 1947 with the 'Type 1', and then a second upgraded 'Type 2' model began production in 1953. The Type 1 originally sold for $125 ($1,547.80 in 2025). Around 80,000 Type I Curtas were produced and 60,000 Type II machines were produced. The Curta was considered to be the best portable calculator and was manufactured until the 1970s when it started to be replaced by electronic calculators. However, even after the electronic calculator became widespread, Curtas were still used in rally racing due to early electronic calculators not faring well with the constant bounces and jolts of rallying.
 
 ![Overview 2](/public/2026-02-07/overview_2.jpg){:.shadow}{:.center}{: width="4000" height="6000"}{:style="max-width: 60%;"}
 
-This Curta is a Type 1, Serial #7251 - a semi-prime serial number! It was built in January of 1951. This machine has narrow rectangular entry knobs with teeth. It also has the metal, rounded top handle without an arrow, grey stripe for subtraction, and clockwise opening canister. 
+This Curta is a Type 1, Serial #7251 - a semi-prime serial number! It was built in January of 1951. This machine has narrow rectangular entry knobs with teeth. It also has the rounded metal top handle without an arrow, grey stripe for subtraction, and clockwise opening canister. 
 
 ![Curta in hand](/public/2026-02-07/curta_in_hand.jpg){:.shadow}{:.center}{: width="4000" height="6000"}{:style="max-width: 60%;"}
 
@@ -39,7 +39,7 @@ Just below this is the clearing lever. It can be folded for storage in the canis
 
 ![Clearing Handle](/public/2026-02-07/clearing_1.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
-And it can be folded out and locked into place for normal operation. Rotating the clearing handle clears out the result and counter register. You can also rotate it halfway to only clear one of the registers. 
+The clearing lever can be folded out and locked into place for normal operation. Rotating the clearing handle clears out the result and counter register. You can also rotate it halfway to only clear one of the registers. 
 
 ![Clearing Handle Unfolded](/public/2026-02-07/clearing_2.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
@@ -69,7 +69,7 @@ This machine also came with two original booklets when I received it.
 
 ![Manuals](/public/2026-02-07/manuals.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
-One is a promotional leaflet and information packet for the device. It shows how to hold it, goes over the machines advantages, and has some example calculations to get the user started. 
+One is a promotional leaflet and information packet for the device. It shows how to hold it, goes over the machine's advantages, and has some example calculations to get the user started. 
 
 ![Generic manual](/public/2026-02-07/manual_1.jpg){:.shadow}{:.center}{: width="6000" height="4000"}{:style="max-width: 80%;"}
 
@@ -79,7 +79,7 @@ The other instruction manual gives more complex operation instructions for doing
 
 ## Mechanism
 
-This Curta was is perfect working condition when I got it, so it has not been taken apart yet. However, the first promotional leaflet has a section dedicated to the mechanism. Here is a scan of those pages from my leaflet:
+This Curta was in perfect working condition when I got it, so it has not been taken apart yet. However, the first promotional leaflet has a section dedicated to the mechanism. Here is a scan of those pages from my leaflet:
 
 ![Mechanism from manual](/public/2026-02-07/mechanism.png){:.shadow}{:.center}{: width="2540" height="1812"}
 
