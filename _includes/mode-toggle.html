@@ -26,24 +26,34 @@
       let self = this;
 
       /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
+      if (this.sysDarkPrefers.addEventListener) {
+        this.sysDarkPrefers.addEventListener('change', () => {
+          self.handleSystemThemeChange();
+        });
+      } else {
+        this.sysDarkPrefers.addListener(() => {
+          self.handleSystemThemeChange();
+        });
+      }
+    } /* constructor() */
 
-          self.clearMode();
+    handleSystemThemeChange() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
         }
 
-        self.notify();
-      });
-    } /* constructor() */
+        this.clearMode();
+      }
+
+      this.notify();
+    }
 
     get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); }
 

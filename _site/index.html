@@ -44,16 +44,16 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Place to share my adventures in programming, hacking, forensics, and antique calculator repair." />
 <meta property="og:description" content="Place to share my adventures in programming, hacking, forensics, and antique calculator repair." />
-<link rel="canonical" href="https://clarkiv.dev/" />
-<meta property="og:url" content="https://clarkiv.dev/" />
+<link rel="canonical" href="http://0.0.0.0:4000/" />
+<meta property="og:url" content="http://0.0.0.0:4000/" />
 <meta property="og:site_name" content="Andrew Clark’s Blog" />
 <meta property="og:type" content="website" />
-<link rel="next" href="https://clarkiv.dev/page2" />
+<link rel="next" href="http://0.0.0.0:4000/page2" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Andrew Clark’s Blog" />
 <meta name="twitter:site" content="@Starwarsfan2099" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Place to share my adventures in programming, hacking, forensics, and antique calculator repair.","headline":"Andrew Clark’s Blog","name":"Andrew Clark IV","sameAs":["https://twitter.com/Starwarsfan2099","https://github.com/Starwarsfan2099"],"url":"https://clarkiv.dev/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"Place to share my adventures in programming, hacking, forensics, and antique calculator repair.","headline":"Andrew Clark’s Blog","name":"Andrew Clark IV","sameAs":["https://twitter.com/Starwarsfan2099","https://github.com/Starwarsfan2099"],"url":"http://0.0.0.0:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -146,24 +146,34 @@
       let self = this;
 
       /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
+      if (this.sysDarkPrefers.addEventListener) {
+        this.sysDarkPrefers.addEventListener('change', () => {
+          self.handleSystemThemeChange();
+        });
+      } else {
+        this.sysDarkPrefers.addListener(() => {
+          self.handleSystemThemeChange();
+        });
+      }
+    } /* constructor() */
 
-          self.clearMode();
+    handleSystemThemeChange() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
         }
 
-        self.notify();
-      });
-    } /* constructor() */
+        this.clearMode();
+      }
+
+      this.notify();
+    }
 
     get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); }
 

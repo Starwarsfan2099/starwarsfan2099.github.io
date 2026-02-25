@@ -6,15 +6,14 @@
 @import 'colors/dark-syntax';
 
 html {
-  @media (prefers-color-scheme: light) {
-    &:not([data-mode]),
-    &[data-mode='light'] {
-      @include light-syntax;
-    }
+  /* Default syntax highlight for browsers that don't support prefers-color-scheme */
+  &:not([data-mode]),
+  &[data-mode='light'] {
+    @include light-syntax;
+  }
 
-    &[data-mode='dark'] {
-      @include dark-syntax;
-    }
+  &[data-mode='dark'] {
+    @include dark-syntax;
   }
 
   @media (prefers-color-scheme: dark) {
