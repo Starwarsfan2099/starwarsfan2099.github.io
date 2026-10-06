@@ -387,3 +387,14 @@ This is the current extent of my calculator collection. If the pictures look rou
 - **From:** Bluefeild, WV
 - **Fully Functional**
 - **Post:** No post yet.
+
+### Wurlitzer
+
+#### Wurlitzer 81
+
+![Wurlitzer 81](/public/2026-10-05/overview.jpg){:.shadow}{:.center}{: width="631" height="950" }
+
+- **Manufactured:** 1941
+- **From:** Bluefeild, WV
+- **Fully Functional**
+- **Post:** [https://clarkiv.dev/posts/Wurlitzer-81/](https://clarkiv.dev/posts/Wurlitzer-81/).
